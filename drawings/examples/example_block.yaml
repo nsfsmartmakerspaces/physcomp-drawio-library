@@ -1,0 +1,25 @@
+schema_version: "1.0.0"
+disable: false
+dip: false
+block: true
+style: block_1
+title:
+  - "ABC"
+  - "Cool Chip"
+  - "123"
+left:
+  - - "A1"
+    - "A1.5"
+  - "A2"
+  - "A3"
+  - ""
+  - "SDA"
+  - "SCL"
+right:
+  - "1"
+  - "2"
+  - "3"
+  - "4"
+  - "5"
+  - "6"
+  - "7"

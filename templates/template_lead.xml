@@ -1,0 +1,6 @@
+
+        <path>
+            <move x="${x_start}" y="${y_start}"/>
+            <line x="${x_end}" y="${y_end}"/>
+        </path>
+        <fillstroke />

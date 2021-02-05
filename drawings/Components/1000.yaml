@@ -1,0 +1,43 @@
+schema_version: "1.0.0"
+disable: false
+
+dip: false
+block: false
+style: chip_1
+title:
+  - "Arduino"
+  - "Uno"
+top:
+  - - "Vin"
+    - "(jack)"
+  - - "Vin"
+    - "(USB)"
+left:
+  - - "Vin"
+    - "(pin)"
+  - "5V"
+  - "3.3V"
+  - ""
+  - "A0"
+  - "A1"
+  - "A2"
+  - "A3"
+  - "A4/SDA"
+  - "A5/SCL"
+right:
+  - "13"
+  - "12"
+  - "~11"
+  - "10/PWM"
+  - "9/PWM"
+  - "8"
+  - "7"
+  - "6/PWM"
+  - "5/PWM"
+  - "4"
+  - "3/PWM"
+  - "2"
+  - "1/TX"
+  - "0/RX"
+bottom:
+  - "GND"

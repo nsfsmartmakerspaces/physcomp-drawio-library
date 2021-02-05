@@ -1,0 +1,25 @@
+schema_version: "1.0.0"
+disable: false
+
+dip: false
+block: false
+style: chip_1
+title:
+  - "Stepper"
+  - "Motor"
+  - "Driver"
+top:
+  - "5V to 12V"
+left:
+  - "IN1"
+  - "IN2"
+  - "IN3"
+  - "IN4"
+right:
+  - "A"
+  - "B"
+  - "C"
+  - "D"
+  - "E"
+bottom:
+  - "GND"

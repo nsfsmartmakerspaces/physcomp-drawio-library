@@ -1,0 +1,18 @@
+schema_version: "1.0.0"
+disable: false
+
+dip: false
+block: false
+style: chip_1
+title:
+  - "3-Axis"
+  - "Accelerometer"
+top:
+  - - "VCC"
+    - "(5V)"
+right:
+  - "X"
+  - "Y"
+  - "Z"
+bottom:
+  - "GND"

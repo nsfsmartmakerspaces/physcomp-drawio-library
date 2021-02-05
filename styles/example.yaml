@@ -1,0 +1,47 @@
+schema_version: "1.0.0"
+
+# Minimum width and height of rect without any pins
+# When there are pins, this is cut in half and applied
+# on each side of the pins
+base:
+  width: 20
+  height: 20
+
+# Title text in center of rect
+title_text:
+  size: 4
+  line_spacing: 0.5
+
+# Text for each pin
+pin_text:
+  # Width of text for vertical pins
+  # Use this to space top and bottom pins more or less
+  vert_width: 7
+
+  # Height of text for horizontal pins
+  # Use this to space right and left pins more or less
+  horiz_height: 7
+
+  # Text size
+  size: 2.5
+
+  # Line spacing used in non-block mode
+  # Block mode allows for only 2 lines per pin and uses
+  # the pad setting below
+  line_spacing: 0.25
+
+  # Space between text and wall of rect
+  # In block mode, this is the vertical distance between
+  # the pin text and the lead for the pins
+  pad: 1
+
+# Each pin segment
+pins:
+  length: 7
+
+  # Length side of arrows (only appear in block mode)
+  arrow_size: 2.5
+
+  # Left pad size for left side arrow (only appear in block
+  # mode)
+  left_arrow_pad: 0.5

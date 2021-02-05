@@ -1,0 +1,18 @@
+schema_version: "1.0.0"
+disable: false
+
+dip: false
+block: false
+style: chip_1
+title:
+  - "Infrared"
+  - "Receiver"
+top:
+  - - "VCC (5V)"
+    - "\"R\""
+right:
+  - - "Out"
+    - "\"Y\""
+bottom:
+  - - "GND"
+    - "\"G\""

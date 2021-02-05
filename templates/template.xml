@@ -1,0 +1,28 @@
+<shape aspect="fixed" h="${height}" w="${width}" strokewidth="inherit" name="${name}">
+    <connections>${connection_insert}
+    </connections>
+    <background>
+        <strokecolor color="#000000"/>
+        <fillcolor color="#ffffff"/>
+        <fontcolor color="#000000"/>
+        <alpha alpha="1"/>
+        <path>
+            <move x="${rect_left}" y="${rect_top}"/>
+            <line x="${rect_left}" y="${rect_bottom}"/>
+            <line x="${rect_right}" y="${rect_bottom}"/>
+            <line x="${rect_right}" y="${rect_top}"/>
+            <line x="${rect_dip_start}" y="${rect_top}"/>
+            ${dip_insert}
+            <close/>
+        </path>
+        <fillstroke />
+    </background>
+    <foreground>
+        <strokecolor color="#000000"/>
+        <fillcolor color="#000000"/>
+        <fontcolor color="#000000"/>
+        <alpha alpha="1"/>
+        <fontsize size="${title_text_size}"/>${title_insert}
+        <fontsize size="${pin_text_size}"/>${pins_insert}
+    </foreground>
+</shape>

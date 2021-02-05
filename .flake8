@@ -1,0 +1,9 @@
+[flake8]
+extend_ignore =
+    E501  # Line too long
+    F403  # Star imports
+    F405  # Undefined (since star imports)
+exclude =
+    .git,
+    __pycache__,
+    dist

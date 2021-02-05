@@ -1,0 +1,17 @@
+schema_version: "1.0.0"
+disable: false
+
+dip: false
+block: false
+style: chip_1
+title:
+  - "Joystick"
+  - "Module"
+top:
+  - "5V"
+right:
+  - "VRx"
+  - "VRy"
+  - "SW"
+bottom:
+  - "GND"

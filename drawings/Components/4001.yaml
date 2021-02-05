@@ -1,0 +1,32 @@
+schema_version: "1.0.0"
+disable: false
+
+dip: false
+block: false
+style: chip_1
+title:
+  - "LCD Display"
+  - "Module"
+top:
+  - - "Vdd"
+    - "(5V)"
+  - - ""
+    - "(5V)"
+left:
+  - "V0 (contrast)"
+  - "RS"
+  - "R/W"
+  - "E"
+  - "D0"
+  - "D1"
+  - "D2"
+  - "D3"
+  - "D4"
+  - "D5"
+  - "D6"
+  - "D7"
+bottom:
+  - - "Vss"
+    - "(GND)"
+  - - ""
+    - "(GND)"

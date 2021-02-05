@@ -1,0 +1,65 @@
+schema_version: "1.0.0"
+
+# Prevent this schema from actually being generating
+disable: false
+
+# Add indent to the top. Cannot be used with top pins
+dip: false
+
+# Put text on leads and add arrows (left in, right out)
+# Cannot be used with top or bottom pins
+block: false
+
+# Which style to use, defined in styles folder
+# These styles define spacing, sizing, etc.
+style: chip_1
+
+# Unfortunately there is no text-wrapping in drawings,
+# so every line must be broken out manually
+title:
+  - "Cool Chip"
+  - "123"
+
+# To disable any side of the chip, comment out or remove
+# that entire section.
+#
+# Empty strings will cause a position to be skipped to
+# allow for manual spacing (no text or lead). Example:
+# top:
+#   - "Pin 1"
+#   - ""
+#   - "Pin 2"
+#
+# Multiline pins are lists within lists. Block mode has
+# a maximum of two lines per pin (one above and one
+# below). Example:
+# left:
+#   - - "A1"
+#     - "Cool pin"
+#   - "A2"
+
+left:
+  - - "A1"
+    - "Cool pin"
+  - "A2"
+  - "A3"
+  - ""
+  - "SDA"
+  - "SCL"
+top:
+  - "5V"
+  - - "Vin"
+    - "(jack)"
+right:
+  - "1"
+  - "2"
+  - "3"
+  - "4"
+  - "5"
+  - "6"
+  - "7"
+bottom:
+  - - "GND"
+    - "(jack)"
+    - "yay"
+  - "GND"

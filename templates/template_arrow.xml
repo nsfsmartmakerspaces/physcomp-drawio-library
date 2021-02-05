@@ -1,0 +1,8 @@
+
+        <path>
+            <move x="${x_flat}" y="${top}"/>
+            <line x="${x_flat}" y="${bottom}"/>
+            <line x="${x_point}" y="${middle}"/>
+            <close/>
+        </path>
+        <fillstroke />

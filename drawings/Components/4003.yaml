@@ -1,0 +1,19 @@
+schema_version: "1.0.0"
+disable: false
+
+dip: false
+block: false
+style: chip_1
+title:
+  - "Breadboard"
+  - "Power"
+  - "Supply"
+left:
+  - - "Barrel Jack"
+    - "(power in)"
+right:
+  - "USB"
+  - "5V"
+  - "3.3V"
+bottom:
+  - "GND"
