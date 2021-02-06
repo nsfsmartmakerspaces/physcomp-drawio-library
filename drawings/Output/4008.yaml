@@ -27,3 +27,6 @@ right:
   - "SRCLK"
   - "~SRCLR"
   - "QH'"
+# Add some width:
+bottom:
+ - ""

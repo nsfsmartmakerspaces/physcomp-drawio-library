@@ -10,3 +10,6 @@ title:
   - "Remote"
 right:
   - "IR Light"
+# Add some width:
+bottom:
+ - ""

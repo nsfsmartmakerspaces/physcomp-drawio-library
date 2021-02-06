@@ -10,6 +10,7 @@ title:
   - "Vibration"
   - "Motor"
 left:
-  - "signal (5V)"
+  - - "signal"
+    - "(5V)"
 bottom:
   - "GND"

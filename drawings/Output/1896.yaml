@@ -9,6 +9,9 @@ title:
   - "Servo"
   - "Motor"
 left:
-  - "PWM (orange)"
-  - "VCC (red)"
-  - "Ground (brown)"
+  - - "PWM"
+    - "(orange)"
+  - - "VCC"
+    - "(red)"
+  - - "Ground"
+    - "(brown)"

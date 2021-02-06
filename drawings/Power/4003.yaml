@@ -10,6 +10,7 @@ title:
   - "Power"
   - "Supply"
 left:
+  - ""
   - - "Barrel Jack"
     - "(power in)"
 right:
