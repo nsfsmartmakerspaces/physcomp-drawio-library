@@ -1,0 +1,60 @@
+<shape aspect="fixed" h="188" w="180" strokewidth="inherit" name="Temperature and Humidity Sensor (DHT11) [0368]">
+    <connections>
+        <constraint x="0.45555555555555555" y="0.0" perimeter="0" name="VCC (3.3V to 5V)"/>
+        <constraint x="0.45555555555555555" y="1.0" perimeter="0" name="GND"/>
+        <constraint x="1.0" y="0.425531914893617" perimeter="0" name="Signal"/>
+        <constraint x="1.0" y="0.574468085106383" perimeter="0" name="[unused]"/>
+    </connections>
+    <background>
+        <strokecolor color="#000000"/>
+        <fillcolor color="#ffffff"/>
+        <fontcolor color="#000000"/>
+        <alpha alpha="1"/>
+        <path>
+            <move x="0" y="16"/>
+            <line x="0" y="172"/>
+            <line x="164" y="172"/>
+            <line x="164" y="16"/>
+            <line x="109.33333333333334" y="16"/>
+            <line x="54.66666666666667" y="16"/>
+            <close/>
+        </path>
+        <fillstroke />
+    </background>
+    <foreground>
+        <strokecolor color="#000000"/>
+        <fillcolor color="#000000"/>
+        <fontcolor color="#000000"/>
+        <alpha alpha="1"/>
+        <fontsize size="16"/>
+        <text str="Temp &" x="82.0" y="77.5" align="center" valign="middle" />
+        <text str="Humidity" x="82.0" y="94.0" align="center" valign="middle" />
+        <text str="Sensor" x="82.0" y="110.5" align="center" valign="middle" />
+        <fontsize size="10"/>
+        <path>
+            <move x="82.0" y="0"/>
+            <line x="82.0" y="16"/>
+        </path>
+        <fillstroke />
+        <text str="VCC" x="82.0" y="21.0" align="center" valign="top" />
+        <text str="(3.3V to 5V)" x="82.0" y="31.25" align="center" valign="top" />
+        <path>
+            <move x="82.0" y="188"/>
+            <line x="82.0" y="172"/>
+        </path>
+        <fillstroke />
+        <text str="GND" x="82.0" y="173.0" align="center" valign="bottom" />
+        <path>
+            <move x="180" y="80.0"/>
+            <line x="164" y="80.0"/>
+        </path>
+        <fillstroke />
+        <text str="Signal" x="160" y="80.0" align="right" valign="middle" />
+        <path>
+            <move x="180" y="108.0"/>
+            <line x="164" y="108.0"/>
+        </path>
+        <fillstroke />
+        <text str="[unused]" x="160" y="108.0" align="right" valign="middle" />
+    </foreground>
+</shape>

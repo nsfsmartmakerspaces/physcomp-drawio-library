@@ -1,0 +1,51 @@
+<shape aspect="fixed" h="184" w="116" strokewidth="inherit" name="Servo Motor [1896]">
+    <connections>
+        <constraint x="0.0" y="0.34782608695652173" perimeter="0" name="PWM (orange)"/>
+        <constraint x="0.0" y="0.5" perimeter="0" name="VCC (red)"/>
+        <constraint x="0.0" y="0.6521739130434783" perimeter="0" name="Ground (brown)"/>
+    </connections>
+    <background>
+        <strokecolor color="#000000"/>
+        <fillcolor color="#ffffff"/>
+        <fontcolor color="#000000"/>
+        <alpha alpha="1"/>
+        <path>
+            <move x="16" y="0"/>
+            <line x="16" y="184"/>
+            <line x="116" y="184"/>
+            <line x="116" y="0"/>
+            <line x="82.66666666666666" y="0"/>
+            <line x="49.33333333333333" y="0"/>
+            <close/>
+        </path>
+        <fillstroke />
+    </background>
+    <foreground>
+        <strokecolor color="#000000"/>
+        <fillcolor color="#000000"/>
+        <fontcolor color="#000000"/>
+        <alpha alpha="1"/>
+        <fontsize size="16"/>
+        <text str="Servo" x="66.0" y="83.75" align="center" valign="middle" />
+        <text str="Motor" x="66.0" y="100.25" align="center" valign="middle" />
+        <fontsize size="10"/>
+        <path>
+            <move x="0" y="64.0"/>
+            <line x="16" y="64.0"/>
+        </path>
+        <fillstroke />
+        <text str="PWM (orange)" x="20" y="64.0" align="left" valign="middle" />
+        <path>
+            <move x="0" y="92.0"/>
+            <line x="16" y="92.0"/>
+        </path>
+        <fillstroke />
+        <text str="VCC (red)" x="20" y="92.0" align="left" valign="middle" />
+        <path>
+            <move x="0" y="120.0"/>
+            <line x="16" y="120.0"/>
+        </path>
+        <fillstroke />
+        <text str="Ground (brown)" x="20" y="120.0" align="left" valign="middle" />
+    </foreground>
+</shape>

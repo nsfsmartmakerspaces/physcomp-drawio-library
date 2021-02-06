@@ -1,0 +1,45 @@
+<shape aspect="fixed" h="144" w="180" strokewidth="inherit" name="Pancake Vibration Motor [0450]">
+    <connections>
+        <constraint x="0.5444444444444444" y="1.0" perimeter="0" name="GND"/>
+        <constraint x="0.0" y="0.4444444444444444" perimeter="0" name="signal (5V)"/>
+    </connections>
+    <background>
+        <strokecolor color="#000000"/>
+        <fillcolor color="#ffffff"/>
+        <fontcolor color="#000000"/>
+        <alpha alpha="1"/>
+        <path>
+            <move x="16" y="0"/>
+            <line x="16" y="128"/>
+            <line x="180" y="128"/>
+            <line x="180" y="0"/>
+            <line x="125.33333333333334" y="0"/>
+            <line x="70.66666666666667" y="0"/>
+            <close/>
+        </path>
+        <fillstroke />
+    </background>
+    <foreground>
+        <strokecolor color="#000000"/>
+        <fillcolor color="#000000"/>
+        <fontcolor color="#000000"/>
+        <alpha alpha="1"/>
+        <fontsize size="16"/>
+        <text str="Pancake" x="98.0" y="47.5" align="center" valign="middle" />
+        <text str="Vibration" x="98.0" y="64.0" align="center" valign="middle" />
+        <text str="Motor" x="98.0" y="80.5" align="center" valign="middle" />
+        <fontsize size="10"/>
+        <path>
+            <move x="98.0" y="144"/>
+            <line x="98.0" y="128"/>
+        </path>
+        <fillstroke />
+        <text str="GND" x="98.0" y="129.0" align="center" valign="bottom" />
+        <path>
+            <move x="0" y="64.0"/>
+            <line x="16" y="64.0"/>
+        </path>
+        <fillstroke />
+        <text str="signal (5V)" x="20" y="64.0" align="left" valign="middle" />
+    </foreground>
+</shape>

@@ -1,0 +1,65 @@
+<shape aspect="fixed" h="240" w="116" strokewidth="inherit" name="Stepper Motor [4004]">
+    <connections>
+        <constraint x="0.0" y="0.26666666666666666" perimeter="0" name="A"/>
+        <constraint x="0.0" y="0.38333333333333336" perimeter="0" name="B"/>
+        <constraint x="0.0" y="0.5" perimeter="0" name="C"/>
+        <constraint x="0.0" y="0.6166666666666667" perimeter="0" name="D"/>
+        <constraint x="0.0" y="0.7333333333333333" perimeter="0" name="E"/>
+    </connections>
+    <background>
+        <strokecolor color="#000000"/>
+        <fillcolor color="#ffffff"/>
+        <fontcolor color="#000000"/>
+        <alpha alpha="1"/>
+        <path>
+            <move x="16" y="0"/>
+            <line x="16" y="240"/>
+            <line x="116" y="240"/>
+            <line x="116" y="0"/>
+            <line x="82.66666666666666" y="0"/>
+            <line x="49.33333333333333" y="0"/>
+            <close/>
+        </path>
+        <fillstroke />
+    </background>
+    <foreground>
+        <strokecolor color="#000000"/>
+        <fillcolor color="#000000"/>
+        <fontcolor color="#000000"/>
+        <alpha alpha="1"/>
+        <fontsize size="16"/>
+        <text str="Stepper" x="66.0" y="111.75" align="center" valign="middle" />
+        <text str="Motor" x="66.0" y="128.25" align="center" valign="middle" />
+        <fontsize size="10"/>
+        <path>
+            <move x="0" y="64.0"/>
+            <line x="16" y="64.0"/>
+        </path>
+        <fillstroke />
+        <text str="A" x="20" y="64.0" align="left" valign="middle" />
+        <path>
+            <move x="0" y="92.0"/>
+            <line x="16" y="92.0"/>
+        </path>
+        <fillstroke />
+        <text str="B" x="20" y="92.0" align="left" valign="middle" />
+        <path>
+            <move x="0" y="120.0"/>
+            <line x="16" y="120.0"/>
+        </path>
+        <fillstroke />
+        <text str="C" x="20" y="120.0" align="left" valign="middle" />
+        <path>
+            <move x="0" y="148.0"/>
+            <line x="16" y="148.0"/>
+        </path>
+        <fillstroke />
+        <text str="D" x="20" y="148.0" align="left" valign="middle" />
+        <path>
+            <move x="0" y="176.0"/>
+            <line x="16" y="176.0"/>
+        </path>
+        <fillstroke />
+        <text str="E" x="20" y="176.0" align="left" valign="middle" />
+    </foreground>
+</shape>
