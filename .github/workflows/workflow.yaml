@@ -1,0 +1,35 @@
+name: physcomp-drawio-library
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    needs: install
+    runs-on: debian-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python 3.x
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+          architecture: 'x64'
+      - name: Install core Python and pip dependencies
+        run: python -m pip install --upgrade pip setuptools wheel
+      - name: Install package
+        run: pip3 install -e .
+      - name: Run physcomp_drawio_generate
+        run: "python3 -m \"physcomp_drawio_generate\""
+      - name: Upload built artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: dist
+          path: |
+            dist
+  # publish:
+  #   needs: build
+  #   runs-on: debian-latest
+  #   steps:
+  #     - run: ./test_server.sh
