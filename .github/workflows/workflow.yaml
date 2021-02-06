@@ -33,28 +33,23 @@ jobs:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
     steps:
-      - name: Checkout repo
+      - name: Checkout gh-pages branch of repo
         uses: actions/checkout@v2
         with:
           ref: "gh-pages"
-          path: "dist"
-      - name: Remove previous build
+      - name: Clear branch of previous build
         run: |
-          cd dist
-          git rm -rf .
+          git rm -rf . --ignore-unmatch
           git clean -fxd
-          cd ../
-      - name: Download build artifact
+      - name: Download built artifact
         uses: actions/download-artifact@v2
         with:
           name: "dist"
-      - name: Commit and push new artifacts
+      - name: Commit and push new artifact
         run: |
-          cd dist
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add . --all
           git commit -m "physcomp-drawio-library publish $GITHUB_SHA"
           git push
-          cd ../
 
