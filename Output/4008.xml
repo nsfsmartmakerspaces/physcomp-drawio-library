@@ -1,21 +1,21 @@
-<shape aspect="fixed" h="324" w="132" strokewidth="inherit" name="Shift Register (74HC595) [4008]">
+<shape aspect="fixed" h="340" w="196" strokewidth="inherit" name="Shift Register (74HC595) [4008]">
     <connections>
-        <constraint x="0.0" y="0.19753086419753085" perimeter="0" name="QB"/>
-        <constraint x="0.0" y="0.2839506172839506" perimeter="0" name="QC"/>
-        <constraint x="0.0" y="0.37037037037037035" perimeter="0" name="QD"/>
-        <constraint x="0.0" y="0.4567901234567901" perimeter="0" name="QE"/>
-        <constraint x="0.0" y="0.5432098765432098" perimeter="0" name="QF"/>
-        <constraint x="0.0" y="0.6296296296296297" perimeter="0" name="QG"/>
-        <constraint x="0.0" y="0.7160493827160493" perimeter="0" name="QH"/>
-        <constraint x="0.0" y="0.8024691358024691" perimeter="0" name="GND"/>
-        <constraint x="1.0" y="0.19753086419753085" perimeter="0" name="VCC"/>
-        <constraint x="1.0" y="0.2839506172839506" perimeter="0" name="QA"/>
-        <constraint x="1.0" y="0.37037037037037035" perimeter="0" name="SER"/>
-        <constraint x="1.0" y="0.4567901234567901" perimeter="0" name="~OE"/>
-        <constraint x="1.0" y="0.5432098765432098" perimeter="0" name="RCLK"/>
-        <constraint x="1.0" y="0.6296296296296297" perimeter="0" name="SRCLK"/>
-        <constraint x="1.0" y="0.7160493827160493" perimeter="0" name="~SRCLR"/>
-        <constraint x="1.0" y="0.8024691358024691" perimeter="0" name="QH'"/>
+        <constraint x="0.0" y="0.18823529411764706" perimeter="0" name="QB"/>
+        <constraint x="0.0" y="0.27058823529411763" perimeter="0" name="QC"/>
+        <constraint x="0.0" y="0.35294117647058826" perimeter="0" name="QD"/>
+        <constraint x="0.0" y="0.43529411764705883" perimeter="0" name="QE"/>
+        <constraint x="0.0" y="0.5176470588235295" perimeter="0" name="QF"/>
+        <constraint x="0.0" y="0.6" perimeter="0" name="QG"/>
+        <constraint x="0.0" y="0.6823529411764706" perimeter="0" name="QH"/>
+        <constraint x="0.0" y="0.7647058823529411" perimeter="0" name="GND"/>
+        <constraint x="1.0" y="0.18823529411764706" perimeter="0" name="VCC"/>
+        <constraint x="1.0" y="0.27058823529411763" perimeter="0" name="QA"/>
+        <constraint x="1.0" y="0.35294117647058826" perimeter="0" name="SER"/>
+        <constraint x="1.0" y="0.43529411764705883" perimeter="0" name="~OE"/>
+        <constraint x="1.0" y="0.5176470588235295" perimeter="0" name="RCLK"/>
+        <constraint x="1.0" y="0.6" perimeter="0" name="SRCLK"/>
+        <constraint x="1.0" y="0.6823529411764706" perimeter="0" name="~SRCLR"/>
+        <constraint x="1.0" y="0.7647058823529411" perimeter="0" name="QH'"/>
     </connections>
     <background>
         <strokecolor color="#000000"/>
@@ -25,10 +25,10 @@
         <path>
             <move x="16" y="0"/>
             <line x="16" y="324"/>
-            <line x="116" y="324"/>
-            <line x="116" y="0"/>
-            <line x="82.66666666666666" y="0"/>
-            <arc rx="16.666666666666668" ry="16.666666666666668" x-axis-rotation="0" large-arc-flag="1" sweep-flag="1" x="49.33333333333333" y="0"/>
+            <line x="180" y="324"/>
+            <line x="180" y="0"/>
+            <line x="125.33333333333334" y="0"/>
+            <arc rx="27.333333333333332" ry="27.333333333333332" x-axis-rotation="0" large-arc-flag="1" sweep-flag="1" x="70.66666666666667" y="0"/>
             <close/>
         </path>
         <fillstroke />
@@ -39,9 +39,9 @@
         <fontcolor color="#000000"/>
         <alpha alpha="1"/>
         <fontsize size="16"/>
-        <text str="Shift" x="66.0" y="145.5" align="center" valign="middle" />
-        <text str="Register" x="66.0" y="162.0" align="center" valign="middle" />
-        <text str="(74HC595)" x="66.0" y="178.5" align="center" valign="middle" />
+        <text str="Shift" x="98.0" y="145.5" align="center" valign="middle" />
+        <text str="Register" x="98.0" y="162.0" align="center" valign="middle" />
+        <text str="(74HC595)" x="98.0" y="178.5" align="center" valign="middle" />
         <fontsize size="10"/>
         <path>
             <move x="0" y="64.0"/>
@@ -92,52 +92,52 @@
         <fillstroke />
         <text str="GND" x="20" y="260.0" align="left" valign="middle" />
         <path>
-            <move x="132" y="64.0"/>
-            <line x="116" y="64.0"/>
+            <move x="196" y="64.0"/>
+            <line x="180" y="64.0"/>
         </path>
         <fillstroke />
-        <text str="VCC" x="112" y="64.0" align="right" valign="middle" />
+        <text str="VCC" x="176" y="64.0" align="right" valign="middle" />
         <path>
-            <move x="132" y="92.0"/>
-            <line x="116" y="92.0"/>
+            <move x="196" y="92.0"/>
+            <line x="180" y="92.0"/>
         </path>
         <fillstroke />
-        <text str="QA" x="112" y="92.0" align="right" valign="middle" />
+        <text str="QA" x="176" y="92.0" align="right" valign="middle" />
         <path>
-            <move x="132" y="120.0"/>
-            <line x="116" y="120.0"/>
+            <move x="196" y="120.0"/>
+            <line x="180" y="120.0"/>
         </path>
         <fillstroke />
-        <text str="SER" x="112" y="120.0" align="right" valign="middle" />
+        <text str="SER" x="176" y="120.0" align="right" valign="middle" />
         <path>
-            <move x="132" y="148.0"/>
-            <line x="116" y="148.0"/>
+            <move x="196" y="148.0"/>
+            <line x="180" y="148.0"/>
         </path>
         <fillstroke />
-        <text str="~OE" x="112" y="148.0" align="right" valign="middle" />
+        <text str="~OE" x="176" y="148.0" align="right" valign="middle" />
         <path>
-            <move x="132" y="176.0"/>
-            <line x="116" y="176.0"/>
+            <move x="196" y="176.0"/>
+            <line x="180" y="176.0"/>
         </path>
         <fillstroke />
-        <text str="RCLK" x="112" y="176.0" align="right" valign="middle" />
+        <text str="RCLK" x="176" y="176.0" align="right" valign="middle" />
         <path>
-            <move x="132" y="204.0"/>
-            <line x="116" y="204.0"/>
+            <move x="196" y="204.0"/>
+            <line x="180" y="204.0"/>
         </path>
         <fillstroke />
-        <text str="SRCLK" x="112" y="204.0" align="right" valign="middle" />
+        <text str="SRCLK" x="176" y="204.0" align="right" valign="middle" />
         <path>
-            <move x="132" y="232.0"/>
-            <line x="116" y="232.0"/>
+            <move x="196" y="232.0"/>
+            <line x="180" y="232.0"/>
         </path>
         <fillstroke />
-        <text str="~SRCLR" x="112" y="232.0" align="right" valign="middle" />
+        <text str="~SRCLR" x="176" y="232.0" align="right" valign="middle" />
         <path>
-            <move x="132" y="260.0"/>
-            <line x="116" y="260.0"/>
+            <move x="196" y="260.0"/>
+            <line x="180" y="260.0"/>
         </path>
         <fillstroke />
-        <text str="QH'" x="112" y="260.0" align="right" valign="middle" />
+        <text str="QH'" x="176" y="260.0" align="right" valign="middle" />
     </foreground>
 </shape>

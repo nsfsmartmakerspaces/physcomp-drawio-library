@@ -15,14 +15,14 @@
         <constraint x="1.0" y="0.15267175572519084" perimeter="0" name="13"/>
         <constraint x="1.0" y="0.20610687022900764" perimeter="0" name="12"/>
         <constraint x="1.0" y="0.2595419847328244" perimeter="0" name="~11"/>
-        <constraint x="1.0" y="0.31297709923664124" perimeter="0" name="10/PWM"/>
-        <constraint x="1.0" y="0.366412213740458" perimeter="0" name="9/PWM"/>
+        <constraint x="1.0" y="0.31297709923664124" perimeter="0" name="~10"/>
+        <constraint x="1.0" y="0.366412213740458" perimeter="0" name="~9"/>
         <constraint x="1.0" y="0.4198473282442748" perimeter="0" name="8"/>
         <constraint x="1.0" y="0.4732824427480916" perimeter="0" name="7"/>
-        <constraint x="1.0" y="0.5267175572519084" perimeter="0" name="6/PWM"/>
-        <constraint x="1.0" y="0.5801526717557252" perimeter="0" name="5/PWM"/>
+        <constraint x="1.0" y="0.5267175572519084" perimeter="0" name="~6"/>
+        <constraint x="1.0" y="0.5801526717557252" perimeter="0" name="~5"/>
         <constraint x="1.0" y="0.6335877862595419" perimeter="0" name="4"/>
-        <constraint x="1.0" y="0.6870229007633588" perimeter="0" name="3/PWM"/>
+        <constraint x="1.0" y="0.6870229007633588" perimeter="0" name="~3"/>
         <constraint x="1.0" y="0.7404580152671756" perimeter="0" name="2"/>
         <constraint x="1.0" y="0.7938931297709924" perimeter="0" name="1/TX"/>
         <constraint x="1.0" y="0.8473282442748091" perimeter="0" name="0/RX"/>
@@ -150,13 +150,13 @@
             <line x="244" y="164.0"/>
         </path>
         <fillstroke />
-        <text str="10/PWM" x="240" y="164.0" align="right" valign="middle" />
+        <text str="~10" x="240" y="164.0" align="right" valign="middle" />
         <path>
             <move x="260" y="192.0"/>
             <line x="244" y="192.0"/>
         </path>
         <fillstroke />
-        <text str="9/PWM" x="240" y="192.0" align="right" valign="middle" />
+        <text str="~9" x="240" y="192.0" align="right" valign="middle" />
         <path>
             <move x="260" y="220.0"/>
             <line x="244" y="220.0"/>
@@ -174,13 +174,13 @@
             <line x="244" y="276.0"/>
         </path>
         <fillstroke />
-        <text str="6/PWM" x="240" y="276.0" align="right" valign="middle" />
+        <text str="~6" x="240" y="276.0" align="right" valign="middle" />
         <path>
             <move x="260" y="304.0"/>
             <line x="244" y="304.0"/>
         </path>
         <fillstroke />
-        <text str="5/PWM" x="240" y="304.0" align="right" valign="middle" />
+        <text str="~5" x="240" y="304.0" align="right" valign="middle" />
         <path>
             <move x="260" y="332.0"/>
             <line x="244" y="332.0"/>
@@ -192,7 +192,7 @@
             <line x="244" y="360.0"/>
         </path>
         <fillstroke />
-        <text str="3/PWM" x="240" y="360.0" align="right" valign="middle" />
+        <text str="~3" x="240" y="360.0" align="right" valign="middle" />
         <path>
             <move x="260" y="388.0"/>
             <line x="244" y="388.0"/>

@@ -1,7 +1,7 @@
 <shape aspect="fixed" h="200" w="196" strokewidth="inherit" name="Breadboard Power Supply [4003]">
     <connections>
         <constraint x="0.5" y="1.0" perimeter="0" name="GND"/>
-        <constraint x="0.0" y="0.32" perimeter="0" name="Barrel Jack (power in)"/>
+        <constraint x="0.0" y="0.46" perimeter="0" name="Barrel Jack (power in)"/>
         <constraint x="1.0" y="0.32" perimeter="0" name="USB"/>
         <constraint x="1.0" y="0.46" perimeter="0" name="5V"/>
         <constraint x="1.0" y="0.6" perimeter="0" name="3.3V"/>
@@ -39,12 +39,12 @@
         <fillstroke />
         <text str="GND" x="98.0" y="185.0" align="center" valign="bottom" />
         <path>
-            <move x="0" y="64.0"/>
-            <line x="16" y="64.0"/>
+            <move x="0" y="92.0"/>
+            <line x="16" y="92.0"/>
         </path>
         <fillstroke />
-        <text str="Barrel Jack" x="20" y="58.875" align="left" valign="middle" />
-        <text str="(power in)" x="20" y="69.125" align="left" valign="middle" />
+        <text str="Barrel Jack" x="20" y="86.875" align="left" valign="middle" />
+        <text str="(power in)" x="20" y="97.125" align="left" valign="middle" />
         <path>
             <move x="196" y="64.0"/>
             <line x="180" y="64.0"/>
