@@ -1,0 +1,29 @@
+schema_version: "1.0.0"
+disable: false
+
+dip: true
+block: false
+style: chip_1
+name: "Shift Register (74HC595) [4008]"
+title:
+  - "Shift"
+  - "Register"
+  - "(74HC595)"
+left:
+  - "QB"
+  - "QC"
+  - "QD"
+  - "QE"
+  - "QF"
+  - "QG"
+  - "QH"
+  - "GND"
+right:
+  - "VCC"
+  - "QA"
+  - "SER"
+  - "~OE"
+  - "RCLK"
+  - "SRCLK"
+  - "~SRCLR"
+  - "QH'"

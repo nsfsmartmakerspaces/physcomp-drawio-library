@@ -1,0 +1,15 @@
+schema_version: "1.0.0"
+disable: false
+
+dip: false
+block: false
+style: chip_1
+name: "Pancake Vibration Motor [0450]"
+title:
+  - "Pancake"
+  - "Vibration"
+  - "Motor"
+left:
+  - "signal (5V)"
+bottom:
+  - "GND"

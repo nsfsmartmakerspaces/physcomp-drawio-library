@@ -1,0 +1,16 @@
+schema_version: "1.0.0"
+disable: false
+
+dip: false
+block: false
+style: chip_1
+name: "Stepper Motor [4004]"
+title:
+  - "Stepper"
+  - "Motor"
+left:
+  - "A"
+  - "B"
+  - "C"
+  - "D"
+  - "E"

@@ -1,0 +1,13 @@
+schema_version: "1.0.0"
+disable: false
+
+dip: false
+block: false
+style: chip_1
+name: "DC Motor [1932]"
+title:
+  - "DC"
+  - "Motor"
+left:
+  - "+ (red)"
+  - "- (black)"

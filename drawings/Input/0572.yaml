@@ -1,0 +1,19 @@
+schema_version: "1.0.0"
+disable: false
+
+dip: false
+block: false
+style: chip_1
+name: "Ultrasonic Ranger (HCSR04) [0572]"
+title:
+  - "Ultrasonic"
+  - "Ranger"
+top:
+  - - "VCC"
+    - "(5V)"
+left:
+  - "Trigger"
+right:
+  - "Echo"
+bottom:
+  - "GND"

@@ -1,0 +1,14 @@
+schema_version: "1.0.0"
+disable: false
+
+dip: false
+block: false
+style: chip_1
+name: "Servo Motor [1896]"
+title:
+  - "Servo"
+  - "Motor"
+left:
+  - "PWM (orange)"
+  - "VCC (red)"
+  - "Ground (brown)"

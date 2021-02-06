@@ -1,0 +1,11 @@
+schema_version: "1.0.0"
+disable: false
+
+dip: true
+block: false
+style: chip_1
+name: "H-Bridge Motor Driver [1258]"
+title:
+  - "H-Bridge"
+  - "Motor"
+  - "Driver"

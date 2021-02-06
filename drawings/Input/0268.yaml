@@ -1,0 +1,19 @@
+schema_version: "1.0.0"
+disable: false
+
+dip: false
+block: false
+style: chip_1
+name: "Temperature and Humidity Sensor (DHT11) [0368]"
+title:
+  - "Temp &"
+  - "Humidity"
+  - "Sensor"
+top:
+  - - "VCC"
+    - "(3.3V to 5V)"
+right:
+  - "Signal"
+  - "[unused]"
+bottom:
+  - "GND"

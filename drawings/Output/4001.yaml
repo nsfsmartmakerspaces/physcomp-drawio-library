@@ -11,7 +11,7 @@ title:
 top:
   - - "Vdd"
     - "(5V)"
-  - - ""
+  - - "A"
     - "(5V)"
 left:
   - "V0 (contrast)"
@@ -29,5 +29,5 @@ left:
 bottom:
   - - "Vss"
     - "(GND)"
-  - - ""
+  - - "K"
     - "(GND)"

@@ -1,0 +1,14 @@
+schema_version: "1.0.0"
+disable: false
+
+dip: false
+block: false
+style: chip_1
+name: "Active Buzzer [0496]"
+title:
+  - "Active"
+  - "Buzzer"
+left:
+  - "+ (signal)"
+bottom:
+  - "GND"
