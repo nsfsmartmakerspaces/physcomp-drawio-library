@@ -11,10 +11,10 @@
         <constraint x="1.0" y="0.18823529411764706" perimeter="0" name="VCC"/>
         <constraint x="1.0" y="0.27058823529411763" perimeter="0" name="QA"/>
         <constraint x="1.0" y="0.35294117647058826" perimeter="0" name="SER"/>
-        <constraint x="1.0" y="0.43529411764705883" perimeter="0" name="~OE"/>
+        <constraint x="1.0" y="0.43529411764705883" perimeter="0" name="!OE"/>
         <constraint x="1.0" y="0.5176470588235295" perimeter="0" name="RCLK"/>
         <constraint x="1.0" y="0.6" perimeter="0" name="SRCLK"/>
-        <constraint x="1.0" y="0.6823529411764706" perimeter="0" name="~SRCLR"/>
+        <constraint x="1.0" y="0.6823529411764706" perimeter="0" name="!SRCLR"/>
         <constraint x="1.0" y="0.7647058823529411" perimeter="0" name="QH'"/>
     </connections>
     <background>
@@ -114,7 +114,7 @@
             <line x="180" y="148.0"/>
         </path>
         <fillstroke />
-        <text str="~OE" x="176" y="148.0" align="right" valign="middle" />
+        <text str="!OE" x="176" y="148.0" align="right" valign="middle" />
         <path>
             <move x="196" y="176.0"/>
             <line x="180" y="176.0"/>
@@ -132,7 +132,7 @@
             <line x="180" y="232.0"/>
         </path>
         <fillstroke />
-        <text str="~SRCLR" x="176" y="232.0" align="right" valign="middle" />
+        <text str="!SRCLR" x="176" y="232.0" align="right" valign="middle" />
         <path>
             <move x="196" y="260.0"/>
             <line x="180" y="260.0"/>
