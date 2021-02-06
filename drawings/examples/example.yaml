@@ -1,7 +1,7 @@
 schema_version: "1.0.0"
 
 # Prevent this schema from actually being generating
-disable: false
+disable: true
 
 # Add indent to the top. Cannot be used with top pins
 dip: false
@@ -13,6 +13,9 @@ block: false
 # Which style to use, defined in styles folder
 # These styles define spacing, sizing, etc.
 style: chip_1
+
+# This name appears in the library selection section
+name: "Example"
 
 # Unfortunately there is no text-wrapping in drawings,
 # so every line must be broken out manually

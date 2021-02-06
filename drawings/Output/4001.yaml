@@ -4,6 +4,7 @@ disable: false
 dip: false
 block: false
 style: chip_1
+name: "LCD Display Module [4001]"
 title:
   - "LCD Display"
   - "Module"

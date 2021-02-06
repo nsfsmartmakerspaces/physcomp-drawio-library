@@ -4,6 +4,7 @@ disable: false
 dip: false
 block: false
 style: chip_1
+name: "Infrared Receiver [0251]"
 title:
   - "Infrared"
   - "Receiver"

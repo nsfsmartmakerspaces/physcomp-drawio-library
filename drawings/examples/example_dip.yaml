@@ -1,8 +1,9 @@
 schema_version: "1.0.0"
-disable: false
+disable: true
 dip: true
 block: false
 style: chip_1
+name: "DIP Example"
 title:
   - "Chip B"
 left:

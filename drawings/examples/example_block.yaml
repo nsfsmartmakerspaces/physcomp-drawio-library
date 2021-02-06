@@ -1,8 +1,9 @@
 schema_version: "1.0.0"
-disable: false
+disable: true
 dip: false
 block: true
 style: block_1
+name: "Block Example"
 title:
   - "ABC"
   - "Cool Chip"

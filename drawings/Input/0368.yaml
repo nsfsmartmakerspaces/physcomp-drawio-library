@@ -4,6 +4,7 @@ disable: false
 dip: false
 block: false
 style: chip_1
+name: "3-Axis Accelerometer [0368]"
 title:
   - "3-Axis"
   - "Accelerometer"

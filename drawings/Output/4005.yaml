@@ -4,6 +4,7 @@ disable: false
 dip: false
 block: false
 style: chip_1
+name: "Stepper Motor Driver [4005]"
 title:
   - "Stepper"
   - "Motor"

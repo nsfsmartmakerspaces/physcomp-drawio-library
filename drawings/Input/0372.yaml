@@ -4,6 +4,7 @@ disable: false
 dip: false
 block: false
 style: chip_1
+name: "Joystick Module [0372]"
 title:
   - "Joystick"
   - "Module"

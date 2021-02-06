@@ -35,6 +35,9 @@ def check_drawing_yaml_file(name: str, src_data: dict, styles: dict) -> bool:
     if DRAWING_YAML_DIP not in src_data or type(src_data[DRAWING_YAML_DIP]) is not bool:
         res = False
         print(f"Missing {DRAWING_YAML_DIP} or not bool in '{name}'")
+    if DRAWING_YAML_NAME not in src_data or type(src_data[DRAWING_YAML_NAME]) is not str:
+        res = False
+        print(f"Missing {DRAWING_YAML_NAME} or not str in '{name}'")
     elif DRAWING_YAML_TOP in src_data and src_data[DRAWING_YAML_DIP]:
         res = False
         print(f"{DRAWING_YAML_DIP} cannot be used with {DRAWING_YAML_TOP} pins in '{name}'")
@@ -194,7 +197,7 @@ async def generate(src_file: str, file_name: str, dest_file: str, templates: dic
 
     # Calculate total widths and heights
     template_opts = {}
-    template_opts[DRAWING_TEMPLATE_NAME] = file_name
+    template_opts[DRAWING_TEMPLATE_NAME] = src_data[DRAWING_YAML_NAME]
     template_opts[DRAWING_TEMPLATE_ASPECT] = ASPECT_FIXED
     template_opts[DRAWING_TEMPLATE_TITLE_TEXT_SIZE] = style["title_text"]["size"]
     template_opts[DRAWING_TEMPLATE_PIN_TEXT_SIZE] = style["pin_text"]["size"]
@@ -408,8 +411,11 @@ async def generate_library_start(name: str, dest: str, templates: dict):
     save_file(dest, templates["start"])
 
 
-async def generate_library_end(name: str, dest: str, templates: dict):
-    append_file(dest, templates["end"])
+async def generate_library_end(name: str, dest: str, templates: dict, libraries_with_first_entry: list):
+    if name not in libraries_with_first_entry:
+        os.remove(dest)
+    else:
+        append_file(dest, templates["end"])
 
 
 async def load_style(styles: dict, name: str, path: str):
@@ -523,7 +529,7 @@ async def main() -> None:
     for library_name in library_names:
         dest_file = f"./{YAML_DIST_DIR}/{library_name}.xml"
         library_tasks_start.append(generate_library_start(library_name, dest_file, library_templates))
-        library_tasks_end.append(generate_library_end(library_name, dest_file, library_templates))
+        library_tasks_end.append(generate_library_end(library_name, dest_file, library_templates, libraries_with_first_entry))
     if len(file_tasks) > 0:
         await asyncio.wait(library_tasks_start)
         await asyncio.wait(file_tasks)
