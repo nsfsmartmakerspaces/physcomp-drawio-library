@@ -1,0 +1,200 @@
+<shape aspect="fixed" h="69" w="48" strokewidth="inherit" name="example_block">
+    <connections>
+        <constraint x="0.0" y="0.1956521739130435" perimeter="0" name="A1 A1.5"/>
+        <constraint x="0.0" y="0.2971014492753623" perimeter="0" name="A2"/>
+        <constraint x="0.0" y="0.39855072463768115" perimeter="0" name="A3"/>
+        <constraint x="0.0" y="0.6014492753623188" perimeter="0" name="SDA"/>
+        <constraint x="0.0" y="0.7028985507246377" perimeter="0" name="SCL"/>
+        <constraint x="1.0" y="0.1956521739130435" perimeter="0" name="1"/>
+        <constraint x="1.0" y="0.2971014492753623" perimeter="0" name="2"/>
+        <constraint x="1.0" y="0.39855072463768115" perimeter="0" name="3"/>
+        <constraint x="1.0" y="0.5" perimeter="0" name="4"/>
+        <constraint x="1.0" y="0.6014492753623188" perimeter="0" name="5"/>
+        <constraint x="1.0" y="0.7028985507246377" perimeter="0" name="6"/>
+        <constraint x="1.0" y="0.8043478260869565" perimeter="0" name="7"/>
+    </connections>
+    <background>
+        <strokecolor color="#000000"/>
+        <fillcolor color="#ffffff"/>
+        <fontcolor color="#000000"/>
+        <alpha alpha="1"/>
+        <path>
+            <move x="14" y="0"/>
+            <line x="14" y="69"/>
+            <line x="34" y="69"/>
+            <line x="34" y="0"/>
+            <line x="27.333333333333332" y="0"/>
+            <line x="20.666666666666664" y="0"/>
+            <close/>
+        </path>
+        <fillstroke />
+    </background>
+    <foreground>
+        <strokecolor color="#000000"/>
+        <fillcolor color="#000000"/>
+        <fontcolor color="#000000"/>
+        <alpha alpha="1"/>
+        <fontsize size="4"/>
+        <text str="ABC" x="24.0" y="30.0" align="center" valign="middle" />
+        <text str="Cool Chip" x="24.0" y="34.5" align="center" valign="middle" />
+        <text str="123" x="24.0" y="39.0" align="center" valign="middle" />
+        <fontsize size="2"/>
+        <path>
+            <move x="0" y="13.5"/>
+            <line x="14" y="13.5"/>
+        </path>
+        <fillstroke />
+        <path>
+            <move x="11.334936490538903" y="12.25"/>
+            <line x="11.334936490538903" y="14.75"/>
+            <line x="13.5" y="13.5"/>
+            <close/>
+        </path>
+        <fillstroke />
+        <text str="A1" x="5.667468245269451" y="13.5" align="center" valign="bottom" />
+        <text str="A1.5" x="5.667468245269451" y="14.5" align="center" valign="top" />
+        <path>
+            <move x="0" y="20.5"/>
+            <line x="14" y="20.5"/>
+        </path>
+        <fillstroke />
+        <path>
+            <move x="11.334936490538903" y="19.25"/>
+            <line x="11.334936490538903" y="21.75"/>
+            <line x="13.5" y="20.5"/>
+            <close/>
+        </path>
+        <fillstroke />
+        <text str="A2" x="5.667468245269451" y="20.5" align="center" valign="bottom" />
+        <path>
+            <move x="0" y="27.5"/>
+            <line x="14" y="27.5"/>
+        </path>
+        <fillstroke />
+        <path>
+            <move x="11.334936490538903" y="26.25"/>
+            <line x="11.334936490538903" y="28.75"/>
+            <line x="13.5" y="27.5"/>
+            <close/>
+        </path>
+        <fillstroke />
+        <text str="A3" x="5.667468245269451" y="27.5" align="center" valign="bottom" />
+        <path>
+            <move x="0" y="41.5"/>
+            <line x="14" y="41.5"/>
+        </path>
+        <fillstroke />
+        <path>
+            <move x="11.334936490538903" y="40.25"/>
+            <line x="11.334936490538903" y="42.75"/>
+            <line x="13.5" y="41.5"/>
+            <close/>
+        </path>
+        <fillstroke />
+        <text str="SDA" x="5.667468245269451" y="41.5" align="center" valign="bottom" />
+        <path>
+            <move x="0" y="48.5"/>
+            <line x="14" y="48.5"/>
+        </path>
+        <fillstroke />
+        <path>
+            <move x="11.334936490538903" y="47.25"/>
+            <line x="11.334936490538903" y="49.75"/>
+            <line x="13.5" y="48.5"/>
+            <close/>
+        </path>
+        <fillstroke />
+        <text str="SCL" x="5.667468245269451" y="48.5" align="center" valign="bottom" />
+        <path>
+            <move x="48" y="13.5"/>
+            <line x="34" y="13.5"/>
+        </path>
+        <fillstroke />
+        <path>
+            <move x="45.8349364905389" y="12.25"/>
+            <line x="45.8349364905389" y="14.75"/>
+            <line x="48" y="13.5"/>
+            <close/>
+        </path>
+        <fillstroke />
+        <text str="1" x="39.917468245269454" y="13.5" align="center" valign="bottom" />
+        <path>
+            <move x="48" y="20.5"/>
+            <line x="34" y="20.5"/>
+        </path>
+        <fillstroke />
+        <path>
+            <move x="45.8349364905389" y="19.25"/>
+            <line x="45.8349364905389" y="21.75"/>
+            <line x="48" y="20.5"/>
+            <close/>
+        </path>
+        <fillstroke />
+        <text str="2" x="39.917468245269454" y="20.5" align="center" valign="bottom" />
+        <path>
+            <move x="48" y="27.5"/>
+            <line x="34" y="27.5"/>
+        </path>
+        <fillstroke />
+        <path>
+            <move x="45.8349364905389" y="26.25"/>
+            <line x="45.8349364905389" y="28.75"/>
+            <line x="48" y="27.5"/>
+            <close/>
+        </path>
+        <fillstroke />
+        <text str="3" x="39.917468245269454" y="27.5" align="center" valign="bottom" />
+        <path>
+            <move x="48" y="34.5"/>
+            <line x="34" y="34.5"/>
+        </path>
+        <fillstroke />
+        <path>
+            <move x="45.8349364905389" y="33.25"/>
+            <line x="45.8349364905389" y="35.75"/>
+            <line x="48" y="34.5"/>
+            <close/>
+        </path>
+        <fillstroke />
+        <text str="4" x="39.917468245269454" y="34.5" align="center" valign="bottom" />
+        <path>
+            <move x="48" y="41.5"/>
+            <line x="34" y="41.5"/>
+        </path>
+        <fillstroke />
+        <path>
+            <move x="45.8349364905389" y="40.25"/>
+            <line x="45.8349364905389" y="42.75"/>
+            <line x="48" y="41.5"/>
+            <close/>
+        </path>
+        <fillstroke />
+        <text str="5" x="39.917468245269454" y="41.5" align="center" valign="bottom" />
+        <path>
+            <move x="48" y="48.5"/>
+            <line x="34" y="48.5"/>
+        </path>
+        <fillstroke />
+        <path>
+            <move x="45.8349364905389" y="47.25"/>
+            <line x="45.8349364905389" y="49.75"/>
+            <line x="48" y="48.5"/>
+            <close/>
+        </path>
+        <fillstroke />
+        <text str="6" x="39.917468245269454" y="48.5" align="center" valign="bottom" />
+        <path>
+            <move x="48" y="55.5"/>
+            <line x="34" y="55.5"/>
+        </path>
+        <fillstroke />
+        <path>
+            <move x="45.8349364905389" y="54.25"/>
+            <line x="45.8349364905389" y="56.75"/>
+            <line x="48" y="55.5"/>
+            <close/>
+        </path>
+        <fillstroke />
+        <text str="7" x="39.917468245269454" y="55.5" align="center" valign="bottom" />
+    </foreground>
+</shape>

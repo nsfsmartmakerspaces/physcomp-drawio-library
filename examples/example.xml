@@ -1,0 +1,146 @@
+<shape aspect="fixed" h="88" w="55" strokewidth="inherit" name="example">
+    <connections>
+        <constraint x="0.42727272727272725" y="0.0" perimeter="0" name="5V"/>
+        <constraint x="0.5727272727272728" y="0.0" perimeter="0" name="Vin (jack)"/>
+        <constraint x="0.42727272727272725" y="1.0" perimeter="0" name="GND (jack) yay"/>
+        <constraint x="0.5727272727272728" y="1.0" perimeter="0" name="GND"/>
+        <constraint x="0.0" y="0.26136363636363635" perimeter="0" name="A1 Cool pin"/>
+        <constraint x="0.0" y="0.3409090909090909" perimeter="0" name="A2"/>
+        <constraint x="0.0" y="0.42045454545454547" perimeter="0" name="A3"/>
+        <constraint x="0.0" y="0.5795454545454546" perimeter="0" name="SDA"/>
+        <constraint x="0.0" y="0.6590909090909091" perimeter="0" name="SCL"/>
+        <constraint x="1.0" y="0.26136363636363635" perimeter="0" name="1"/>
+        <constraint x="1.0" y="0.3409090909090909" perimeter="0" name="2"/>
+        <constraint x="1.0" y="0.42045454545454547" perimeter="0" name="3"/>
+        <constraint x="1.0" y="0.5" perimeter="0" name="4"/>
+        <constraint x="1.0" y="0.5795454545454546" perimeter="0" name="5"/>
+        <constraint x="1.0" y="0.6590909090909091" perimeter="0" name="6"/>
+        <constraint x="1.0" y="0.7386363636363636" perimeter="0" name="7"/>
+    </connections>
+    <background>
+        <strokecolor color="#000000"/>
+        <fillcolor color="#ffffff"/>
+        <fontcolor color="#000000"/>
+        <alpha alpha="1"/>
+        <path>
+            <move x="7" y="7"/>
+            <line x="7" y="81"/>
+            <line x="48" y="81"/>
+            <line x="48" y="7"/>
+            <line x="34.333333333333336" y="7"/>
+            <line x="20.666666666666668" y="7"/>
+            <close/>
+        </path>
+        <fillstroke />
+    </background>
+    <foreground>
+        <strokecolor color="#000000"/>
+        <fillcolor color="#000000"/>
+        <fontcolor color="#000000"/>
+        <alpha alpha="1"/>
+        <fontsize size="4"/>
+        <text str="Cool Chip" x="27.5" y="41.75" align="center" valign="middle" />
+        <text str="123" x="27.5" y="46.25" align="center" valign="middle" />
+        <fontsize size="2.5"/>
+        <path>
+            <move x="23.5" y="0"/>
+            <line x="23.5" y="7"/>
+        </path>
+        <fillstroke />
+        <text str="5V" x="23.5" y="8.25" align="center" valign="top" />
+        <path>
+            <move x="31.5" y="0"/>
+            <line x="31.5" y="7"/>
+        </path>
+        <fillstroke />
+        <text str="Vin" x="31.5" y="8.25" align="center" valign="top" />
+        <text str="(jack)" x="31.5" y="11.0" align="center" valign="top" />
+        <path>
+            <move x="23.5" y="88"/>
+            <line x="23.5" y="81"/>
+        </path>
+        <fillstroke />
+        <text str="GND" x="23.5" y="75.75" align="center" valign="bottom" />
+        <text str="(jack)" x="23.5" y="78.5" align="center" valign="bottom" />
+        <text str="yay" x="23.5" y="81.25" align="center" valign="bottom" />
+        <path>
+            <move x="31.5" y="88"/>
+            <line x="31.5" y="81"/>
+        </path>
+        <fillstroke />
+        <text str="GND" x="31.5" y="81.25" align="center" valign="bottom" />
+        <path>
+            <move x="0" y="23.0"/>
+            <line x="7" y="23.0"/>
+        </path>
+        <fillstroke />
+        <text str="A1" x="8" y="21.625" align="left" valign="middle" />
+        <text str="Cool pin" x="8" y="24.375" align="left" valign="middle" />
+        <path>
+            <move x="0" y="30.0"/>
+            <line x="7" y="30.0"/>
+        </path>
+        <fillstroke />
+        <text str="A2" x="8" y="30.0" align="left" valign="middle" />
+        <path>
+            <move x="0" y="37.0"/>
+            <line x="7" y="37.0"/>
+        </path>
+        <fillstroke />
+        <text str="A3" x="8" y="37.0" align="left" valign="middle" />
+        <path>
+            <move x="0" y="51.0"/>
+            <line x="7" y="51.0"/>
+        </path>
+        <fillstroke />
+        <text str="SDA" x="8" y="51.0" align="left" valign="middle" />
+        <path>
+            <move x="0" y="58.0"/>
+            <line x="7" y="58.0"/>
+        </path>
+        <fillstroke />
+        <text str="SCL" x="8" y="58.0" align="left" valign="middle" />
+        <path>
+            <move x="55" y="23.0"/>
+            <line x="48" y="23.0"/>
+        </path>
+        <fillstroke />
+        <text str="1" x="47" y="23.0" align="right" valign="middle" />
+        <path>
+            <move x="55" y="30.0"/>
+            <line x="48" y="30.0"/>
+        </path>
+        <fillstroke />
+        <text str="2" x="47" y="30.0" align="right" valign="middle" />
+        <path>
+            <move x="55" y="37.0"/>
+            <line x="48" y="37.0"/>
+        </path>
+        <fillstroke />
+        <text str="3" x="47" y="37.0" align="right" valign="middle" />
+        <path>
+            <move x="55" y="44.0"/>
+            <line x="48" y="44.0"/>
+        </path>
+        <fillstroke />
+        <text str="4" x="47" y="44.0" align="right" valign="middle" />
+        <path>
+            <move x="55" y="51.0"/>
+            <line x="48" y="51.0"/>
+        </path>
+        <fillstroke />
+        <text str="5" x="47" y="51.0" align="right" valign="middle" />
+        <path>
+            <move x="55" y="58.0"/>
+            <line x="48" y="58.0"/>
+        </path>
+        <fillstroke />
+        <text str="6" x="47" y="58.0" align="right" valign="middle" />
+        <path>
+            <move x="55" y="65.0"/>
+            <line x="48" y="65.0"/>
+        </path>
+        <fillstroke />
+        <text str="7" x="47" y="65.0" align="right" valign="middle" />
+    </foreground>
+</shape>
