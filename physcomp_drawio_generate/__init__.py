@@ -20,7 +20,7 @@ assert sys.version_info >= (3, 5)
 
 
 def xmlEscape(in_str: str) -> str:
-    return in_str.translate(str.maketrans({"\"":  "&quot;", "\\": r"\\"}))
+    return in_str.translate(str.maketrans({"\"":  "&quot;", "\\": r"\\", "&":  "&amp;"}))
 
 
 # Quick schema-ish checker for yaml files
