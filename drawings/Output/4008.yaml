@@ -22,10 +22,10 @@ right:
   - "VCC"
   - "QA"
   - "SER"
-  - "~OE"
+  - "!OE"
   - "RCLK"
   - "SRCLK"
-  - "~SRCLR"
+  - "!SRCLR"
   - "QH'"
 # Add some width:
 bottom:
