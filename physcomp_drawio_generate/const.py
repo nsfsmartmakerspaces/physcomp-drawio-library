@@ -2,6 +2,7 @@
 DRAWING_TEMPLATE_NAME = "name"
 DRAWING_TEMPLATE_WIDTH = "width"
 DRAWING_TEMPLATE_HEIGHT = "height"
+DRAWING_TEMPLATE_ASPECT = "aspect"
 DRAWING_TEMPLATE_RECT_WIDTH = "rect_width"
 DRAWING_TEMPLATE_RECT_HEIGHT = "rect_height"
 DRAWING_TEMPLATE_RECT_TOP = "rect_top"
@@ -46,18 +47,30 @@ ARROW_TEMPLATE_MIDDLE = "middle"
 ARROW_TEMPLATE_X_POINT = "x_point"
 ARROW_TEMPLATE_X_FLAT = "x_flat"
 
-# Template locations
-TEMPLATE_MAIN = "templates/template.xml"
-TEMPLATE_TITLE = "templates/template_title.xml"
-TEMPLATE_LEAD = "templates/template_lead.xml"
-TEMPLATE_PIN_HORIZ = "templates/template_pin_horiz.xml"
-TEMPLATE_PIN_VERT = "templates/template_pin_vert.xml"
-TEMPLATE_CONNECTION = "templates/template_connection.xml"
-TEMPLATE_DIP = "templates/template_dip.xml"
-TEMPLATE_NO_DIP = "templates/template_no_dip.xml"
-TEMPLATE_DIP = "templates/template_dip.xml"
-TEMPLATE_ARROW = "templates/template_arrow.xml"
+LIBRARY_XML_TEMPLATE_DATA = "data"
+LIBRARY_XML_TEMPLATE_WIDTH = "width"
+LIBRARY_XML_TEMPLATE_HEIGHT = "height"
 
+LIBRARY_JSON_XML = "xml"
+LIBRARY_JSON_WIDTH = "w"
+LIBRARY_JSON_HEIGHT = "h"
+LIBRARY_JSON_ASPECT = "aspect"
+LIBRARY_JSON_TITLE = "title"
+
+# Template locations
+TEMPLATE_DRAWING_MAIN = "templates/drawing.xml"
+TEMPLATE_DRAWING_TITLE = "templates/drawing_title.xml"
+TEMPLATE_DRAWING_LEAD = "templates/drawing_lead.xml"
+TEMPLATE_DRAWING_PIN_HORIZ = "templates/drawing_pin_horiz.xml"
+TEMPLATE_DRAWING_PIN_VERT = "templates/drawing_pin_vert.xml"
+TEMPLATE_DRAWING_CONNECTION = "templates/drawing_connection.xml"
+TEMPLATE_DRAWING_DIP = "templates/drawing_dip.xml"
+TEMPLATE_DRAWING_NO_DIP = "templates/drawing_no_dip.xml"
+TEMPLATE_DRAWING_DIP = "templates/drawing_dip.xml"
+TEMPLATE_DRAWING_ARROW = "templates/drawing_arrow.xml"
+TEMPLATE_LIBRARY_START = "templates/library_start.xml"
+TEMPLATE_LIBRARY_END = "templates/library_end.xml"
+TEMPLATE_LIBRARY_XML = "templates/library_xml.xml"
 
 # Src and dist dirs
 YAML_SRC_DIR = "drawings"
@@ -101,3 +114,8 @@ TEXT_ALIGN_CENTER = "center"
 TEXT_VALIGN_TOP = "top"
 TEXT_VALIGN_BOTTOM = "bottom"
 TEXT_VALIGN_MIDDLE = "middle"
+ASPECT_FIXED = "fixed"
+
+
+# Settings
+URLENCODE_SAFE_CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_.!~'()"

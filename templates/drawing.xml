@@ -1,4 +1,4 @@
-<shape aspect="fixed" h="${height}" w="${width}" strokewidth="inherit" name="${name}">
+<shape aspect="${aspect}" h="${height}" w="${width}" strokewidth="inherit" name="${name}">
     <connections>${connection_insert}
     </connections>
     <background>

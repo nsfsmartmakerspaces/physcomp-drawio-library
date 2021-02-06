@@ -1,11 +1,15 @@
 import asyncio
+from base64 import b64encode
 from glob import glob
+from json import dumps
 from math import sqrt
 from string import Template
 import os
 import pathlib
 from shutil import rmtree
 import sys
+import urllib
+import zlib
 
 import yaml
 
@@ -143,7 +147,27 @@ def save_file(file_path: str, data: str) -> None:
         file.write(data)
 
 
-async def generate(src_file: str, file_name: str, dest_file: str, templates: dict, styles: dict) -> None:
+def append_file(file_path: str, data: str) -> None:
+    pathlib.Path(os.path.split(file_path)[0]).mkdir(parents=True, exist_ok=True)
+    with open(file_path, 'a') as file:
+        file.write(data)
+
+
+# Modified from https://stackoverflow.com/a/59051367
+def pako_deflate_raw(data):
+    compress = zlib.compressobj(
+        zlib.Z_DEFAULT_COMPRESSION, zlib.DEFLATED, -15, memLevel=8,
+        strategy=zlib.Z_DEFAULT_STRATEGY)
+    compressed_data = compress.compress(bytes(data, 'iso-8859-1'))
+    compressed_data += compress.flush()
+    return compressed_data
+
+
+def drawio_compress(data):
+    return b64encode(pako_deflate_raw(urllib.parse.quote(data, safe=URLENCODE_SAFE_CHARS))).decode('utf-8')
+
+
+async def generate(src_file: str, file_name: str, dest_file: str, templates: dict, styles: dict, library: str, library_dest: str, libraries_with_first_entry: set) -> None:
     # print(src_file, dest_file)
     src_data = read_yaml_file(src_file)
 
@@ -171,6 +195,7 @@ async def generate(src_file: str, file_name: str, dest_file: str, templates: dic
     # Calculate total widths and heights
     template_opts = {}
     template_opts[DRAWING_TEMPLATE_NAME] = file_name
+    template_opts[DRAWING_TEMPLATE_ASPECT] = ASPECT_FIXED
     template_opts[DRAWING_TEMPLATE_TITLE_TEXT_SIZE] = style["title_text"]["size"]
     template_opts[DRAWING_TEMPLATE_PIN_TEXT_SIZE] = style["pin_text"]["size"]
     template_opts[DRAWING_TEMPLATE_PIN_LENGTH] = style["pins"]["length"]
@@ -355,6 +380,37 @@ async def generate(src_file: str, file_name: str, dest_file: str, templates: dic
     out = Template(templates["main"]).substitute(template_opts)
     save_file(dest_file, out)
 
+    library_append = ""
+    if library in libraries_with_first_entry:
+        library_append += ","
+    else:
+        libraries_with_first_entry.add(library)
+
+    # Yes, I know it's silly. It's an XML...compressed...and  put in another XML...and compressed again
+    library_xml_opts = {}
+    library_xml_opts[LIBRARY_XML_TEMPLATE_DATA] = drawio_compress(out)
+    library_xml_opts[LIBRARY_XML_TEMPLATE_WIDTH] = template_opts[DRAWING_TEMPLATE_WIDTH]
+    library_xml_opts[LIBRARY_XML_TEMPLATE_HEIGHT] = template_opts[DRAWING_TEMPLATE_HEIGHT]
+    library_xml_data = drawio_compress(Template(templates["library_xml"]).substitute(library_xml_opts))
+
+    library_data = {
+        LIBRARY_JSON_XML: library_xml_data,
+        LIBRARY_JSON_WIDTH: template_opts[DRAWING_TEMPLATE_WIDTH],
+        LIBRARY_JSON_HEIGHT: template_opts[DRAWING_TEMPLATE_HEIGHT],
+        LIBRARY_JSON_ASPECT: template_opts[DRAWING_TEMPLATE_ASPECT],
+        LIBRARY_JSON_TITLE: template_opts[DRAWING_TEMPLATE_NAME]
+    }
+    library_append += dumps(library_data)
+    append_file(library_dest, library_append)
+
+
+async def generate_library_start(name: str, dest: str, templates: dict):
+    save_file(dest, templates["start"])
+
+
+async def generate_library_end(name: str, dest: str, templates: dict):
+    append_file(dest, templates["end"])
+
 
 async def load_style(styles: dict, name: str, path: str):
     src_data = read_yaml_file(path)
@@ -393,25 +449,33 @@ async def load_style(styles: dict, name: str, path: str):
 
 
 async def main() -> None:
-    templates = {}
-    with open(TEMPLATE_MAIN, 'r') as stream:
-        templates["main"] = stream.read()
-    with open(TEMPLATE_TITLE, 'r') as stream:
-        templates["title"] = stream.read()
-    with open(TEMPLATE_LEAD, 'r') as stream:
-        templates["lead"] = stream.read()
-    with open(TEMPLATE_PIN_HORIZ, 'r') as stream:
-        templates["pin_horiz"] = stream.read()
+    drawing_templates = {}
+    with open(TEMPLATE_DRAWING_MAIN, 'r') as stream:
+        drawing_templates["main"] = stream.read()
+    with open(TEMPLATE_DRAWING_TITLE, 'r') as stream:
+        drawing_templates["title"] = stream.read()
+    with open(TEMPLATE_DRAWING_LEAD, 'r') as stream:
+        drawing_templates["lead"] = stream.read()
+    with open(TEMPLATE_DRAWING_PIN_HORIZ, 'r') as stream:
+        drawing_templates["pin_horiz"] = stream.read()
     # with open(TEMPLATE_PIN_VERT, 'r') as stream:
     #     templates["pin_vert"] = stream.read()
-    with open(TEMPLATE_CONNECTION, 'r') as stream:
-        templates["connection"] = stream.read()
-    with open(TEMPLATE_DIP, 'r') as stream:
-        templates["dip"] = stream.read()
-    with open(TEMPLATE_NO_DIP, 'r') as stream:
-        templates["no_dip"] = stream.read()
-    with open(TEMPLATE_ARROW, 'r') as stream:
-        templates["arrow"] = stream.read()
+    with open(TEMPLATE_DRAWING_CONNECTION, 'r') as stream:
+        drawing_templates["connection"] = stream.read()
+    with open(TEMPLATE_DRAWING_DIP, 'r') as stream:
+        drawing_templates["dip"] = stream.read()
+    with open(TEMPLATE_DRAWING_NO_DIP, 'r') as stream:
+        drawing_templates["no_dip"] = stream.read()
+    with open(TEMPLATE_DRAWING_ARROW, 'r') as stream:
+        drawing_templates["arrow"] = stream.read()
+    with open(TEMPLATE_LIBRARY_XML, 'r') as stream:
+        drawing_templates["library_xml"] = stream.read()
+
+    library_templates = {}
+    with open(TEMPLATE_LIBRARY_START, 'r') as stream:
+        library_templates["start"] = stream.read()
+    with open(TEMPLATE_LIBRARY_END, 'r') as stream:
+        library_templates["end"] = stream.read()
 
     style_names = []
     styles = {}
@@ -433,23 +497,36 @@ async def main() -> None:
     await asyncio.wait(tasks)
 
     file_names = []
-    tasks = []
+    library_names = set()
+    file_tasks = []
+    library_tasks_start = []
+    library_tasks_end = []
+    libraries_with_first_entry = set()
     src_files = glob(f"./{YAML_SRC_DIR}/*/*.yaml")
     src_files.extend(glob(f"./{YAML_SRC_DIR}/*/*.yml"))
     for src_file in src_files:
-        base_name = os.path.basename(src_file)
-        file_name = os.path.splitext(base_name)[0]
+        split = os.path.normpath(src_file).split(os.path.sep)
+        file_name = os.path.splitext(split[2])[0]
+        library_name = split[1]
         file_path = os.path.splitext(src_file)[0]
         if (file_name in file_names):
             print(f"Duplicate drawing base name {file_name}")
             exit(1)
         file_names.append(file_name)
+        library_names.add(library_name)
         dest_file = file_path.replace(YAML_SRC_DIR, YAML_DIST_DIR, 1)
         dest_file = f"{dest_file}.xml"
+        library_dest = f"./{YAML_DIST_DIR}/{library_name}.xml"
         if os.path.isdir(f"./{YAML_DIST_DIR}"):
             rmtree(f"./{YAML_DIST_DIR}")
-        tasks.append(generate(src_file, file_name, dest_file, templates, styles))
-    if len(tasks) > 0:
-        await asyncio.wait(tasks)
+        file_tasks.append(generate(src_file, file_name, dest_file, drawing_templates, styles, library_name, library_dest, libraries_with_first_entry))
+    for library_name in library_names:
+        dest_file = f"./{YAML_DIST_DIR}/{library_name}.xml"
+        library_tasks_start.append(generate_library_start(library_name, dest_file, library_templates))
+        library_tasks_end.append(generate_library_end(library_name, dest_file, library_templates))
+    if len(file_tasks) > 0:
+        await asyncio.wait(library_tasks_start)
+        await asyncio.wait(file_tasks)
+        await asyncio.wait(library_tasks_end)
     else:
         print("No drawings to process, stopping")
