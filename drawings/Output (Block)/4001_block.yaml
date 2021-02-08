@@ -1,0 +1,14 @@
+schema_version: "1.0.0"
+disable: false
+
+dip: false
+block: true
+style: block_1
+name: "LCD Display Module [4001]"
+title:
+  - "LCD Display"
+  - "Module"
+left:
+  - "Display Input"
+right:
+  - - "Display"

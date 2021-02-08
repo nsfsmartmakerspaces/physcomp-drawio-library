@@ -1,0 +1,14 @@
+schema_version: "1.0.0"
+disable: false
+
+dip: false
+block: true
+style: block_1
+name: "Active Buzzer [0496]"
+title:
+  - "Active"
+  - "Buzzer"
+left:
+  - "Buzzer Signal"
+right:
+  - "Sound"

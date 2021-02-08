@@ -1,0 +1,14 @@
+schema_version: "1.0.0"
+disable: false
+
+dip: false
+block: true
+style: block_1
+name: "Stepper Motor [4004]"
+title:
+  - "Stepper"
+  - "Motor"
+left:
+  - "Stepper Power"
+right:
+ - "Rotation"

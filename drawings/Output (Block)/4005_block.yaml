@@ -1,0 +1,15 @@
+schema_version: "1.0.0"
+disable: false
+
+dip: false
+block: true
+style: block_1
+name: "Stepper Motor Driver [4005]"
+title:
+  - "Stepper"
+  - "Motor"
+  - "Driver"
+left:
+  - "Stepper Signal"
+right:
+  - "Stepper Power"

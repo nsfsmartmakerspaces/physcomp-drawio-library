@@ -1,0 +1,22 @@
+schema_version: "1.0.0"
+disable: false
+
+dip: true
+block: true
+style: block_1
+name: "Shift Register (74HC595) [4008]"
+title:
+  - "Shift"
+  - "Register"
+  - "(74HC595)"
+left:
+  - "Data"
+right:
+  - "Out 0"
+  - "Out 1"
+  - "Out 2"
+  - "Out 3"
+  - "Out 4"
+  - "Out 5"
+  - "Out 6"
+  - "Out 7"
