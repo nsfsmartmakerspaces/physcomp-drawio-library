@@ -8,5 +8,7 @@ name: "Infrared Receiver [0251]"
 title:
   - "Infrared"
   - "Receiver"
+left:
+  - - "Infrared Light"
 right:
   - - "Infrared Data"
