@@ -1,8 +1,8 @@
 schema_version: "1.0.0"
 
 base:
-  width: 100
-  height: 80
+  width: 110
+  height: 90
 title_text:
   size: 16
   line_spacing: 0.5
@@ -13,6 +13,6 @@ pin_text:
   line_spacing: 0.5
   pad: 6
 pins:
-  length: 64
+  length: 70
   arrow_size: 10
   left_arrow_pad: 2.0
