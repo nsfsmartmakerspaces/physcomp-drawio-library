@@ -1,0 +1,14 @@
+schema_version: "1.0.0"
+disable: false
+
+dip: false
+block: true
+style: block_1
+name: "Temperature and Humidity Sensor (DHT11) [0368]"
+title:
+  - "Temp &"
+  - "Humidity"
+  - "Sensor"
+right:
+  - "Temperature"
+  - "Humidity"

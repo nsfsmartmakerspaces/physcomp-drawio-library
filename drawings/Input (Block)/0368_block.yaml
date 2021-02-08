@@ -1,0 +1,12 @@
+schema_version: "1.0.0"
+disable: false
+
+dip: false
+block: true
+style: block_1
+name: "3-Axis Accelerometer [0368]"
+title:
+  - "3-Axis"
+  - "Accelerometer"
+right:
+  - "Movement Data"

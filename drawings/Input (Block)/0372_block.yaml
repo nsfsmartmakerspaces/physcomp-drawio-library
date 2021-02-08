@@ -1,0 +1,14 @@
+schema_version: "1.0.0"
+disable: false
+
+dip: false
+block: true
+style: block_1
+name: "Joystick Module [0372]"
+title:
+  - "Joystick"
+  - "Module"
+right:
+  - "X Movement"
+  - "Y Movement"
+  - "Press (button)"

@@ -1,0 +1,12 @@
+schema_version: "1.0.0"
+disable: false
+
+dip: false
+block: true
+style: block_1
+name: "Infrared Receiver [0251]"
+title:
+  - "Infrared"
+  - "Receiver"
+right:
+  - - "Infrared Data"
