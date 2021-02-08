@@ -1,7 +1,7 @@
 schema_version: "1.0.0"
 disable: false
 
-dip: true
+dip: false
 block: true
 style: block_1
 name: "H-Bridge Motor Driver [1258]"
