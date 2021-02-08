@@ -1,0 +1,157 @@
+<shape aspect="fixed" h="304" w="228" strokewidth="inherit" name="Shift Register (74HC595) [4008]">
+    <connections>
+        <constraint x="0.0" y="0.17763157894736842" perimeter="0" name="Data"/>
+        <constraint x="1.0" y="0.17763157894736842" perimeter="0" name="Out 0"/>
+        <constraint x="1.0" y="0.26973684210526316" perimeter="0" name="Out 1"/>
+        <constraint x="1.0" y="0.3618421052631579" perimeter="0" name="Out 2"/>
+        <constraint x="1.0" y="0.45394736842105265" perimeter="0" name="Out 3"/>
+        <constraint x="1.0" y="0.5460526315789473" perimeter="0" name="Out 4"/>
+        <constraint x="1.0" y="0.6381578947368421" perimeter="0" name="Out 5"/>
+        <constraint x="1.0" y="0.7302631578947368" perimeter="0" name="Out 6"/>
+        <constraint x="1.0" y="0.8223684210526315" perimeter="0" name="Out 7"/>
+    </connections>
+    <background>
+        <strokecolor color="#000000"/>
+        <fillcolor color="#ffffff"/>
+        <fontcolor color="#000000"/>
+        <alpha alpha="1"/>
+        <path>
+            <move x="64" y="0"/>
+            <line x="64" y="304"/>
+            <line x="164" y="304"/>
+            <line x="164" y="0"/>
+            <line x="130.66666666666666" y="0"/>
+            <arc rx="16.666666666666668" ry="16.666666666666668" x-axis-rotation="0" large-arc-flag="1" sweep-flag="1" x="97.33333333333333" y="0"/>
+            <close/>
+        </path>
+        <fillstroke />
+    </background>
+    <foreground>
+        <strokecolor color="#000000"/>
+        <fillcolor color="#000000"/>
+        <fontcolor color="#000000"/>
+        <alpha alpha="1"/>
+        <fontsize size="16"/>
+        <text str="Shift" x="114.0" y="135.5" align="center" valign="middle" />
+        <text str="Register" x="114.0" y="152.0" align="center" valign="middle" />
+        <text str="(74HC595)" x="114.0" y="168.5" align="center" valign="middle" />
+        <fontsize size="8"/>
+        <path>
+            <move x="0" y="54.0"/>
+            <line x="64" y="54.0"/>
+        </path>
+        <fillstroke />
+        <path>
+            <move x="53.33974596215561" y="49.0"/>
+            <line x="53.33974596215561" y="59.0"/>
+            <line x="62.0" y="54.0"/>
+            <close/>
+        </path>
+        <fillstroke />
+        <text str="Data" x="26.669872981077805" y="52.0" align="center" valign="bottom" />
+        <path>
+            <move x="228" y="54.0"/>
+            <line x="164" y="54.0"/>
+        </path>
+        <fillstroke />
+        <path>
+            <move x="219.3397459621556" y="49.0"/>
+            <line x="219.3397459621556" y="59.0"/>
+            <line x="228" y="54.0"/>
+            <close/>
+        </path>
+        <fillstroke />
+        <text str="Out 0" x="191.66987298107782" y="52.0" align="center" valign="bottom" />
+        <path>
+            <move x="228" y="82.0"/>
+            <line x="164" y="82.0"/>
+        </path>
+        <fillstroke />
+        <path>
+            <move x="219.3397459621556" y="77.0"/>
+            <line x="219.3397459621556" y="87.0"/>
+            <line x="228" y="82.0"/>
+            <close/>
+        </path>
+        <fillstroke />
+        <text str="Out 1" x="191.66987298107782" y="80.0" align="center" valign="bottom" />
+        <path>
+            <move x="228" y="110.0"/>
+            <line x="164" y="110.0"/>
+        </path>
+        <fillstroke />
+        <path>
+            <move x="219.3397459621556" y="105.0"/>
+            <line x="219.3397459621556" y="115.0"/>
+            <line x="228" y="110.0"/>
+            <close/>
+        </path>
+        <fillstroke />
+        <text str="Out 2" x="191.66987298107782" y="108.0" align="center" valign="bottom" />
+        <path>
+            <move x="228" y="138.0"/>
+            <line x="164" y="138.0"/>
+        </path>
+        <fillstroke />
+        <path>
+            <move x="219.3397459621556" y="133.0"/>
+            <line x="219.3397459621556" y="143.0"/>
+            <line x="228" y="138.0"/>
+            <close/>
+        </path>
+        <fillstroke />
+        <text str="Out 3" x="191.66987298107782" y="136.0" align="center" valign="bottom" />
+        <path>
+            <move x="228" y="166.0"/>
+            <line x="164" y="166.0"/>
+        </path>
+        <fillstroke />
+        <path>
+            <move x="219.3397459621556" y="161.0"/>
+            <line x="219.3397459621556" y="171.0"/>
+            <line x="228" y="166.0"/>
+            <close/>
+        </path>
+        <fillstroke />
+        <text str="Out 4" x="191.66987298107782" y="164.0" align="center" valign="bottom" />
+        <path>
+            <move x="228" y="194.0"/>
+            <line x="164" y="194.0"/>
+        </path>
+        <fillstroke />
+        <path>
+            <move x="219.3397459621556" y="189.0"/>
+            <line x="219.3397459621556" y="199.0"/>
+            <line x="228" y="194.0"/>
+            <close/>
+        </path>
+        <fillstroke />
+        <text str="Out 5" x="191.66987298107782" y="192.0" align="center" valign="bottom" />
+        <path>
+            <move x="228" y="222.0"/>
+            <line x="164" y="222.0"/>
+        </path>
+        <fillstroke />
+        <path>
+            <move x="219.3397459621556" y="217.0"/>
+            <line x="219.3397459621556" y="227.0"/>
+            <line x="228" y="222.0"/>
+            <close/>
+        </path>
+        <fillstroke />
+        <text str="Out 6" x="191.66987298107782" y="220.0" align="center" valign="bottom" />
+        <path>
+            <move x="228" y="250.0"/>
+            <line x="164" y="250.0"/>
+        </path>
+        <fillstroke />
+        <path>
+            <move x="219.3397459621556" y="245.0"/>
+            <line x="219.3397459621556" y="255.0"/>
+            <line x="228" y="250.0"/>
+            <close/>
+        </path>
+        <fillstroke />
+        <text str="Out 7" x="191.66987298107782" y="248.0" align="center" valign="bottom" />
+    </foreground>
+</shape>

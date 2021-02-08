@@ -1,4 +1,4 @@
-<shape aspect="fixed" h="108" w="136" strokewidth="inherit" name="Infrared Remote [4006]">
+<shape aspect="fixed" h="108" w="164" strokewidth="inherit" name="Infrared Remote [4006]">
     <connections>
         <constraint x="1.0" y="0.5" perimeter="0" name="IR Light"/>
     </connections>
@@ -10,10 +10,10 @@
         <path>
             <move x="0" y="0"/>
             <line x="0" y="108"/>
-            <line x="80" y="108"/>
-            <line x="80" y="0"/>
-            <line x="53.33333333333333" y="0"/>
-            <line x="26.666666666666664" y="0"/>
+            <line x="100" y="108"/>
+            <line x="100" y="0"/>
+            <line x="66.66666666666666" y="0"/>
+            <line x="33.33333333333333" y="0"/>
             <close/>
         </path>
         <fillstroke />
@@ -24,21 +24,21 @@
         <fontcolor color="#000000"/>
         <alpha alpha="1"/>
         <fontsize size="16"/>
-        <text str="Infrared" x="40.0" y="45.75" align="center" valign="middle" />
-        <text str="Remote" x="40.0" y="62.25" align="center" valign="middle" />
+        <text str="Infrared" x="50.0" y="45.75" align="center" valign="middle" />
+        <text str="Remote" x="50.0" y="62.25" align="center" valign="middle" />
         <fontsize size="8"/>
         <path>
-            <move x="136" y="54.0"/>
-            <line x="80" y="54.0"/>
+            <move x="164" y="54.0"/>
+            <line x="100" y="54.0"/>
         </path>
         <fillstroke />
         <path>
-            <move x="127.33974596215562" y="49.0"/>
-            <line x="127.33974596215562" y="59.0"/>
-            <line x="136" y="54.0"/>
+            <move x="155.3397459621556" y="49.0"/>
+            <line x="155.3397459621556" y="59.0"/>
+            <line x="164" y="54.0"/>
             <close/>
         </path>
         <fillstroke />
-        <text str="IR Light" x="103.6698729810778" y="56.0" align="center" valign="bottom" />
+        <text str="IR Light" x="127.6698729810778" y="52.0" align="center" valign="bottom" />
     </foreground>
 </shape>

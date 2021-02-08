@@ -1,4 +1,4 @@
-<shape aspect="fixed" h="136" w="136" strokewidth="inherit" name="Temperature and Humidity Sensor (DHT11) [0368]">
+<shape aspect="fixed" h="136" w="164" strokewidth="inherit" name="Temperature and Humidity Sensor (DHT11) [0368]">
     <connections>
         <constraint x="1.0" y="0.39705882352941174" perimeter="0" name="Temperature"/>
         <constraint x="1.0" y="0.6029411764705882" perimeter="0" name="Humidity"/>
@@ -11,10 +11,10 @@
         <path>
             <move x="0" y="0"/>
             <line x="0" y="136"/>
-            <line x="80" y="136"/>
-            <line x="80" y="0"/>
-            <line x="53.33333333333333" y="0"/>
-            <line x="26.666666666666664" y="0"/>
+            <line x="100" y="136"/>
+            <line x="100" y="0"/>
+            <line x="66.66666666666666" y="0"/>
+            <line x="33.33333333333333" y="0"/>
             <close/>
         </path>
         <fillstroke />
@@ -25,35 +25,35 @@
         <fontcolor color="#000000"/>
         <alpha alpha="1"/>
         <fontsize size="16"/>
-        <text str="Temp &amp;" x="40.0" y="51.5" align="center" valign="middle" />
-        <text str="Humidity" x="40.0" y="68.0" align="center" valign="middle" />
-        <text str="Sensor" x="40.0" y="84.5" align="center" valign="middle" />
+        <text str="Temp &amp;" x="50.0" y="51.5" align="center" valign="middle" />
+        <text str="Humidity" x="50.0" y="68.0" align="center" valign="middle" />
+        <text str="Sensor" x="50.0" y="84.5" align="center" valign="middle" />
         <fontsize size="8"/>
         <path>
-            <move x="136" y="54.0"/>
-            <line x="80" y="54.0"/>
+            <move x="164" y="54.0"/>
+            <line x="100" y="54.0"/>
         </path>
         <fillstroke />
         <path>
-            <move x="127.33974596215562" y="49.0"/>
-            <line x="127.33974596215562" y="59.0"/>
-            <line x="136" y="54.0"/>
+            <move x="155.3397459621556" y="49.0"/>
+            <line x="155.3397459621556" y="59.0"/>
+            <line x="164" y="54.0"/>
             <close/>
         </path>
         <fillstroke />
-        <text str="Temperature" x="103.6698729810778" y="56.0" align="center" valign="bottom" />
+        <text str="Temperature" x="127.6698729810778" y="52.0" align="center" valign="bottom" />
         <path>
-            <move x="136" y="82.0"/>
-            <line x="80" y="82.0"/>
+            <move x="164" y="82.0"/>
+            <line x="100" y="82.0"/>
         </path>
         <fillstroke />
         <path>
-            <move x="127.33974596215562" y="77.0"/>
-            <line x="127.33974596215562" y="87.0"/>
-            <line x="136" y="82.0"/>
+            <move x="155.3397459621556" y="77.0"/>
+            <line x="155.3397459621556" y="87.0"/>
+            <line x="164" y="82.0"/>
             <close/>
         </path>
         <fillstroke />
-        <text str="Humidity" x="103.6698729810778" y="84.0" align="center" valign="bottom" />
+        <text str="Humidity" x="127.6698729810778" y="80.0" align="center" valign="bottom" />
     </foreground>
 </shape>
