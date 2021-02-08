@@ -1,0 +1,22 @@
+schema_version: "1.0.0"
+disable: false
+
+dip: false
+block: false
+style: chip_1
+name: "Optical Proximity Sensor [0237]"
+title:
+  - "Optical"
+  - "Proximity"
+  - "Sensor"
+  - "LTH-1550-01"
+top:
+  - - "LED"
+    - "anode"
+  - - "phototransistor"
+    - "collector"
+right:
+  - - "phototransistor"
+    - "emitter"
+bottom:
+  - "GND"
