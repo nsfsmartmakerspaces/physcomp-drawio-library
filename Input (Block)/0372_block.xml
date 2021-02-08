@@ -1,4 +1,4 @@
-<shape aspect="fixed" h="41" w="34" strokewidth="inherit" name="Joystick Module [0372]">
+<shape aspect="fixed" h="164" w="136" strokewidth="inherit" name="Joystick Module [0372]">
     <connections>
         <constraint x="1.0" y="0.32926829268292684" perimeter="0" name="X Movement"/>
         <constraint x="1.0" y="0.5" perimeter="0" name="Y Movement"/>
@@ -11,11 +11,11 @@
         <alpha alpha="1"/>
         <path>
             <move x="0" y="0"/>
-            <line x="0" y="41"/>
-            <line x="20" y="41"/>
-            <line x="20" y="0"/>
-            <line x="13.333333333333332" y="0"/>
-            <line x="6.666666666666666" y="0"/>
+            <line x="0" y="164"/>
+            <line x="80" y="164"/>
+            <line x="80" y="0"/>
+            <line x="53.33333333333333" y="0"/>
+            <line x="26.666666666666664" y="0"/>
             <close/>
         </path>
         <fillstroke />
@@ -25,48 +25,48 @@
         <fillcolor color="#000000"/>
         <fontcolor color="#000000"/>
         <alpha alpha="1"/>
-        <fontsize size="4"/>
-        <text str="Joystick" x="10.0" y="18.25" align="center" valign="middle" />
-        <text str="Module" x="10.0" y="22.75" align="center" valign="middle" />
-        <fontsize size="2"/>
+        <fontsize size="16"/>
+        <text str="Joystick" x="40.0" y="73.75" align="center" valign="middle" />
+        <text str="Module" x="40.0" y="90.25" align="center" valign="middle" />
+        <fontsize size="8"/>
         <path>
-            <move x="34" y="13.5"/>
-            <line x="20" y="13.5"/>
+            <move x="136" y="54.0"/>
+            <line x="80" y="54.0"/>
         </path>
         <fillstroke />
         <path>
-            <move x="31.834936490538905" y="12.25"/>
-            <line x="31.834936490538905" y="14.75"/>
-            <line x="34" y="13.5"/>
+            <move x="127.33974596215562" y="49.0"/>
+            <line x="127.33974596215562" y="59.0"/>
+            <line x="136" y="54.0"/>
             <close/>
         </path>
         <fillstroke />
-        <text str="X Movement" x="25.91746824526945" y="13.5" align="center" valign="bottom" />
+        <text str="X Movement" x="103.6698729810778" y="56.0" align="center" valign="bottom" />
         <path>
-            <move x="34" y="20.5"/>
-            <line x="20" y="20.5"/>
+            <move x="136" y="82.0"/>
+            <line x="80" y="82.0"/>
         </path>
         <fillstroke />
         <path>
-            <move x="31.834936490538905" y="19.25"/>
-            <line x="31.834936490538905" y="21.75"/>
-            <line x="34" y="20.5"/>
+            <move x="127.33974596215562" y="77.0"/>
+            <line x="127.33974596215562" y="87.0"/>
+            <line x="136" y="82.0"/>
             <close/>
         </path>
         <fillstroke />
-        <text str="Y Movement" x="25.91746824526945" y="20.5" align="center" valign="bottom" />
+        <text str="Y Movement" x="103.6698729810778" y="84.0" align="center" valign="bottom" />
         <path>
-            <move x="34" y="27.5"/>
-            <line x="20" y="27.5"/>
+            <move x="136" y="110.0"/>
+            <line x="80" y="110.0"/>
         </path>
         <fillstroke />
         <path>
-            <move x="31.834936490538905" y="26.25"/>
-            <line x="31.834936490538905" y="28.75"/>
-            <line x="34" y="27.5"/>
+            <move x="127.33974596215562" y="105.0"/>
+            <line x="127.33974596215562" y="115.0"/>
+            <line x="136" y="110.0"/>
             <close/>
         </path>
         <fillstroke />
-        <text str="Press (button)" x="25.91746824526945" y="27.5" align="center" valign="bottom" />
+        <text str="Press (button)" x="103.6698729810778" y="112.0" align="center" valign="bottom" />
     </foreground>
 </shape>
