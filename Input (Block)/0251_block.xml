@@ -1,0 +1,44 @@
+<shape aspect="fixed" h="27" w="34" strokewidth="inherit" name="Infrared Receiver [0251]">
+    <connections>
+        <constraint x="1.0" y="0.5" perimeter="0" name="Infrared Data"/>
+    </connections>
+    <background>
+        <strokecolor color="#000000"/>
+        <fillcolor color="#ffffff"/>
+        <fontcolor color="#000000"/>
+        <alpha alpha="1"/>
+        <path>
+            <move x="0" y="0"/>
+            <line x="0" y="27"/>
+            <line x="20" y="27"/>
+            <line x="20" y="0"/>
+            <line x="13.333333333333332" y="0"/>
+            <line x="6.666666666666666" y="0"/>
+            <close/>
+        </path>
+        <fillstroke />
+    </background>
+    <foreground>
+        <strokecolor color="#000000"/>
+        <fillcolor color="#000000"/>
+        <fontcolor color="#000000"/>
+        <alpha alpha="1"/>
+        <fontsize size="4"/>
+        <text str="Infrared" x="10.0" y="11.25" align="center" valign="middle" />
+        <text str="Receiver" x="10.0" y="15.75" align="center" valign="middle" />
+        <fontsize size="2"/>
+        <path>
+            <move x="34" y="13.5"/>
+            <line x="20" y="13.5"/>
+        </path>
+        <fillstroke />
+        <path>
+            <move x="31.834936490538905" y="12.25"/>
+            <line x="31.834936490538905" y="14.75"/>
+            <line x="34" y="13.5"/>
+            <close/>
+        </path>
+        <fillstroke />
+        <text str="Infrared Data" x="25.91746824526945" y="13.5" align="center" valign="bottom" />
+    </foreground>
+</shape>
