@@ -1,4 +1,4 @@
-<shape aspect="fixed" h="188" w="180" strokewidth="inherit" name="Temperature and Humidity Sensor (DHT11) [0368]">
+<shape aspect="fixed" h="188" w="180" strokewidth="inherit" name="Temperature and Humidity Sensor (DHT11) [0268]">
     <connections>
         <constraint x="0.45555555555555555" y="0.0" perimeter="0" name="VCC (3.3V to 5V)"/>
         <constraint x="0.45555555555555555" y="1.0" perimeter="0" name="GND"/>
