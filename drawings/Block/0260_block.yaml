@@ -1,0 +1,13 @@
+schema_version: "1.0.0"
+disable: false
+
+dip: false
+block: true
+style: block_1
+name: "Photoresistor [0260]"
+title:
+  - "Photoresistor"
+left:
+  - - "Light"
+right:
+  - - "Light Signal"

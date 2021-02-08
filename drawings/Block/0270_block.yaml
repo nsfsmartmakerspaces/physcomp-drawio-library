@@ -1,0 +1,11 @@
+schema_version: "1.0.0"
+disable: false
+
+dip: false
+block: true
+style: block_1
+name: "Thermistor [0270]"
+title:
+  - "Thermistor"
+right:
+  - - "Temperature"

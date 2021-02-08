@@ -4,7 +4,7 @@ disable: false
 dip: false
 block: true
 style: block_1
-name: "Temperature and Humidity Sensor (DHT11) [0368]"
+name: "Temperature and Humidity Sensor (DHT11) [0268]"
 title:
   - "Temp &"
   - "Humidity"

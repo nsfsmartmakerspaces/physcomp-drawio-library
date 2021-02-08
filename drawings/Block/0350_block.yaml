@@ -4,12 +4,11 @@ disable: false
 dip: false
 block: true
 style: block_1
-name: "Tactile Button Switch [0356]"
+name: "Lever Switch [0350]"
 title:
-  - "Tactile"
-  - "Button"
+  - "Lever"
   - "Switch"
 left:
   - - "Actuation"
 right:
-  - - "Button Signal"
+  - - "Lever Signal"
