@@ -1,18 +1,18 @@
 schema_version: "1.0.0"
 
 base:
-  width: 20
-  height: 20
+  width: 80
+  height: 80
 title_text:
-  size: 4
+  size: 16
   line_spacing: 0.5
 pin_text:
-  vert_width: 7
-  horiz_height: 7
-  size: 2
+  vert_width: 28
+  horiz_height: 28
+  size: 8
   line_spacing: 0.5
-  pad: 1
+  pad: 2
 pins:
-  length: 14
-  arrow_size: 2.5
-  left_arrow_pad: 0.5
+  length: 56
+  arrow_size: 10
+  left_arrow_pad: 2.0
