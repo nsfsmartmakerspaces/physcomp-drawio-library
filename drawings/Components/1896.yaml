@@ -8,10 +8,12 @@ name: "Servo Motor [1896]"
 title:
   - "Servo"
   - "Motor"
-left:
-  - - "PWM"
-    - "(orange)"
-  - - "VCC"
+top:
+  - - "VCC (4.8–6V)"
     - "(red)"
-  - - "Ground"
+left:
+  - - "signal"
+    - "(orange)"
+bottom:
+  - - "ground"
     - "(brown)"
