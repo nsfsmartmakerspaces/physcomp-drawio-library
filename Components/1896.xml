@@ -1,8 +1,8 @@
-<shape aspect="fixed" h="184" w="116" strokewidth="inherit" name="Servo Motor [1896]">
+<shape aspect="fixed" h="160" w="180" strokewidth="inherit" name="Servo Motor [1896]">
     <connections>
-        <constraint x="0.0" y="0.34782608695652173" perimeter="0" name="PWM (orange)"/>
-        <constraint x="0.0" y="0.5" perimeter="0" name="VCC (red)"/>
-        <constraint x="0.0" y="0.6521739130434783" perimeter="0" name="Ground (brown)"/>
+        <constraint x="0.5444444444444444" y="0.0" perimeter="0" name="VCC (4.8–6V) (red)"/>
+        <constraint x="0.5444444444444444" y="1.0" perimeter="0" name="ground (brown)"/>
+        <constraint x="0.0" y="0.5" perimeter="0" name="signal (orange)"/>
     </connections>
     <background>
         <strokecolor color="#000000"/>
@@ -10,12 +10,12 @@
         <fontcolor color="#000000"/>
         <alpha alpha="1"/>
         <path>
-            <move x="16" y="0"/>
-            <line x="16" y="184"/>
-            <line x="116" y="184"/>
-            <line x="116" y="0"/>
-            <line x="82.66666666666666" y="0"/>
-            <line x="49.33333333333333" y="0"/>
+            <move x="16" y="16"/>
+            <line x="16" y="144"/>
+            <line x="180" y="144"/>
+            <line x="180" y="16"/>
+            <line x="125.33333333333334" y="16"/>
+            <line x="70.66666666666667" y="16"/>
             <close/>
         </path>
         <fillstroke />
@@ -26,29 +26,29 @@
         <fontcolor color="#000000"/>
         <alpha alpha="1"/>
         <fontsize size="16"/>
-        <text str="Servo" x="66.0" y="83.75" align="center" valign="middle" />
-        <text str="Motor" x="66.0" y="100.25" align="center" valign="middle" />
+        <text str="Servo" x="98.0" y="71.75" align="center" valign="middle" />
+        <text str="Motor" x="98.0" y="88.25" align="center" valign="middle" />
         <fontsize size="10"/>
         <path>
-            <move x="0" y="64.0"/>
-            <line x="16" y="64.0"/>
+            <move x="98.0" y="0"/>
+            <line x="98.0" y="16"/>
         </path>
         <fillstroke />
-        <text str="PWM" x="20" y="58.875" align="left" valign="middle" />
-        <text str="(orange)" x="20" y="69.125" align="left" valign="middle" />
+        <text str="VCC (4.8–6V)" x="98.0" y="21.0" align="center" valign="top" />
+        <text str="(red)" x="98.0" y="31.25" align="center" valign="top" />
         <path>
-            <move x="0" y="92.0"/>
-            <line x="16" y="92.0"/>
+            <move x="98.0" y="160"/>
+            <line x="98.0" y="144"/>
         </path>
         <fillstroke />
-        <text str="VCC" x="20" y="86.875" align="left" valign="middle" />
-        <text str="(red)" x="20" y="97.125" align="left" valign="middle" />
+        <text str="ground" x="98.0" y="134.75" align="center" valign="bottom" />
+        <text str="(brown)" x="98.0" y="145.0" align="center" valign="bottom" />
         <path>
-            <move x="0" y="120.0"/>
-            <line x="16" y="120.0"/>
+            <move x="0" y="80.0"/>
+            <line x="16" y="80.0"/>
         </path>
         <fillstroke />
-        <text str="Ground" x="20" y="114.875" align="left" valign="middle" />
-        <text str="(brown)" x="20" y="125.125" align="left" valign="middle" />
+        <text str="signal" x="20" y="74.875" align="left" valign="middle" />
+        <text str="(orange)" x="20" y="85.125" align="left" valign="middle" />
     </foreground>
 </shape>
