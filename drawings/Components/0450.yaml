@@ -9,8 +9,7 @@ title:
   - "Pancake"
   - "Vibration"
   - "Motor"
-left:
-  - - "signal"
-    - "(5V)"
+top:
+  - "VCC (~3V)"
 bottom:
   - "GND"
