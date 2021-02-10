@@ -9,7 +9,7 @@ title:
   - "H-Bridge"
   - "Motor"
   - "Driver"
-  - "L293DNE"
+  - "(L293DNE)"
 left:
   - "motor 1 enable"
   - "motor 1 signal A"
@@ -28,3 +28,8 @@ right:
   - "motor 2 signal B"
   - "motor 2 output B"
   - "motor 2 enable"
+# widen:
+bottom:
+  - ""
+  - ""
+  - ""
