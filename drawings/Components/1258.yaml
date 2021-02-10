@@ -4,8 +4,27 @@ disable: false
 dip: true
 block: false
 style: chip_1
-name: "H-Bridge Motor Driver [1258]"
+name: "H-Bridge Motor Driver L293DNE [1258]"
 title:
   - "H-Bridge"
   - "Motor"
   - "Driver"
+  - "L293DNE"
+left:
+  - "motor 1 enable"
+  - "motor 1 signal A"
+  - "motor 1 output A"
+  - "ground"
+  - "ground"
+  - "motor 1 signal B"
+  - "motor 1 output B"
+  - "motor power (4.5–36V)"
+right:
+  - "logic power (5V)"
+  - "motor 2 signal A"
+  - "motor 2 output A"
+  - "ground"
+  - "ground"
+  - "motor 2 signal B"
+  - "motor 2 output B"
+  - "motor 2 enable"
