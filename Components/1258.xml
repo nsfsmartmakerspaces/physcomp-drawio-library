@@ -1,21 +1,21 @@
-<shape aspect="fixed" h="324" w="132" strokewidth="inherit" name="H-Bridge Motor Driver L293DNE [1258]">
+<shape aspect="fixed" h="340" w="324" strokewidth="inherit" name="H-Bridge Motor Driver L293DNE [1258]">
     <connections>
-        <constraint x="0.0" y="0.19753086419753085" perimeter="0" name="motor 1 enable"/>
-        <constraint x="0.0" y="0.2839506172839506" perimeter="0" name="motor 1 signal A"/>
-        <constraint x="0.0" y="0.37037037037037035" perimeter="0" name="motor 1 output A"/>
-        <constraint x="0.0" y="0.4567901234567901" perimeter="0" name="ground"/>
-        <constraint x="0.0" y="0.5432098765432098" perimeter="0" name="ground"/>
-        <constraint x="0.0" y="0.6296296296296297" perimeter="0" name="motor 1 signal B"/>
-        <constraint x="0.0" y="0.7160493827160493" perimeter="0" name="motor 1 output B"/>
-        <constraint x="0.0" y="0.8024691358024691" perimeter="0" name="motor power (4.5–36V)"/>
-        <constraint x="1.0" y="0.19753086419753085" perimeter="0" name="logic power (5V)"/>
-        <constraint x="1.0" y="0.2839506172839506" perimeter="0" name="motor 2 signal A"/>
-        <constraint x="1.0" y="0.37037037037037035" perimeter="0" name="motor 2 output A"/>
-        <constraint x="1.0" y="0.4567901234567901" perimeter="0" name="ground"/>
-        <constraint x="1.0" y="0.5432098765432098" perimeter="0" name="ground"/>
-        <constraint x="1.0" y="0.6296296296296297" perimeter="0" name="motor 2 signal B"/>
-        <constraint x="1.0" y="0.7160493827160493" perimeter="0" name="motor 2 output B"/>
-        <constraint x="1.0" y="0.8024691358024691" perimeter="0" name="motor 2 enable"/>
+        <constraint x="0.0" y="0.18823529411764706" perimeter="0" name="motor 1 enable"/>
+        <constraint x="0.0" y="0.27058823529411763" perimeter="0" name="motor 1 signal A"/>
+        <constraint x="0.0" y="0.35294117647058826" perimeter="0" name="motor 1 output A"/>
+        <constraint x="0.0" y="0.43529411764705883" perimeter="0" name="ground"/>
+        <constraint x="0.0" y="0.5176470588235295" perimeter="0" name="ground"/>
+        <constraint x="0.0" y="0.6" perimeter="0" name="motor 1 signal B"/>
+        <constraint x="0.0" y="0.6823529411764706" perimeter="0" name="motor 1 output B"/>
+        <constraint x="0.0" y="0.7647058823529411" perimeter="0" name="motor power (4.5–36V)"/>
+        <constraint x="1.0" y="0.18823529411764706" perimeter="0" name="logic power (5V)"/>
+        <constraint x="1.0" y="0.27058823529411763" perimeter="0" name="motor 2 signal A"/>
+        <constraint x="1.0" y="0.35294117647058826" perimeter="0" name="motor 2 output A"/>
+        <constraint x="1.0" y="0.43529411764705883" perimeter="0" name="ground"/>
+        <constraint x="1.0" y="0.5176470588235295" perimeter="0" name="ground"/>
+        <constraint x="1.0" y="0.6" perimeter="0" name="motor 2 signal B"/>
+        <constraint x="1.0" y="0.6823529411764706" perimeter="0" name="motor 2 output B"/>
+        <constraint x="1.0" y="0.7647058823529411" perimeter="0" name="motor 2 enable"/>
     </connections>
     <background>
         <strokecolor color="#000000"/>
@@ -25,10 +25,10 @@
         <path>
             <move x="16" y="0"/>
             <line x="16" y="324"/>
-            <line x="116" y="324"/>
-            <line x="116" y="0"/>
-            <line x="82.66666666666666" y="0"/>
-            <arc rx="16.666666666666668" ry="16.666666666666668" x-axis-rotation="0" large-arc-flag="1" sweep-flag="1" x="49.33333333333333" y="0"/>
+            <line x="308" y="324"/>
+            <line x="308" y="0"/>
+            <line x="210.66666666666669" y="0"/>
+            <arc rx="48.666666666666664" ry="48.666666666666664" x-axis-rotation="0" large-arc-flag="1" sweep-flag="1" x="113.33333333333334" y="0"/>
             <close/>
         </path>
         <fillstroke />
@@ -39,10 +39,10 @@
         <fontcolor color="#000000"/>
         <alpha alpha="1"/>
         <fontsize size="16"/>
-        <text str="H-Bridge" x="66.0" y="137.25" align="center" valign="middle" />
-        <text str="Motor" x="66.0" y="153.75" align="center" valign="middle" />
-        <text str="Driver" x="66.0" y="170.25" align="center" valign="middle" />
-        <text str="L293DNE" x="66.0" y="186.75" align="center" valign="middle" />
+        <text str="H-Bridge" x="162.0" y="137.25" align="center" valign="middle" />
+        <text str="Motor" x="162.0" y="153.75" align="center" valign="middle" />
+        <text str="Driver" x="162.0" y="170.25" align="center" valign="middle" />
+        <text str="(L293DNE)" x="162.0" y="186.75" align="center" valign="middle" />
         <fontsize size="10"/>
         <path>
             <move x="0" y="64.0"/>
@@ -93,52 +93,52 @@
         <fillstroke />
         <text str="motor power (4.5–36V)" x="20" y="260.0" align="left" valign="middle" />
         <path>
-            <move x="132" y="64.0"/>
-            <line x="116" y="64.0"/>
+            <move x="324" y="64.0"/>
+            <line x="308" y="64.0"/>
         </path>
         <fillstroke />
-        <text str="logic power (5V)" x="112" y="64.0" align="right" valign="middle" />
+        <text str="logic power (5V)" x="304" y="64.0" align="right" valign="middle" />
         <path>
-            <move x="132" y="92.0"/>
-            <line x="116" y="92.0"/>
+            <move x="324" y="92.0"/>
+            <line x="308" y="92.0"/>
         </path>
         <fillstroke />
-        <text str="motor 2 signal A" x="112" y="92.0" align="right" valign="middle" />
+        <text str="motor 2 signal A" x="304" y="92.0" align="right" valign="middle" />
         <path>
-            <move x="132" y="120.0"/>
-            <line x="116" y="120.0"/>
+            <move x="324" y="120.0"/>
+            <line x="308" y="120.0"/>
         </path>
         <fillstroke />
-        <text str="motor 2 output A" x="112" y="120.0" align="right" valign="middle" />
+        <text str="motor 2 output A" x="304" y="120.0" align="right" valign="middle" />
         <path>
-            <move x="132" y="148.0"/>
-            <line x="116" y="148.0"/>
+            <move x="324" y="148.0"/>
+            <line x="308" y="148.0"/>
         </path>
         <fillstroke />
-        <text str="ground" x="112" y="148.0" align="right" valign="middle" />
+        <text str="ground" x="304" y="148.0" align="right" valign="middle" />
         <path>
-            <move x="132" y="176.0"/>
-            <line x="116" y="176.0"/>
+            <move x="324" y="176.0"/>
+            <line x="308" y="176.0"/>
         </path>
         <fillstroke />
-        <text str="ground" x="112" y="176.0" align="right" valign="middle" />
+        <text str="ground" x="304" y="176.0" align="right" valign="middle" />
         <path>
-            <move x="132" y="204.0"/>
-            <line x="116" y="204.0"/>
+            <move x="324" y="204.0"/>
+            <line x="308" y="204.0"/>
         </path>
         <fillstroke />
-        <text str="motor 2 signal B" x="112" y="204.0" align="right" valign="middle" />
+        <text str="motor 2 signal B" x="304" y="204.0" align="right" valign="middle" />
         <path>
-            <move x="132" y="232.0"/>
-            <line x="116" y="232.0"/>
+            <move x="324" y="232.0"/>
+            <line x="308" y="232.0"/>
         </path>
         <fillstroke />
-        <text str="motor 2 output B" x="112" y="232.0" align="right" valign="middle" />
+        <text str="motor 2 output B" x="304" y="232.0" align="right" valign="middle" />
         <path>
-            <move x="132" y="260.0"/>
-            <line x="116" y="260.0"/>
+            <move x="324" y="260.0"/>
+            <line x="308" y="260.0"/>
         </path>
         <fillstroke />
-        <text str="motor 2 enable" x="112" y="260.0" align="right" valign="middle" />
+        <text str="motor 2 enable" x="304" y="260.0" align="right" valign="middle" />
     </foreground>
 </shape>
