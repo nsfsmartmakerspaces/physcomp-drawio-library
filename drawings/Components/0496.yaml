@@ -8,7 +8,7 @@ name: "Active Buzzer [0496]"
 title:
   - "Active"
   - "Buzzer"
-left:
-  - "+ (signal)"
+top:
+  - "VCC"
 bottom:
   - "GND"
