@@ -8,7 +8,7 @@ name: "3-Axis Accelerometer [0368]"
 title:
   - "3-Axis"
   - "Accelerometer"
-right:
+left:
   - - "Physical"
     - "Motion"
 right:
