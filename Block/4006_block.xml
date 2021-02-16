@@ -54,7 +54,7 @@
             <close/>
         </path>
         <fillstroke />
-        <text str="Physical Infrared" x="210.66987298107782" y="57.0" align="center" valign="bottom" />
-        <text str="Light" x="210.66987298107782" y="65.0" align="center" valign="top" />
+        <text str="Physical" x="210.66987298107782" y="57.0" align="center" valign="bottom" />
+        <text str="Infrared Light" x="210.66987298107782" y="65.0" align="center" valign="top" />
     </foreground>
 </shape>

@@ -40,8 +40,8 @@
             <close/>
         </path>
         <fillstroke />
-        <text str="Physical Infrared" x="29.669872981077805" y="57.0" align="center" valign="bottom" />
-        <text str="Light" x="29.669872981077805" y="65.0" align="center" valign="top" />
+        <text str="Physical" x="29.669872981077805" y="57.0" align="center" valign="bottom" />
+        <text str="Infrared Light" x="29.669872981077805" y="65.0" align="center" valign="top" />
         <path>
             <move x="250" y="59.0"/>
             <line x="180" y="59.0"/>
