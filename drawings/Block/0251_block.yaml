@@ -10,7 +10,7 @@ title:
   - "Receiver"
 left:
   - - "Physical Infrared"
-  - - "Light"
+    - "Light"
 right:
   - - "Infrared"
     - "Signal"
