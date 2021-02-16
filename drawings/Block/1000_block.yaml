@@ -2,8 +2,8 @@ schema_version: "1.0.0"
 disable: false
 
 dip: false
-block: false
-style: chip_1
+block: true
+style: block_1
 name: "Arduino Uno [1000]"
 title:
   - "Arduino"
