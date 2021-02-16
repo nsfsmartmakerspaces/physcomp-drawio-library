@@ -7,7 +7,7 @@ style: block_1
 name: "Thermistor [0270]"
 title:
   - "Thermistor"
-right:
+left:
   - - "Physical"
     - "Temperature"
 right:
