@@ -9,12 +9,12 @@ title:
   - "Breadboard"
   - "Power"
   - "Supply"
-left:
-  - ""
+top:
   - - "Barrel Jack"
     - "(power in)"
 right:
-  - "USB"
+  - - "USB"
+    - "Power"
   - "5V"
   - "3.3V"
 bottom:
