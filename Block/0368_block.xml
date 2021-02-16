@@ -1,6 +1,6 @@
 <shape aspect="fixed" h="118" w="180" strokewidth="inherit" name="3-Axis Accelerometer [0368]">
     <connections>
-        <constraint x="1.0" y="0.5" perimeter="0" name="Movement Data"/>
+        <constraint x="1.0" y="0.5" perimeter="0" name="Movement Signal"/>
     </connections>
     <background>
         <strokecolor color="#000000"/>
@@ -39,6 +39,7 @@
             <close/>
         </path>
         <fillstroke />
-        <text str="Movement Data" x="140.66987298107782" y="57.0" align="center" valign="bottom" />
+        <text str="Movement" x="140.66987298107782" y="57.0" align="center" valign="bottom" />
+        <text str="Signal" x="140.66987298107782" y="65.0" align="center" valign="top" />
     </foreground>
 </shape>

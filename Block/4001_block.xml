@@ -1,6 +1,6 @@
 <shape aspect="fixed" h="118" w="180" strokewidth="inherit" name="LCD Display Module [4001]">
     <connections>
-        <constraint x="0.0" y="0.5" perimeter="0" name="Display Input"/>
+        <constraint x="0.0" y="0.5" perimeter="0" name="Display Input Signal"/>
     </connections>
     <background>
         <strokecolor color="#000000"/>
@@ -39,6 +39,7 @@
             <close/>
         </path>
         <fillstroke />
-        <text str="Display Input" x="29.669872981077805" y="57.0" align="center" valign="bottom" />
+        <text str="Display" x="29.669872981077805" y="57.0" align="center" valign="bottom" />
+        <text str="Input Signal" x="29.669872981077805" y="65.0" align="center" valign="top" />
     </foreground>
 </shape>

@@ -1,6 +1,6 @@
 <shape aspect="fixed" h="118" w="250" strokewidth="inherit" name="Photoresistor [0260]">
     <connections>
-        <constraint x="0.0" y="0.5" perimeter="0" name="Light"/>
+        <constraint x="0.0" y="0.5" perimeter="0" name="Physical Light"/>
         <constraint x="1.0" y="0.5" perimeter="0" name="Light Signal"/>
     </connections>
     <background>
@@ -39,7 +39,8 @@
             <close/>
         </path>
         <fillstroke />
-        <text str="Light" x="29.669872981077805" y="57.0" align="center" valign="bottom" />
+        <text str="Physical" x="29.669872981077805" y="57.0" align="center" valign="bottom" />
+        <text str="Light" x="29.669872981077805" y="65.0" align="center" valign="top" />
         <path>
             <move x="250" y="59.0"/>
             <line x="180" y="59.0"/>
@@ -52,6 +53,7 @@
             <close/>
         </path>
         <fillstroke />
-        <text str="Light Signal" x="210.66987298107782" y="57.0" align="center" valign="bottom" />
+        <text str="Light" x="210.66987298107782" y="57.0" align="center" valign="bottom" />
+        <text str="Signal" x="210.66987298107782" y="65.0" align="center" valign="top" />
     </foreground>
 </shape>

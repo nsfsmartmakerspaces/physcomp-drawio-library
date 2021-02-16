@@ -1,6 +1,6 @@
 <shape aspect="fixed" h="118" w="180" strokewidth="inherit" name="Thermistor [0270]">
     <connections>
-        <constraint x="1.0" y="0.5" perimeter="0" name="Temperature"/>
+        <constraint x="1.0" y="0.5" perimeter="0" name="Temperature Signal"/>
     </connections>
     <background>
         <strokecolor color="#000000"/>
@@ -39,5 +39,6 @@
         </path>
         <fillstroke />
         <text str="Temperature" x="140.66987298107782" y="57.0" align="center" valign="bottom" />
+        <text str="Signal" x="140.66987298107782" y="65.0" align="center" valign="top" />
     </foreground>
 </shape>

@@ -41,7 +41,8 @@
             <close/>
         </path>
         <fillstroke />
-        <text str="Stepper Signal" x="29.669872981077805" y="57.0" align="center" valign="bottom" />
+        <text str="Stepper" x="29.669872981077805" y="57.0" align="center" valign="bottom" />
+        <text str="Signal" x="29.669872981077805" y="65.0" align="center" valign="top" />
         <path>
             <move x="250" y="59.0"/>
             <line x="180" y="59.0"/>
@@ -54,6 +55,7 @@
             <close/>
         </path>
         <fillstroke />
-        <text str="Stepper Power" x="210.66987298107782" y="57.0" align="center" valign="bottom" />
+        <text str="Stepper" x="210.66987298107782" y="57.0" align="center" valign="bottom" />
+        <text str="Power" x="210.66987298107782" y="65.0" align="center" valign="top" />
     </foreground>
 </shape>
