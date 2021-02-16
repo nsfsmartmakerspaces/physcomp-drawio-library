@@ -9,6 +9,8 @@ title:
   - "Stepper"
   - "Motor"
 left:
-  - "Stepper Power"
+  - - "Stepper"
+    - "Power"
 right:
- - "Rotation"
+ - - "Physical"
+   - "Rotation"

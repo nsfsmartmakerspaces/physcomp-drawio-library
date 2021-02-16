@@ -10,6 +10,8 @@ title:
   - "Button"
   - "Switch"
 left:
-  - - "Actuation"
+  - - "Physical"
+    - "Actuation"
 right:
-  - - "Button Signal"
+  - - "Button"
+    - "Signal"

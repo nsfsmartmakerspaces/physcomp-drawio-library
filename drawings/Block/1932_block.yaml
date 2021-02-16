@@ -9,6 +9,8 @@ title:
   - "DC"
   - "Motor"
 left:
-  - "Motor Power"
+  - - "Motor"
+    - "Power"
 right:
- - "Rotation"
+ - - "Physical"
+   - "Rotation"

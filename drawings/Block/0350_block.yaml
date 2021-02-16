@@ -9,6 +9,8 @@ title:
   - "Lever"
   - "Switch"
 left:
-  - - "Actuation"
+  - - "Physical"
+    - "Actuation"
 right:
-  - - "Lever Signal"
+  - - "Lever"
+    - "Signal"

@@ -9,4 +9,5 @@ title:
   - "LCD Display"
   - "Module"
 left:
-  - "Display Input"
+  - - "Display"
+    - "Input Signal"

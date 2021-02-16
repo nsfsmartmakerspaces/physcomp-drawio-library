@@ -8,5 +8,9 @@ name: "Ultrasonic Ranger (HCSR04) [0572]"
 title:
   - "Ultrasonic"
   - "Ranger"
+left:
+  - - "Physical"
+    - "Distance"
 right:
-  - "Distance"
+  - - "Distance"
+    - "Signal"

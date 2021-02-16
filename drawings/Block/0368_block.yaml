@@ -9,4 +9,8 @@ title:
   - "3-Axis"
   - "Accelerometer"
 right:
-  - "Movement Data"
+  - - "Physical"
+    - "Motion"
+right:
+  - - "Movement"
+    - "Signal"

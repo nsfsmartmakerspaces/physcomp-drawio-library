@@ -9,6 +9,8 @@ title:
   - "Passive"
   - "Buzzer"
 left:
-  - "Buzzer Signal"
+  - - "Buzzer"
+    - "Signal"
 right:
-  - "Sound"
+  - - "Physical"
+    - "Sound"

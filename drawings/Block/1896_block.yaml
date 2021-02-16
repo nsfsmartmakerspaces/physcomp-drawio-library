@@ -9,6 +9,8 @@ title:
   - "Servo"
   - "Motor"
 left:
-  - - "Servo Signal"
+  - - "Servo"
+    - "Signal"
 right:
- - "Rotation"
+ - - "Physical"
+   - "Rotation"

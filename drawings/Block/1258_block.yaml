@@ -10,6 +10,8 @@ title:
   - "Motor"
   - "Driver"
 left:
- - "Motor Signal"
+ - - "Motor"
+   - "Signal"
 right:
- - "Motor Power"
+ - - "Motor"
+   - "Power"

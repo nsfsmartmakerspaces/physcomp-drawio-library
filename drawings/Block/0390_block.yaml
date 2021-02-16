@@ -8,6 +8,8 @@ name: "Potentiometer [0390]"
 title:
   - "Potentiometer"
 left:
-  - - "Rotation"
+  - - "Physical"
+    - "Rotation"
 right:
-  - - "Potentiometer Signal"
+  - - "Potentiometer"
+    - "Signal"

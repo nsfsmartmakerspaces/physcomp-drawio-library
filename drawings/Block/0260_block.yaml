@@ -8,6 +8,8 @@ name: "Photoresistor [0260]"
 title:
   - "Photoresistor"
 left:
-  - - "Light"
+  - - "Physical"
+    - "Light"
 right:
-  - - "Light Signal"
+  - - "Light"
+    - "Signal"

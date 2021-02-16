@@ -10,6 +10,8 @@ title:
   - "Vibration"
   - "Motor"
 left:
-  - - "Vibration Signal"
+  - - "Vibration"
+    - "Signal"
 right:
-  - "Vibration"
+  - - "Physical"
+    - "Vibration"

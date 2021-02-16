@@ -8,4 +8,8 @@ name: "Thermistor [0270]"
 title:
   - "Thermistor"
 right:
+  - - "Physical"
+    - "Temperature"
+right:
   - - "Temperature"
+    - "Signal"

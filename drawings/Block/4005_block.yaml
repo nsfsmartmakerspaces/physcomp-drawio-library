@@ -10,6 +10,8 @@ title:
   - "Motor"
   - "Driver"
 left:
-  - "Stepper Signal"
+  - - "Stepper"
+    - "Signal"
 right:
-  - "Stepper Power"
+  - - "Stepper"
+    - "Power"

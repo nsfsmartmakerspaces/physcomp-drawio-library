@@ -9,6 +9,8 @@ title:
   - "Tilt"
   - "Switch"
 left:
-  - - "Tilt"
+  - - "Physical"
+    - "Tilt"
 right:
-  - - "Tilt Signal"
+  - - "Tilt"
+    - "Signal"

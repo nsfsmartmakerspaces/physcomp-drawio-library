@@ -8,5 +8,9 @@ name: "Infrared Remote [4006]"
 title:
   - "Infrared"
   - "Remote"
+left:
+  - - "Physical"
+    - "Button Press"
 right:
-  - "IR Light"
+  - - "Physical Infrared"
+    - "Light"

@@ -10,6 +10,8 @@ title:
   - "Emitting"
   - "Diode (LED)"
 left:
- - "LED Signal"
+ - - "LED"
+   - "Signal"
 right:
- - "Light"
+ - - "Physical"
+   - "Light"

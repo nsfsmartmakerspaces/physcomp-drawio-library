@@ -9,6 +9,8 @@ title:
   - "Infrared"
   - "Receiver"
 left:
-  - - "Infrared Light"
+  - - "Physical Infrared"
+  - - "Light"
 right:
-  - - "Infrared Data"
+  - - "Infrared"
+    - "Signal"

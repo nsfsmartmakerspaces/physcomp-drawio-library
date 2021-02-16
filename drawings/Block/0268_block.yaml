@@ -9,6 +9,13 @@ title:
   - "Temp &"
   - "Humidity"
   - "Sensor"
+left:
+  - - "Physical"
+    - "Temperature"
+  - - "Physical"
+    - "Humidity"
 right:
-  - "Temperature"
-  - "Humidity"
+  - - "Temperature"
+    - "Signal"
+  - - "Humidity"
+    - "Signal"

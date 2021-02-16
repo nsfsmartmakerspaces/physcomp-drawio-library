@@ -9,6 +9,8 @@ title:
   - "Arduino"
   - "Uno"
 left:
-  - "Inputs"
+  - - "Input"
+    - "Signals"
 right:
-  - "Outputs"
+  - - "Output"
+    - "Signals"

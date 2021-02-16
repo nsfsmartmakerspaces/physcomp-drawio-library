@@ -9,6 +9,8 @@ title:
   - "Arcade"
   - "Push-button"
 left:
-  - - "Actuation"
+  - - "Physical"
+    - "Actuation"
 right:
-  - - "Button Signal"
+  - - "Button"
+    - "Signal"
