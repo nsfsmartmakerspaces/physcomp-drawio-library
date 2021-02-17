@@ -13,7 +13,7 @@ pin_text:
   horiz_height: 28
   size: 8
   line_spacing: 0.5
-  pad: 6
+  pad: 5
 pins:
   length: 70
   arrow_size: 10

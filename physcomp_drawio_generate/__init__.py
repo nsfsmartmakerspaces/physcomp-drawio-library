@@ -373,7 +373,7 @@ async def generate(src_file: str, file_name: str, dest_file: str, templates: dic
                     pin_opts[PIN_TEMPLATE_TEXT_VALIGN] = TEXT_VALIGN_TOP
                     pin_opts[PIN_TEMPLATE_Y] = y
                     # pin_opts[PIN_TEMPLATE_Y] += style["pin_text"]["size"] / 2
-                    pin_opts[PIN_TEMPLATE_Y] += style["pin_text"]["pad"]
+                    pin_opts[PIN_TEMPLATE_Y] += style["pin_text"]["pad"] / 2
                     pins += Template(templates["pin_horiz"]).substitute(pin_opts)
 
             connection_opts = {}
