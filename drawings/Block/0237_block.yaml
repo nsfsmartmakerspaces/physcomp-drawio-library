@@ -1,0 +1,20 @@
+schema_version: "1.0.0"
+disable: false
+
+dip: false
+block: true
+style: block_1
+name: "Optical Proximity Sensor [0237]"
+title:
+  - "Optical"
+  - "Proximity"
+  - "Sensor"
+  - "LTH-1550-01"
+bottom_text:
+  - "#0237"
+left:
+  - - "Physical"
+    - "Distance"
+right:
+  - - "Distance"
+    - "Signal"
