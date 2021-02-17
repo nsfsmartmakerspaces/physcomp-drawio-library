@@ -9,6 +9,9 @@ title:
   - "Light"
   - "Emitting"
   - "Diode (LED)"
+  - "%color%"
+placeholders:
+  "color": "!COLOR!"
 left:
  - - "LED"
    - "Signal"

@@ -58,6 +58,18 @@ def check_drawing_yaml_file(name: str, src_data: dict, styles: dict) -> bool:
         res = False
         print(f"Missing {DRAWING_YAML_TITLE} '{name}'")
 
+    if DRAWING_YAML_PLACEHOLDERS in src_data:
+        if type(src_data[DRAWING_YAML_PLACEHOLDERS]) is not dict:
+            res = False
+            print(f"{DRAWING_YAML_PLACEHOLDERS} is not dict in '{name}'")
+        for key in src_data[DRAWING_YAML_PLACEHOLDERS]:
+            if type(key) is not str:
+                res = False
+                print(f"A key in {DRAWING_YAML_PLACEHOLDERS} is not str in '{name}'")
+            if type(src_data[DRAWING_YAML_PLACEHOLDERS][key]) is not str:
+                res = False
+                print(f"A value of a key in {DRAWING_YAML_PLACEHOLDERS} is not str in '{name}'")
+
     for key in [DRAWING_YAML_TITLE, DRAWING_YAML_TOP, DRAWING_YAML_BOTTOM, DRAWING_YAML_LEFT, DRAWING_YAML_RIGHT]:
         if key in src_data:
             if type(src_data[key]) is not list:
@@ -399,6 +411,14 @@ async def generate(src_file: str, file_name: str, dest_file: str, templates: dic
     library_xml_opts[LIBRARY_XML_TEMPLATE_DATA] = drawio_compress(out)
     library_xml_opts[LIBRARY_XML_TEMPLATE_WIDTH] = template_opts[DRAWING_TEMPLATE_WIDTH]
     library_xml_opts[LIBRARY_XML_TEMPLATE_HEIGHT] = template_opts[DRAWING_TEMPLATE_HEIGHT]
+    library_xml_opts[LIBRARY_XML_TEMPLATE_PLACEHOLDERS] = ""
+    if DRAWING_YAML_PLACEHOLDERS in src_data:
+        for key in src_data[DRAWING_YAML_PLACEHOLDERS]:
+            library_xml_placeholder_opts = {}
+            library_xml_placeholder_opts[LIBRARY_XML_PLACEHOLDER_TEMPLATE_PLACEHOLDER] = key
+            library_xml_placeholder_opts[LIBRARY_XML_PLACEHOLDER_TEMPLATE_VALUE] = xmlEscape(src_data[DRAWING_YAML_PLACEHOLDERS][key])
+            placeholder = Template(templates["library_xml_placeholder"]).substitute(library_xml_placeholder_opts)
+            library_xml_opts[LIBRARY_XML_TEMPLATE_PLACEHOLDERS] += placeholder
     library_xml_data = drawio_compress(Template(templates["library_xml"]).substitute(library_xml_opts))
 
     library_data = {
@@ -484,6 +504,8 @@ async def main() -> None:
         drawing_templates["arrow"] = stream.read()
     with open(TEMPLATE_LIBRARY_XML, 'r') as stream:
         drawing_templates["library_xml"] = stream.read()
+    with open(TEMPLATE_LIBRARY_XML_PLACEHOLDER, 'r') as stream:
+        drawing_templates["library_xml_placeholder"] = stream.read()
 
     library_templates = {}
     with open(TEMPLATE_LIBRARY_START, 'r') as stream:

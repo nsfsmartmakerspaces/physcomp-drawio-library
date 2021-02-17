@@ -22,6 +22,15 @@ name: "Example"
 title:
   - "Cool Chip"
   - "123"
+  - "%customValue%"
+
+# Placeholders provide user-configurable text values
+# Simply use %value_name% anywhere there is text and
+# add it here. The object key must match your %key%
+# and the key's value is the default text. The key
+# must be XML safe (as an attribute)
+placeholders:
+  customValue: "HEYO CHANGE ME"
 
 # To disable any side of the chip, comment out or remove
 # that entire section.
