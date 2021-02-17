@@ -24,6 +24,11 @@ title:
   - "123"
   - "%customValue%"
 
+# Add text to the bottom right of the drawing. In dip
+# mode the text is in the bottom center
+bottom_text:
+  - "BOTTOM TEXT"
+
 # Placeholders provide user-configurable text values
 # Simply use %value_name% anywhere there is text and
 # add it here. The object key must match your %key%

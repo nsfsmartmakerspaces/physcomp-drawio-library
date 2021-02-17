@@ -8,6 +8,8 @@ name: "Ultrasonic Ranger (HCSR04) [0572]"
 title:
   - "Ultrasonic"
   - "Ranger"
+bottom_text:
+  - "#0572"
 top:
   - - "VCC"
     - "(5V)"

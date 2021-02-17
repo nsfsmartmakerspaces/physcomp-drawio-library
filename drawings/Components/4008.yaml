@@ -9,6 +9,8 @@ title:
   - "Shift"
   - "Register"
   - "(74HC595)"
+bottom_text:
+  - "#4008"
 left:
   - "QB"
   - "QC"

@@ -8,6 +8,8 @@ name: "Stepper Motor [4004]"
 title:
   - "Stepper"
   - "Motor"
+bottom_text:
+  - "#4004"
 left:
   - "A"
   - "B"

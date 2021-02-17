@@ -1,0 +1,2 @@
+
+        <text str="${text}" x="${x}" y="${y}" align="${align}" valign="bottom" placeholders="1"/>

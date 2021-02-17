@@ -9,6 +9,8 @@ title:
   - "Stepper"
   - "Motor"
   - "Driver"
+bottom_text:
+  - "#4005"
 top:
   - "5V to 12V"
 left:

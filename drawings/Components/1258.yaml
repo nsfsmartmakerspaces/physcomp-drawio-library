@@ -10,6 +10,8 @@ title:
   - "Motor"
   - "Driver"
   - "(L293DNE)"
+bottom_text:
+  - "#1258"
 left:
   - "motor 1 enable"
   - "motor 1 signal A"

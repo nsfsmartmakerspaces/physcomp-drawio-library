@@ -9,6 +9,8 @@ title:
   - "Tactile"
   - "Button"
   - "Switch"
+bottom_text:
+  - "#0356"
 left:
   - - "Physical"
     - "Actuation"

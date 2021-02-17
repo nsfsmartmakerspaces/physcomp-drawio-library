@@ -10,6 +10,8 @@ title:
   - "Proximity"
   - "Sensor"
   - "LTH-1550-01"
+bottom_text:
+  - "#0237"
 top:
   - - "LED"
     - "anode"

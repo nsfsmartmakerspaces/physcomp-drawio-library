@@ -9,6 +9,8 @@ title:
   - "Temp &"
   - "Humidity"
   - "Sensor"
+bottom_text:
+  - "#0268"
 left:
   - - "Physical"
     - "Temperature"

@@ -8,6 +8,8 @@ name: "Arcade Push-button [2461]"
 title:
   - "Arcade"
   - "Push-button"
+bottom_text:
+  - "#2461"
 left:
   - - "Physical"
     - "Actuation"

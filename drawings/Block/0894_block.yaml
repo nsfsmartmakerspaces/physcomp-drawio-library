@@ -10,6 +10,8 @@ title:
   - "Emitting"
   - "Diode (LED)"
   - "%color%"
+bottom_text:
+  - "#0894"
 placeholders:
   "color": "!COLOR!"
 left:

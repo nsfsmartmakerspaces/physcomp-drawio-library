@@ -16,6 +16,12 @@ title_text:
   size: 4
   line_spacing: 0.5
 
+# Text that goes in the bottom center or bottom right
+bottom_text:
+  size: 1.5
+  line_spacing: 0.125
+  pad: 4
+
 # Text for each pin
 pin_text:
   # Width of text for vertical pins

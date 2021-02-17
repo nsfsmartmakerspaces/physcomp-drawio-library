@@ -8,6 +8,8 @@ name: "LCD Display Module [4001]"
 title:
   - "LCD Display"
   - "Module"
+bottom_text:
+  - "#4001"
 top:
   - - "Vdd"
     - "(5V)"

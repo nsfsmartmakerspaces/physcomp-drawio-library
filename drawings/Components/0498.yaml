@@ -8,6 +8,8 @@ name: "Passive Buzzer [0498]"
 title:
   - "Passive"
   - "Buzzer"
+bottom_text:
+  - "#0498"
 top:
   - - "VCC"
     - "(must be square wave)"

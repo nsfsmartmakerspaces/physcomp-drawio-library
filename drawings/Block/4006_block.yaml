@@ -8,6 +8,8 @@ name: "Infrared Remote [4006]"
 title:
   - "Infrared"
   - "Remote"
+bottom_text:
+  - "#4006"
 left:
   - - "Physical"
     - "Button Press"

@@ -7,6 +7,8 @@ style: block_1
 name: "Photoresistor [0260]"
 title:
   - "Photoresistor"
+bottom_text:
+  - "#0260"
 left:
   - - "Physical"
     - "Light"

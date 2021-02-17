@@ -57,6 +57,9 @@ def check_drawing_yaml_file(name: str, src_data: dict, styles: dict) -> bool:
     if DRAWING_YAML_TITLE not in src_data:
         res = False
         print(f"Missing {DRAWING_YAML_TITLE} '{name}'")
+    if DRAWING_YAML_BOTTOM_TEXT not in src_data:
+        res = False
+        print(f"Missing {DRAWING_YAML_BOTTOM_TEXT} '{name}'")
 
     if DRAWING_YAML_PLACEHOLDERS in src_data:
         if type(src_data[DRAWING_YAML_PLACEHOLDERS]) is not dict:
@@ -70,7 +73,8 @@ def check_drawing_yaml_file(name: str, src_data: dict, styles: dict) -> bool:
                 res = False
                 print(f"A value of a key in {DRAWING_YAML_PLACEHOLDERS} is not str in '{name}'")
 
-    for key in [DRAWING_YAML_TITLE, DRAWING_YAML_TOP, DRAWING_YAML_BOTTOM, DRAWING_YAML_LEFT, DRAWING_YAML_RIGHT]:
+    for key in [DRAWING_YAML_TITLE, DRAWING_YAML_TOP, DRAWING_YAML_BOTTOM, DRAWING_YAML_LEFT, DRAWING_YAML_RIGHT,
+                DRAWING_YAML_BOTTOM_TEXT]:
         if key in src_data:
             if type(src_data[key]) is not list:
                 res = False
@@ -120,6 +124,17 @@ def check_style_yaml_file(name: str, src_data: dict) -> bool:
                type(src_data[STYLE_YAML_TITLE_TEXT][attr]) is not float)):
                 res = False
                 print(f"{attr} in {STYLE_YAML_TITLE_TEXT} is not int or float in '{name}'")
+    if STYLE_YAML_BOTTOM_TEXT not in src_data or type(src_data[STYLE_YAML_BOTTOM_TEXT]) is not dict:
+        res = False
+        print(f"{STYLE_YAML_BOTTOM_TEXT} missing or is not dict in '{name}'")
+    else:
+        for attr in [STYLE_YAML_BOTTOM_TEXT_SIZE, STYLE_YAML_BOTTOM_TEXT_LINE_SPACING,
+                     STYLE_YAML_BOTTOM_TEXT_PAD]:
+            if (attr not in src_data[STYLE_YAML_BOTTOM_TEXT] or
+               (type(src_data[STYLE_YAML_BOTTOM_TEXT][attr]) is not int and
+               type(src_data[STYLE_YAML_BOTTOM_TEXT][attr]) is not float)):
+                res = False
+                print(f"{attr} in {STYLE_YAML_BOTTOM_TEXT} is not int or float in '{name}'")
     if STYLE_YAML_PIN_TEXT not in src_data or type(src_data[STYLE_YAML_PIN_TEXT]) is not dict:
         res = False
         print(f"{STYLE_YAML_PIN_TEXT} missing or is not dict in '{name}'")
@@ -212,6 +227,7 @@ async def generate(src_file: str, file_name: str, dest_file: str, templates: dic
     template_opts[DRAWING_TEMPLATE_NAME] = src_data[DRAWING_YAML_NAME]
     template_opts[DRAWING_TEMPLATE_ASPECT] = ASPECT_FIXED
     template_opts[DRAWING_TEMPLATE_TITLE_TEXT_SIZE] = style["title_text"]["size"]
+    template_opts[DRAWING_TEMPLATE_BOTTOM_TEXT_SIZE] = style["bottom_text"]["size"]
     template_opts[DRAWING_TEMPLATE_PIN_TEXT_SIZE] = style["pin_text"]["size"]
     template_opts[DRAWING_TEMPLATE_PIN_LENGTH] = style["pins"]["length"]
     template_opts[DRAWING_TEMPLATE_RECT_WIDTH] = style["base"]["width"] + (style["pin_text"]["vert_width"] * max(len(src_data[DRAWING_YAML_TOP]), len(src_data[DRAWING_YAML_BOTTOM])))
@@ -271,6 +287,28 @@ async def generate(src_file: str, file_name: str, dest_file: str, templates: dic
         title_opts[TITLE_TEMPLATE_Y] = title_start + (style["title_text"]["size"] * i) + (style["title_text"]["size"] / 2) + (style["title_text"]["line_spacing"] * i)
         titles += Template(templates["title"]).substitute(title_opts)
     template_opts[DRAWING_TEMPLATE_RECT_TITLE_INSERT] = titles
+
+    bottom = ""
+    bottom_lines = len(src_data[DRAWING_YAML_BOTTOM_TEXT])
+    bottom_height = (style["bottom_text"]["size"] * bottom_lines) + ((bottom_lines - 1) * style["bottom_text"]["line_spacing"])
+    bottom_start = template_opts[DRAWING_TEMPLATE_RECT_HEIGHT] - (bottom_height / 2) - (style["bottom_text"]["pad"] / 2)
+    if len(src_data[DRAWING_YAML_TOP]) > 0:
+        bottom_start += style["pins"]["length"]
+    bottom_x = template_opts[DRAWING_TEMPLATE_RECT_WIDTH] / 2
+    bottom_align = TEXT_ALIGN_CENTER
+    if not src_data[DRAWING_YAML_BLOCK]:
+        bottom_x = template_opts[DRAWING_TEMPLATE_RECT_WIDTH] - style["bottom_text"]["pad"]
+        bottom_align = TEXT_ALIGN_RIGHT
+    if len(src_data[DRAWING_YAML_LEFT]) > 0:
+        bottom_x += style["pins"]["length"]
+    for i, line in enumerate(src_data[DRAWING_YAML_BOTTOM_TEXT]):
+        bottom_opts = {}
+        bottom_opts[BOTTOM_TEMPLATE_TEXT] = xmlEscape(line)
+        bottom_opts[BOTTOM_TEMPLATE_ALIGN] = bottom_align
+        bottom_opts[BOTTOM_TEMPLATE_X] = bottom_x
+        bottom_opts[BOTTOM_TEMPLATE_Y] = bottom_start + (style["bottom_text"]["size"] * i) + (style["bottom_text"]["size"] / 2) + (style["bottom_text"]["line_spacing"] * i)
+        bottom += Template(templates["bottom"]).substitute(bottom_opts)
+    template_opts[DRAWING_TEMPLATE_RECT_BOTTOM_INSERT] = bottom
 
     connections = ""
     pins = ""
@@ -465,6 +503,11 @@ async def load_style(styles: dict, name: str, path: str):
             "size": src_data[STYLE_YAML_TITLE_TEXT][STYLE_YAML_TITLE_TEXT_SIZE],
             "line_spacing": src_data[STYLE_YAML_TITLE_TEXT][STYLE_YAML_TITLE_TEXT_LINE_SPACING]
         },
+        "bottom_text": {
+            "size": src_data[STYLE_YAML_BOTTOM_TEXT][STYLE_YAML_BOTTOM_TEXT_SIZE],
+            "line_spacing": src_data[STYLE_YAML_BOTTOM_TEXT][STYLE_YAML_BOTTOM_TEXT_LINE_SPACING],
+            "pad": src_data[STYLE_YAML_BOTTOM_TEXT][STYLE_YAML_BOTTOM_TEXT_PAD]
+        },
         "pin_text": {
             "vert_width": src_data[STYLE_YAML_PIN_TEXT][STYLE_YAML_PIN_TEXT_VERT_WIDTH],
             "horiz_height": src_data[STYLE_YAML_PIN_TEXT][STYLE_YAML_PIN_TEXT_HORIZ_HEIGHT],
@@ -486,6 +529,8 @@ async def main() -> None:
         drawing_templates["main"] = stream.read()
     with open(TEMPLATE_DRAWING_TITLE, 'r') as stream:
         drawing_templates["title"] = stream.read()
+    with open(TEMPLATE_DRAWING_BOTTOM, 'r') as stream:
+        drawing_templates["bottom"] = stream.read()
     with open(TEMPLATE_DRAWING_LEAD, 'r') as stream:
         drawing_templates["lead"] = stream.read()
     with open(TEMPLATE_DRAWING_PIN_HORIZ, 'r') as stream:

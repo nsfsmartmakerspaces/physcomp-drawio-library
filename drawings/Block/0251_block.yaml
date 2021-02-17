@@ -8,6 +8,8 @@ name: "Infrared Receiver [0251]"
 title:
   - "Infrared"
   - "Receiver"
+bottom_text:
+  - "#0251"
 left:
   - - "Physical"
     - "Infrared Light"

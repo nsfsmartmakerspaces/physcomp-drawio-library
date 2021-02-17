@@ -8,6 +8,8 @@ name: "DC Motor [1932]"
 title:
   - "DC"
   - "Motor"
+bottom_text:
+  - "#1932"
 left:
   - - "Motor"
     - "Power"

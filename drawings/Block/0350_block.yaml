@@ -8,6 +8,8 @@ name: "Lever Switch [0350]"
 title:
   - "Lever"
   - "Switch"
+bottom_text:
+  - "#0350"
 left:
   - - "Physical"
     - "Actuation"

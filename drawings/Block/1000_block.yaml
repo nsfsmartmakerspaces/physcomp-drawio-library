@@ -8,6 +8,8 @@ name: "Arduino Uno [1000]"
 title:
   - "Arduino"
   - "Uno"
+bottom_text:
+  - "#1000"
 left:
   - - "Input"
     - "Signals"

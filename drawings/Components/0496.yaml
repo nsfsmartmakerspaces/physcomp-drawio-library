@@ -8,6 +8,8 @@ name: "Active Buzzer [0496]"
 title:
   - "Active"
   - "Buzzer"
+bottom_text:
+  - "#0496"
 top:
   - "VCC"
 bottom:

@@ -8,6 +8,8 @@ name: "3-Axis Accelerometer [0368]"
 title:
   - "3-Axis"
   - "Accelerometer"
+bottom_text:
+  - "#0368"
 top:
   - - "VCC"
     - "(5V)"

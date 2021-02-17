@@ -8,6 +8,8 @@ name: "Tilt Switch [0272]"
 title:
   - "Tilt"
   - "Switch"
+bottom_text:
+  - "#0272"
 left:
   - - "Physical"
     - "Tilt"

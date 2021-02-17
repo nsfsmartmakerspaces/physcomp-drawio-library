@@ -8,6 +8,8 @@ title:
   - "ABC"
   - "Cool Chip"
   - "123"
+bottom_text:
+  - "Part 2"
 left:
   - - "A1"
     - "A1.5"

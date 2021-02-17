@@ -9,6 +9,8 @@ title:
   - "Breadboard"
   - "Power"
   - "Supply"
+bottom_text:
+  - "#4003"
 top:
   - - "Barrel Jack"
     - "(power in)"

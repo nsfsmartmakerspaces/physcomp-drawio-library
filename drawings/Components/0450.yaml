@@ -9,6 +9,8 @@ title:
   - "Pancake"
   - "Vibration"
   - "Motor"
+bottom_text:
+  - "#0450"
 top:
   - "VCC (~3V)"
 bottom:

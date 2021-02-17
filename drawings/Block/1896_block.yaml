@@ -8,6 +8,8 @@ name: "Servo Motor [1896]"
 title:
   - "Servo"
   - "Motor"
+bottom_text:
+  - "#1896"
 left:
   - - "Servo"
     - "Signal"

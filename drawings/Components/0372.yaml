@@ -8,6 +8,8 @@ name: "Joystick Module [0372]"
 title:
   - "Joystick"
   - "Module"
+bottom_text:
+  - "#0372"
 top:
   - "5V"
 right:
