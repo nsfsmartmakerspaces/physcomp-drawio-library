@@ -1,1 +1,9 @@
-<arc rx="${radius}" ry="${radius}" x-axis-rotation="0" large-arc-flag="1" sweep-flag="1" x="${end_x}" y="${end_y}"/>
+<path>
+            <move x="${rect_left}" y="${rect_top}"/>
+            <line x="${rect_left}" y="${rect_bottom}"/>
+            <line x="${rect_right}" y="${rect_bottom}"/>
+            <line x="${rect_right}" y="${rect_top}"/>
+            <line x="${rect_dip_start}" y="${rect_top}"/>
+            <arc rx="${radius}" ry="${radius}" x-axis-rotation="0" large-arc-flag="1" sweep-flag="1" x="${end_x}" y="${end_y}"/>
+            <close/>
+        </path>

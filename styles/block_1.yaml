@@ -3,6 +3,8 @@ schema_version: "1.0.0"
 base:
   width: 110
   height: 90
+  rounded: true
+  border_radius: 20
 title_text:
   size: 16
   line_spacing: 0.5

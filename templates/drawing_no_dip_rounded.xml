@@ -1,0 +1,1 @@
+<roundrect x="${rect_left}" y="${rect_top}" h="${rect_height}" w="${rect_width}" arcsize="${rect_border_radius}"/>

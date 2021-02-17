@@ -92,7 +92,7 @@ def check_style_yaml_file(name: str, src_data: dict) -> bool:
         res = False
         print(f"{STYLE_YAML_BASE} missing or is not dict in '{name}'")
     else:
-        for attr in [STYLE_YAML_BASE_WIDTH, STYLE_YAML_BASE_HEIGHT]:
+        for attr in [STYLE_YAML_BASE_WIDTH, STYLE_YAML_BASE_HEIGHT, STYLE_YAML_BASE_BORDER_RADIUS]:
             if (attr not in src_data[STYLE_YAML_BASE] or
                (type(src_data[STYLE_YAML_BASE][attr]) is not int and
                type(src_data[STYLE_YAML_BASE][attr]) is not float)):
@@ -214,27 +214,32 @@ async def generate(src_file: str, file_name: str, dest_file: str, templates: dic
         template_opts[DRAWING_TEMPLATE_HEIGHT] += style["pins"]["length"]
     if len(src_data[DRAWING_YAML_BOTTOM]) > 0:
         template_opts[DRAWING_TEMPLATE_HEIGHT] += style["pins"]["length"]
-    template_opts[DRAWING_TEMPLATE_RECT_TOP] = 0
-    template_opts[DRAWING_TEMPLATE_RECT_BOTTOM] = template_opts[DRAWING_TEMPLATE_RECT_HEIGHT]
-    if len(src_data[DRAWING_YAML_TOP]) > 0:
-        template_opts[DRAWING_TEMPLATE_RECT_TOP] += style["pins"]["length"]
-        template_opts[DRAWING_TEMPLATE_RECT_BOTTOM] += style["pins"]["length"]
-    template_opts[DRAWING_TEMPLATE_RECT_LEFT] = 0
-    template_opts[DRAWING_TEMPLATE_RECT_RIGHT] = template_opts[DRAWING_TEMPLATE_RECT_WIDTH]
-    if len(src_data[DRAWING_YAML_LEFT]) > 0:
-        template_opts[DRAWING_TEMPLATE_RECT_LEFT] += style["pins"]["length"]
-        template_opts[DRAWING_TEMPLATE_RECT_RIGHT] += style["pins"]["length"]
-    template_opts[DRAWING_TEMPLATE_RECT_DIP_START] = template_opts[DRAWING_TEMPLATE_RECT_RIGHT] - (template_opts[DRAWING_TEMPLATE_RECT_WIDTH] / 3)
     # template_opts[DRAWING_TEMPLATE_TITLE_X] = template_opts[DRAWING_TEMPLATE_WIDTH] / 2
     # template_opts[DRAWING_TEMPLATE_TITLE_Y] = template_opts[DRAWING_TEMPLATE_HEIGHT] / 2
 
     dip_opts = {}
-    dip_opts[DIP_TEMPLATE_END_X] = template_opts[DRAWING_TEMPLATE_RECT_RIGHT] - (2 * (template_opts[DRAWING_TEMPLATE_RECT_WIDTH] / 3))
-    dip_opts[DIP_TEMPLATE_END_Y] = template_opts[DRAWING_TEMPLATE_RECT_TOP]
-    dip_opts[DIP_TEMPLATE_RADIUS] = (template_opts[DRAWING_TEMPLATE_RECT_RIGHT] - dip_opts[DIP_TEMPLATE_END_X]) / 4
+    dip_opts[DIP_TEMPLATE_RECT_WIDTH] = template_opts[DRAWING_TEMPLATE_RECT_WIDTH]
+    dip_opts[DIP_TEMPLATE_RECT_HEIGHT] = template_opts[DRAWING_TEMPLATE_RECT_HEIGHT]
+    dip_opts[DIP_TEMPLATE_RECT_TOP] = 0
+    dip_opts[DIP_TEMPLATE_RECT_BOTTOM] = template_opts[DRAWING_TEMPLATE_RECT_HEIGHT]
+    if len(src_data[DRAWING_YAML_TOP]) > 0:
+        dip_opts[DIP_TEMPLATE_RECT_TOP] += style["pins"]["length"]
+        dip_opts[DIP_TEMPLATE_RECT_BOTTOM] += style["pins"]["length"]
+    dip_opts[DIP_TEMPLATE_RECT_LEFT] = 0
+    dip_opts[DIP_TEMPLATE_RECT_RIGHT] = template_opts[DRAWING_TEMPLATE_RECT_WIDTH]
+    if len(src_data[DRAWING_YAML_LEFT]) > 0:
+        dip_opts[DIP_TEMPLATE_RECT_LEFT] += style["pins"]["length"]
+        dip_opts[DIP_TEMPLATE_RECT_RIGHT] += style["pins"]["length"]
+    dip_opts[DIP_TEMPLATE_RECT_DIP_START] = dip_opts[DIP_TEMPLATE_RECT_RIGHT] - (template_opts[DRAWING_TEMPLATE_RECT_WIDTH] / 3)
+    dip_opts[DIP_TEMPLATE_END_X] = dip_opts[DIP_TEMPLATE_RECT_RIGHT] - (2 * (template_opts[DRAWING_TEMPLATE_RECT_WIDTH] / 3))
+    dip_opts[DIP_TEMPLATE_END_Y] = dip_opts[DIP_TEMPLATE_RECT_TOP]
+    dip_opts[DIP_TEMPLATE_RADIUS] = (dip_opts[DIP_TEMPLATE_RECT_RIGHT] - dip_opts[DIP_TEMPLATE_END_X]) / 4
+    dip_opts[DIP_TEMPLATE_BORDER_RADIUS] = style["base"]["border_radius"]
 
-    if (src_data[DRAWING_YAML_DIP]):
+    if src_data[DRAWING_YAML_DIP]:
         template_opts[DRAWING_TEMPLATE_RECT_DIP_INSERT] = Template(templates["dip"]).substitute(dip_opts)
+    elif style["base"]["border_radius"] > 0:
+        template_opts[DRAWING_TEMPLATE_RECT_DIP_INSERT] = Template(templates["no_dip_rounded"]).substitute(dip_opts)
     else:
         template_opts[DRAWING_TEMPLATE_RECT_DIP_INSERT] = Template(templates["no_dip"]).substitute(dip_opts)
 
@@ -433,7 +438,8 @@ async def load_style(styles: dict, name: str, path: str):
     styles[name] = {
         "base": {
             "width": src_data[STYLE_YAML_BASE][STYLE_YAML_BASE_WIDTH],
-            "height": src_data[STYLE_YAML_BASE][STYLE_YAML_BASE_HEIGHT]
+            "height": src_data[STYLE_YAML_BASE][STYLE_YAML_BASE_HEIGHT],
+            "border_radius": src_data[STYLE_YAML_BASE][STYLE_YAML_BASE_BORDER_RADIUS]
         },
         "title_text": {
             "size": src_data[STYLE_YAML_TITLE_TEXT][STYLE_YAML_TITLE_TEXT_SIZE],
@@ -472,6 +478,8 @@ async def main() -> None:
         drawing_templates["dip"] = stream.read()
     with open(TEMPLATE_DRAWING_NO_DIP, 'r') as stream:
         drawing_templates["no_dip"] = stream.read()
+    with open(TEMPLATE_DRAWING_NO_DIP_ROUNDED, 'r') as stream:
+        drawing_templates["no_dip_rounded"] = stream.read()
     with open(TEMPLATE_DRAWING_ARROW, 'r') as stream:
         drawing_templates["arrow"] = stream.read()
     with open(TEMPLATE_LIBRARY_XML, 'r') as stream:

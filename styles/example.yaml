@@ -7,6 +7,10 @@ base:
   width: 20
   height: 20
 
+  # Border radius for rounded corners. Ignored for dip
+  # mode. Set to negative to disable.
+  border_radius: 5
+
 # Title text in center of rect
 title_text:
   size: 4
