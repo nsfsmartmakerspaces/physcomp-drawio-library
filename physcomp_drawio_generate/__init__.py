@@ -315,13 +315,13 @@ async def generate(src_file: str, file_name: str, dest_file: str, templates: dic
                 pin_start = y
                 pin_lines = len(pin)
                 pin_height = (style["pin_text"]["size"] * pin_lines) + ((pin_lines - 1) * style["pin_text"]["line_spacing"])
-                pin_valign = TEXT_VALIGN_TOP
+                pin_valign = TEXT_VALIGN_BOTTOM
                 if key == DRAWING_YAML_TOP:
-                    # pin_start += style["pin_text"]["pad"] / 2
+                    pin_start += style["pin_text"]["pad"] * 2
                     pass
                 elif key == DRAWING_YAML_BOTTOM:
                     pin_valign = TEXT_VALIGN_BOTTOM
-                    pin_start -= style["pin_text"]["pad"]
+                    pin_start -= style["pin_text"]["pad"] * 2
                 else:
                     pin_valign = TEXT_VALIGN_MIDDLE
                     pin_start -= pin_height / 2
