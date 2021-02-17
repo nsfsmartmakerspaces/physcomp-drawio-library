@@ -42,102 +42,104 @@
         <text str="Shift" x="98.0" y="145.5" align="center" valign="middle" placeholders="1"/>
         <text str="Register" x="98.0" y="162.0" align="center" valign="middle" placeholders="1"/>
         <text str="(74HC595)" x="98.0" y="178.5" align="center" valign="middle" placeholders="1"/>
+        <fontsize size="8"/>
+        <text str="#4008" x="176" y="322.0" align="right" valign="bottom" placeholders="1"/>
         <fontsize size="10"/>
         <path>
             <move x="0" y="64.0"/>
             <line x="16" y="64.0"/>
         </path>
         <fillstroke />
-        <text str="QB" x="20" y="64.0" align="left" valign="middle" />
+        <text str="QB" x="20" y="64.0" align="left" valign="middle" placeholders="1" />
         <path>
             <move x="0" y="92.0"/>
             <line x="16" y="92.0"/>
         </path>
         <fillstroke />
-        <text str="QC" x="20" y="92.0" align="left" valign="middle" />
+        <text str="QC" x="20" y="92.0" align="left" valign="middle" placeholders="1" />
         <path>
             <move x="0" y="120.0"/>
             <line x="16" y="120.0"/>
         </path>
         <fillstroke />
-        <text str="QD" x="20" y="120.0" align="left" valign="middle" />
+        <text str="QD" x="20" y="120.0" align="left" valign="middle" placeholders="1" />
         <path>
             <move x="0" y="148.0"/>
             <line x="16" y="148.0"/>
         </path>
         <fillstroke />
-        <text str="QE" x="20" y="148.0" align="left" valign="middle" />
+        <text str="QE" x="20" y="148.0" align="left" valign="middle" placeholders="1" />
         <path>
             <move x="0" y="176.0"/>
             <line x="16" y="176.0"/>
         </path>
         <fillstroke />
-        <text str="QF" x="20" y="176.0" align="left" valign="middle" />
+        <text str="QF" x="20" y="176.0" align="left" valign="middle" placeholders="1" />
         <path>
             <move x="0" y="204.0"/>
             <line x="16" y="204.0"/>
         </path>
         <fillstroke />
-        <text str="QG" x="20" y="204.0" align="left" valign="middle" />
+        <text str="QG" x="20" y="204.0" align="left" valign="middle" placeholders="1" />
         <path>
             <move x="0" y="232.0"/>
             <line x="16" y="232.0"/>
         </path>
         <fillstroke />
-        <text str="QH" x="20" y="232.0" align="left" valign="middle" />
+        <text str="QH" x="20" y="232.0" align="left" valign="middle" placeholders="1" />
         <path>
             <move x="0" y="260.0"/>
             <line x="16" y="260.0"/>
         </path>
         <fillstroke />
-        <text str="GND" x="20" y="260.0" align="left" valign="middle" />
+        <text str="GND" x="20" y="260.0" align="left" valign="middle" placeholders="1" />
         <path>
             <move x="196" y="64.0"/>
             <line x="180" y="64.0"/>
         </path>
         <fillstroke />
-        <text str="VCC" x="176" y="64.0" align="right" valign="middle" />
+        <text str="VCC" x="176" y="64.0" align="right" valign="middle" placeholders="1" />
         <path>
             <move x="196" y="92.0"/>
             <line x="180" y="92.0"/>
         </path>
         <fillstroke />
-        <text str="QA" x="176" y="92.0" align="right" valign="middle" />
+        <text str="QA" x="176" y="92.0" align="right" valign="middle" placeholders="1" />
         <path>
             <move x="196" y="120.0"/>
             <line x="180" y="120.0"/>
         </path>
         <fillstroke />
-        <text str="SER" x="176" y="120.0" align="right" valign="middle" />
+        <text str="SER" x="176" y="120.0" align="right" valign="middle" placeholders="1" />
         <path>
             <move x="196" y="148.0"/>
             <line x="180" y="148.0"/>
         </path>
         <fillstroke />
-        <text str="!OE" x="176" y="148.0" align="right" valign="middle" />
+        <text str="!OE" x="176" y="148.0" align="right" valign="middle" placeholders="1" />
         <path>
             <move x="196" y="176.0"/>
             <line x="180" y="176.0"/>
         </path>
         <fillstroke />
-        <text str="RCLK" x="176" y="176.0" align="right" valign="middle" />
+        <text str="RCLK" x="176" y="176.0" align="right" valign="middle" placeholders="1" />
         <path>
             <move x="196" y="204.0"/>
             <line x="180" y="204.0"/>
         </path>
         <fillstroke />
-        <text str="SRCLK" x="176" y="204.0" align="right" valign="middle" />
+        <text str="SRCLK" x="176" y="204.0" align="right" valign="middle" placeholders="1" />
         <path>
             <move x="196" y="232.0"/>
             <line x="180" y="232.0"/>
         </path>
         <fillstroke />
-        <text str="!SRCLR" x="176" y="232.0" align="right" valign="middle" />
+        <text str="!SRCLR" x="176" y="232.0" align="right" valign="middle" placeholders="1" />
         <path>
             <move x="196" y="260.0"/>
             <line x="180" y="260.0"/>
         </path>
         <fillstroke />
-        <text str="QH'" x="176" y="260.0" align="right" valign="middle" />
+        <text str="QH'" x="176" y="260.0" align="right" valign="middle" placeholders="1" />
     </foreground>
 </shape>

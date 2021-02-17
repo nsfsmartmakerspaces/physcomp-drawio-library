@@ -21,31 +21,33 @@
         <fontsize size="16"/>
         <text str="Ultrasonic" x="98.0" y="71.75" align="center" valign="middle" placeholders="1"/>
         <text str="Ranger" x="98.0" y="88.25" align="center" valign="middle" placeholders="1"/>
+        <fontsize size="8"/>
+        <text str="#0572" x="176" y="142.0" align="right" valign="bottom" placeholders="1"/>
         <fontsize size="10"/>
         <path>
             <move x="98.0" y="0"/>
             <line x="98.0" y="16"/>
         </path>
         <fillstroke />
-        <text str="VCC" x="98.0" y="29.0" align="center" valign="bottom" />
-        <text str="(5V)" x="98.0" y="39.25" align="center" valign="bottom" />
+        <text str="VCC" x="98.0" y="29.0" align="center" valign="bottom" placeholders="1" />
+        <text str="(5V)" x="98.0" y="39.25" align="center" valign="bottom" placeholders="1" />
         <path>
             <move x="98.0" y="160"/>
             <line x="98.0" y="144"/>
         </path>
         <fillstroke />
-        <text str="GND" x="98.0" y="141.0" align="center" valign="bottom" />
+        <text str="GND" x="98.0" y="141.0" align="center" valign="bottom" placeholders="1" />
         <path>
             <move x="0" y="80.0"/>
             <line x="16" y="80.0"/>
         </path>
         <fillstroke />
-        <text str="Trigger" x="20" y="80.0" align="left" valign="middle" />
+        <text str="Trigger" x="20" y="80.0" align="left" valign="middle" placeholders="1" />
         <path>
             <move x="196" y="80.0"/>
             <line x="180" y="80.0"/>
         </path>
         <fillstroke />
-        <text str="Echo" x="176" y="80.0" align="right" valign="middle" />
+        <text str="Echo" x="176" y="80.0" align="right" valign="middle" placeholders="1" />
     </foreground>
 </shape>

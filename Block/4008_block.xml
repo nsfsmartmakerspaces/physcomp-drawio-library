@@ -28,6 +28,8 @@
         <text str="Register" x="125.0" y="157.0" align="center" valign="middle" placeholders="1"/>
         <text str="(74HC595)" x="125.0" y="173.5" align="center" valign="middle" placeholders="1"/>
         <fontsize size="8"/>
+        <text str="#4008" x="125.0" y="312.0" align="center" valign="bottom" placeholders="1"/>
+        <fontsize size="8"/>
         <path>
             <move x="0" y="59.0"/>
             <line x="70" y="59.0"/>
@@ -40,8 +42,8 @@
             <close/>
         </path>
         <fillstroke />
-        <text str="Input" x="29.669872981077805" y="58.0" align="center" valign="bottom" />
-        <text str="Signal" x="29.669872981077805" y="61.5" align="center" valign="top" />
+        <text str="Input" x="29.669872981077805" y="58.0" align="center" valign="bottom" placeholders="1" />
+        <text str="Signal" x="29.669872981077805" y="61.5" align="center" valign="top" placeholders="1" />
         <path>
             <move x="250" y="59.0"/>
             <line x="180" y="59.0"/>
@@ -54,8 +56,8 @@
             <close/>
         </path>
         <fillstroke />
-        <text str="Out 0" x="210.66987298107782" y="58.0" align="center" valign="bottom" />
-        <text str="Signal" x="210.66987298107782" y="61.5" align="center" valign="top" />
+        <text str="Out 0" x="210.66987298107782" y="58.0" align="center" valign="bottom" placeholders="1" />
+        <text str="Signal" x="210.66987298107782" y="61.5" align="center" valign="top" placeholders="1" />
         <path>
             <move x="250" y="87.0"/>
             <line x="180" y="87.0"/>
@@ -68,8 +70,8 @@
             <close/>
         </path>
         <fillstroke />
-        <text str="Out 1" x="210.66987298107782" y="86.0" align="center" valign="bottom" />
-        <text str="Signal" x="210.66987298107782" y="89.5" align="center" valign="top" />
+        <text str="Out 1" x="210.66987298107782" y="86.0" align="center" valign="bottom" placeholders="1" />
+        <text str="Signal" x="210.66987298107782" y="89.5" align="center" valign="top" placeholders="1" />
         <path>
             <move x="250" y="115.0"/>
             <line x="180" y="115.0"/>
@@ -82,8 +84,8 @@
             <close/>
         </path>
         <fillstroke />
-        <text str="Out 2" x="210.66987298107782" y="114.0" align="center" valign="bottom" />
-        <text str="Signal" x="210.66987298107782" y="117.5" align="center" valign="top" />
+        <text str="Out 2" x="210.66987298107782" y="114.0" align="center" valign="bottom" placeholders="1" />
+        <text str="Signal" x="210.66987298107782" y="117.5" align="center" valign="top" placeholders="1" />
         <path>
             <move x="250" y="143.0"/>
             <line x="180" y="143.0"/>
@@ -96,8 +98,8 @@
             <close/>
         </path>
         <fillstroke />
-        <text str="Out 3" x="210.66987298107782" y="142.0" align="center" valign="bottom" />
-        <text str="Signal" x="210.66987298107782" y="145.5" align="center" valign="top" />
+        <text str="Out 3" x="210.66987298107782" y="142.0" align="center" valign="bottom" placeholders="1" />
+        <text str="Signal" x="210.66987298107782" y="145.5" align="center" valign="top" placeholders="1" />
         <path>
             <move x="250" y="171.0"/>
             <line x="180" y="171.0"/>
@@ -110,8 +112,8 @@
             <close/>
         </path>
         <fillstroke />
-        <text str="Out 4" x="210.66987298107782" y="170.0" align="center" valign="bottom" />
-        <text str="Signal" x="210.66987298107782" y="173.5" align="center" valign="top" />
+        <text str="Out 4" x="210.66987298107782" y="170.0" align="center" valign="bottom" placeholders="1" />
+        <text str="Signal" x="210.66987298107782" y="173.5" align="center" valign="top" placeholders="1" />
         <path>
             <move x="250" y="199.0"/>
             <line x="180" y="199.0"/>
@@ -124,8 +126,8 @@
             <close/>
         </path>
         <fillstroke />
-        <text str="Out 5" x="210.66987298107782" y="198.0" align="center" valign="bottom" />
-        <text str="Signal" x="210.66987298107782" y="201.5" align="center" valign="top" />
+        <text str="Out 5" x="210.66987298107782" y="198.0" align="center" valign="bottom" placeholders="1" />
+        <text str="Signal" x="210.66987298107782" y="201.5" align="center" valign="top" placeholders="1" />
         <path>
             <move x="250" y="227.0"/>
             <line x="180" y="227.0"/>
@@ -138,8 +140,8 @@
             <close/>
         </path>
         <fillstroke />
-        <text str="Out 6" x="210.66987298107782" y="226.0" align="center" valign="bottom" />
-        <text str="Signal" x="210.66987298107782" y="229.5" align="center" valign="top" />
+        <text str="Out 6" x="210.66987298107782" y="226.0" align="center" valign="bottom" placeholders="1" />
+        <text str="Signal" x="210.66987298107782" y="229.5" align="center" valign="top" placeholders="1" />
         <path>
             <move x="250" y="255.0"/>
             <line x="180" y="255.0"/>
@@ -152,7 +154,7 @@
             <close/>
         </path>
         <fillstroke />
-        <text str="Out 7" x="210.66987298107782" y="254.0" align="center" valign="bottom" />
-        <text str="Signal" x="210.66987298107782" y="257.5" align="center" valign="top" />
+        <text str="Out 7" x="210.66987298107782" y="254.0" align="center" valign="bottom" placeholders="1" />
+        <text str="Signal" x="210.66987298107782" y="257.5" align="center" valign="top" placeholders="1" />
     </foreground>
 </shape>

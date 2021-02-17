@@ -22,36 +22,38 @@
         <fontsize size="16"/>
         <text str="Joystick" x="82.0" y="99.75" align="center" valign="middle" placeholders="1"/>
         <text str="Module" x="82.0" y="116.25" align="center" valign="middle" placeholders="1"/>
+        <fontsize size="8"/>
+        <text str="#0372" x="160" y="198.0" align="right" valign="bottom" placeholders="1"/>
         <fontsize size="10"/>
         <path>
             <move x="82.0" y="0"/>
             <line x="82.0" y="16"/>
         </path>
         <fillstroke />
-        <text str="5V" x="82.0" y="29.0" align="center" valign="bottom" />
+        <text str="5V" x="82.0" y="29.0" align="center" valign="bottom" placeholders="1" />
         <path>
             <move x="82.0" y="216"/>
             <line x="82.0" y="200"/>
         </path>
         <fillstroke />
-        <text str="GND" x="82.0" y="197.0" align="center" valign="bottom" />
+        <text str="GND" x="82.0" y="197.0" align="center" valign="bottom" placeholders="1" />
         <path>
             <move x="180" y="80.0"/>
             <line x="164" y="80.0"/>
         </path>
         <fillstroke />
-        <text str="VRx" x="160" y="80.0" align="right" valign="middle" />
+        <text str="VRx" x="160" y="80.0" align="right" valign="middle" placeholders="1" />
         <path>
             <move x="180" y="108.0"/>
             <line x="164" y="108.0"/>
         </path>
         <fillstroke />
-        <text str="VRy" x="160" y="108.0" align="right" valign="middle" />
+        <text str="VRy" x="160" y="108.0" align="right" valign="middle" placeholders="1" />
         <path>
             <move x="180" y="136.0"/>
             <line x="164" y="136.0"/>
         </path>
         <fillstroke />
-        <text str="SW" x="160" y="136.0" align="right" valign="middle" />
+        <text str="SW" x="160" y="136.0" align="right" valign="middle" placeholders="1" />
     </foreground>
 </shape>

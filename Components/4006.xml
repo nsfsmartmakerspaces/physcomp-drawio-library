@@ -18,12 +18,14 @@
         <fontsize size="16"/>
         <text str="Infrared" x="82.0" y="55.75" align="center" valign="middle" placeholders="1"/>
         <text str="Remote" x="82.0" y="72.25" align="center" valign="middle" placeholders="1"/>
+        <fontsize size="8"/>
+        <text str="#4006" x="160" y="126.0" align="right" valign="bottom" placeholders="1"/>
         <fontsize size="10"/>
         <path>
             <move x="180" y="64.0"/>
             <line x="164" y="64.0"/>
         </path>
         <fillstroke />
-        <text str="IR Light" x="160" y="64.0" align="right" valign="middle" />
+        <text str="IR Light" x="160" y="64.0" align="right" valign="middle" placeholders="1" />
     </foreground>
 </shape>

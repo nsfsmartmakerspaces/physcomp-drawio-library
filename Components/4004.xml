@@ -22,36 +22,38 @@
         <fontsize size="16"/>
         <text str="Stepper" x="66.0" y="111.75" align="center" valign="middle" placeholders="1"/>
         <text str="Motor" x="66.0" y="128.25" align="center" valign="middle" placeholders="1"/>
+        <fontsize size="8"/>
+        <text str="#4004" x="112" y="238.0" align="right" valign="bottom" placeholders="1"/>
         <fontsize size="10"/>
         <path>
             <move x="0" y="64.0"/>
             <line x="16" y="64.0"/>
         </path>
         <fillstroke />
-        <text str="A" x="20" y="64.0" align="left" valign="middle" />
+        <text str="A" x="20" y="64.0" align="left" valign="middle" placeholders="1" />
         <path>
             <move x="0" y="92.0"/>
             <line x="16" y="92.0"/>
         </path>
         <fillstroke />
-        <text str="B" x="20" y="92.0" align="left" valign="middle" />
+        <text str="B" x="20" y="92.0" align="left" valign="middle" placeholders="1" />
         <path>
             <move x="0" y="120.0"/>
             <line x="16" y="120.0"/>
         </path>
         <fillstroke />
-        <text str="C" x="20" y="120.0" align="left" valign="middle" />
+        <text str="C" x="20" y="120.0" align="left" valign="middle" placeholders="1" />
         <path>
             <move x="0" y="148.0"/>
             <line x="16" y="148.0"/>
         </path>
         <fillstroke />
-        <text str="D" x="20" y="148.0" align="left" valign="middle" />
+        <text str="D" x="20" y="148.0" align="left" valign="middle" placeholders="1" />
         <path>
             <move x="0" y="176.0"/>
             <line x="16" y="176.0"/>
         </path>
         <fillstroke />
-        <text str="E" x="20" y="176.0" align="left" valign="middle" />
+        <text str="E" x="20" y="176.0" align="left" valign="middle" placeholders="1" />
     </foreground>
 </shape>

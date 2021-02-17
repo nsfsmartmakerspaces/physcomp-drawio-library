@@ -23,33 +23,35 @@
         <text str="Proximity" x="114.0" y="71.75" align="center" valign="middle" placeholders="1"/>
         <text str="Sensor" x="114.0" y="88.25" align="center" valign="middle" placeholders="1"/>
         <text str="LTH-1550-01" x="114.0" y="104.75" align="center" valign="middle" placeholders="1"/>
+        <fontsize size="8"/>
+        <text str="#0237" x="224" y="142.0" align="right" valign="bottom" placeholders="1"/>
         <fontsize size="10"/>
         <path>
             <move x="82.0" y="0"/>
             <line x="82.0" y="16"/>
         </path>
         <fillstroke />
-        <text str="LED" x="82.0" y="29.0" align="center" valign="bottom" />
-        <text str="anode" x="82.0" y="39.25" align="center" valign="bottom" />
+        <text str="LED" x="82.0" y="29.0" align="center" valign="bottom" placeholders="1" />
+        <text str="anode" x="82.0" y="39.25" align="center" valign="bottom" placeholders="1" />
         <path>
             <move x="146.0" y="0"/>
             <line x="146.0" y="16"/>
         </path>
         <fillstroke />
-        <text str="phototransistor" x="146.0" y="29.0" align="center" valign="bottom" />
-        <text str="collector" x="146.0" y="39.25" align="center" valign="bottom" />
+        <text str="phototransistor" x="146.0" y="29.0" align="center" valign="bottom" placeholders="1" />
+        <text str="collector" x="146.0" y="39.25" align="center" valign="bottom" placeholders="1" />
         <path>
             <move x="82.0" y="160"/>
             <line x="82.0" y="144"/>
         </path>
         <fillstroke />
-        <text str="GND" x="82.0" y="141.0" align="center" valign="bottom" />
+        <text str="GND" x="82.0" y="141.0" align="center" valign="bottom" placeholders="1" />
         <path>
             <move x="244" y="80.0"/>
             <line x="228" y="80.0"/>
         </path>
         <fillstroke />
-        <text str="phototransistor" x="224" y="74.875" align="right" valign="middle" />
-        <text str="emitter" x="224" y="85.125" align="right" valign="middle" />
+        <text str="phototransistor" x="224" y="74.875" align="right" valign="middle" placeholders="1" />
+        <text str="emitter" x="224" y="85.125" align="right" valign="middle" placeholders="1" />
     </foreground>
 </shape>

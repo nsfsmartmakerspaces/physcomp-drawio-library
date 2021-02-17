@@ -20,18 +20,20 @@
         <text str="Pancake" x="82.0" y="49.5" align="center" valign="middle" placeholders="1"/>
         <text str="Vibration" x="82.0" y="66.0" align="center" valign="middle" placeholders="1"/>
         <text str="Motor" x="82.0" y="82.5" align="center" valign="middle" placeholders="1"/>
+        <fontsize size="8"/>
+        <text str="#0450" x="160" y="114.0" align="right" valign="bottom" placeholders="1"/>
         <fontsize size="10"/>
         <path>
             <move x="82.0" y="0"/>
             <line x="82.0" y="16"/>
         </path>
         <fillstroke />
-        <text str="VCC (~3V)" x="82.0" y="29.0" align="center" valign="bottom" />
+        <text str="VCC (~3V)" x="82.0" y="29.0" align="center" valign="bottom" placeholders="1" />
         <path>
             <move x="82.0" y="132"/>
             <line x="82.0" y="116"/>
         </path>
         <fillstroke />
-        <text str="GND" x="82.0" y="113.0" align="center" valign="bottom" />
+        <text str="GND" x="82.0" y="113.0" align="center" valign="bottom" placeholders="1" />
     </foreground>
 </shape>

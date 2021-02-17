@@ -19,20 +19,22 @@
         <fontsize size="16"/>
         <text str="DC" x="66.0" y="69.75" align="center" valign="middle" placeholders="1"/>
         <text str="Motor" x="66.0" y="86.25" align="center" valign="middle" placeholders="1"/>
+        <fontsize size="8"/>
+        <text str="#1932" x="112" y="154.0" align="right" valign="bottom" placeholders="1"/>
         <fontsize size="10"/>
         <path>
             <move x="0" y="64.0"/>
             <line x="16" y="64.0"/>
         </path>
         <fillstroke />
-        <text str="+" x="20" y="58.875" align="left" valign="middle" />
-        <text str="(red)" x="20" y="69.125" align="left" valign="middle" />
+        <text str="+" x="20" y="58.875" align="left" valign="middle" placeholders="1" />
+        <text str="(red)" x="20" y="69.125" align="left" valign="middle" placeholders="1" />
         <path>
             <move x="0" y="92.0"/>
             <line x="16" y="92.0"/>
         </path>
         <fillstroke />
-        <text str="-" x="20" y="86.875" align="left" valign="middle" />
-        <text str="(black)" x="20" y="97.125" align="left" valign="middle" />
+        <text str="-" x="20" y="86.875" align="left" valign="middle" placeholders="1" />
+        <text str="(black)" x="20" y="97.125" align="left" valign="middle" placeholders="1" />
     </foreground>
 </shape>

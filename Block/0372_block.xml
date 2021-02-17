@@ -24,6 +24,8 @@
         <text str="Joystick" x="125.0" y="78.75" align="center" valign="middle" placeholders="1"/>
         <text str="Module" x="125.0" y="95.25" align="center" valign="middle" placeholders="1"/>
         <fontsize size="8"/>
+        <text str="#0372" x="125.0" y="172.0" align="center" valign="bottom" placeholders="1"/>
+        <fontsize size="8"/>
         <path>
             <move x="0" y="59.0"/>
             <line x="70" y="59.0"/>
@@ -36,8 +38,8 @@
             <close/>
         </path>
         <fillstroke />
-        <text str="Physical X" x="29.669872981077805" y="58.0" align="center" valign="bottom" />
-        <text str="Movement" x="29.669872981077805" y="61.5" align="center" valign="top" />
+        <text str="Physical X" x="29.669872981077805" y="58.0" align="center" valign="bottom" placeholders="1" />
+        <text str="Movement" x="29.669872981077805" y="61.5" align="center" valign="top" placeholders="1" />
         <path>
             <move x="0" y="87.0"/>
             <line x="70" y="87.0"/>
@@ -50,8 +52,8 @@
             <close/>
         </path>
         <fillstroke />
-        <text str="Physical Y" x="29.669872981077805" y="86.0" align="center" valign="bottom" />
-        <text str="Movement" x="29.669872981077805" y="89.5" align="center" valign="top" />
+        <text str="Physical Y" x="29.669872981077805" y="86.0" align="center" valign="bottom" placeholders="1" />
+        <text str="Movement" x="29.669872981077805" y="89.5" align="center" valign="top" placeholders="1" />
         <path>
             <move x="0" y="115.0"/>
             <line x="70" y="115.0"/>
@@ -64,8 +66,8 @@
             <close/>
         </path>
         <fillstroke />
-        <text str="Physical" x="29.669872981077805" y="114.0" align="center" valign="bottom" />
-        <text str="Button Press" x="29.669872981077805" y="117.5" align="center" valign="top" />
+        <text str="Physical" x="29.669872981077805" y="114.0" align="center" valign="bottom" placeholders="1" />
+        <text str="Button Press" x="29.669872981077805" y="117.5" align="center" valign="top" placeholders="1" />
         <path>
             <move x="250" y="59.0"/>
             <line x="180" y="59.0"/>
@@ -78,8 +80,8 @@
             <close/>
         </path>
         <fillstroke />
-        <text str="X Movement" x="210.66987298107782" y="58.0" align="center" valign="bottom" />
-        <text str="Signal" x="210.66987298107782" y="61.5" align="center" valign="top" />
+        <text str="X Movement" x="210.66987298107782" y="58.0" align="center" valign="bottom" placeholders="1" />
+        <text str="Signal" x="210.66987298107782" y="61.5" align="center" valign="top" placeholders="1" />
         <path>
             <move x="250" y="87.0"/>
             <line x="180" y="87.0"/>
@@ -92,8 +94,8 @@
             <close/>
         </path>
         <fillstroke />
-        <text str="Y Movement" x="210.66987298107782" y="86.0" align="center" valign="bottom" />
-        <text str="Signal" x="210.66987298107782" y="89.5" align="center" valign="top" />
+        <text str="Y Movement" x="210.66987298107782" y="86.0" align="center" valign="bottom" placeholders="1" />
+        <text str="Signal" x="210.66987298107782" y="89.5" align="center" valign="top" placeholders="1" />
         <path>
             <move x="250" y="115.0"/>
             <line x="180" y="115.0"/>
@@ -106,7 +108,7 @@
             <close/>
         </path>
         <fillstroke />
-        <text str="Press (button)" x="210.66987298107782" y="114.0" align="center" valign="bottom" />
-        <text str="Signal" x="210.66987298107782" y="117.5" align="center" valign="top" />
+        <text str="Press (button)" x="210.66987298107782" y="114.0" align="center" valign="bottom" placeholders="1" />
+        <text str="Signal" x="210.66987298107782" y="117.5" align="center" valign="top" placeholders="1" />
     </foreground>
 </shape>

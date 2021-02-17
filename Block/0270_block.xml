@@ -19,6 +19,8 @@
         <fontsize size="16"/>
         <text str="Thermistor" x="125.0" y="59.0" align="center" valign="middle" placeholders="1"/>
         <fontsize size="8"/>
+        <text str="#0270" x="125.0" y="116.0" align="center" valign="bottom" placeholders="1"/>
+        <fontsize size="8"/>
         <path>
             <move x="0" y="59.0"/>
             <line x="70" y="59.0"/>
@@ -31,8 +33,8 @@
             <close/>
         </path>
         <fillstroke />
-        <text str="Physical" x="29.669872981077805" y="58.0" align="center" valign="bottom" />
-        <text str="Temperature" x="29.669872981077805" y="61.5" align="center" valign="top" />
+        <text str="Physical" x="29.669872981077805" y="58.0" align="center" valign="bottom" placeholders="1" />
+        <text str="Temperature" x="29.669872981077805" y="61.5" align="center" valign="top" placeholders="1" />
         <path>
             <move x="250" y="59.0"/>
             <line x="180" y="59.0"/>
@@ -45,7 +47,7 @@
             <close/>
         </path>
         <fillstroke />
-        <text str="Temperature" x="210.66987298107782" y="58.0" align="center" valign="bottom" />
-        <text str="Signal" x="210.66987298107782" y="61.5" align="center" valign="top" />
+        <text str="Temperature" x="210.66987298107782" y="58.0" align="center" valign="bottom" placeholders="1" />
+        <text str="Signal" x="210.66987298107782" y="61.5" align="center" valign="top" placeholders="1" />
     </foreground>
 </shape>

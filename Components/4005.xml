@@ -29,72 +29,74 @@
         <text str="Stepper" x="98.0" y="119.5" align="center" valign="middle" placeholders="1"/>
         <text str="Motor" x="98.0" y="136.0" align="center" valign="middle" placeholders="1"/>
         <text str="Driver" x="98.0" y="152.5" align="center" valign="middle" placeholders="1"/>
+        <fontsize size="8"/>
+        <text str="#4005" x="176" y="254.0" align="right" valign="bottom" placeholders="1"/>
         <fontsize size="10"/>
         <path>
             <move x="98.0" y="0"/>
             <line x="98.0" y="16"/>
         </path>
         <fillstroke />
-        <text str="5V to 12V" x="98.0" y="29.0" align="center" valign="bottom" />
+        <text str="5V to 12V" x="98.0" y="29.0" align="center" valign="bottom" placeholders="1" />
         <path>
             <move x="98.0" y="272"/>
             <line x="98.0" y="256"/>
         </path>
         <fillstroke />
-        <text str="GND" x="98.0" y="253.0" align="center" valign="bottom" />
+        <text str="GND" x="98.0" y="253.0" align="center" valign="bottom" placeholders="1" />
         <path>
             <move x="0" y="80.0"/>
             <line x="16" y="80.0"/>
         </path>
         <fillstroke />
-        <text str="IN1" x="20" y="80.0" align="left" valign="middle" />
+        <text str="IN1" x="20" y="80.0" align="left" valign="middle" placeholders="1" />
         <path>
             <move x="0" y="108.0"/>
             <line x="16" y="108.0"/>
         </path>
         <fillstroke />
-        <text str="IN2" x="20" y="108.0" align="left" valign="middle" />
+        <text str="IN2" x="20" y="108.0" align="left" valign="middle" placeholders="1" />
         <path>
             <move x="0" y="136.0"/>
             <line x="16" y="136.0"/>
         </path>
         <fillstroke />
-        <text str="IN3" x="20" y="136.0" align="left" valign="middle" />
+        <text str="IN3" x="20" y="136.0" align="left" valign="middle" placeholders="1" />
         <path>
             <move x="0" y="164.0"/>
             <line x="16" y="164.0"/>
         </path>
         <fillstroke />
-        <text str="IN4" x="20" y="164.0" align="left" valign="middle" />
+        <text str="IN4" x="20" y="164.0" align="left" valign="middle" placeholders="1" />
         <path>
             <move x="196" y="80.0"/>
             <line x="180" y="80.0"/>
         </path>
         <fillstroke />
-        <text str="A" x="176" y="80.0" align="right" valign="middle" />
+        <text str="A" x="176" y="80.0" align="right" valign="middle" placeholders="1" />
         <path>
             <move x="196" y="108.0"/>
             <line x="180" y="108.0"/>
         </path>
         <fillstroke />
-        <text str="B" x="176" y="108.0" align="right" valign="middle" />
+        <text str="B" x="176" y="108.0" align="right" valign="middle" placeholders="1" />
         <path>
             <move x="196" y="136.0"/>
             <line x="180" y="136.0"/>
         </path>
         <fillstroke />
-        <text str="C" x="176" y="136.0" align="right" valign="middle" />
+        <text str="C" x="176" y="136.0" align="right" valign="middle" placeholders="1" />
         <path>
             <move x="196" y="164.0"/>
             <line x="180" y="164.0"/>
         </path>
         <fillstroke />
-        <text str="D" x="176" y="164.0" align="right" valign="middle" />
+        <text str="D" x="176" y="164.0" align="right" valign="middle" placeholders="1" />
         <path>
             <move x="196" y="192.0"/>
             <line x="180" y="192.0"/>
         </path>
         <fillstroke />
-        <text str="E" x="176" y="192.0" align="right" valign="middle" />
+        <text str="E" x="176" y="192.0" align="right" valign="middle" placeholders="1" />
     </foreground>
 </shape>
