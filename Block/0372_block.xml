@@ -21,8 +21,8 @@
         <fontcolor color="#000000"/>
         <alpha alpha="1"/>
         <fontsize size="16"/>
-        <text str="Joystick" x="125.0" y="78.75" align="center" valign="middle" />
-        <text str="Module" x="125.0" y="95.25" align="center" valign="middle" />
+        <text str="Joystick" x="125.0" y="78.75" align="center" valign="middle" placeholders="1"/>
+        <text str="Module" x="125.0" y="95.25" align="center" valign="middle" placeholders="1"/>
         <fontsize size="8"/>
         <path>
             <move x="0" y="59.0"/>

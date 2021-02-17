@@ -20,9 +20,9 @@
         <fontcolor color="#000000"/>
         <alpha alpha="1"/>
         <fontsize size="16"/>
-        <text str="Breadboard" x="82.0" y="91.5" align="center" valign="middle" />
-        <text str="Power" x="82.0" y="108.0" align="center" valign="middle" />
-        <text str="Supply" x="82.0" y="124.5" align="center" valign="middle" />
+        <text str="Breadboard" x="82.0" y="91.5" align="center" valign="middle" placeholders="1"/>
+        <text str="Power" x="82.0" y="108.0" align="center" valign="middle" placeholders="1"/>
+        <text str="Supply" x="82.0" y="124.5" align="center" valign="middle" placeholders="1"/>
         <fontsize size="10"/>
         <path>
             <move x="82.0" y="0"/>

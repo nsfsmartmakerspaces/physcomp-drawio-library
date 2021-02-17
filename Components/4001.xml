@@ -31,8 +31,8 @@
         <fontcolor color="#000000"/>
         <alpha alpha="1"/>
         <fontsize size="16"/>
-        <text str="LCD Display" x="130.0" y="225.75" align="center" valign="middle" />
-        <text str="Module" x="130.0" y="242.25" align="center" valign="middle" />
+        <text str="LCD Display" x="130.0" y="225.75" align="center" valign="middle" placeholders="1"/>
+        <text str="Module" x="130.0" y="242.25" align="center" valign="middle" placeholders="1"/>
         <fontsize size="10"/>
         <path>
             <move x="98.0" y="0"/>

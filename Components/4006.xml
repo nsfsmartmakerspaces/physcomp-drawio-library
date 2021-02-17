@@ -16,8 +16,8 @@
         <fontcolor color="#000000"/>
         <alpha alpha="1"/>
         <fontsize size="16"/>
-        <text str="Infrared" x="82.0" y="55.75" align="center" valign="middle" />
-        <text str="Remote" x="82.0" y="72.25" align="center" valign="middle" />
+        <text str="Infrared" x="82.0" y="55.75" align="center" valign="middle" placeholders="1"/>
+        <text str="Remote" x="82.0" y="72.25" align="center" valign="middle" placeholders="1"/>
         <fontsize size="10"/>
         <path>
             <move x="180" y="64.0"/>

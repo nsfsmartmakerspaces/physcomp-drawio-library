@@ -41,8 +41,8 @@
         <fontcolor color="#000000"/>
         <alpha alpha="1"/>
         <fontsize size="16"/>
-        <text str="Arduino" x="130.0" y="253.75" align="center" valign="middle" />
-        <text str="Uno" x="130.0" y="270.25" align="center" valign="middle" />
+        <text str="Arduino" x="130.0" y="253.75" align="center" valign="middle" placeholders="1"/>
+        <text str="Uno" x="130.0" y="270.25" align="center" valign="middle" placeholders="1"/>
         <fontsize size="10"/>
         <path>
             <move x="98.0" y="0"/>

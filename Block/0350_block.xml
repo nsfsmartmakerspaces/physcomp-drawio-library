@@ -17,8 +17,8 @@
         <fontcolor color="#000000"/>
         <alpha alpha="1"/>
         <fontsize size="16"/>
-        <text str="Lever" x="125.0" y="50.75" align="center" valign="middle" />
-        <text str="Switch" x="125.0" y="67.25" align="center" valign="middle" />
+        <text str="Lever" x="125.0" y="50.75" align="center" valign="middle" placeholders="1"/>
+        <text str="Switch" x="125.0" y="67.25" align="center" valign="middle" placeholders="1"/>
         <fontsize size="8"/>
         <path>
             <move x="0" y="59.0"/>

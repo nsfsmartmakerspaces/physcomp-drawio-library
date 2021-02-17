@@ -17,8 +17,8 @@
         <fontcolor color="#000000"/>
         <alpha alpha="1"/>
         <fontsize size="16"/>
-        <text str="Passive" x="82.0" y="57.75" align="center" valign="middle" />
-        <text str="Buzzer" x="82.0" y="74.25" align="center" valign="middle" />
+        <text str="Passive" x="82.0" y="57.75" align="center" valign="middle" placeholders="1"/>
+        <text str="Buzzer" x="82.0" y="74.25" align="center" valign="middle" placeholders="1"/>
         <fontsize size="10"/>
         <path>
             <move x="82.0" y="0"/>
