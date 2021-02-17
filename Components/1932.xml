@@ -8,15 +8,7 @@
         <fillcolor color="#ffffff"/>
         <fontcolor color="#000000"/>
         <alpha alpha="1"/>
-        <path>
-            <move x="16" y="0"/>
-            <line x="16" y="156"/>
-            <line x="116" y="156"/>
-            <line x="116" y="0"/>
-            <line x="82.66666666666666" y="0"/>
-            <line x="49.33333333333333" y="0"/>
-            <close/>
-        </path>
+        <rect x="16" y="0" h="156" w="100" arcsize="-1"/>
         <fillstroke />
     </background>
     <foreground>

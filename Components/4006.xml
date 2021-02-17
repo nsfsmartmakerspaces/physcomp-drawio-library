@@ -7,15 +7,7 @@
         <fillcolor color="#ffffff"/>
         <fontcolor color="#000000"/>
         <alpha alpha="1"/>
-        <path>
-            <move x="0" y="0"/>
-            <line x="0" y="128"/>
-            <line x="164" y="128"/>
-            <line x="164" y="0"/>
-            <line x="109.33333333333334" y="0"/>
-            <line x="54.66666666666667" y="0"/>
-            <close/>
-        </path>
+        <rect x="0" y="0" h="128" w="164" arcsize="-1"/>
         <fillstroke />
     </background>
     <foreground>

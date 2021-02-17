@@ -22,15 +22,7 @@
         <fillcolor color="#ffffff"/>
         <fontcolor color="#000000"/>
         <alpha alpha="1"/>
-        <path>
-            <move x="16" y="16"/>
-            <line x="16" y="452"/>
-            <line x="244" y="452"/>
-            <line x="244" y="16"/>
-            <line x="168.0" y="16"/>
-            <line x="92.0" y="16"/>
-            <close/>
-        </path>
+        <rect x="16" y="16" h="436" w="228" arcsize="-1"/>
         <fillstroke />
     </background>
     <foreground>
@@ -47,29 +39,29 @@
             <line x="98.0" y="16"/>
         </path>
         <fillstroke />
-        <text str="Vdd" x="98.0" y="21.0" align="center" valign="top" />
-        <text str="(5V)" x="98.0" y="31.25" align="center" valign="top" />
+        <text str="Vdd" x="98.0" y="29.0" align="center" valign="bottom" />
+        <text str="(5V)" x="98.0" y="39.25" align="center" valign="bottom" />
         <path>
             <move x="162.0" y="0"/>
             <line x="162.0" y="16"/>
         </path>
         <fillstroke />
-        <text str="A" x="162.0" y="21.0" align="center" valign="top" />
-        <text str="(5V)" x="162.0" y="31.25" align="center" valign="top" />
+        <text str="A" x="162.0" y="29.0" align="center" valign="bottom" />
+        <text str="(5V)" x="162.0" y="39.25" align="center" valign="bottom" />
         <path>
             <move x="98.0" y="468"/>
             <line x="98.0" y="452"/>
         </path>
         <fillstroke />
-        <text str="Vss" x="98.0" y="442.75" align="center" valign="bottom" />
-        <text str="(GND)" x="98.0" y="453.0" align="center" valign="bottom" />
+        <text str="Vss" x="98.0" y="438.75" align="center" valign="bottom" />
+        <text str="(GND)" x="98.0" y="449.0" align="center" valign="bottom" />
         <path>
             <move x="162.0" y="468"/>
             <line x="162.0" y="452"/>
         </path>
         <fillstroke />
-        <text str="K" x="162.0" y="442.75" align="center" valign="bottom" />
-        <text str="(GND)" x="162.0" y="453.0" align="center" valign="bottom" />
+        <text str="K" x="162.0" y="438.75" align="center" valign="bottom" />
+        <text str="(GND)" x="162.0" y="449.0" align="center" valign="bottom" />
         <path>
             <move x="0" y="80.0"/>
             <line x="16" y="80.0"/>

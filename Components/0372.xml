@@ -11,15 +11,7 @@
         <fillcolor color="#ffffff"/>
         <fontcolor color="#000000"/>
         <alpha alpha="1"/>
-        <path>
-            <move x="0" y="16"/>
-            <line x="0" y="200"/>
-            <line x="164" y="200"/>
-            <line x="164" y="16"/>
-            <line x="109.33333333333334" y="16"/>
-            <line x="54.66666666666667" y="16"/>
-            <close/>
-        </path>
+        <rect x="0" y="16" h="184" w="164" arcsize="-1"/>
         <fillstroke />
     </background>
     <foreground>
@@ -36,13 +28,13 @@
             <line x="82.0" y="16"/>
         </path>
         <fillstroke />
-        <text str="5V" x="82.0" y="21.0" align="center" valign="top" />
+        <text str="5V" x="82.0" y="29.0" align="center" valign="bottom" />
         <path>
             <move x="82.0" y="216"/>
             <line x="82.0" y="200"/>
         </path>
         <fillstroke />
-        <text str="GND" x="82.0" y="201.0" align="center" valign="bottom" />
+        <text str="GND" x="82.0" y="197.0" align="center" valign="bottom" />
         <path>
             <move x="180" y="80.0"/>
             <line x="164" y="80.0"/>

@@ -9,15 +9,7 @@
         <fillcolor color="#ffffff"/>
         <fontcolor color="#000000"/>
         <alpha alpha="1"/>
-        <path>
-            <move x="16" y="16"/>
-            <line x="16" y="144"/>
-            <line x="180" y="144"/>
-            <line x="180" y="16"/>
-            <line x="125.33333333333334" y="16"/>
-            <line x="70.66666666666667" y="16"/>
-            <close/>
-        </path>
+        <rect x="16" y="16" h="128" w="164" arcsize="-1"/>
         <fillstroke />
     </background>
     <foreground>
@@ -34,15 +26,15 @@
             <line x="98.0" y="16"/>
         </path>
         <fillstroke />
-        <text str="VCC (4.8–6V)" x="98.0" y="21.0" align="center" valign="top" />
-        <text str="(red)" x="98.0" y="31.25" align="center" valign="top" />
+        <text str="VCC (4.8–6V)" x="98.0" y="29.0" align="center" valign="bottom" />
+        <text str="(red)" x="98.0" y="39.25" align="center" valign="bottom" />
         <path>
             <move x="98.0" y="160"/>
             <line x="98.0" y="144"/>
         </path>
         <fillstroke />
-        <text str="ground" x="98.0" y="134.75" align="center" valign="bottom" />
-        <text str="(brown)" x="98.0" y="145.0" align="center" valign="bottom" />
+        <text str="ground" x="98.0" y="130.75" align="center" valign="bottom" />
+        <text str="(brown)" x="98.0" y="141.0" align="center" valign="bottom" />
         <path>
             <move x="0" y="80.0"/>
             <line x="16" y="80.0"/>

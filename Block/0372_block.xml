@@ -12,15 +12,7 @@
         <fillcolor color="#ffffff"/>
         <fontcolor color="#000000"/>
         <alpha alpha="1"/>
-        <path>
-            <move x="70" y="0"/>
-            <line x="70" y="174"/>
-            <line x="180" y="174"/>
-            <line x="180" y="0"/>
-            <line x="143.33333333333334" y="0"/>
-            <line x="106.66666666666667" y="0"/>
-            <close/>
-        </path>
+        <roundrect x="70" y="0" h="174" w="110" arcsize="20"/>
         <fillstroke />
     </background>
     <foreground>
@@ -44,8 +36,8 @@
             <close/>
         </path>
         <fillstroke />
-        <text str="Physical X" x="29.669872981077805" y="57.0" align="center" valign="bottom" />
-        <text str="Movement" x="29.669872981077805" y="65.0" align="center" valign="top" />
+        <text str="Physical X" x="29.669872981077805" y="58.0" align="center" valign="bottom" />
+        <text str="Movement" x="29.669872981077805" y="61.5" align="center" valign="top" />
         <path>
             <move x="0" y="87.0"/>
             <line x="70" y="87.0"/>
@@ -58,8 +50,8 @@
             <close/>
         </path>
         <fillstroke />
-        <text str="Physical Y" x="29.669872981077805" y="85.0" align="center" valign="bottom" />
-        <text str="Movement" x="29.669872981077805" y="93.0" align="center" valign="top" />
+        <text str="Physical Y" x="29.669872981077805" y="86.0" align="center" valign="bottom" />
+        <text str="Movement" x="29.669872981077805" y="89.5" align="center" valign="top" />
         <path>
             <move x="0" y="115.0"/>
             <line x="70" y="115.0"/>
@@ -72,8 +64,8 @@
             <close/>
         </path>
         <fillstroke />
-        <text str="Physical" x="29.669872981077805" y="113.0" align="center" valign="bottom" />
-        <text str="Button Press" x="29.669872981077805" y="121.0" align="center" valign="top" />
+        <text str="Physical" x="29.669872981077805" y="114.0" align="center" valign="bottom" />
+        <text str="Button Press" x="29.669872981077805" y="117.5" align="center" valign="top" />
         <path>
             <move x="250" y="59.0"/>
             <line x="180" y="59.0"/>
@@ -86,8 +78,8 @@
             <close/>
         </path>
         <fillstroke />
-        <text str="X Movement" x="210.66987298107782" y="57.0" align="center" valign="bottom" />
-        <text str="Signal" x="210.66987298107782" y="65.0" align="center" valign="top" />
+        <text str="X Movement" x="210.66987298107782" y="58.0" align="center" valign="bottom" />
+        <text str="Signal" x="210.66987298107782" y="61.5" align="center" valign="top" />
         <path>
             <move x="250" y="87.0"/>
             <line x="180" y="87.0"/>
@@ -100,8 +92,8 @@
             <close/>
         </path>
         <fillstroke />
-        <text str="Y Movement" x="210.66987298107782" y="85.0" align="center" valign="bottom" />
-        <text str="Signal" x="210.66987298107782" y="93.0" align="center" valign="top" />
+        <text str="Y Movement" x="210.66987298107782" y="86.0" align="center" valign="bottom" />
+        <text str="Signal" x="210.66987298107782" y="89.5" align="center" valign="top" />
         <path>
             <move x="250" y="115.0"/>
             <line x="180" y="115.0"/>
@@ -114,7 +106,7 @@
             <close/>
         </path>
         <fillstroke />
-        <text str="Press (button)" x="210.66987298107782" y="113.0" align="center" valign="bottom" />
-        <text str="Signal" x="210.66987298107782" y="121.0" align="center" valign="top" />
+        <text str="Press (button)" x="210.66987298107782" y="114.0" align="center" valign="bottom" />
+        <text str="Signal" x="210.66987298107782" y="117.5" align="center" valign="top" />
     </foreground>
 </shape>
