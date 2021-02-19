@@ -6,6 +6,8 @@ style: chip_1
 name: "DIP Example"
 title:
   - "Chip B"
+bottom_text:
+  - "Part 1"
 left:
   - "A1"
   - "A2"
