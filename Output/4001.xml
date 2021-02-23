@@ -1,28 +1,28 @@
-<shape aspect="fixed" h="468" w="244" strokewidth="inherit" name="LCD Display Module [4001]">
+<shape aspect="fixed" h="500" w="260" strokewidth="inherit" name="LCD Display Module [4001]">
     <connections>
-        <constraint x="0.4016393442622951" y="0.0" perimeter="0" name="Vdd (5V)"/>
-        <constraint x="0.6639344262295082" y="0.0" perimeter="0" name="A (5V)"/>
-        <constraint x="0.4016393442622951" y="1.0" perimeter="0" name="Vss (GND)"/>
-        <constraint x="0.6639344262295082" y="1.0" perimeter="0" name="K (GND)"/>
-        <constraint x="0.0" y="0.17094017094017094" perimeter="0" name="V0 (contrast)"/>
-        <constraint x="0.0" y="0.23076923076923078" perimeter="0" name="RS"/>
-        <constraint x="0.0" y="0.2905982905982906" perimeter="0" name="R/W"/>
-        <constraint x="0.0" y="0.3504273504273504" perimeter="0" name="E"/>
-        <constraint x="0.0" y="0.41025641025641024" perimeter="0" name="D0"/>
-        <constraint x="0.0" y="0.4700854700854701" perimeter="0" name="D1"/>
-        <constraint x="0.0" y="0.5299145299145299" perimeter="0" name="D2"/>
-        <constraint x="0.0" y="0.5897435897435898" perimeter="0" name="D3"/>
-        <constraint x="0.0" y="0.6495726495726496" perimeter="0" name="D4"/>
-        <constraint x="0.0" y="0.7094017094017094" perimeter="0" name="D5"/>
-        <constraint x="0.0" y="0.7692307692307693" perimeter="0" name="D6"/>
-        <constraint x="0.0" y="0.8290598290598291" perimeter="0" name="D7"/>
+        <constraint x="0.40384615384615385" y="0.0" perimeter="0" name="Vdd (5V)"/>
+        <constraint x="0.6730769230769231" y="0.0" perimeter="0" name="A (5V)"/>
+        <constraint x="0.40384615384615385" y="1.0" perimeter="0" name="Vss (GND)"/>
+        <constraint x="0.6730769230769231" y="1.0" perimeter="0" name="K (GND)"/>
+        <constraint x="0.0" y="0.17" perimeter="0" name="V0 (contrast)"/>
+        <constraint x="0.0" y="0.23" perimeter="0" name="RS"/>
+        <constraint x="0.0" y="0.29" perimeter="0" name="R/W"/>
+        <constraint x="0.0" y="0.35" perimeter="0" name="E"/>
+        <constraint x="0.0" y="0.41" perimeter="0" name="D0"/>
+        <constraint x="0.0" y="0.47" perimeter="0" name="D1"/>
+        <constraint x="0.0" y="0.53" perimeter="0" name="D2"/>
+        <constraint x="0.0" y="0.59" perimeter="0" name="D3"/>
+        <constraint x="0.0" y="0.65" perimeter="0" name="D4"/>
+        <constraint x="0.0" y="0.71" perimeter="0" name="D5"/>
+        <constraint x="0.0" y="0.77" perimeter="0" name="D6"/>
+        <constraint x="0.0" y="0.83" perimeter="0" name="D7"/>
     </connections>
     <background>
         <strokecolor color="#000000"/>
         <fillcolor color="#ffffff"/>
         <fontcolor color="#000000"/>
         <alpha alpha="1"/>
-        <rect x="16" y="16" h="436" w="228" arcsize="-1"/>
+        <rect x="20" y="20" h="460" w="240" arcsize="-1"/>
         <fillstroke />
     </background>
     <foreground>
@@ -31,110 +31,110 @@
         <fontcolor color="#000000"/>
         <alpha alpha="1"/>
         <fontsize size="16"/>
-        <text str="LCD Display" x="130.0" y="225.75" align="center" valign="middle" placeholders="1"/>
-        <text str="Module" x="130.0" y="242.25" align="center" valign="middle" placeholders="1"/>
+        <text str="LCD Display" x="140.0" y="241.75" align="center" valign="middle" placeholders="1"/>
+        <text str="Module" x="140.0" y="258.25" align="center" valign="middle" placeholders="1"/>
         <fontsize size="8"/>
-        <text str="#4001" x="240" y="450.0" align="right" valign="bottom" placeholders="1"/>
+        <text str="#4001" x="256" y="478.0" align="right" valign="bottom" placeholders="1"/>
         <fontsize size="10"/>
         <path>
-            <move x="98.0" y="0"/>
-            <line x="98.0" y="16"/>
+            <move x="105.0" y="0"/>
+            <line x="105.0" y="20"/>
         </path>
         <fillstroke />
-        <text str="Vdd" x="98.0" y="29.0" align="center" valign="bottom" placeholders="1" />
-        <text str="(5V)" x="98.0" y="39.25" align="center" valign="bottom" placeholders="1" />
+        <text str="Vdd" x="105.0" y="33.0" align="center" valign="bottom" placeholders="1" />
+        <text str="(5V)" x="105.0" y="43.25" align="center" valign="bottom" placeholders="1" />
         <path>
-            <move x="162.0" y="0"/>
-            <line x="162.0" y="16"/>
+            <move x="175.0" y="0"/>
+            <line x="175.0" y="20"/>
         </path>
         <fillstroke />
-        <text str="A" x="162.0" y="29.0" align="center" valign="bottom" placeholders="1" />
-        <text str="(5V)" x="162.0" y="39.25" align="center" valign="bottom" placeholders="1" />
+        <text str="A" x="175.0" y="33.0" align="center" valign="bottom" placeholders="1" />
+        <text str="(5V)" x="175.0" y="43.25" align="center" valign="bottom" placeholders="1" />
         <path>
-            <move x="98.0" y="468"/>
-            <line x="98.0" y="452"/>
+            <move x="105.0" y="500"/>
+            <line x="105.0" y="480"/>
         </path>
         <fillstroke />
-        <text str="Vss" x="98.0" y="438.75" align="center" valign="bottom" placeholders="1" />
-        <text str="(GND)" x="98.0" y="449.0" align="center" valign="bottom" placeholders="1" />
+        <text str="Vss" x="105.0" y="466.75" align="center" valign="bottom" placeholders="1" />
+        <text str="(GND)" x="105.0" y="477.0" align="center" valign="bottom" placeholders="1" />
         <path>
-            <move x="162.0" y="468"/>
-            <line x="162.0" y="452"/>
+            <move x="175.0" y="500"/>
+            <line x="175.0" y="480"/>
         </path>
         <fillstroke />
-        <text str="K" x="162.0" y="438.75" align="center" valign="bottom" placeholders="1" />
-        <text str="(GND)" x="162.0" y="449.0" align="center" valign="bottom" placeholders="1" />
+        <text str="K" x="175.0" y="466.75" align="center" valign="bottom" placeholders="1" />
+        <text str="(GND)" x="175.0" y="477.0" align="center" valign="bottom" placeholders="1" />
         <path>
-            <move x="0" y="80.0"/>
-            <line x="16" y="80.0"/>
+            <move x="0" y="85.0"/>
+            <line x="20" y="85.0"/>
         </path>
         <fillstroke />
-        <text str="V0 (contrast)" x="20" y="80.0" align="left" valign="middle" placeholders="1" />
+        <text str="V0 (contrast)" x="24" y="85.0" align="left" valign="middle" placeholders="1" />
         <path>
-            <move x="0" y="108.0"/>
-            <line x="16" y="108.0"/>
+            <move x="0" y="115.0"/>
+            <line x="20" y="115.0"/>
         </path>
         <fillstroke />
-        <text str="RS" x="20" y="108.0" align="left" valign="middle" placeholders="1" />
+        <text str="RS" x="24" y="115.0" align="left" valign="middle" placeholders="1" />
         <path>
-            <move x="0" y="136.0"/>
-            <line x="16" y="136.0"/>
+            <move x="0" y="145.0"/>
+            <line x="20" y="145.0"/>
         </path>
         <fillstroke />
-        <text str="R/W" x="20" y="136.0" align="left" valign="middle" placeholders="1" />
+        <text str="R/W" x="24" y="145.0" align="left" valign="middle" placeholders="1" />
         <path>
-            <move x="0" y="164.0"/>
-            <line x="16" y="164.0"/>
+            <move x="0" y="175.0"/>
+            <line x="20" y="175.0"/>
         </path>
         <fillstroke />
-        <text str="E" x="20" y="164.0" align="left" valign="middle" placeholders="1" />
+        <text str="E" x="24" y="175.0" align="left" valign="middle" placeholders="1" />
         <path>
-            <move x="0" y="192.0"/>
-            <line x="16" y="192.0"/>
+            <move x="0" y="205.0"/>
+            <line x="20" y="205.0"/>
         </path>
         <fillstroke />
-        <text str="D0" x="20" y="192.0" align="left" valign="middle" placeholders="1" />
+        <text str="D0" x="24" y="205.0" align="left" valign="middle" placeholders="1" />
         <path>
-            <move x="0" y="220.0"/>
-            <line x="16" y="220.0"/>
+            <move x="0" y="235.0"/>
+            <line x="20" y="235.0"/>
         </path>
         <fillstroke />
-        <text str="D1" x="20" y="220.0" align="left" valign="middle" placeholders="1" />
+        <text str="D1" x="24" y="235.0" align="left" valign="middle" placeholders="1" />
         <path>
-            <move x="0" y="248.0"/>
-            <line x="16" y="248.0"/>
+            <move x="0" y="265.0"/>
+            <line x="20" y="265.0"/>
         </path>
         <fillstroke />
-        <text str="D2" x="20" y="248.0" align="left" valign="middle" placeholders="1" />
+        <text str="D2" x="24" y="265.0" align="left" valign="middle" placeholders="1" />
         <path>
-            <move x="0" y="276.0"/>
-            <line x="16" y="276.0"/>
+            <move x="0" y="295.0"/>
+            <line x="20" y="295.0"/>
         </path>
         <fillstroke />
-        <text str="D3" x="20" y="276.0" align="left" valign="middle" placeholders="1" />
+        <text str="D3" x="24" y="295.0" align="left" valign="middle" placeholders="1" />
         <path>
-            <move x="0" y="304.0"/>
-            <line x="16" y="304.0"/>
+            <move x="0" y="325.0"/>
+            <line x="20" y="325.0"/>
         </path>
         <fillstroke />
-        <text str="D4" x="20" y="304.0" align="left" valign="middle" placeholders="1" />
+        <text str="D4" x="24" y="325.0" align="left" valign="middle" placeholders="1" />
         <path>
-            <move x="0" y="332.0"/>
-            <line x="16" y="332.0"/>
+            <move x="0" y="355.0"/>
+            <line x="20" y="355.0"/>
         </path>
         <fillstroke />
-        <text str="D5" x="20" y="332.0" align="left" valign="middle" placeholders="1" />
+        <text str="D5" x="24" y="355.0" align="left" valign="middle" placeholders="1" />
         <path>
-            <move x="0" y="360.0"/>
-            <line x="16" y="360.0"/>
+            <move x="0" y="385.0"/>
+            <line x="20" y="385.0"/>
         </path>
         <fillstroke />
-        <text str="D6" x="20" y="360.0" align="left" valign="middle" placeholders="1" />
+        <text str="D6" x="24" y="385.0" align="left" valign="middle" placeholders="1" />
         <path>
-            <move x="0" y="388.0"/>
-            <line x="16" y="388.0"/>
+            <move x="0" y="415.0"/>
+            <line x="20" y="415.0"/>
         </path>
         <fillstroke />
-        <text str="D7" x="20" y="388.0" align="left" valign="middle" placeholders="1" />
+        <text str="D7" x="24" y="415.0" align="left" valign="middle" placeholders="1" />
     </foreground>
 </shape>

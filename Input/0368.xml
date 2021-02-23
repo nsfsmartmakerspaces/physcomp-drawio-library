@@ -1,17 +1,17 @@
-<shape aspect="fixed" h="216" w="180" strokewidth="inherit" name="3-Axis Accelerometer [0368]">
+<shape aspect="fixed" h="230" w="190" strokewidth="inherit" name="3-Axis Accelerometer [0368]">
     <connections>
-        <constraint x="0.45555555555555555" y="0.0" perimeter="0" name="VCC (5V)"/>
-        <constraint x="0.45555555555555555" y="1.0" perimeter="0" name="GND"/>
-        <constraint x="1.0" y="0.37037037037037035" perimeter="0" name="X"/>
+        <constraint x="0.4473684210526316" y="0.0" perimeter="0" name="VCC (5V)"/>
+        <constraint x="0.4473684210526316" y="1.0" perimeter="0" name="GND"/>
+        <constraint x="1.0" y="0.3695652173913043" perimeter="0" name="X"/>
         <constraint x="1.0" y="0.5" perimeter="0" name="Y"/>
-        <constraint x="1.0" y="0.6296296296296297" perimeter="0" name="Z"/>
+        <constraint x="1.0" y="0.6304347826086957" perimeter="0" name="Z"/>
     </connections>
     <background>
         <strokecolor color="#000000"/>
         <fillcolor color="#ffffff"/>
         <fontcolor color="#000000"/>
         <alpha alpha="1"/>
-        <rect x="0" y="16" h="184" w="164" arcsize="-1"/>
+        <rect x="0" y="20" h="190" w="170" arcsize="-1"/>
         <fillstroke />
     </background>
     <foreground>
@@ -20,41 +20,41 @@
         <fontcolor color="#000000"/>
         <alpha alpha="1"/>
         <fontsize size="16"/>
-        <text str="3-Axis" x="82.0" y="99.75" align="center" valign="middle" placeholders="1"/>
-        <text str="Accelerometer" x="82.0" y="116.25" align="center" valign="middle" placeholders="1"/>
+        <text str="3-Axis" x="85.0" y="106.75" align="center" valign="middle" placeholders="1"/>
+        <text str="Accelerometer" x="85.0" y="123.25" align="center" valign="middle" placeholders="1"/>
         <fontsize size="8"/>
-        <text str="#0368" x="160" y="198.0" align="right" valign="bottom" placeholders="1"/>
+        <text str="#0368" x="166" y="208.0" align="right" valign="bottom" placeholders="1"/>
         <fontsize size="10"/>
         <path>
-            <move x="82.0" y="0"/>
-            <line x="82.0" y="16"/>
+            <move x="85.0" y="0"/>
+            <line x="85.0" y="20"/>
         </path>
         <fillstroke />
-        <text str="VCC" x="82.0" y="29.0" align="center" valign="bottom" placeholders="1" />
-        <text str="(5V)" x="82.0" y="39.25" align="center" valign="bottom" placeholders="1" />
+        <text str="VCC" x="85.0" y="33.0" align="center" valign="bottom" placeholders="1" />
+        <text str="(5V)" x="85.0" y="43.25" align="center" valign="bottom" placeholders="1" />
         <path>
-            <move x="82.0" y="216"/>
-            <line x="82.0" y="200"/>
+            <move x="85.0" y="230"/>
+            <line x="85.0" y="210"/>
         </path>
         <fillstroke />
-        <text str="GND" x="82.0" y="197.0" align="center" valign="bottom" placeholders="1" />
+        <text str="GND" x="85.0" y="207.0" align="center" valign="bottom" placeholders="1" />
         <path>
-            <move x="180" y="80.0"/>
-            <line x="164" y="80.0"/>
+            <move x="190" y="85.0"/>
+            <line x="170" y="85.0"/>
         </path>
         <fillstroke />
-        <text str="X" x="160" y="80.0" align="right" valign="middle" placeholders="1" />
+        <text str="X" x="166" y="85.0" align="right" valign="middle" placeholders="1" />
         <path>
-            <move x="180" y="108.0"/>
-            <line x="164" y="108.0"/>
+            <move x="190" y="115.0"/>
+            <line x="170" y="115.0"/>
         </path>
         <fillstroke />
-        <text str="Y" x="160" y="108.0" align="right" valign="middle" placeholders="1" />
+        <text str="Y" x="166" y="115.0" align="right" valign="middle" placeholders="1" />
         <path>
-            <move x="180" y="136.0"/>
-            <line x="164" y="136.0"/>
+            <move x="190" y="145.0"/>
+            <line x="170" y="145.0"/>
         </path>
         <fillstroke />
-        <text str="Z" x="160" y="136.0" align="right" valign="middle" placeholders="1" />
+        <text str="Z" x="166" y="145.0" align="right" valign="middle" placeholders="1" />
     </foreground>
 </shape>
