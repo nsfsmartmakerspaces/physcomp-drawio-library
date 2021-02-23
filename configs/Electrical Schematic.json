@@ -39,16 +39,40 @@
                 {
                     "id": "physcomp-components",
                     "title": {
-                        "main": "Components"
+                        "main": "Electronic Components"
                     },
-                    "desc": "Electronics components",
+                    "desc": "Electronic components",
                     "libs": [
                         {
                             "title": {
-                                "main": "Components"
+                                "main": "Input"
                             },
-                            "url": "https://nsfsmartmakerspaces.github.io/physcomp-drawio-library/Components.xml",
-                            "tags": "components",
+                            "url": "https://nsfsmartmakerspaces.github.io/physcomp-drawio-library/Input.xml",
+                            "tags": "component input",
+                            "prefetch": true
+                        },
+                        {
+                            "title": {
+                                "main": "Controller"
+                            },
+                            "url": "https://nsfsmartmakerspaces.github.io/physcomp-drawio-library/Controller.xml",
+                            "tags": "component controller",
+                            "prefetch": true
+                        },
+                        {
+                            "title": {
+                                "main": "Output"
+                            },
+                            "url": "https://nsfsmartmakerspaces.github.io/physcomp-drawio-library/Output.xml",
+                            "tags": "component output",
+                            "prefetch": true
+                        },
+                        {
+                            "title": {
+                                "main": "Power"
+                            },
+                            "url": "https://nsfsmartmakerspaces.github.io/physcomp-drawio-library/Power.xml",
+                            "tags": "component power",
                             "prefetch": true
                         }
                     ]

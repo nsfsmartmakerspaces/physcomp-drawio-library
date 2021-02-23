@@ -1,7 +1,7 @@
 {
     "defaultLibraries": "physcomp-block;general",
     "defaultCustomLibraries": "",
-    "enabledLibraries": "general",
+    "enabledLibraries": ["general"],
     "enableCustomLibraries": false,
     "override": true,
     "version": "0.0.1",
@@ -45,10 +45,26 @@
                     "libs": [
                         {
                             "title": {
-                                "main": "Block Diagram Components"
+                                "main": "Input (Block)"
                             },
-                            "url": "https://nsfsmartmakerspaces.github.io/physcomp-drawio-library/Block.xml",
-                            "tags": "block",
+                            "url": "https://nsfsmartmakerspaces.github.io/physcomp-drawio-library/Input%20(Block).xml",
+                            "tags": "block input",
+                            "prefetch": true
+                        },
+                        {
+                            "title": {
+                                "main": "Controller (Block)"
+                            },
+                            "url": "https://nsfsmartmakerspaces.github.io/physcomp-drawio-library/Controller%20(Block).xml",
+                            "tags": "block controller",
+                            "prefetch": true
+                        },
+                        {
+                            "title": {
+                                "main": "Output (Block)"
+                            },
+                            "url": "https://nsfsmartmakerspaces.github.io/physcomp-drawio-library/Output%20(Block).xml",
+                            "tags": "block output",
                             "prefetch": true
                         }
                     ]
