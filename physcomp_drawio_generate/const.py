@@ -71,6 +71,11 @@ LIBRARY_JSON_HEIGHT = "h"
 LIBRARY_JSON_ASPECT = "aspect"
 LIBRARY_JSON_TITLE = "title"
 
+CONFIG_URL_TEMPLATE_DATA = "data"
+
+CONFIG_ENTRY_TEMPLATE_URL = "url"
+CONFIG_ENTRY_TEMPLATE_NAME = "name"
+
 # Template locations
 TEMPLATE_DRAWING_MAIN = "templates/drawing.xml"
 TEMPLATE_DRAWING_TITLE = "templates/drawing_title.xml"
@@ -88,11 +93,18 @@ TEMPLATE_LIBRARY_START = "templates/library_start.xml"
 TEMPLATE_LIBRARY_END = "templates/library_end.xml"
 TEMPLATE_LIBRARY_XML = "templates/library_xml.xml"
 TEMPLATE_LIBRARY_XML_PLACEHOLDER = "templates/library_xml_placeholder.xml"
+TEMPLATE_CONFIG_START = "templates/config_start.html"
+TEMPLATE_CONFIG_END = "templates/config_end.html"
+TEMPLATE_CONFIG_ENTRY = "templates/config_entry.html"
+TEMPLATE_CONFIG_URL = "templates/config_url.txt"
 
 # Src and dist dirs
 YAML_SRC_DIR = "drawings"
 YAML_STYLE_DIR = "styles"
 YAML_DIST_DIR = "dist"
+CONFIG_SRC_DIR = "configs"
+CONFIG_STATIC_DIR = "static"
+CONFIG_TARGET_FILE = "index.html"
 
 # Drawing YAML names
 DRAWING_YAML_SCHEMA_VERSION = "schema_version"

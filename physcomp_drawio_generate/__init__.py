@@ -1,12 +1,13 @@
 import asyncio
 from base64 import b64encode
+from distutils.dir_util import copy_tree
 from glob import glob
-from json import dumps
+import json
 from math import sqrt
 from string import Template
 import os
 import pathlib
-from shutil import rmtree
+import shutil
 import sys
 import urllib
 import zlib
@@ -168,6 +169,15 @@ def read_yaml_file(src_file: str) -> dict:
             return yaml.safe_load(stream)
         except yaml.DRAWING_YAMLError as exc:
             print(f"DRAWING_YAML error {src_file}: {exc}")
+            return None
+
+
+def read_json_file(src_file: str) -> dict:
+    with open(src_file, 'r') as stream:
+        try:
+            return json.load(stream)
+        except ValueError as exc:
+            print(f"ValueError error {src_file}: {exc}")
             return None
 
 
@@ -466,7 +476,7 @@ async def generate(src_file: str, file_name: str, dest_file: str, templates: dic
         LIBRARY_JSON_ASPECT: template_opts[DRAWING_TEMPLATE_ASPECT],
         LIBRARY_JSON_TITLE: template_opts[DRAWING_TEMPLATE_NAME]
     }
-    library_append += dumps(library_data)
+    library_append += json.dumps(library_data)
     append_file(library_dest, library_append)
 
 
@@ -523,6 +533,33 @@ async def load_style(styles: dict, name: str, path: str):
     }
 
 
+async def www_start(templates: dict) -> None:
+    if os.path.isdir(CONFIG_STATIC_DIR):
+        copy_tree(CONFIG_STATIC_DIR, YAML_DIST_DIR)
+    save_file(f"./{YAML_DIST_DIR}/{CONFIG_TARGET_FILE}", templates["start"])
+
+
+async def www_end(templates: dict) -> None:
+    append_file(f"./{YAML_DIST_DIR}/{CONFIG_TARGET_FILE}", templates["end"])
+
+
+async def generate_config(file: str, name: str, templates: dict) -> None:
+    inputJSON = read_json_file(file)
+    stringify = json.dumps(inputJSON, separators=(',', ':'))
+    compressed = drawio_compress(stringify)
+
+    url_opts = {}
+    url_opts[CONFIG_URL_TEMPLATE_DATA] = compressed
+    url = Template(templates["url"]).substitute(url_opts)
+
+    entry_opts = {}
+    entry_opts[CONFIG_ENTRY_TEMPLATE_URL] = url
+    entry_opts[CONFIG_ENTRY_TEMPLATE_NAME] = name
+    entry = Template(templates["entry"]).substitute(entry_opts)
+
+    append_file(f"./{YAML_DIST_DIR}/{CONFIG_TARGET_FILE}", entry)
+
+
 async def main() -> None:
     drawing_templates = {}
     with open(TEMPLATE_DRAWING_MAIN, 'r') as stream:
@@ -557,6 +594,16 @@ async def main() -> None:
         library_templates["start"] = stream.read()
     with open(TEMPLATE_LIBRARY_END, 'r') as stream:
         library_templates["end"] = stream.read()
+
+    config_templates = {}
+    with open(TEMPLATE_CONFIG_START, 'r') as stream:
+        config_templates["start"] = stream.read()
+    with open(TEMPLATE_CONFIG_END, 'r') as stream:
+        config_templates["end"] = stream.read()
+    with open(TEMPLATE_CONFIG_ENTRY, 'r') as stream:
+        config_templates["entry"] = stream.read()
+    with open(TEMPLATE_CONFIG_URL, 'r') as stream:
+        config_templates["url"] = stream.read()
 
     style_names = []
     styles = {}
@@ -599,15 +646,27 @@ async def main() -> None:
         dest_file = f"{dest_file}.xml"
         library_dest = f"./{YAML_DIST_DIR}/{library_name}.xml"
         if os.path.isdir(f"./{YAML_DIST_DIR}"):
-            rmtree(f"./{YAML_DIST_DIR}")
+            shutil.rmtree(f"./{YAML_DIST_DIR}")
         file_tasks.append(generate(src_file, file_name, dest_file, drawing_templates, styles, library_name, library_dest, libraries_with_first_entry))
     for library_name in library_names:
         dest_file = f"./{YAML_DIST_DIR}/{library_name}.xml"
         library_tasks_start.append(generate_library_start(library_name, dest_file, library_templates))
         library_tasks_end.append(generate_library_end(library_name, dest_file, library_templates, libraries_with_first_entry))
+
+    config_tasks = []
+    config_files = glob(f"./{CONFIG_SRC_DIR}/*.json")
+    for config_file in config_files:
+        split = os.path.normpath(config_file).split(os.path.sep)
+        file_name = os.path.splitext(split[1])[0]
+        config_tasks.append(generate_config(config_file, file_name, config_templates))
+
     if len(file_tasks) > 0:
         await asyncio.wait(library_tasks_start)
         await asyncio.wait(file_tasks)
         await asyncio.wait(library_tasks_end)
+        if len(config_tasks) > 0:
+            await www_start(config_templates)
+            await asyncio.wait(config_tasks)
+            await www_end(config_templates)
     else:
         print("No drawings to process, stopping")
