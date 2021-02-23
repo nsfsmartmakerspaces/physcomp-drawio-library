@@ -1,5 +1,6 @@
 import asyncio
 from base64 import b64encode
+from datetime import datetime, timezone
 from distutils.dir_util import copy_tree
 from glob import glob
 import json
@@ -12,6 +13,7 @@ import sys
 import urllib
 import zlib
 
+import pytz
 import yaml
 
 from .const import *
@@ -540,7 +542,12 @@ async def www_start(templates: dict) -> None:
 
 
 async def www_end(templates: dict) -> None:
-    append_file(f"./{YAML_DIST_DIR}/{CONFIG_TARGET_FILE}", templates["end"])
+    tz = pytz.timezone(TIMEZONE)
+    now = (datetime.now(tz)).strftime("%m/%d/%Y, %H:%M:%S")
+    end_opts = {}
+    end_opts[CONFIG_END_TEMPLATE_DATETIME] = now
+    end = Template(templates["end"]).substitute(end_opts)
+    append_file(f"./{YAML_DIST_DIR}/{CONFIG_TARGET_FILE}", end)
 
 
 async def generate_config(file: str, name: str, templates: dict) -> None:

@@ -7,6 +7,7 @@ setup(name='physcomp_drawio_library',
       author='NSF Smart Maker Spaces',
       packages=['physcomp_drawio_generate'],
       install_requires=[
-          'PyYAML==5.4.1',
+          'pytz==2021.1',
+          'PyYAML==5.4.1'
       ],
       zip_safe=False)

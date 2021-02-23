@@ -76,6 +76,8 @@ CONFIG_URL_TEMPLATE_DATA = "data"
 CONFIG_ENTRY_TEMPLATE_URL = "url"
 CONFIG_ENTRY_TEMPLATE_NAME = "name"
 
+CONFIG_END_TEMPLATE_DATETIME = "datetime"
+
 # Template locations
 TEMPLATE_DRAWING_MAIN = "templates/drawing.xml"
 TEMPLATE_DRAWING_TITLE = "templates/drawing_title.xml"
@@ -156,3 +158,4 @@ ASPECT_FIXED = "fixed"
 
 # Settings
 URLENCODE_SAFE_CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_.!~'()"
+TIMEZONE = "America/New_York"
