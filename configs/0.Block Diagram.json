@@ -1,0 +1,59 @@
+{
+    "defaultLibraries": "physcomp-block",
+    "defaultCustomLibraries": "",
+    "enabledLibraries": "",
+    "enableCustomLibraries": false,
+    "override": true,
+    "version": "0.0.1",
+    "defaultEdgeStyle": {
+        "edgeStyle": "orthogonalEdgeStyle",
+        "rounded": "0",
+        "jumpStyle": "arc",
+        "jumpSize": "10",
+        "orthogonalLoop": "1",
+        "jettySize": "auto",
+        "html": "1",
+        "exitX": "0",
+        "exitY": "0.5",
+        "exitDX": "0",
+        "exitDY": "0",
+        "exitPerimeter": "0",
+        "endArrow": "none",
+        "endFill": "0",
+        "startArrow": "none",
+        "startFill": "0",
+        "strokeWidth": "1",
+        "shadow": "0",
+        "sketch": "0",
+        "targetPerimeterSpacing": "0",
+        "sourcePerimeterSpacing": "0",
+        "startSize": "6",
+        "endSize": "6"
+    },
+    "libraries": [
+        {
+            "title": {
+                "main": "Physical Computing"
+            },
+            "entries": [
+                {
+                    "id": "physcomp-block",
+                    "title": {
+                        "main": "Block Diagram Components"
+                    },
+                    "desc": "Block diagram components",
+                    "libs": [
+                        {
+                            "title": {
+                                "main": "Block Diagram Components"
+                            },
+                            "url": "https://nsfsmartmakerspaces.github.io/physcomp-drawio-library/Block.xml",
+                            "tags": "block",
+                            "prefetch": true
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
