@@ -13,8 +13,8 @@ bottom_text:
   line_spacing: 0.25
   pad: 4
 pin_text:
-  vert_width: 28
-  horiz_height: 28
+  vert_width: 30
+  horiz_height: 30
   size: 8
   line_spacing: 0.5
   pad: 5
