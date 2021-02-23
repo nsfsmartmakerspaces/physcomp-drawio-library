@@ -544,6 +544,7 @@ async def www_start(templates: dict) -> None:
 async def www_end(templates: dict) -> None:
     tz = pytz.timezone(TIMEZONE)
     now = (datetime.now(tz)).strftime("%m/%d/%Y, %H:%M:%S")
+    now = f"{now} ({TIMEZONE})"
     end_opts = {}
     end_opts[CONFIG_END_TEMPLATE_DATETIME] = now
     end = Template(templates["end"]).substitute(end_opts)
