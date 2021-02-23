@@ -1,7 +1,7 @@
 {
-    "defaultLibraries": "physcomp-components",
+    "defaultLibraries": "physcomp-components;general",
     "defaultCustomLibraries": "",
-    "enabledLibraries": "",
+    "enabledLibraries": ["general"],
     "enableCustomLibraries": false,
     "override": true,
     "version": "0.0.1",
