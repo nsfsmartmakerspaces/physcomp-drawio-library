@@ -541,18 +541,16 @@ async def www_start(templates: dict) -> None:
     save_file(f"./{YAML_DIST_DIR}/{CONFIG_TARGET_FILE}", templates["start"])
 
 
-async def www_end(templates: dict) -> None:
-    tz = pytz.timezone(TIMEZONE)
-    now = (datetime.now(tz)).strftime("%m/%d/%Y, %H:%M:%S")
-    now = f"{now} ({TIMEZONE})"
+async def www_end(now_str: str, templates: dict) -> None:
     end_opts = {}
-    end_opts[CONFIG_END_TEMPLATE_DATETIME] = now
+    end_opts[CONFIG_END_TEMPLATE_DATETIME] = now_str
     end = Template(templates["end"]).substitute(end_opts)
     append_file(f"./{YAML_DIST_DIR}/{CONFIG_TARGET_FILE}", end)
 
 
-async def generate_config(file: str, name: str, templates: dict) -> None:
+async def generate_config(file: str, name: str, version: int, templates: dict) -> None:
     inputJSON = read_json_file(file)
+    inputJSON[CONFIG_JSON_VERSION] = f"{version}-{name}"
     stringify = json.dumps(inputJSON, separators=(',', ':'))
     compressed = drawio_compress(stringify)
 
@@ -663,10 +661,14 @@ async def main() -> None:
 
     config_tasks = []
     config_files = glob(f"./{CONFIG_SRC_DIR}/*.json")
+    tz = pytz.timezone(TIMEZONE)
+    now = datetime.now(tz)
+    now_str = f"{now.strftime('%m/%d/%Y, %H:%M:%S')} ({TIMEZONE})"
+    config_version = str(now.microsecond)
     for config_file in config_files:
         split = os.path.normpath(config_file).split(os.path.sep)
         file_name = os.path.splitext(split[1])[0]
-        config_tasks.append(generate_config(config_file, file_name, config_templates))
+        config_tasks.append(generate_config(config_file, file_name, config_version, config_templates))
 
     if len(file_tasks) > 0:
         await asyncio.wait(library_tasks_start)
@@ -675,6 +677,6 @@ async def main() -> None:
         if len(config_tasks) > 0:
             await www_start(config_templates)
             await asyncio.wait(config_tasks)
-            await www_end(config_templates)
+            await www_end(now_str, config_templates)
     else:
         print("No drawings to process, stopping")

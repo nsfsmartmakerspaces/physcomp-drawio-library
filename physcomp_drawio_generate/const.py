@@ -146,6 +146,8 @@ STYLE_YAML_PINS_LENGTH = "length"
 STYLE_YAML_PINS_ARROW_SIZE = "arrow_size"
 STYLE_YAML_PINS_LEFT_ARROW_PAD = "left_arrow_pad"
 
+CONFIG_JSON_VERSION = "version"
+
 # Template attr values
 TEXT_ALIGN_LEFT = "left"
 TEXT_ALIGN_RIGHT = "right"

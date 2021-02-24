@@ -4,7 +4,6 @@
     "enabledLibraries": ["general", "physcomp-block", "physcomp-components", "electrical"],
     "enableCustomLibraries": false,
     "override": true,
-    "version": "0.0.1",
     "defaultEdgeStyle": {
         "edgeStyle": "orthogonalEdgeStyle",
         "rounded": "0",
