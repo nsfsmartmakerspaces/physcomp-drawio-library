@@ -1,6 +1,6 @@
 import asyncio
 from base64 import b64encode
-from datetime import datetime, timezone
+from datetime import datetime
 from distutils.dir_util import copy_tree
 from glob import glob
 import json
