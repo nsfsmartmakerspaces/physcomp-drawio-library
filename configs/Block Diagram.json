@@ -1,7 +1,7 @@
 {
     "defaultLibraries": "physcomp-block;general",
     "defaultCustomLibraries": "",
-    "enabledLibraries": ["general"],
+    "enabledLibraries": ["general", "physcomp-block", "physcomp-components", "electrical"],
     "enableCustomLibraries": false,
     "override": true,
     "version": "0.0.1",
@@ -65,6 +65,47 @@
                             },
                             "url": "https://nsfsmartmakerspaces.github.io/physcomp-drawio-library/Output%20(Block).xml",
                             "tags": "block output",
+                            "prefetch": true
+                        }
+                    ]
+                },
+                {
+                    "id": "physcomp-components",
+                    "title": {
+                        "main": "Electronic Components"
+                    },
+                    "desc": "Electronic components",
+                    "libs": [
+                        {
+                            "title": {
+                                "main": "Input"
+                            },
+                            "url": "https://nsfsmartmakerspaces.github.io/physcomp-drawio-library/Input.xml",
+                            "tags": "component input",
+                            "prefetch": true
+                        },
+                        {
+                            "title": {
+                                "main": "Controller"
+                            },
+                            "url": "https://nsfsmartmakerspaces.github.io/physcomp-drawio-library/Controller.xml",
+                            "tags": "component controller",
+                            "prefetch": true
+                        },
+                        {
+                            "title": {
+                                "main": "Output"
+                            },
+                            "url": "https://nsfsmartmakerspaces.github.io/physcomp-drawio-library/Output.xml",
+                            "tags": "component output",
+                            "prefetch": true
+                        },
+                        {
+                            "title": {
+                                "main": "Power"
+                            },
+                            "url": "https://nsfsmartmakerspaces.github.io/physcomp-drawio-library/Power.xml",
+                            "tags": "component power",
                             "prefetch": true
                         }
                     ]

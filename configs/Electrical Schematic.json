@@ -1,7 +1,7 @@
 {
     "defaultLibraries": "physcomp-components;general",
     "defaultCustomLibraries": "",
-    "enabledLibraries": ["general"],
+    "enabledLibraries": ["general", "physcomp-block", "physcomp-components", "electrical"],
     "enableCustomLibraries": false,
     "override": true,
     "version": "0.0.1",
@@ -36,6 +36,39 @@
                 "main": "Physical Computing"
             },
             "entries": [
+                {
+                    "id": "physcomp-block",
+                    "title": {
+                        "main": "Block Diagram Components"
+                    },
+                    "desc": "Block diagram components",
+                    "libs": [
+                        {
+                            "title": {
+                                "main": "Input (Block)"
+                            },
+                            "url": "https://nsfsmartmakerspaces.github.io/physcomp-drawio-library/Input%20(Block).xml",
+                            "tags": "block input",
+                            "prefetch": true
+                        },
+                        {
+                            "title": {
+                                "main": "Controller (Block)"
+                            },
+                            "url": "https://nsfsmartmakerspaces.github.io/physcomp-drawio-library/Controller%20(Block).xml",
+                            "tags": "block controller",
+                            "prefetch": true
+                        },
+                        {
+                            "title": {
+                                "main": "Output (Block)"
+                            },
+                            "url": "https://nsfsmartmakerspaces.github.io/physcomp-drawio-library/Output%20(Block).xml",
+                            "tags": "block output",
+                            "prefetch": true
+                        }
+                    ]
+                },
                 {
                     "id": "physcomp-components",
                     "title": {
