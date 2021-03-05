@@ -1,7 +1,7 @@
 {
-    "defaultLibraries": "physcomp-block;general",
+    "defaultLibraries": "physcomp-block-${config_version};general",
     "defaultCustomLibraries": "",
-    "enabledLibraries": ["general", "physcomp-block", "physcomp-components", "electrical"],
+    "enabledLibraries": ["general", "physcomp-block-${config_version}", "physcomp-components-${config_version}", "electrical"],
     "enableCustomLibraries": false,
     "override": true,
     "defaultEdgeStyle": {
@@ -36,7 +36,7 @@
             },
             "entries": [
                 {
-                    "id": "physcomp-block",
+                    "id": "physcomp-block-${config_version}",
                     "title": {
                         "main": "Block Diagram Components"
                     },
@@ -69,7 +69,7 @@
                     ]
                 },
                 {
-                    "id": "physcomp-components",
+                    "id": "physcomp-components-${config_version}",
                     "title": {
                         "main": "Electronic Components"
                     },
