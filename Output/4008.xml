@@ -1,21 +1,21 @@
-<shape aspect="fixed" h="360" w="210" strokewidth="inherit" name="Shift Register (74HC595) [4008]">
+<shape aspect="fixed" h="370" w="220" strokewidth="inherit" name="Shift Register (74HC595) [4008]">
     <connections>
-        <constraint x="0.0" y="0.18055555555555555" perimeter="0" name="QB"/>
-        <constraint x="0.0" y="0.2638888888888889" perimeter="0" name="QC"/>
-        <constraint x="0.0" y="0.3472222222222222" perimeter="0" name="QD"/>
-        <constraint x="0.0" y="0.4305555555555556" perimeter="0" name="QE"/>
-        <constraint x="0.0" y="0.5138888888888888" perimeter="0" name="QF"/>
-        <constraint x="0.0" y="0.5972222222222222" perimeter="0" name="QG"/>
-        <constraint x="0.0" y="0.6805555555555556" perimeter="0" name="QH"/>
-        <constraint x="0.0" y="0.7638888888888888" perimeter="0" name="GND"/>
-        <constraint x="1.0" y="0.18055555555555555" perimeter="0" name="VCC"/>
-        <constraint x="1.0" y="0.2638888888888889" perimeter="0" name="QA"/>
-        <constraint x="1.0" y="0.3472222222222222" perimeter="0" name="SER"/>
-        <constraint x="1.0" y="0.4305555555555556" perimeter="0" name="!OE"/>
-        <constraint x="1.0" y="0.5138888888888888" perimeter="0" name="RCLK"/>
-        <constraint x="1.0" y="0.5972222222222222" perimeter="0" name="SRCLK"/>
-        <constraint x="1.0" y="0.6805555555555556" perimeter="0" name="!SRCLR"/>
-        <constraint x="1.0" y="0.7638888888888888" perimeter="0" name="QH'"/>
+        <constraint x="0.0" y="0.1891891891891892" perimeter="0" name="QB"/>
+        <constraint x="0.0" y="0.2702702702702703" perimeter="0" name="QC"/>
+        <constraint x="0.0" y="0.35135135135135137" perimeter="0" name="QD"/>
+        <constraint x="0.0" y="0.43243243243243246" perimeter="0" name="QE"/>
+        <constraint x="0.0" y="0.5135135135135135" perimeter="0" name="QF"/>
+        <constraint x="0.0" y="0.5945945945945946" perimeter="0" name="QG"/>
+        <constraint x="0.0" y="0.6756756756756757" perimeter="0" name="QH"/>
+        <constraint x="0.0" y="0.7567567567567568" perimeter="0" name="GND"/>
+        <constraint x="1.0" y="0.1891891891891892" perimeter="0" name="VCC"/>
+        <constraint x="1.0" y="0.2702702702702703" perimeter="0" name="QA"/>
+        <constraint x="1.0" y="0.35135135135135137" perimeter="0" name="SER"/>
+        <constraint x="1.0" y="0.43243243243243246" perimeter="0" name="!OE"/>
+        <constraint x="1.0" y="0.5135135135135135" perimeter="0" name="RCLK"/>
+        <constraint x="1.0" y="0.5945945945945946" perimeter="0" name="SRCLK"/>
+        <constraint x="1.0" y="0.6756756756756757" perimeter="0" name="!SRCLR"/>
+        <constraint x="1.0" y="0.7567567567567568" perimeter="0" name="QH'"/>
     </connections>
     <background>
         <strokecolor color="#000000"/>
@@ -24,11 +24,11 @@
         <alpha alpha="1"/>
         <path>
             <move x="20" y="0"/>
-            <line x="20" y="340"/>
-            <line x="190" y="340"/>
-            <line x="190" y="0"/>
-            <line x="133.33333333333334" y="0"/>
-            <arc rx="28.333333333333332" ry="28.333333333333332" x-axis-rotation="0" large-arc-flag="1" sweep-flag="1" x="76.66666666666667" y="0"/>
+            <line x="20" y="350"/>
+            <line x="200" y="350"/>
+            <line x="200" y="0"/>
+            <line x="140.0" y="0"/>
+            <arc rx="30.0" ry="30.0" x-axis-rotation="0" large-arc-flag="1" sweep-flag="1" x="80.0" y="0"/>
             <close/>
         </path>
         <fillstroke />
@@ -39,107 +39,107 @@
         <fontcolor color="#000000"/>
         <alpha alpha="1"/>
         <fontsize size="16"/>
-        <text str="Shift" x="105.0" y="153.5" align="center" valign="middle" placeholders="1"/>
-        <text str="Register" x="105.0" y="170.0" align="center" valign="middle" placeholders="1"/>
-        <text str="(74HC595)" x="105.0" y="186.5" align="center" valign="middle" placeholders="1"/>
+        <text str="Shift" x="110.0" y="158.5" align="center" valign="middle" placeholders="1"/>
+        <text str="Register" x="110.0" y="175.0" align="center" valign="middle" placeholders="1"/>
+        <text str="(74HC595)" x="110.0" y="191.5" align="center" valign="middle" placeholders="1"/>
         <fontsize size="8"/>
-        <text str="#4008" x="186" y="338.0" align="right" valign="bottom" placeholders="1"/>
+        <text str="#4008" x="196" y="348.0" align="right" valign="bottom" placeholders="1"/>
         <fontsize size="10"/>
         <path>
-            <move x="0" y="65.0"/>
-            <line x="20" y="65.0"/>
+            <move x="0" y="70.0"/>
+            <line x="20" y="70.0"/>
         </path>
         <fillstroke />
-        <text str="QB" x="24" y="65.0" align="left" valign="middle" placeholders="1" />
+        <text str="QB" x="24" y="70.0" align="left" valign="middle" placeholders="1" />
         <path>
-            <move x="0" y="95.0"/>
-            <line x="20" y="95.0"/>
+            <move x="0" y="100.0"/>
+            <line x="20" y="100.0"/>
         </path>
         <fillstroke />
-        <text str="QC" x="24" y="95.0" align="left" valign="middle" placeholders="1" />
+        <text str="QC" x="24" y="100.0" align="left" valign="middle" placeholders="1" />
         <path>
-            <move x="0" y="125.0"/>
-            <line x="20" y="125.0"/>
+            <move x="0" y="130.0"/>
+            <line x="20" y="130.0"/>
         </path>
         <fillstroke />
-        <text str="QD" x="24" y="125.0" align="left" valign="middle" placeholders="1" />
+        <text str="QD" x="24" y="130.0" align="left" valign="middle" placeholders="1" />
         <path>
-            <move x="0" y="155.0"/>
-            <line x="20" y="155.0"/>
+            <move x="0" y="160.0"/>
+            <line x="20" y="160.0"/>
         </path>
         <fillstroke />
-        <text str="QE" x="24" y="155.0" align="left" valign="middle" placeholders="1" />
+        <text str="QE" x="24" y="160.0" align="left" valign="middle" placeholders="1" />
         <path>
-            <move x="0" y="185.0"/>
-            <line x="20" y="185.0"/>
+            <move x="0" y="190.0"/>
+            <line x="20" y="190.0"/>
         </path>
         <fillstroke />
-        <text str="QF" x="24" y="185.0" align="left" valign="middle" placeholders="1" />
+        <text str="QF" x="24" y="190.0" align="left" valign="middle" placeholders="1" />
         <path>
-            <move x="0" y="215.0"/>
-            <line x="20" y="215.0"/>
+            <move x="0" y="220.0"/>
+            <line x="20" y="220.0"/>
         </path>
         <fillstroke />
-        <text str="QG" x="24" y="215.0" align="left" valign="middle" placeholders="1" />
+        <text str="QG" x="24" y="220.0" align="left" valign="middle" placeholders="1" />
         <path>
-            <move x="0" y="245.0"/>
-            <line x="20" y="245.0"/>
+            <move x="0" y="250.0"/>
+            <line x="20" y="250.0"/>
         </path>
         <fillstroke />
-        <text str="QH" x="24" y="245.0" align="left" valign="middle" placeholders="1" />
+        <text str="QH" x="24" y="250.0" align="left" valign="middle" placeholders="1" />
         <path>
-            <move x="0" y="275.0"/>
-            <line x="20" y="275.0"/>
+            <move x="0" y="280.0"/>
+            <line x="20" y="280.0"/>
         </path>
         <fillstroke />
-        <text str="GND" x="24" y="275.0" align="left" valign="middle" placeholders="1" />
+        <text str="GND" x="24" y="280.0" align="left" valign="middle" placeholders="1" />
         <path>
-            <move x="210" y="65.0"/>
-            <line x="190" y="65.0"/>
+            <move x="220" y="70.0"/>
+            <line x="200" y="70.0"/>
         </path>
         <fillstroke />
-        <text str="VCC" x="186" y="65.0" align="right" valign="middle" placeholders="1" />
+        <text str="VCC" x="196" y="70.0" align="right" valign="middle" placeholders="1" />
         <path>
-            <move x="210" y="95.0"/>
-            <line x="190" y="95.0"/>
+            <move x="220" y="100.0"/>
+            <line x="200" y="100.0"/>
         </path>
         <fillstroke />
-        <text str="QA" x="186" y="95.0" align="right" valign="middle" placeholders="1" />
+        <text str="QA" x="196" y="100.0" align="right" valign="middle" placeholders="1" />
         <path>
-            <move x="210" y="125.0"/>
-            <line x="190" y="125.0"/>
+            <move x="220" y="130.0"/>
+            <line x="200" y="130.0"/>
         </path>
         <fillstroke />
-        <text str="SER" x="186" y="125.0" align="right" valign="middle" placeholders="1" />
+        <text str="SER" x="196" y="130.0" align="right" valign="middle" placeholders="1" />
         <path>
-            <move x="210" y="155.0"/>
-            <line x="190" y="155.0"/>
+            <move x="220" y="160.0"/>
+            <line x="200" y="160.0"/>
         </path>
         <fillstroke />
-        <text str="!OE" x="186" y="155.0" align="right" valign="middle" placeholders="1" />
+        <text str="!OE" x="196" y="160.0" align="right" valign="middle" placeholders="1" />
         <path>
-            <move x="210" y="185.0"/>
-            <line x="190" y="185.0"/>
+            <move x="220" y="190.0"/>
+            <line x="200" y="190.0"/>
         </path>
         <fillstroke />
-        <text str="RCLK" x="186" y="185.0" align="right" valign="middle" placeholders="1" />
+        <text str="RCLK" x="196" y="190.0" align="right" valign="middle" placeholders="1" />
         <path>
-            <move x="210" y="215.0"/>
-            <line x="190" y="215.0"/>
+            <move x="220" y="220.0"/>
+            <line x="200" y="220.0"/>
         </path>
         <fillstroke />
-        <text str="SRCLK" x="186" y="215.0" align="right" valign="middle" placeholders="1" />
+        <text str="SRCLK" x="196" y="220.0" align="right" valign="middle" placeholders="1" />
         <path>
-            <move x="210" y="245.0"/>
-            <line x="190" y="245.0"/>
+            <move x="220" y="250.0"/>
+            <line x="200" y="250.0"/>
         </path>
         <fillstroke />
-        <text str="!SRCLR" x="186" y="245.0" align="right" valign="middle" placeholders="1" />
+        <text str="!SRCLR" x="196" y="250.0" align="right" valign="middle" placeholders="1" />
         <path>
-            <move x="210" y="275.0"/>
-            <line x="190" y="275.0"/>
+            <move x="220" y="280.0"/>
+            <line x="200" y="280.0"/>
         </path>
         <fillstroke />
-        <text str="QH'" x="186" y="275.0" align="right" valign="middle" placeholders="1" />
+        <text str="QH'" x="196" y="280.0" align="right" valign="middle" placeholders="1" />
     </foreground>
 </shape>

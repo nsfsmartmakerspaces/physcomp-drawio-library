@@ -1,13 +1,13 @@
-<shape aspect="fixed" h="150" w="190" strokewidth="inherit" name="Infrared Remote [4006]">
+<shape aspect="fixed" h="160" w="200" strokewidth="inherit" name="Infrared Remote [4006]">
     <connections>
-        <constraint x="1.0" y="0.43333333333333335" perimeter="0" name="IR Light"/>
+        <constraint x="1.0" y="0.4375" perimeter="0" name="IR Light"/>
     </connections>
     <background>
         <strokecolor color="#000000"/>
         <fillcolor color="#ffffff"/>
         <fontcolor color="#000000"/>
         <alpha alpha="1"/>
-        <rect x="0" y="0" h="130" w="170" arcsize="-1"/>
+        <rect x="0" y="0" h="140" w="180" arcsize="-1"/>
         <fillstroke />
     </background>
     <foreground>
@@ -16,16 +16,16 @@
         <fontcolor color="#000000"/>
         <alpha alpha="1"/>
         <fontsize size="16"/>
-        <text str="Infrared" x="85.0" y="56.75" align="center" valign="middle" placeholders="1"/>
-        <text str="Remote" x="85.0" y="73.25" align="center" valign="middle" placeholders="1"/>
+        <text str="Infrared" x="90.0" y="61.75" align="center" valign="middle" placeholders="1"/>
+        <text str="Remote" x="90.0" y="78.25" align="center" valign="middle" placeholders="1"/>
         <fontsize size="8"/>
-        <text str="#4006" x="166" y="128.0" align="right" valign="bottom" placeholders="1"/>
+        <text str="#4006" x="176" y="138.0" align="right" valign="bottom" placeholders="1"/>
         <fontsize size="10"/>
         <path>
-            <move x="190" y="65.0"/>
-            <line x="170" y="65.0"/>
+            <move x="200" y="70.0"/>
+            <line x="180" y="70.0"/>
         </path>
         <fillstroke />
-        <text str="IR Light" x="166" y="65.0" align="right" valign="middle" placeholders="1" />
+        <text str="IR Light" x="176" y="70.0" align="right" valign="middle" placeholders="1" />
     </foreground>
 </shape>

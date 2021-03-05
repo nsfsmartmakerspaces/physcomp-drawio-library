@@ -1,4 +1,4 @@
-<shape aspect="fixed" h="170" w="210" strokewidth="inherit" name="Ultrasonic Ranger (HCSR04) [0572]">
+<shape aspect="fixed" h="180" w="220" strokewidth="inherit" name="Ultrasonic Ranger (HCSR04) [0572]">
     <connections>
         <constraint x="0.5" y="0.0" perimeter="0" name="VCC (5V)"/>
         <constraint x="0.5" y="1.0" perimeter="0" name="GND"/>
@@ -10,7 +10,7 @@
         <fillcolor color="#ffffff"/>
         <fontcolor color="#000000"/>
         <alpha alpha="1"/>
-        <rect x="20" y="20" h="130" w="170" arcsize="-1"/>
+        <rect x="20" y="20" h="140" w="180" arcsize="-1"/>
         <fillstroke />
     </background>
     <foreground>
@@ -19,35 +19,35 @@
         <fontcolor color="#000000"/>
         <alpha alpha="1"/>
         <fontsize size="16"/>
-        <text str="Ultrasonic" x="105.0" y="76.75" align="center" valign="middle" placeholders="1"/>
-        <text str="Ranger" x="105.0" y="93.25" align="center" valign="middle" placeholders="1"/>
+        <text str="Ultrasonic" x="110.0" y="81.75" align="center" valign="middle" placeholders="1"/>
+        <text str="Ranger" x="110.0" y="98.25" align="center" valign="middle" placeholders="1"/>
         <fontsize size="8"/>
-        <text str="#0572" x="186" y="148.0" align="right" valign="bottom" placeholders="1"/>
+        <text str="#0572" x="196" y="158.0" align="right" valign="bottom" placeholders="1"/>
         <fontsize size="10"/>
         <path>
-            <move x="105.0" y="0"/>
-            <line x="105.0" y="20"/>
+            <move x="110.0" y="0"/>
+            <line x="110.0" y="20"/>
         </path>
         <fillstroke />
-        <text str="VCC" x="105.0" y="33.0" align="center" valign="bottom" placeholders="1" />
-        <text str="(5V)" x="105.0" y="43.25" align="center" valign="bottom" placeholders="1" />
+        <text str="VCC" x="110.0" y="33.0" align="center" valign="bottom" placeholders="1" />
+        <text str="(5V)" x="110.0" y="43.25" align="center" valign="bottom" placeholders="1" />
         <path>
-            <move x="105.0" y="170"/>
-            <line x="105.0" y="150"/>
+            <move x="110.0" y="180"/>
+            <line x="110.0" y="160"/>
         </path>
         <fillstroke />
-        <text str="GND" x="105.0" y="147.0" align="center" valign="bottom" placeholders="1" />
+        <text str="GND" x="110.0" y="157.0" align="center" valign="bottom" placeholders="1" />
         <path>
-            <move x="0" y="85.0"/>
-            <line x="20" y="85.0"/>
+            <move x="0" y="90.0"/>
+            <line x="20" y="90.0"/>
         </path>
         <fillstroke />
-        <text str="Trigger" x="24" y="85.0" align="left" valign="middle" placeholders="1" />
+        <text str="Trigger" x="24" y="90.0" align="left" valign="middle" placeholders="1" />
         <path>
-            <move x="210" y="85.0"/>
-            <line x="190" y="85.0"/>
+            <move x="220" y="90.0"/>
+            <line x="200" y="90.0"/>
         </path>
         <fillstroke />
-        <text str="Echo" x="186" y="85.0" align="right" valign="middle" placeholders="1" />
+        <text str="Echo" x="196" y="90.0" align="right" valign="middle" placeholders="1" />
     </foreground>
 </shape>
