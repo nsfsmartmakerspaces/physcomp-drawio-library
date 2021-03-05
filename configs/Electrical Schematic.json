@@ -79,7 +79,7 @@
                             "title": {
                                 "main": "Input"
                             },
-                            "url": "https://nsfsmartmakerspaces.github.io/physcomp-drawio-library/Input.xml",
+                            "url": "https://nsfsmartmakerspaces.github.io/physcomp-drawio-library/Input-${config_version}.xml",
                             "tags": "component input",
                             "prefetch": true
                         },
@@ -87,7 +87,7 @@
                             "title": {
                                 "main": "Controller"
                             },
-                            "url": "https://nsfsmartmakerspaces.github.io/physcomp-drawio-library/Controller.xml",
+                            "url": "https://nsfsmartmakerspaces.github.io/physcomp-drawio-library/Controller-${config_version}.xml",
                             "tags": "component controller",
                             "prefetch": true
                         },
@@ -95,7 +95,7 @@
                             "title": {
                                 "main": "Output"
                             },
-                            "url": "https://nsfsmartmakerspaces.github.io/physcomp-drawio-library/Output.xml",
+                            "url": "https://nsfsmartmakerspaces.github.io/physcomp-drawio-library/Output-${config_version}.xml",
                             "tags": "component output",
                             "prefetch": true
                         },
@@ -103,7 +103,7 @@
                             "title": {
                                 "main": "Power"
                             },
-                            "url": "https://nsfsmartmakerspaces.github.io/physcomp-drawio-library/Power.xml",
+                            "url": "https://nsfsmartmakerspaces.github.io/physcomp-drawio-library/Power-${config_version}.xml",
                             "tags": "component power",
                             "prefetch": true
                         }
