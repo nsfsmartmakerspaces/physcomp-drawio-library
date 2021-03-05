@@ -46,7 +46,7 @@
                             "title": {
                                 "main": "Input (Block)"
                             },
-                            "url": "https://nsfsmartmakerspaces.github.io/physcomp-drawio-library/Input%20(Block).xml",
+                            "url": "https://nsfsmartmakerspaces.github.io/physcomp-drawio-library/Input%20(Block)-${config_version}.xml",
                             "tags": "block input",
                             "prefetch": true
                         },
@@ -54,7 +54,7 @@
                             "title": {
                                 "main": "Controller (Block)"
                             },
-                            "url": "https://nsfsmartmakerspaces.github.io/physcomp-drawio-library/Controller%20(Block).xml",
+                            "url": "https://nsfsmartmakerspaces.github.io/physcomp-drawio-library/Controller%20(Block)-${config_version}.xml",
                             "tags": "block controller",
                             "prefetch": true
                         },
@@ -62,7 +62,7 @@
                             "title": {
                                 "main": "Output (Block)"
                             },
-                            "url": "https://nsfsmartmakerspaces.github.io/physcomp-drawio-library/Output%20(Block).xml",
+                            "url": "https://nsfsmartmakerspaces.github.io/physcomp-drawio-library/Output%20(Block)-${config_version}.xml",
                             "tags": "block output",
                             "prefetch": true
                         }

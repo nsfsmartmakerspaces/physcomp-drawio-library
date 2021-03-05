@@ -189,6 +189,16 @@ def read_json_file(src_file: str) -> dict:
             return None
 
 
+def read_json_file_template_safe(src_file: str, template_opts: dict) -> dict:
+    with open(src_file, 'r') as stream:
+        try:
+            data = Template(stream.read()).safe_substitute(template_opts)
+            return json.loads(data)
+        except ValueError as exc:
+            print(f"ValueError error {src_file}: {exc}")
+            return None
+
+
 def save_file(file_path: str, data: str) -> None:
     pathlib.Path(os.path.split(file_path)[0]).mkdir(parents=True, exist_ok=True)
     with open(file_path, 'w') as file:
@@ -563,7 +573,9 @@ async def www_end(now_str: str, templates: dict) -> None:
 
 
 async def generate_config(file: str, name: str, version: int, templates: dict) -> None:
-    inputJSON = read_json_file(file)
+    file_opts = {}
+    file_opts[CONFIG_TEMPLATE_CONFIG_VERSION] = version
+    inputJSON = read_json_file_template_safe(file, file_opts)
     inputJSON[CONFIG_JSON_VERSION] = f"{version}-{name}"
     stringify = json.dumps(inputJSON, separators=(',', ':'))
     compressed = drawio_compress(stringify)
@@ -646,6 +658,11 @@ async def main() -> None:
         tasks.append(load_style(styles, style_name, style_path))
     await asyncio.wait(tasks)
 
+    tz = pytz.timezone(TIMEZONE)
+    now = datetime.now(tz)
+    now_str = f"{now.strftime('%m/%d/%Y, %H:%M:%S')} ({TIMEZONE})"
+    config_version = str(now.microsecond)
+
     file_names = []
     library_names = set()
     file_tasks = []
@@ -665,22 +682,18 @@ async def main() -> None:
         file_names.append(file_name)
         library_names.add(library_name)
         dest_file = file_path.replace(YAML_SRC_DIR, YAML_DIST_DIR, 1)
-        dest_file = f"{dest_file}.xml"
-        library_dest = f"./{YAML_DIST_DIR}/{library_name}.xml"
+        dest_file = f"{dest_file}-{config_version}.xml"
+        library_dest = f"./{YAML_DIST_DIR}/{library_name}-{config_version}.xml"
         if os.path.isdir(f"./{YAML_DIST_DIR}"):
             shutil.rmtree(f"./{YAML_DIST_DIR}")
         file_tasks.append(generate(src_file, file_name, dest_file, drawing_templates, styles, library_name, library_dest, libraries_with_first_entry))
     for library_name in library_names:
-        dest_file = f"./{YAML_DIST_DIR}/{library_name}.xml"
+        dest_file = f"./{YAML_DIST_DIR}/{library_name}-{config_version}.xml"
         library_tasks_start.append(generate_library_start(library_name, dest_file, library_templates))
         library_tasks_end.append(generate_library_end(library_name, dest_file, library_templates, libraries_with_first_entry))
 
     config_tasks = []
     config_files = glob(f"./{CONFIG_SRC_DIR}/*.json")
-    tz = pytz.timezone(TIMEZONE)
-    now = datetime.now(tz)
-    now_str = f"{now.strftime('%m/%d/%Y, %H:%M:%S')} ({TIMEZONE})"
-    config_version = str(now.microsecond)
     for config_file in config_files:
         split = os.path.normpath(config_file).split(os.path.sep)
         file_name = os.path.splitext(split[1])[0]
