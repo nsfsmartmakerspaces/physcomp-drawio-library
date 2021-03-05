@@ -1,23 +1,7 @@
 schema_version: "1.0.0"
 disable: false
 
-# dip: false
-# block: false
-# style: chip_1
 name: "Potentiometer [0390]"
-# title:
-  # - "Joystick"
-  # - "Module"
-# bottom_text:
-  # - "#0372"
-# top:
-  # - "5V"
-# right:
-  # - "VRx"
-  # - "VRy"
-  # - "SW"
-# bottom:
-  # - "GND"
 
 placeholders:
   "value": "!VALUE!"
