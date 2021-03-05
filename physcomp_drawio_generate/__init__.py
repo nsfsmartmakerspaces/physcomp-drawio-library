@@ -6,6 +6,7 @@ from glob import glob
 import json
 from math import sqrt
 from string import Template
+from numbers import Number
 import os
 import pathlib
 import shutil
@@ -35,35 +36,9 @@ def check_drawing_yaml_file(name: str, src_data: dict, styles: dict) -> bool:
     if DRAWING_YAML_DISABLE in src_data and type(src_data[DRAWING_YAML_DISABLE]) is not bool:
         res = False
         print(f"{DRAWING_YAML_DISABLE} must be bool in '{name}'")
-    if DRAWING_YAML_DIP not in src_data or type(src_data[DRAWING_YAML_DIP]) is not bool:
-        res = False
-        print(f"Missing {DRAWING_YAML_DIP} or not bool in '{name}'")
     if DRAWING_YAML_NAME not in src_data or type(src_data[DRAWING_YAML_NAME]) is not str:
         res = False
         print(f"Missing {DRAWING_YAML_NAME} or not str in '{name}'")
-    elif DRAWING_YAML_TOP in src_data and src_data[DRAWING_YAML_DIP]:
-        res = False
-        print(f"{DRAWING_YAML_DIP} cannot be used with {DRAWING_YAML_TOP} pins in '{name}'")
-    if DRAWING_YAML_BLOCK not in src_data or type(src_data[DRAWING_YAML_BLOCK]) is not bool:
-        res = False
-        print(f"Missing {DRAWING_YAML_BLOCK} or not bool in '{name}'")
-    elif (DRAWING_YAML_TOP in src_data or DRAWING_YAML_BOTTOM in src_data) and src_data[DRAWING_YAML_BLOCK]:
-        res = False
-        print(f"{DRAWING_YAML_BLOCK} cannot be used with {DRAWING_YAML_TOP} or {DRAWING_YAML_BOTTOM} pins in '{name}'")
-    if DRAWING_YAML_STYLE not in src_data or type(src_data[DRAWING_YAML_STYLE]) is not str:
-        res = False
-        print(f"Missing {DRAWING_YAML_STYLE} or not str in '{name}'")
-    elif (src_data[DRAWING_YAML_STYLE] not in styles):
-        res = False
-        print(f"{DRAWING_YAML_STYLE} '{src_data[DRAWING_YAML_STYLE]}' reference in '{name}' not loaded")
-
-    if DRAWING_YAML_TITLE not in src_data:
-        res = False
-        print(f"Missing {DRAWING_YAML_TITLE} '{name}'")
-    if DRAWING_YAML_BOTTOM_TEXT not in src_data:
-        res = False
-        print(f"Missing {DRAWING_YAML_BOTTOM_TEXT} '{name}'")
-
     if DRAWING_YAML_PLACEHOLDERS in src_data:
         if type(src_data[DRAWING_YAML_PLACEHOLDERS]) is not dict:
             res = False
@@ -75,30 +50,72 @@ def check_drawing_yaml_file(name: str, src_data: dict, styles: dict) -> bool:
             if type(src_data[DRAWING_YAML_PLACEHOLDERS][key]) is not str:
                 res = False
                 print(f"A value of a key in {DRAWING_YAML_PLACEHOLDERS} is not str in '{name}'")
+    if DRAWING_YAML_CUSTOM in src_data and type(src_data[DRAWING_YAML_CUSTOM]) is not dict:
+        res = False
+        print(f"{DRAWING_YAML_CUSTOM} is not object in '{name}'")
+    elif DRAWING_YAML_CUSTOM in src_data:
+        if (DRAWING_YAML_CUSTOM_WIDTH not in src_data[DRAWING_YAML_CUSTOM] or
+           not isinstance(src_data[DRAWING_YAML_CUSTOM][DRAWING_YAML_CUSTOM_WIDTH], Number)):
+            res = False
+            print(f"Missing {DRAWING_YAML_CUSTOM}/{DRAWING_YAML_CUSTOM_WIDTH} or not str in '{name}'")
+        if (DRAWING_YAML_CUSTOM_HEIGHT not in src_data[DRAWING_YAML_CUSTOM] or
+           not isinstance(src_data[DRAWING_YAML_CUSTOM][DRAWING_YAML_CUSTOM_HEIGHT], Number)):
+            res = False
+            print(f"Missing {DRAWING_YAML_CUSTOM}/{DRAWING_YAML_CUSTOM_HEIGHT} or not str in '{name}'")
+        if (DRAWING_YAML_CUSTOM_XML not in src_data[DRAWING_YAML_CUSTOM] or
+           type(src_data[DRAWING_YAML_CUSTOM][DRAWING_YAML_CUSTOM_XML]) is not str):
+            res = False
+            print(f"Missing {DRAWING_YAML_CUSTOM}/{DRAWING_YAML_CUSTOM_XML} or not str in '{name}'")
+    elif DRAWING_YAML_CUSTOM not in src_data:
+        if DRAWING_YAML_DIP not in src_data or type(src_data[DRAWING_YAML_DIP]) is not bool:
+            res = False
+            print(f"Missing {DRAWING_YAML_DIP} or not bool in '{name}'")
+        elif DRAWING_YAML_TOP in src_data and src_data[DRAWING_YAML_DIP]:
+            res = False
+            print(f"{DRAWING_YAML_DIP} cannot be used with {DRAWING_YAML_TOP} pins in '{name}'")
+        if DRAWING_YAML_BLOCK not in src_data or type(src_data[DRAWING_YAML_BLOCK]) is not bool:
+            res = False
+            print(f"Missing {DRAWING_YAML_BLOCK} or not bool in '{name}'")
+        elif (DRAWING_YAML_TOP in src_data or DRAWING_YAML_BOTTOM in src_data) and src_data[DRAWING_YAML_BLOCK]:
+            res = False
+            print(f"{DRAWING_YAML_BLOCK} cannot be used with {DRAWING_YAML_TOP} or {DRAWING_YAML_BOTTOM} pins in '{name}'")
+        if DRAWING_YAML_STYLE not in src_data or type(src_data[DRAWING_YAML_STYLE]) is not str:
+            res = False
+            print(f"Missing {DRAWING_YAML_STYLE} or not str in '{name}'")
+        elif (src_data[DRAWING_YAML_STYLE] not in styles):
+            res = False
+            print(f"{DRAWING_YAML_STYLE} '{src_data[DRAWING_YAML_STYLE]}' reference in '{name}' not loaded")
 
-    for key in [DRAWING_YAML_TITLE, DRAWING_YAML_TOP, DRAWING_YAML_BOTTOM, DRAWING_YAML_LEFT, DRAWING_YAML_RIGHT,
-                DRAWING_YAML_BOTTOM_TEXT]:
-        if key in src_data:
-            if type(src_data[key]) is not list:
-                res = False
-                print(f"{key} is not list in '{name}'")
-            else:
-                for pin in src_data[key]:
-                    if type(pin) is not str and type(pin) is not list:
-                        res = False
-                        print(f"An item in {key} is not str or list in '{name}'")
-                    if (type(pin) is list and DRAWING_YAML_BLOCK in src_data and
-                       src_data[DRAWING_YAML_BLOCK] and len(pin) > 2):
-                        res = False
-                        print(f"An item in {key} has more than two lines in block mode in '{name}'")
-                    if type(pin) is list and len(pin) == 0:
-                        res = False
-                        print(f"An item in {key} has a multiline pin without any elements '{name}'")
-                    elif type(pin) is list:
-                        for line in pin:
-                            if type(line) is not str:
-                                res = False
-                                print(f"An item in {key} has a multiline pin with a non-str element '{name}'")
+        if DRAWING_YAML_TITLE not in src_data:
+            res = False
+            print(f"Missing {DRAWING_YAML_TITLE} '{name}'")
+        if DRAWING_YAML_BOTTOM_TEXT not in src_data:
+            res = False
+            print(f"Missing {DRAWING_YAML_BOTTOM_TEXT} '{name}'")
+
+        for key in [DRAWING_YAML_TITLE, DRAWING_YAML_TOP, DRAWING_YAML_BOTTOM, DRAWING_YAML_LEFT, DRAWING_YAML_RIGHT,
+                    DRAWING_YAML_BOTTOM_TEXT]:
+            if key in src_data:
+                if type(src_data[key]) is not list:
+                    res = False
+                    print(f"{key} is not list in '{name}'")
+                else:
+                    for pin in src_data[key]:
+                        if type(pin) is not str and type(pin) is not list:
+                            res = False
+                            print(f"An item in {key} is not str or list in '{name}'")
+                        if (type(pin) is list and DRAWING_YAML_BLOCK in src_data and
+                           src_data[DRAWING_YAML_BLOCK] and len(pin) > 2):
+                            res = False
+                            print(f"An item in {key} has more than two lines in block mode in '{name}'")
+                        if type(pin) is list and len(pin) == 0:
+                            res = False
+                            print(f"An item in {key} has a multiline pin without any elements '{name}'")
+                        elif type(pin) is list:
+                            for line in pin:
+                                if type(line) is not str:
+                                    res = False
+                                    print(f"An item in {key} has a multiline pin with a non-str element '{name}'")
     return res
 
 
@@ -112,32 +129,26 @@ def check_style_yaml_file(name: str, src_data: dict) -> bool:
         print(f"{STYLE_YAML_BASE} missing or is not dict in '{name}'")
     else:
         for attr in [STYLE_YAML_BASE_WIDTH, STYLE_YAML_BASE_HEIGHT, STYLE_YAML_BASE_BORDER_RADIUS]:
-            if (attr not in src_data[STYLE_YAML_BASE] or
-               (type(src_data[STYLE_YAML_BASE][attr]) is not int and
-               type(src_data[STYLE_YAML_BASE][attr]) is not float)):
+            if attr not in src_data[STYLE_YAML_BASE] or not isinstance(src_data[STYLE_YAML_BASE][attr], Number):
                 res = False
-                print(f"{attr} in {STYLE_YAML_BASE} is not int or float in '{name}'")
+                print(f"{attr} in {STYLE_YAML_BASE} is not number in '{name}'")
     if STYLE_YAML_TITLE_TEXT not in src_data or type(src_data[STYLE_YAML_TITLE_TEXT]) is not dict:
         res = False
         print(f"{STYLE_YAML_TITLE_TEXT} missing or is not dict in '{name}'")
     else:
         for attr in [STYLE_YAML_TITLE_TEXT_SIZE, STYLE_YAML_TITLE_TEXT_LINE_SPACING]:
-            if (attr not in src_data[STYLE_YAML_TITLE_TEXT] or
-               (type(src_data[STYLE_YAML_TITLE_TEXT][attr]) is not int and
-               type(src_data[STYLE_YAML_TITLE_TEXT][attr]) is not float)):
+            if attr not in src_data[STYLE_YAML_TITLE_TEXT] or not isinstance(src_data[STYLE_YAML_TITLE_TEXT][attr], Number):
                 res = False
-                print(f"{attr} in {STYLE_YAML_TITLE_TEXT} is not int or float in '{name}'")
+                print(f"{attr} in {STYLE_YAML_TITLE_TEXT} is not number in '{name}'")
     if STYLE_YAML_BOTTOM_TEXT not in src_data or type(src_data[STYLE_YAML_BOTTOM_TEXT]) is not dict:
         res = False
         print(f"{STYLE_YAML_BOTTOM_TEXT} missing or is not dict in '{name}'")
     else:
         for attr in [STYLE_YAML_BOTTOM_TEXT_SIZE, STYLE_YAML_BOTTOM_TEXT_LINE_SPACING,
                      STYLE_YAML_BOTTOM_TEXT_PAD]:
-            if (attr not in src_data[STYLE_YAML_BOTTOM_TEXT] or
-               (type(src_data[STYLE_YAML_BOTTOM_TEXT][attr]) is not int and
-               type(src_data[STYLE_YAML_BOTTOM_TEXT][attr]) is not float)):
+            if attr not in src_data[STYLE_YAML_BOTTOM_TEXT] or not isinstance(src_data[STYLE_YAML_BOTTOM_TEXT][attr], Number):
                 res = False
-                print(f"{attr} in {STYLE_YAML_BOTTOM_TEXT} is not int or float in '{name}'")
+                print(f"{attr} in {STYLE_YAML_BOTTOM_TEXT} is not number in '{name}'")
     if STYLE_YAML_PIN_TEXT not in src_data or type(src_data[STYLE_YAML_PIN_TEXT]) is not dict:
         res = False
         print(f"{STYLE_YAML_PIN_TEXT} missing or is not dict in '{name}'")
@@ -145,23 +156,18 @@ def check_style_yaml_file(name: str, src_data: dict) -> bool:
         for attr in [STYLE_YAML_PIN_TEXT_VERT_WIDTH, STYLE_YAML_PIN_TEXT_HORIZ_HEIGHT,
                      STYLE_YAML_PIN_TEXT_SIZE, STYLE_YAML_PIN_TEXT_PAD,
                      STYLE_YAML_PIN_TEXT_LINE_SPACING]:
-            if (attr not in src_data[STYLE_YAML_PIN_TEXT] or
-               (type(src_data[STYLE_YAML_PIN_TEXT][attr]) is not int and
-               type(src_data[STYLE_YAML_PIN_TEXT][attr]) is not float)):
+            if attr not in src_data[STYLE_YAML_PIN_TEXT] or not isinstance(src_data[STYLE_YAML_PIN_TEXT][attr], Number):
                 res = False
-                print(f"{attr} in {STYLE_YAML_PIN_TEXT} is not int or float in '{name}'")
-                print(f"{attr} in {STYLE_YAML_TITLE_TEXT} is not int or float in '{name}'")
+                print(f"{attr} in {STYLE_YAML_PIN_TEXT} is not number in '{name}'")
     if STYLE_YAML_PINS not in src_data or type(src_data[STYLE_YAML_PINS]) is not dict:
         res = False
         print(f"{STYLE_YAML_PINS} missing or is not dict in '{name}'")
     else:
         for attr in [STYLE_YAML_PINS_LENGTH, STYLE_YAML_PINS_ARROW_SIZE,
                      STYLE_YAML_PINS_LEFT_ARROW_PAD]:
-            if (attr not in src_data[STYLE_YAML_PINS] or
-               (type(src_data[STYLE_YAML_PINS][attr]) is not int and
-               type(src_data[STYLE_YAML_PINS][attr]) is not float)):
+            if attr not in src_data[STYLE_YAML_PINS] or not isinstance(src_data[STYLE_YAML_PINS][attr], Number):
                 res = False
-                print(f"{attr} in {STYLE_YAML_PINS} is not int or float in '{name}'")
+                print(f"{attr} in {STYLE_YAML_PINS} is not number in '{name}'")
     return res
 
 
@@ -232,222 +238,230 @@ async def generate(src_file: str, file_name: str, dest_file: str, templates: dic
             if type(pin) is str:
                 src_data[key][i] = [pin]
 
-    style = styles[src_data[DRAWING_YAML_STYLE]]
-
     # Calculate total widths and heights
+    out = ""
     template_opts = {}
     template_opts[DRAWING_TEMPLATE_NAME] = src_data[DRAWING_YAML_NAME]
     template_opts[DRAWING_TEMPLATE_ASPECT] = ASPECT_FIXED
-    template_opts[DRAWING_TEMPLATE_TITLE_TEXT_SIZE] = style["title_text"]["size"]
-    template_opts[DRAWING_TEMPLATE_BOTTOM_TEXT_SIZE] = style["bottom_text"]["size"]
-    template_opts[DRAWING_TEMPLATE_PIN_TEXT_SIZE] = style["pin_text"]["size"]
-    template_opts[DRAWING_TEMPLATE_PIN_LENGTH] = style["pins"]["length"]
-    template_opts[DRAWING_TEMPLATE_RECT_WIDTH] = style["base"]["width"] + (style["pin_text"]["vert_width"] * max(len(src_data[DRAWING_YAML_TOP]), len(src_data[DRAWING_YAML_BOTTOM])))
-    template_opts[DRAWING_TEMPLATE_RECT_HEIGHT] = style["base"]["height"] + (style["pin_text"]["horiz_height"] * max(len(src_data[DRAWING_YAML_LEFT]), len(src_data[DRAWING_YAML_RIGHT])))
-    template_opts[DRAWING_TEMPLATE_WIDTH] = template_opts[DRAWING_TEMPLATE_RECT_WIDTH]
-    if len(src_data[DRAWING_YAML_LEFT]) > 0:
-        template_opts[DRAWING_TEMPLATE_WIDTH] += style["pins"]["length"]
-    if len(src_data[DRAWING_YAML_RIGHT]) > 0:
-        template_opts[DRAWING_TEMPLATE_WIDTH] += style["pins"]["length"]
-    template_opts[DRAWING_TEMPLATE_HEIGHT] = template_opts[DRAWING_TEMPLATE_RECT_HEIGHT]
-    if len(src_data[DRAWING_YAML_TOP]) > 0:
-        template_opts[DRAWING_TEMPLATE_HEIGHT] += style["pins"]["length"]
-    if len(src_data[DRAWING_YAML_BOTTOM]) > 0:
-        template_opts[DRAWING_TEMPLATE_HEIGHT] += style["pins"]["length"]
-    # template_opts[DRAWING_TEMPLATE_TITLE_X] = template_opts[DRAWING_TEMPLATE_WIDTH] / 2
-    # template_opts[DRAWING_TEMPLATE_TITLE_Y] = template_opts[DRAWING_TEMPLATE_HEIGHT] / 2
 
-    dip_opts = {}
-    dip_opts[DIP_TEMPLATE_RECT_WIDTH] = template_opts[DRAWING_TEMPLATE_RECT_WIDTH]
-    dip_opts[DIP_TEMPLATE_RECT_HEIGHT] = template_opts[DRAWING_TEMPLATE_RECT_HEIGHT]
-    dip_opts[DIP_TEMPLATE_RECT_TOP] = 0
-    dip_opts[DIP_TEMPLATE_RECT_BOTTOM] = template_opts[DRAWING_TEMPLATE_RECT_HEIGHT]
-    if len(src_data[DRAWING_YAML_TOP]) > 0:
-        dip_opts[DIP_TEMPLATE_RECT_TOP] += style["pins"]["length"]
-        dip_opts[DIP_TEMPLATE_RECT_BOTTOM] += style["pins"]["length"]
-    dip_opts[DIP_TEMPLATE_RECT_LEFT] = 0
-    dip_opts[DIP_TEMPLATE_RECT_RIGHT] = template_opts[DRAWING_TEMPLATE_RECT_WIDTH]
-    if len(src_data[DRAWING_YAML_LEFT]) > 0:
-        dip_opts[DIP_TEMPLATE_RECT_LEFT] += style["pins"]["length"]
-        dip_opts[DIP_TEMPLATE_RECT_RIGHT] += style["pins"]["length"]
-    dip_opts[DIP_TEMPLATE_RECT_DIP_START] = dip_opts[DIP_TEMPLATE_RECT_RIGHT] - (template_opts[DRAWING_TEMPLATE_RECT_WIDTH] / 3)
-    dip_opts[DIP_TEMPLATE_END_X] = dip_opts[DIP_TEMPLATE_RECT_RIGHT] - (2 * (template_opts[DRAWING_TEMPLATE_RECT_WIDTH] / 3))
-    dip_opts[DIP_TEMPLATE_END_Y] = dip_opts[DIP_TEMPLATE_RECT_TOP]
-    dip_opts[DIP_TEMPLATE_RADIUS] = (dip_opts[DIP_TEMPLATE_RECT_RIGHT] - dip_opts[DIP_TEMPLATE_END_X]) / 4
-    dip_opts[DIP_TEMPLATE_BORDER_RADIUS] = style["base"]["border_radius"]
-
-    if src_data[DRAWING_YAML_DIP]:
-        template_opts[DRAWING_TEMPLATE_RECT_DIP_INSERT] = Template(templates["dip"]).substitute(dip_opts)
-    elif style["base"]["border_radius"] > 0:
-        template_opts[DRAWING_TEMPLATE_RECT_DIP_INSERT] = Template(templates["no_dip_rounded"]).substitute(dip_opts)
+    if DRAWING_YAML_CUSTOM in src_data:
+        template_opts[DRAWING_TEMPLATE_WIDTH] = src_data[DRAWING_YAML_CUSTOM][DRAWING_YAML_CUSTOM_WIDTH]
+        template_opts[DRAWING_TEMPLATE_HEIGHT] = src_data[DRAWING_YAML_CUSTOM][DRAWING_YAML_CUSTOM_HEIGHT]
+        template_opts[DRAWING_TEMPLATE_CUSTOM_INSERT] = src_data[DRAWING_YAML_CUSTOM][DRAWING_YAML_CUSTOM_XML]
+        out = Template(templates["custom"]).substitute(template_opts)
     else:
-        template_opts[DRAWING_TEMPLATE_RECT_DIP_INSERT] = Template(templates["no_dip"]).substitute(dip_opts)
+        style = styles[src_data[DRAWING_YAML_STYLE]]
+        template_opts[DRAWING_TEMPLATE_TITLE_TEXT_SIZE] = style["title_text"]["size"]
+        template_opts[DRAWING_TEMPLATE_BOTTOM_TEXT_SIZE] = style["bottom_text"]["size"]
+        template_opts[DRAWING_TEMPLATE_PIN_TEXT_SIZE] = style["pin_text"]["size"]
+        template_opts[DRAWING_TEMPLATE_PIN_LENGTH] = style["pins"]["length"]
+        template_opts[DRAWING_TEMPLATE_RECT_WIDTH] = style["base"]["width"] + (style["pin_text"]["vert_width"] * max(len(src_data[DRAWING_YAML_TOP]), len(src_data[DRAWING_YAML_BOTTOM])))
+        template_opts[DRAWING_TEMPLATE_RECT_HEIGHT] = style["base"]["height"] + (style["pin_text"]["horiz_height"] * max(len(src_data[DRAWING_YAML_LEFT]), len(src_data[DRAWING_YAML_RIGHT])))
+        template_opts[DRAWING_TEMPLATE_WIDTH] = template_opts[DRAWING_TEMPLATE_RECT_WIDTH]
+        if len(src_data[DRAWING_YAML_LEFT]) > 0:
+            template_opts[DRAWING_TEMPLATE_WIDTH] += style["pins"]["length"]
+        if len(src_data[DRAWING_YAML_RIGHT]) > 0:
+            template_opts[DRAWING_TEMPLATE_WIDTH] += style["pins"]["length"]
+        template_opts[DRAWING_TEMPLATE_HEIGHT] = template_opts[DRAWING_TEMPLATE_RECT_HEIGHT]
+        if len(src_data[DRAWING_YAML_TOP]) > 0:
+            template_opts[DRAWING_TEMPLATE_HEIGHT] += style["pins"]["length"]
+        if len(src_data[DRAWING_YAML_BOTTOM]) > 0:
+            template_opts[DRAWING_TEMPLATE_HEIGHT] += style["pins"]["length"]
+        # template_opts[DRAWING_TEMPLATE_TITLE_X] = template_opts[DRAWING_TEMPLATE_WIDTH] / 2
+        # template_opts[DRAWING_TEMPLATE_TITLE_Y] = template_opts[DRAWING_TEMPLATE_HEIGHT] / 2
 
-    titles = ""
-    title_lines = len(src_data[DRAWING_YAML_TITLE])
-    title_height = (style["title_text"]["size"] * title_lines) + ((title_lines - 1) * style["title_text"]["line_spacing"])
-    title_start = (template_opts[DRAWING_TEMPLATE_RECT_HEIGHT] / 2) - (title_height / 2)
-    if len(src_data[DRAWING_YAML_TOP]) > 0:
-        title_start += style["pins"]["length"]
-    title_x = template_opts[DRAWING_TEMPLATE_RECT_WIDTH] / 2
-    if len(src_data[DRAWING_YAML_LEFT]) > 0:
-        title_x += style["pins"]["length"]
-    for i, line in enumerate(src_data[DRAWING_YAML_TITLE]):
-        title_opts = {}
-        title_opts[TITLE_TEMPLATE_TITLE] = xmlEscape(line)
-        title_opts[TITLE_TEMPLATE_X] = title_x
-        title_opts[TITLE_TEMPLATE_Y] = title_start + (style["title_text"]["size"] * i) + (style["title_text"]["size"] / 2) + (style["title_text"]["line_spacing"] * i)
-        titles += Template(templates["title"]).substitute(title_opts)
-    template_opts[DRAWING_TEMPLATE_RECT_TITLE_INSERT] = titles
+        dip_opts = {}
+        dip_opts[DIP_TEMPLATE_RECT_WIDTH] = template_opts[DRAWING_TEMPLATE_RECT_WIDTH]
+        dip_opts[DIP_TEMPLATE_RECT_HEIGHT] = template_opts[DRAWING_TEMPLATE_RECT_HEIGHT]
+        dip_opts[DIP_TEMPLATE_RECT_TOP] = 0
+        dip_opts[DIP_TEMPLATE_RECT_BOTTOM] = template_opts[DRAWING_TEMPLATE_RECT_HEIGHT]
+        if len(src_data[DRAWING_YAML_TOP]) > 0:
+            dip_opts[DIP_TEMPLATE_RECT_TOP] += style["pins"]["length"]
+            dip_opts[DIP_TEMPLATE_RECT_BOTTOM] += style["pins"]["length"]
+        dip_opts[DIP_TEMPLATE_RECT_LEFT] = 0
+        dip_opts[DIP_TEMPLATE_RECT_RIGHT] = template_opts[DRAWING_TEMPLATE_RECT_WIDTH]
+        if len(src_data[DRAWING_YAML_LEFT]) > 0:
+            dip_opts[DIP_TEMPLATE_RECT_LEFT] += style["pins"]["length"]
+            dip_opts[DIP_TEMPLATE_RECT_RIGHT] += style["pins"]["length"]
+        dip_opts[DIP_TEMPLATE_RECT_DIP_START] = dip_opts[DIP_TEMPLATE_RECT_RIGHT] - (template_opts[DRAWING_TEMPLATE_RECT_WIDTH] / 3)
+        dip_opts[DIP_TEMPLATE_END_X] = dip_opts[DIP_TEMPLATE_RECT_RIGHT] - (2 * (template_opts[DRAWING_TEMPLATE_RECT_WIDTH] / 3))
+        dip_opts[DIP_TEMPLATE_END_Y] = dip_opts[DIP_TEMPLATE_RECT_TOP]
+        dip_opts[DIP_TEMPLATE_RADIUS] = (dip_opts[DIP_TEMPLATE_RECT_RIGHT] - dip_opts[DIP_TEMPLATE_END_X]) / 4
+        dip_opts[DIP_TEMPLATE_BORDER_RADIUS] = style["base"]["border_radius"]
 
-    bottom = ""
-    bottom_lines = len(src_data[DRAWING_YAML_BOTTOM_TEXT])
-    bottom_height = (style["bottom_text"]["size"] * bottom_lines) + ((bottom_lines - 1) * style["bottom_text"]["line_spacing"])
-    bottom_start = template_opts[DRAWING_TEMPLATE_RECT_HEIGHT] - (bottom_height / 2) - (style["bottom_text"]["pad"] / 2)
-    if len(src_data[DRAWING_YAML_TOP]) > 0:
-        bottom_start += style["pins"]["length"]
-    bottom_x = template_opts[DRAWING_TEMPLATE_RECT_WIDTH] / 2
-    bottom_align = TEXT_ALIGN_CENTER
-    if not src_data[DRAWING_YAML_BLOCK]:
-        bottom_x = template_opts[DRAWING_TEMPLATE_RECT_WIDTH] - style["bottom_text"]["pad"]
-        bottom_align = TEXT_ALIGN_RIGHT
-    if len(src_data[DRAWING_YAML_LEFT]) > 0:
-        bottom_x += style["pins"]["length"]
-    for i, line in enumerate(src_data[DRAWING_YAML_BOTTOM_TEXT]):
-        bottom_opts = {}
-        bottom_opts[BOTTOM_TEMPLATE_TEXT] = xmlEscape(line)
-        bottom_opts[BOTTOM_TEMPLATE_ALIGN] = bottom_align
-        bottom_opts[BOTTOM_TEMPLATE_X] = bottom_x
-        bottom_opts[BOTTOM_TEMPLATE_Y] = bottom_start + (style["bottom_text"]["size"] * i) + (style["bottom_text"]["size"] / 2) + (style["bottom_text"]["line_spacing"] * i)
-        bottom += Template(templates["bottom"]).substitute(bottom_opts)
-    template_opts[DRAWING_TEMPLATE_RECT_BOTTOM_INSERT] = bottom
+        if src_data[DRAWING_YAML_DIP]:
+            template_opts[DRAWING_TEMPLATE_RECT_DIP_INSERT] = Template(templates["dip"]).substitute(dip_opts)
+        elif style["base"]["border_radius"] > 0:
+            template_opts[DRAWING_TEMPLATE_RECT_DIP_INSERT] = Template(templates["no_dip_rounded"]).substitute(dip_opts)
+        else:
+            template_opts[DRAWING_TEMPLATE_RECT_DIP_INSERT] = Template(templates["no_dip"]).substitute(dip_opts)
 
-    connections = ""
-    pins = ""
-    for key in [DRAWING_YAML_TOP, DRAWING_YAML_BOTTOM, DRAWING_YAML_LEFT, DRAWING_YAML_RIGHT]:
-        for i, pin in enumerate(src_data[key]):
-            # skip blank lines
-            if pin[0] == "":
-                continue
+        titles = ""
+        title_lines = len(src_data[DRAWING_YAML_TITLE])
+        title_height = (style["title_text"]["size"] * title_lines) + ((title_lines - 1) * style["title_text"]["line_spacing"])
+        title_start = (template_opts[DRAWING_TEMPLATE_RECT_HEIGHT] / 2) - (title_height / 2)
+        if len(src_data[DRAWING_YAML_TOP]) > 0:
+            title_start += style["pins"]["length"]
+        title_x = template_opts[DRAWING_TEMPLATE_RECT_WIDTH] / 2
+        if len(src_data[DRAWING_YAML_LEFT]) > 0:
+            title_x += style["pins"]["length"]
+        for i, line in enumerate(src_data[DRAWING_YAML_TITLE]):
+            title_opts = {}
+            title_opts[TITLE_TEMPLATE_TITLE] = xmlEscape(line)
+            title_opts[TITLE_TEMPLATE_X] = title_x
+            title_opts[TITLE_TEMPLATE_Y] = title_start + (style["title_text"]["size"] * i) + (style["title_text"]["size"] / 2) + (style["title_text"]["line_spacing"] * i)
+            titles += Template(templates["title"]).substitute(title_opts)
+        template_opts[DRAWING_TEMPLATE_RECT_TITLE_INSERT] = titles
 
-            x = 0
-            if len(src_data[DRAWING_YAML_LEFT]) > 0:
-                x += style["pins"]["length"]
-            if key == DRAWING_YAML_TOP or key == DRAWING_YAML_BOTTOM:
-                x += (style["base"]["width"] / 2) + (style["pin_text"]["vert_width"] * i) + (style["pin_text"]["vert_width"] / 2)
-            elif key == DRAWING_YAML_RIGHT:
-                x += template_opts[DRAWING_TEMPLATE_RECT_WIDTH]
-            y = 0
-            if len(src_data[DRAWING_YAML_TOP]) > 0:
-                y += style["pins"]["length"]
-            if key == DRAWING_YAML_LEFT or key == DRAWING_YAML_RIGHT:
-                y += (style["base"]["height"] / 2) + (style["pin_text"]["horiz_height"] * i) + (style["pin_text"]["horiz_height"] / 2)
-            elif key == DRAWING_YAML_BOTTOM:
-                y += template_opts[DRAWING_TEMPLATE_RECT_HEIGHT]
+        bottom = ""
+        bottom_lines = len(src_data[DRAWING_YAML_BOTTOM_TEXT])
+        bottom_height = (style["bottom_text"]["size"] * bottom_lines) + ((bottom_lines - 1) * style["bottom_text"]["line_spacing"])
+        bottom_start = template_opts[DRAWING_TEMPLATE_RECT_HEIGHT] - (bottom_height / 2) - (style["bottom_text"]["pad"] / 2)
+        if len(src_data[DRAWING_YAML_TOP]) > 0:
+            bottom_start += style["pins"]["length"]
+        bottom_x = template_opts[DRAWING_TEMPLATE_RECT_WIDTH] / 2
+        bottom_align = TEXT_ALIGN_CENTER
+        if not src_data[DRAWING_YAML_BLOCK]:
+            bottom_x = template_opts[DRAWING_TEMPLATE_RECT_WIDTH] - style["bottom_text"]["pad"]
+            bottom_align = TEXT_ALIGN_RIGHT
+        if len(src_data[DRAWING_YAML_LEFT]) > 0:
+            bottom_x += style["pins"]["length"]
+        for i, line in enumerate(src_data[DRAWING_YAML_BOTTOM_TEXT]):
+            bottom_opts = {}
+            bottom_opts[BOTTOM_TEMPLATE_TEXT] = xmlEscape(line)
+            bottom_opts[BOTTOM_TEMPLATE_ALIGN] = bottom_align
+            bottom_opts[BOTTOM_TEMPLATE_X] = bottom_x
+            bottom_opts[BOTTOM_TEMPLATE_Y] = bottom_start + (style["bottom_text"]["size"] * i) + (style["bottom_text"]["size"] / 2) + (style["bottom_text"]["line_spacing"] * i)
+            bottom += Template(templates["bottom"]).substitute(bottom_opts)
+        template_opts[DRAWING_TEMPLATE_RECT_BOTTOM_INSERT] = bottom
 
-            conn_x = 0
-            if key == DRAWING_YAML_TOP or key == DRAWING_YAML_BOTTOM:
-                conn_x = x
-            elif key == DRAWING_YAML_RIGHT:
-                conn_x = template_opts[DRAWING_TEMPLATE_WIDTH]
-            conn_y = 0
-            if key == DRAWING_YAML_LEFT or key == DRAWING_YAML_RIGHT:
-                conn_y = y
-            elif key == DRAWING_YAML_BOTTOM:
-                conn_y = template_opts[DRAWING_TEMPLATE_HEIGHT]
+        connections = ""
+        pins = ""
+        for key in [DRAWING_YAML_TOP, DRAWING_YAML_BOTTOM, DRAWING_YAML_LEFT, DRAWING_YAML_RIGHT]:
+            for i, pin in enumerate(src_data[key]):
+                # skip blank lines
+                if pin[0] == "":
+                    continue
 
-            lead_opts = {}
-            lead_opts[LEAD_TEMPLATE_X_START] = conn_x
-            lead_opts[LEAD_TEMPLATE_Y_START] = conn_y
-            lead_opts[LEAD_TEMPLATE_X_END] = x
-            lead_opts[LEAD_TEMPLATE_Y_END] = y
-            pins += Template(templates["lead"]).substitute(lead_opts)
-
-            pin_x = x
-            if not src_data[DRAWING_YAML_BLOCK]:
-                pin_align = TEXT_ALIGN_LEFT
-                if key == DRAWING_YAML_LEFT:
-                    pin_x += style["pin_text"]["pad"]
+                x = 0
+                if len(src_data[DRAWING_YAML_LEFT]) > 0:
+                    x += style["pins"]["length"]
+                if key == DRAWING_YAML_TOP or key == DRAWING_YAML_BOTTOM:
+                    x += (style["base"]["width"] / 2) + (style["pin_text"]["vert_width"] * i) + (style["pin_text"]["vert_width"] / 2)
                 elif key == DRAWING_YAML_RIGHT:
-                    pin_align = TEXT_ALIGN_RIGHT
-                    pin_x -= style["pin_text"]["pad"]
-                else:
-                    pin_align = TEXT_ALIGN_CENTER
-
-                pin_start = y
-                pin_lines = len(pin)
-                pin_height = (style["pin_text"]["size"] * pin_lines) + ((pin_lines - 1) * style["pin_text"]["line_spacing"])
-                pin_valign = TEXT_VALIGN_BOTTOM
-                if key == DRAWING_YAML_TOP:
-                    pin_start += style["pin_text"]["pad"] * 2
-                    pass
+                    x += template_opts[DRAWING_TEMPLATE_RECT_WIDTH]
+                y = 0
+                if len(src_data[DRAWING_YAML_TOP]) > 0:
+                    y += style["pins"]["length"]
+                if key == DRAWING_YAML_LEFT or key == DRAWING_YAML_RIGHT:
+                    y += (style["base"]["height"] / 2) + (style["pin_text"]["horiz_height"] * i) + (style["pin_text"]["horiz_height"] / 2)
                 elif key == DRAWING_YAML_BOTTOM:
+                    y += template_opts[DRAWING_TEMPLATE_RECT_HEIGHT]
+
+                conn_x = 0
+                if key == DRAWING_YAML_TOP or key == DRAWING_YAML_BOTTOM:
+                    conn_x = x
+                elif key == DRAWING_YAML_RIGHT:
+                    conn_x = template_opts[DRAWING_TEMPLATE_WIDTH]
+                conn_y = 0
+                if key == DRAWING_YAML_LEFT or key == DRAWING_YAML_RIGHT:
+                    conn_y = y
+                elif key == DRAWING_YAML_BOTTOM:
+                    conn_y = template_opts[DRAWING_TEMPLATE_HEIGHT]
+
+                lead_opts = {}
+                lead_opts[LEAD_TEMPLATE_X_START] = conn_x
+                lead_opts[LEAD_TEMPLATE_Y_START] = conn_y
+                lead_opts[LEAD_TEMPLATE_X_END] = x
+                lead_opts[LEAD_TEMPLATE_Y_END] = y
+                pins += Template(templates["lead"]).substitute(lead_opts)
+
+                pin_x = x
+                if not src_data[DRAWING_YAML_BLOCK]:
+                    pin_align = TEXT_ALIGN_LEFT
+                    if key == DRAWING_YAML_LEFT:
+                        pin_x += style["pin_text"]["pad"]
+                    elif key == DRAWING_YAML_RIGHT:
+                        pin_align = TEXT_ALIGN_RIGHT
+                        pin_x -= style["pin_text"]["pad"]
+                    else:
+                        pin_align = TEXT_ALIGN_CENTER
+
+                    pin_start = y
+                    pin_lines = len(pin)
+                    pin_height = (style["pin_text"]["size"] * pin_lines) + ((pin_lines - 1) * style["pin_text"]["line_spacing"])
                     pin_valign = TEXT_VALIGN_BOTTOM
-                    pin_start -= style["pin_text"]["pad"] * 2
-                else:
-                    pin_valign = TEXT_VALIGN_MIDDLE
-                    pin_start -= pin_height / 2
+                    if key == DRAWING_YAML_TOP:
+                        pin_start += style["pin_text"]["pad"] * 2
+                        pass
+                    elif key == DRAWING_YAML_BOTTOM:
+                        pin_valign = TEXT_VALIGN_BOTTOM
+                        pin_start -= style["pin_text"]["pad"] * 2
+                    else:
+                        pin_valign = TEXT_VALIGN_MIDDLE
+                        pin_start -= pin_height / 2
 
-                for i, line in enumerate(pin):
+                    for i, line in enumerate(pin):
+                        pin_opts = {}
+                        pin_opts[PIN_TEMPLATE_NAME] = xmlEscape(line)
+                        pin_opts[PIN_TEMPLATE_TEXT_ALIGN] = pin_align
+                        pin_opts[PIN_TEMPLATE_TEXT_VALIGN] = pin_valign
+                        pin_opts[PIN_TEMPLATE_X] = pin_x
+                        pin_opts[PIN_TEMPLATE_Y] = pin_start + (style["pin_text"]["size"] * i) + (style["pin_text"]["size"] / 2) + (style["pin_text"]["line_spacing"] * i)
+                        if key == DRAWING_YAML_BOTTOM:
+                            # pin_opts[PIN_TEMPLATE_Y] -= ((len(pin) - 1) - i) * (style["pin_text"]["line_spacing"] + style["pin_text"]["size"])
+                            pin_opts[PIN_TEMPLATE_Y] -= (len(pin) - 1) * (style["pin_text"]["size"] + style["pin_text"]["line_spacing"])
+                        pins += Template(templates["pin_horiz"]).substitute(pin_opts)
+                else:
                     pin_opts = {}
-                    pin_opts[PIN_TEMPLATE_NAME] = xmlEscape(line)
-                    pin_opts[PIN_TEMPLATE_TEXT_ALIGN] = pin_align
-                    pin_opts[PIN_TEMPLATE_TEXT_VALIGN] = pin_valign
-                    pin_opts[PIN_TEMPLATE_X] = pin_x
-                    pin_opts[PIN_TEMPLATE_Y] = pin_start + (style["pin_text"]["size"] * i) + (style["pin_text"]["size"] / 2) + (style["pin_text"]["line_spacing"] * i)
-                    if key == DRAWING_YAML_BOTTOM:
-                        # pin_opts[PIN_TEMPLATE_Y] -= ((len(pin) - 1) - i) * (style["pin_text"]["line_spacing"] + style["pin_text"]["size"])
-                        pin_opts[PIN_TEMPLATE_Y] -= (len(pin) - 1) * (style["pin_text"]["size"] + style["pin_text"]["line_spacing"])
-                    pins += Template(templates["pin_horiz"]).substitute(pin_opts)
-            else:
-                pin_opts = {}
-                pin_opts[PIN_TEMPLATE_NAME] = xmlEscape(pin[0])
-                arrow_point_dist = sqrt((style["pins"]["arrow_size"]) ** 2 - ((style["pins"]["arrow_size"]) / 2) ** 2)
-                pin_opts[PIN_TEMPLATE_TEXT_ALIGN] = TEXT_ALIGN_CENTER
-                pin_opts[PIN_TEMPLATE_TEXT_VALIGN] = TEXT_VALIGN_BOTTOM
-                pin_opts[PIN_TEMPLATE_Y] = y
-                pin_opts[PIN_TEMPLATE_Y] += style["pin_text"]["size"] / 2
-                pin_opts[PIN_TEMPLATE_Y] -= style["pin_text"]["pad"]
-                if key == DRAWING_YAML_LEFT:
-                    pin_x -= style["pins"]["length"] / 2
-                    pin_x -= (arrow_point_dist + style["pins"]["left_arrow_pad"]) / 2
-                else:
-                    pin_x += style["pins"]["length"] / 2
-                    pin_x -= arrow_point_dist / 2
-                pin_opts[PIN_TEMPLATE_X] = pin_x
-
-                arrow_opts = {}
-                arrow_opts[ARROW_TEMPLATE_TOP] = y - (style["pins"]["arrow_size"] / 2)
-                arrow_opts[ARROW_TEMPLATE_BOTTOM] = y + (style["pins"]["arrow_size"] / 2)
-                arrow_opts[ARROW_TEMPLATE_MIDDLE] = y
-
-                if key == DRAWING_YAML_LEFT:
-                    arrow_opts[ARROW_TEMPLATE_X_POINT] = x - style["pins"]["left_arrow_pad"]
-                    arrow_opts[ARROW_TEMPLATE_X_FLAT] = x - (arrow_point_dist + style["pins"]["left_arrow_pad"])
-                else:
-                    arrow_opts[ARROW_TEMPLATE_X_POINT] = conn_x
-                    arrow_opts[ARROW_TEMPLATE_X_FLAT] = conn_x - arrow_point_dist
-                pins += Template(templates["arrow"]).substitute(arrow_opts)
-                pins += Template(templates["pin_horiz"]).substitute(pin_opts)
-
-                if len(pin) == 2:
-                    pin_opts[PIN_TEMPLATE_NAME] = xmlEscape(pin[1])
-                    pin_opts[PIN_TEMPLATE_TEXT_VALIGN] = TEXT_VALIGN_TOP
+                    pin_opts[PIN_TEMPLATE_NAME] = xmlEscape(pin[0])
+                    arrow_point_dist = sqrt((style["pins"]["arrow_size"]) ** 2 - ((style["pins"]["arrow_size"]) / 2) ** 2)
+                    pin_opts[PIN_TEMPLATE_TEXT_ALIGN] = TEXT_ALIGN_CENTER
+                    pin_opts[PIN_TEMPLATE_TEXT_VALIGN] = TEXT_VALIGN_BOTTOM
                     pin_opts[PIN_TEMPLATE_Y] = y
-                    # pin_opts[PIN_TEMPLATE_Y] += style["pin_text"]["size"] / 2
-                    pin_opts[PIN_TEMPLATE_Y] += style["pin_text"]["pad"] / 2
+                    pin_opts[PIN_TEMPLATE_Y] += style["pin_text"]["size"] / 2
+                    pin_opts[PIN_TEMPLATE_Y] -= style["pin_text"]["pad"]
+                    if key == DRAWING_YAML_LEFT:
+                        pin_x -= style["pins"]["length"] / 2
+                        pin_x -= (arrow_point_dist + style["pins"]["left_arrow_pad"]) / 2
+                    else:
+                        pin_x += style["pins"]["length"] / 2
+                        pin_x -= arrow_point_dist / 2
+                    pin_opts[PIN_TEMPLATE_X] = pin_x
+
+                    arrow_opts = {}
+                    arrow_opts[ARROW_TEMPLATE_TOP] = y - (style["pins"]["arrow_size"] / 2)
+                    arrow_opts[ARROW_TEMPLATE_BOTTOM] = y + (style["pins"]["arrow_size"] / 2)
+                    arrow_opts[ARROW_TEMPLATE_MIDDLE] = y
+
+                    if key == DRAWING_YAML_LEFT:
+                        arrow_opts[ARROW_TEMPLATE_X_POINT] = x - style["pins"]["left_arrow_pad"]
+                        arrow_opts[ARROW_TEMPLATE_X_FLAT] = x - (arrow_point_dist + style["pins"]["left_arrow_pad"])
+                    else:
+                        arrow_opts[ARROW_TEMPLATE_X_POINT] = conn_x
+                        arrow_opts[ARROW_TEMPLATE_X_FLAT] = conn_x - arrow_point_dist
+                    pins += Template(templates["arrow"]).substitute(arrow_opts)
                     pins += Template(templates["pin_horiz"]).substitute(pin_opts)
 
-            connection_opts = {}
-            connection_opts[CONNECTION_TEMPLATE_NAME] = xmlEscape(" ".join(pin))
-            connection_opts[CONNECTION_TEMPLATE_X] = conn_x / template_opts[DRAWING_TEMPLATE_WIDTH]
-            connection_opts[CONNECTION_TEMPLATE_Y] = conn_y / template_opts[DRAWING_TEMPLATE_HEIGHT]
-            connections += Template(templates["connection"]).substitute(connection_opts)
+                    if len(pin) == 2:
+                        pin_opts[PIN_TEMPLATE_NAME] = xmlEscape(pin[1])
+                        pin_opts[PIN_TEMPLATE_TEXT_VALIGN] = TEXT_VALIGN_TOP
+                        pin_opts[PIN_TEMPLATE_Y] = y
+                        # pin_opts[PIN_TEMPLATE_Y] += style["pin_text"]["size"] / 2
+                        pin_opts[PIN_TEMPLATE_Y] += style["pin_text"]["pad"] / 2
+                        pins += Template(templates["pin_horiz"]).substitute(pin_opts)
 
-    template_opts[DRAWING_TEMPLATE_CONNECTION_INSERT] = connections
-    template_opts[DRAWING_TEMPLATE_PINS_INSERT] = pins
+                connection_opts = {}
+                connection_opts[CONNECTION_TEMPLATE_NAME] = xmlEscape(" ".join(pin))
+                connection_opts[CONNECTION_TEMPLATE_X] = conn_x / template_opts[DRAWING_TEMPLATE_WIDTH]
+                connection_opts[CONNECTION_TEMPLATE_Y] = conn_y / template_opts[DRAWING_TEMPLATE_HEIGHT]
+                connections += Template(templates["connection"]).substitute(connection_opts)
 
-    out = Template(templates["main"]).substitute(template_opts)
+        template_opts[DRAWING_TEMPLATE_CONNECTION_INSERT] = connections
+        template_opts[DRAWING_TEMPLATE_PINS_INSERT] = pins
+
+        out = Template(templates["main"]).substitute(template_opts)
+
     save_file(dest_file, out)
 
     library_append = ""
@@ -570,6 +584,8 @@ async def main() -> None:
     drawing_templates = {}
     with open(TEMPLATE_DRAWING_MAIN, 'r') as stream:
         drawing_templates["main"] = stream.read()
+    with open(TEMPLATE_DRAWING_CUSTOM, 'r') as stream:
+        drawing_templates["custom"] = stream.read()
     with open(TEMPLATE_DRAWING_TITLE, 'r') as stream:
         drawing_templates["title"] = stream.read()
     with open(TEMPLATE_DRAWING_BOTTOM, 'r') as stream:

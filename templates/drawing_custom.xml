@@ -1,0 +1,3 @@
+<shape aspect="${aspect}" h="${height}" w="${width}" strokewidth="inherit" name="${name}">
+  ${custom_insert}
+</shape>
