@@ -9,14 +9,14 @@ placeholders:
 # Modified from https://github.com/jgraph/drawio/blob/cd8fb3ab6bbfc949722444b1901771332b3387d3/src/main/webapp/stencils/electrical/opto_electronics.xml
 custom:
   width: 100
-  height: 90
+  height: 100
   xml: |
     <connections>
         <constraint name="in" perimeter="0" x="0" y="0.5"/>
         <constraint name="out" perimeter="0" x="1" y="0.5"/>
     </connections>
     <background>
-        <ellipse h="90" w="90" x="5" y="0"/>
+        <ellipse h="90" w="90" x="5" y="5"/>
     </background>
     <foreground>
         <strokecolor color="#000000"/>
@@ -26,30 +26,30 @@ custom:
         <fontsize size="16"/>
         <fillstroke/>
         <path>
-            <move x="85" y="12"/>
-            <line x="92" y="5"/>
-            <move x="85" y="9"/>
-            <line x="85" y="12"/>
-            <line x="88" y="12"/>
-            <move x="80" y="7"/>
-            <line x="87" y="0"/>
-            <move x="80" y="4"/>
-            <line x="80" y="7"/>
-            <line x="82" y="7"/>
-            <move x="0" y="45"/>
-            <line x="18" y="45"/>
-            <line x="22" y="35"/>
-            <line x="30" y="55"/>
-            <line x="38" y="35"/>
-            <line x="46" y="55"/>
-            <line x="54" y="35"/>
-            <line x="62" y="55"/>
-            <line x="70" y="35"/>
-            <line x="78" y="55"/>
-            <line x="82" y="45"/>
-            <line x="100" y="45"/>
+            <move x="85" y="17"/>
+            <line x="92" y="10"/>
+            <move x="85" y="14"/>
+            <line x="85" y="17"/>
+            <line x="88" y="17"/>
+            <move x="80" y="12"/>
+            <line x="87" y="5"/>
+            <move x="80" y="9"/>
+            <line x="80" y="12"/>
+            <line x="82" y="12"/>
+            <move x="0" y="50"/>
+            <line x="18" y="50"/>
+            <line x="22" y="40"/>
+            <line x="30" y="60"/>
+            <line x="38" y="40"/>
+            <line x="46" y="60"/>
+            <line x="54" y="40"/>
+            <line x="62" y="60"/>
+            <line x="70" y="40"/>
+            <line x="78" y="60"/>
+            <line x="82" y="50"/>
+            <line x="100" y="50"/>
         </path>
         <fontsize size="8"/>
-        <text str="#0260" x="89" y="57" align="right" valign="top" placeholders="1"/>
+        <text str="#0260" x="89" y="62" align="right" valign="top" placeholders="1"/>
         <stroke/>
     </foreground>
