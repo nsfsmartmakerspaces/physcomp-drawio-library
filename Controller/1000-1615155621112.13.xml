@@ -1,0 +1,209 @@
+<shape aspect="fixed" h="570" w="290" strokewidth="inherit" name="Arduino Uno [1000]">
+    <connections>
+        <constraint x="0.3793103448275862" y="0.0" perimeter="0" name="Vin (jack)"/>
+        <constraint x="0.6206896551724138" y="0.0" perimeter="0" name="Vin (USB)"/>
+        <constraint x="0.3793103448275862" y="1.0" perimeter="0" name="GND"/>
+        <constraint x="0.0" y="0.15789473684210525" perimeter="0" name="Vin (pin)"/>
+        <constraint x="0.0" y="0.21052631578947367" perimeter="0" name="5V"/>
+        <constraint x="0.0" y="0.2631578947368421" perimeter="0" name="3.3V"/>
+        <constraint x="0.0" y="0.3684210526315789" perimeter="0" name="A0"/>
+        <constraint x="0.0" y="0.42105263157894735" perimeter="0" name="A1"/>
+        <constraint x="0.0" y="0.47368421052631576" perimeter="0" name="A2"/>
+        <constraint x="0.0" y="0.5263157894736842" perimeter="0" name="A3"/>
+        <constraint x="0.0" y="0.5789473684210527" perimeter="0" name="A4/SDA"/>
+        <constraint x="0.0" y="0.631578947368421" perimeter="0" name="A5/SCL"/>
+        <constraint x="1.0" y="0.15789473684210525" perimeter="0" name="13"/>
+        <constraint x="1.0" y="0.21052631578947367" perimeter="0" name="12"/>
+        <constraint x="1.0" y="0.2631578947368421" perimeter="0" name="~11"/>
+        <constraint x="1.0" y="0.3157894736842105" perimeter="0" name="~10"/>
+        <constraint x="1.0" y="0.3684210526315789" perimeter="0" name="~9"/>
+        <constraint x="1.0" y="0.42105263157894735" perimeter="0" name="8"/>
+        <constraint x="1.0" y="0.47368421052631576" perimeter="0" name="7"/>
+        <constraint x="1.0" y="0.5263157894736842" perimeter="0" name="~6"/>
+        <constraint x="1.0" y="0.5789473684210527" perimeter="0" name="~5"/>
+        <constraint x="1.0" y="0.631578947368421" perimeter="0" name="4"/>
+        <constraint x="1.0" y="0.6842105263157895" perimeter="0" name="~3"/>
+        <constraint x="1.0" y="0.7368421052631579" perimeter="0" name="2"/>
+        <constraint x="1.0" y="0.7894736842105263" perimeter="0" name="1/TX"/>
+        <constraint x="1.0" y="0.8421052631578947" perimeter="0" name="0/RX"/>
+    </connections>
+    <background>
+        <strokecolor color="#000000"/>
+        <fillcolor color="#ffffff"/>
+        <fontcolor color="#000000"/>
+        <alpha alpha="1"/>
+        <rect x="20" y="20" h="530" w="250" arcsize="-1"/>
+        <fillstroke />
+    </background>
+    <foreground>
+        <strokecolor color="#000000"/>
+        <fillcolor color="#000000"/>
+        <fontcolor color="#000000"/>
+        <alpha alpha="1"/>
+        <fontsize size="16"/>
+        <text str="Arduino" x="145.0" y="276.75" align="center" valign="middle" placeholders="1"/>
+        <text str="Uno" x="145.0" y="293.25" align="center" valign="middle" placeholders="1"/>
+        <fontsize size="8"/>
+        <text str="#1000" x="266" y="548.0" align="right" valign="bottom" placeholders="1"/>
+        <fontsize size="10"/>
+        <path>
+            <move x="110.0" y="0"/>
+            <line x="110.0" y="20"/>
+        </path>
+        <fillstroke />
+        <text str="Vin" x="110.0" y="33.0" align="center" valign="bottom" placeholders="1" />
+        <text str="(jack)" x="110.0" y="43.25" align="center" valign="bottom" placeholders="1" />
+        <path>
+            <move x="180.0" y="0"/>
+            <line x="180.0" y="20"/>
+        </path>
+        <fillstroke />
+        <text str="Vin" x="180.0" y="33.0" align="center" valign="bottom" placeholders="1" />
+        <text str="(USB)" x="180.0" y="43.25" align="center" valign="bottom" placeholders="1" />
+        <path>
+            <move x="110.0" y="570"/>
+            <line x="110.0" y="550"/>
+        </path>
+        <fillstroke />
+        <text str="GND" x="110.0" y="547.0" align="center" valign="bottom" placeholders="1" />
+        <path>
+            <move x="0" y="90.0"/>
+            <line x="20" y="90.0"/>
+        </path>
+        <fillstroke />
+        <text str="Vin" x="24" y="84.875" align="left" valign="middle" placeholders="1" />
+        <text str="(pin)" x="24" y="95.125" align="left" valign="middle" placeholders="1" />
+        <path>
+            <move x="0" y="120.0"/>
+            <line x="20" y="120.0"/>
+        </path>
+        <fillstroke />
+        <text str="5V" x="24" y="120.0" align="left" valign="middle" placeholders="1" />
+        <path>
+            <move x="0" y="150.0"/>
+            <line x="20" y="150.0"/>
+        </path>
+        <fillstroke />
+        <text str="3.3V" x="24" y="150.0" align="left" valign="middle" placeholders="1" />
+        <path>
+            <move x="0" y="210.0"/>
+            <line x="20" y="210.0"/>
+        </path>
+        <fillstroke />
+        <text str="A0" x="24" y="210.0" align="left" valign="middle" placeholders="1" />
+        <path>
+            <move x="0" y="240.0"/>
+            <line x="20" y="240.0"/>
+        </path>
+        <fillstroke />
+        <text str="A1" x="24" y="240.0" align="left" valign="middle" placeholders="1" />
+        <path>
+            <move x="0" y="270.0"/>
+            <line x="20" y="270.0"/>
+        </path>
+        <fillstroke />
+        <text str="A2" x="24" y="270.0" align="left" valign="middle" placeholders="1" />
+        <path>
+            <move x="0" y="300.0"/>
+            <line x="20" y="300.0"/>
+        </path>
+        <fillstroke />
+        <text str="A3" x="24" y="300.0" align="left" valign="middle" placeholders="1" />
+        <path>
+            <move x="0" y="330.0"/>
+            <line x="20" y="330.0"/>
+        </path>
+        <fillstroke />
+        <text str="A4/SDA" x="24" y="330.0" align="left" valign="middle" placeholders="1" />
+        <path>
+            <move x="0" y="360.0"/>
+            <line x="20" y="360.0"/>
+        </path>
+        <fillstroke />
+        <text str="A5/SCL" x="24" y="360.0" align="left" valign="middle" placeholders="1" />
+        <path>
+            <move x="290" y="90.0"/>
+            <line x="270" y="90.0"/>
+        </path>
+        <fillstroke />
+        <text str="13" x="266" y="90.0" align="right" valign="middle" placeholders="1" />
+        <path>
+            <move x="290" y="120.0"/>
+            <line x="270" y="120.0"/>
+        </path>
+        <fillstroke />
+        <text str="12" x="266" y="120.0" align="right" valign="middle" placeholders="1" />
+        <path>
+            <move x="290" y="150.0"/>
+            <line x="270" y="150.0"/>
+        </path>
+        <fillstroke />
+        <text str="~11" x="266" y="150.0" align="right" valign="middle" placeholders="1" />
+        <path>
+            <move x="290" y="180.0"/>
+            <line x="270" y="180.0"/>
+        </path>
+        <fillstroke />
+        <text str="~10" x="266" y="180.0" align="right" valign="middle" placeholders="1" />
+        <path>
+            <move x="290" y="210.0"/>
+            <line x="270" y="210.0"/>
+        </path>
+        <fillstroke />
+        <text str="~9" x="266" y="210.0" align="right" valign="middle" placeholders="1" />
+        <path>
+            <move x="290" y="240.0"/>
+            <line x="270" y="240.0"/>
+        </path>
+        <fillstroke />
+        <text str="8" x="266" y="240.0" align="right" valign="middle" placeholders="1" />
+        <path>
+            <move x="290" y="270.0"/>
+            <line x="270" y="270.0"/>
+        </path>
+        <fillstroke />
+        <text str="7" x="266" y="270.0" align="right" valign="middle" placeholders="1" />
+        <path>
+            <move x="290" y="300.0"/>
+            <line x="270" y="300.0"/>
+        </path>
+        <fillstroke />
+        <text str="~6" x="266" y="300.0" align="right" valign="middle" placeholders="1" />
+        <path>
+            <move x="290" y="330.0"/>
+            <line x="270" y="330.0"/>
+        </path>
+        <fillstroke />
+        <text str="~5" x="266" y="330.0" align="right" valign="middle" placeholders="1" />
+        <path>
+            <move x="290" y="360.0"/>
+            <line x="270" y="360.0"/>
+        </path>
+        <fillstroke />
+        <text str="4" x="266" y="360.0" align="right" valign="middle" placeholders="1" />
+        <path>
+            <move x="290" y="390.0"/>
+            <line x="270" y="390.0"/>
+        </path>
+        <fillstroke />
+        <text str="~3" x="266" y="390.0" align="right" valign="middle" placeholders="1" />
+        <path>
+            <move x="290" y="420.0"/>
+            <line x="270" y="420.0"/>
+        </path>
+        <fillstroke />
+        <text str="2" x="266" y="420.0" align="right" valign="middle" placeholders="1" />
+        <path>
+            <move x="290" y="450.0"/>
+            <line x="270" y="450.0"/>
+        </path>
+        <fillstroke />
+        <text str="1/TX" x="266" y="450.0" align="right" valign="middle" placeholders="1" />
+        <path>
+            <move x="290" y="480.0"/>
+            <line x="270" y="480.0"/>
+        </path>
+        <fillstroke />
+        <text str="0/RX" x="266" y="480.0" align="right" valign="middle" placeholders="1" />
+    </foreground>
+</shape>
