@@ -661,7 +661,7 @@ async def main() -> None:
     tz = pytz.timezone(TIMEZONE)
     now = datetime.now(tz)
     now_str = f"{now.strftime('%m/%d/%Y, %H:%M:%S')} ({TIMEZONE})"
-    config_version = str(now.microsecond)
+    config_version = str((now.astimezone(pytz.UTC) - datetime.utcfromtimestamp(0).replace(tzinfo=pytz.UTC)).total_seconds() * 1000)
 
     file_names = []
     library_names = set()
