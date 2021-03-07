@@ -3,9 +3,6 @@ disable: false
 
 name: "Photoresistor [0260]"
 
-placeholders:
-  "value": "!VALUE!"
-
 # Modified from https://github.com/jgraph/drawio/blob/cd8fb3ab6bbfc949722444b1901771332b3387d3/src/main/webapp/stencils/electrical/opto_electronics.xml
 custom:
   width: 100
