@@ -4,10 +4,10 @@ disable: false
 dip: false
 block: true
 style: block_1
-name: "Lever Switch [0350]"
+name: "Lever Microswitch [0350]"
 title:
   - "Lever"
-  - "Switch"
+  - "Microswitch"
 bottom_text:
   - "#0350"
 left:
