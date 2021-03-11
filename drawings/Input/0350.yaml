@@ -6,7 +6,7 @@ name: "Lever Microswitch [0350]"
 # Modified from https://github.com/jgraph/drawio/blob/cd8fb3ab6bbfc949722444b1901771332b3387d3/src/main/webapp/stencils/electrical/electro-mechanical.xml
 custom:
   width: 80
-  height: 80
+  height: 90
   xml: |
     <connections>
         <constraint name="COM" perimeter="0" x="0" y="0.66666666666666666667"/>
