@@ -6,12 +6,12 @@ name: "Arcade Button [2461]"
 # Modified from https://github.com/jgraph/drawio/blob/cd8fb3ab6bbfc949722444b1901771332b3387d3/src/main/webapp/stencils/electrical/electro-mechanical.xml
 custom:
   width: 80
-  height: 90
+  height: 50
   xml: |
     <connections>
-        <constraint name="COM" perimeter="0" x="0" y="0.66666666666666666667"/>
-        <constraint name="NC" perimeter="0" x="1" y="0.55555555555555555556"/>
-        <constraint name="NO" perimeter="0" x="1" y="0.77777777777777777778"/>
+        <constraint name="COM" perimeter="0" x="0" y="0.6"/>
+        <constraint name="NC" perimeter="0" x="1" y="0.2"/>
+        <constraint name="NO" perimeter="0" x="1" y="0.6"/>
     </connections>
     <foreground>
         <strokecolor color="#000000"/>
@@ -21,26 +21,26 @@ custom:
         <fontsize size="16"/>
         <fillstroke/>
         <path>
-            <move x="0" y="60"/>
-            <line x="17.5" y="60"/>
-            <move x="62.5" y="50"/>
-            <line x="80" y="50"/>
-            <move x="20.5" y="64"/>
-            <line x="59.5" y="54"/>
+            <move x="0" y="30"/>
+            <line x="17.5" y="30"/>
+            <move x="62.5" y="10"/>
+            <line x="80" y="10"/>
+            <move x="20.5" y="30"/>
+            <line x="59.5" y="14"/>
             <move x="40" y="0"/>
-            <line x="40" y="59"/>
-            <move x="62.5" y="70"/>
-            <line x="80" y="70"/>
+            <line x="40" y="22"/>
+            <move x="62.5" y="30"/>
+            <line x="80" y="30"/>
         </path>
         <stroke/>
-        <ellipse h="6" w="6" x="56.5" y="47"/>
+        <ellipse h="6" w="6" x="56.5" y="7"/>
         <fillstroke/>
-        <ellipse h="6" w="6" x="17.5" y="57"/>
+        <ellipse h="6" w="6" x="17.5" y="27"/>
         <fillstroke/>
-        <ellipse h="6" w="6" x="56.5" y="67"/>
+        <ellipse h="6" w="6" x="56.5" y="27"/>
         <fillstroke/>
         <fontsize size="8"/>
-        <text str="ARCADE" x="2" y="74" align="left" valign="top" placeholders="1"/>
-        <text str="#2461" x="78" y="74" align="right" valign="top" placeholders="1"/>
+        <text str="ARCADE" x="2" y="34" align="left" valign="top" placeholders="1"/>
+        <text str="#2461" x="78" y="34" align="right" valign="top" placeholders="1"/>
         <stroke/>
     </foreground>
