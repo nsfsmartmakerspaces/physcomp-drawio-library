@@ -658,7 +658,9 @@ async def main() -> None:
             exit(1)
         style_names.append(style_name)
         tasks.append(load_style(styles, style_name, style_path))
-    await asyncio.wait(tasks)
+    # await asyncio.wait(tasks)
+    for task in tasks:
+        await task
 
     tz = pytz.timezone(TIMEZONE)
     now = datetime.now(tz)
