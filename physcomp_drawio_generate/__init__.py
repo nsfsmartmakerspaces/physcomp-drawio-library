@@ -658,9 +658,7 @@ async def main() -> None:
             exit(1)
         style_names.append(style_name)
         tasks.append(load_style(styles, style_name, style_path))
-    # await asyncio.wait(tasks)
-    for task in tasks:
-        await task
+    await asyncio.wait(tasks)
 
     tz = pytz.timezone(TIMEZONE)
     now = datetime.now(tz)
@@ -699,6 +697,7 @@ async def main() -> None:
 
     config_tasks = []
     config_files = glob(f"./{CONFIG_SRC_DIR}/*.json")
+    config_files.sort()
     for config_file in config_files:
         split = os.path.normpath(config_file).split(os.path.sep)
         file_name = os.path.splitext(split[1])[0]
