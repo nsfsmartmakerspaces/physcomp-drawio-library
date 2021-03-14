@@ -700,12 +700,20 @@ async def main() -> None:
         config_tasks.append(generate_config(config_file, file_name, config_version, config_templates))
 
     if len(file_tasks) > 0:
-        await asyncio.wait(library_tasks_start)
-        await asyncio.wait(file_tasks)
-        await asyncio.wait(library_tasks_end)
+        # await asyncio.wait(library_tasks_start)
+        # await asyncio.wait(file_tasks)
+        # await asyncio.wait(library_tasks_end)
+        for task in library_tasks_start:
+            await task
+        for task in file_tasks:
+            await task
+        for task in library_tasks_end:
+            await task
         if len(config_tasks) > 0:
             await www_start(config_templates)
-            await asyncio.wait(config_tasks)
+            # await asyncio.wait(config_tasks)
+            for task in config_tasks:
+                await task
             await www_end(now_str, config_templates)
     else:
         print("No drawings to process, stopping")
