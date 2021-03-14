@@ -80,6 +80,7 @@ CONFIG_ENTRY_TEMPLATE_URL = "url"
 CONFIG_ENTRY_TEMPLATE_NAME = "name"
 
 CONFIG_END_TEMPLATE_DATETIME = "datetime"
+CONFIG_END_TEMPLATE_YEAR = "year"
 
 # Template locations
 TEMPLATE_DRAWING_MAIN = "templates/drawing.xml"
@@ -155,6 +156,7 @@ STYLE_YAML_PINS_ARROW_SIZE = "arrow_size"
 STYLE_YAML_PINS_LEFT_ARROW_PAD = "left_arrow_pad"
 
 CONFIG_JSON_VERSION = "version"
+CONFIG_JSON_PAGE_GEN = "PAGE_GEN"
 
 # Template attr values
 TEXT_ALIGN_LEFT = "left"

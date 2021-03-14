@@ -1,5 +1,6 @@
 import asyncio
 from base64 import b64encode
+from copy import deepcopy
 from datetime import datetime
 from distutils.dir_util import copy_tree
 from glob import glob
@@ -565,9 +566,10 @@ async def www_start(templates: dict) -> None:
     save_file(f"./{YAML_DIST_DIR}/{CONFIG_TARGET_FILE}", templates["start"])
 
 
-async def www_end(now_str: str, templates: dict) -> None:
+async def www_end(now_year: str, now_str: str, templates: dict) -> None:
     end_opts = {}
     end_opts[CONFIG_END_TEMPLATE_DATETIME] = now_str
+    end_opts[CONFIG_END_TEMPLATE_YEAR] = now_year
     end = Template(templates["end"]).substitute(end_opts)
     append_file(f"./{YAML_DIST_DIR}/{CONFIG_TARGET_FILE}", end)
 
@@ -577,6 +579,8 @@ async def generate_config(file: str, name: str, version: int, templates: dict) -
     file_opts[CONFIG_TEMPLATE_CONFIG_VERSION] = version
     inputJSON = read_json_file_template_safe(file, file_opts)
     inputJSON[CONFIG_JSON_VERSION] = f"{version}-{name}"
+    entry_opts = deepcopy(inputJSON[CONFIG_JSON_PAGE_GEN])
+    del inputJSON[CONFIG_JSON_PAGE_GEN]
     stringify = json.dumps(inputJSON, separators=(',', ':'))
     compressed = drawio_compress(stringify)
 
@@ -584,9 +588,7 @@ async def generate_config(file: str, name: str, version: int, templates: dict) -
     url_opts[CONFIG_URL_TEMPLATE_DATA] = compressed
     url = Template(templates["url"]).substitute(url_opts)
 
-    entry_opts = {}
     entry_opts[CONFIG_ENTRY_TEMPLATE_URL] = url
-    entry_opts[CONFIG_ENTRY_TEMPLATE_NAME] = name
     entry = Template(templates["entry"]).substitute(entry_opts)
 
     append_file(f"./{YAML_DIST_DIR}/{CONFIG_TARGET_FILE}", entry)
@@ -661,6 +663,7 @@ async def main() -> None:
     tz = pytz.timezone(TIMEZONE)
     now = datetime.now(tz)
     now_str = f"{now.strftime('%m/%d/%Y, %H:%M:%S')} ({TIMEZONE})"
+    now_year = f"{now.strftime('%Y')}"
     config_version = str((now.astimezone(pytz.UTC) - datetime.utcfromtimestamp(0).replace(tzinfo=pytz.UTC)).total_seconds() * 1000)
 
     file_names = []
@@ -714,6 +717,6 @@ async def main() -> None:
             # await asyncio.wait(config_tasks)
             for task in config_tasks:
                 await task
-            await www_end(now_str, config_templates)
+            await www_end(now_year, now_str, config_templates)
     else:
         print("No drawings to process, stopping")

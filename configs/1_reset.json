@@ -1,0 +1,8 @@
+{
+    "PAGE_GEN": {
+        "name": "Reset Draw.io",
+        "desc": "Reset draw.io back to its default interface",
+        "button_text": "Reset draw.io",
+        "button_class": "secondary"
+    }
+}
