@@ -1,5 +1,5 @@
 {
-    "defaultLibraries": "physcomp-block-${config_version};general",
+    "defaultLibraries": "physcomp-block-${config_version};physcomp-components-${config_version};general",
     "defaultCustomLibraries": "",
     "enabledLibraries": ["general", "physcomp-block-${config_version}", "physcomp-components-${config_version}", "electrical"],
     "enableCustomLibraries": false,
