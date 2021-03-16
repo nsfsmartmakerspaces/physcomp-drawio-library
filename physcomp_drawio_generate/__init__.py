@@ -696,6 +696,7 @@ async def main() -> None:
     libraries_with_first_entry = set()
     src_files = glob(f"./{YAML_SRC_DIR}/*/*.yaml")
     src_files.extend(glob(f"./{YAML_SRC_DIR}/*/*.yml"))
+    src_files.sort()
     for src_file in src_files:
         split = os.path.normpath(src_file).split(os.path.sep)
         file_name = os.path.splitext(split[2])[0]
