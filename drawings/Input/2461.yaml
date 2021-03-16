@@ -7,7 +7,7 @@ name: "Arcade Button [2461]"
 custom:
   width: 80
   height: 50
-  xml: |
+  stencil: |
     <connections>
         <constraint name="COM" perimeter="0" x="0" y="0.6"/>
         <constraint name="NC" perimeter="0" x="1" y="0.2"/>

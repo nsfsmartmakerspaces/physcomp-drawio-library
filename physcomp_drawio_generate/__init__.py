@@ -63,10 +63,24 @@ def check_drawing_yaml_file(name: str, src_data: dict, styles: dict) -> bool:
            not isinstance(src_data[DRAWING_YAML_CUSTOM][DRAWING_YAML_CUSTOM_HEIGHT], Number)):
             res = False
             print(f"Missing {DRAWING_YAML_CUSTOM}/{DRAWING_YAML_CUSTOM_HEIGHT} or not str in '{name}'")
-        if (DRAWING_YAML_CUSTOM_XML not in src_data[DRAWING_YAML_CUSTOM] or
+        if (DRAWING_YAML_CUSTOM_STENCIL not in src_data[DRAWING_YAML_CUSTOM] and
+           DRAWING_YAML_CUSTOM_XML not in src_data[DRAWING_YAML_CUSTOM]):
+            res = False
+            print(f"Missing {DRAWING_YAML_CUSTOM}/{DRAWING_YAML_CUSTOM_STENCIL} or "
+                  f"{DRAWING_YAML_CUSTOM}/{DRAWING_YAML_CUSTOM_XML} in '{name}'")
+        elif (DRAWING_YAML_CUSTOM_STENCIL in src_data[DRAWING_YAML_CUSTOM] and
+              DRAWING_YAML_CUSTOM_XML in src_data[DRAWING_YAML_CUSTOM]):
+            res = False
+            print(f"Both {DRAWING_YAML_CUSTOM}/{DRAWING_YAML_CUSTOM_STENCIL} and "
+                  f"{DRAWING_YAML_CUSTOM}/{DRAWING_YAML_CUSTOM_XML} in '{name}'")
+        if (DRAWING_YAML_CUSTOM_STENCIL in src_data[DRAWING_YAML_CUSTOM] and
+           type(src_data[DRAWING_YAML_CUSTOM][DRAWING_YAML_CUSTOM_STENCIL]) is not str):
+            res = False
+            print(f"{DRAWING_YAML_CUSTOM}/{DRAWING_YAML_CUSTOM_STENCIL} not str in '{name}'")
+        if (DRAWING_YAML_CUSTOM_XML in src_data[DRAWING_YAML_CUSTOM] and
            type(src_data[DRAWING_YAML_CUSTOM][DRAWING_YAML_CUSTOM_XML]) is not str):
             res = False
-            print(f"Missing {DRAWING_YAML_CUSTOM}/{DRAWING_YAML_CUSTOM_XML} or not str in '{name}'")
+            print(f"{DRAWING_YAML_CUSTOM}/{DRAWING_YAML_CUSTOM_XML} not str in '{name}'")
     elif DRAWING_YAML_CUSTOM not in src_data:
         if DRAWING_YAML_DIP not in src_data or type(src_data[DRAWING_YAML_DIP]) is not bool:
             res = False
@@ -258,8 +272,11 @@ async def generate(src_file: str, file_name: str, dest_file: str, templates: dic
     if DRAWING_YAML_CUSTOM in src_data:
         template_opts[DRAWING_TEMPLATE_WIDTH] = src_data[DRAWING_YAML_CUSTOM][DRAWING_YAML_CUSTOM_WIDTH]
         template_opts[DRAWING_TEMPLATE_HEIGHT] = src_data[DRAWING_YAML_CUSTOM][DRAWING_YAML_CUSTOM_HEIGHT]
-        template_opts[DRAWING_TEMPLATE_CUSTOM_INSERT] = src_data[DRAWING_YAML_CUSTOM][DRAWING_YAML_CUSTOM_XML]
-        out = Template(templates["custom"]).substitute(template_opts)
+        if DRAWING_YAML_CUSTOM_STENCIL in src_data[DRAWING_YAML_CUSTOM]:
+            template_opts[DRAWING_TEMPLATE_CUSTOM_INSERT] = src_data[DRAWING_YAML_CUSTOM][DRAWING_YAML_CUSTOM_STENCIL]
+            out = Template(templates["custom"]).substitute(template_opts)
+        else:
+            out = src_data[DRAWING_YAML_CUSTOM][DRAWING_YAML_CUSTOM_XML]
     else:
         style = styles[src_data[DRAWING_YAML_STYLE]]
         template_opts[DRAWING_TEMPLATE_TITLE_TEXT_SIZE] = style["title_text"]["size"]
@@ -481,20 +498,25 @@ async def generate(src_file: str, file_name: str, dest_file: str, templates: dic
     else:
         libraries_with_first_entry.add(library)
 
-    # Yes, I know it's silly. It's an XML...compressed...and  put in another XML...and compressed again
-    library_xml_opts = {}
-    library_xml_opts[LIBRARY_XML_TEMPLATE_DATA] = drawio_compress(out)
-    library_xml_opts[LIBRARY_XML_TEMPLATE_WIDTH] = template_opts[DRAWING_TEMPLATE_WIDTH]
-    library_xml_opts[LIBRARY_XML_TEMPLATE_HEIGHT] = template_opts[DRAWING_TEMPLATE_HEIGHT]
-    library_xml_opts[LIBRARY_XML_TEMPLATE_PLACEHOLDERS] = ""
-    if DRAWING_YAML_PLACEHOLDERS in src_data:
-        for key in src_data[DRAWING_YAML_PLACEHOLDERS]:
-            library_xml_placeholder_opts = {}
-            library_xml_placeholder_opts[LIBRARY_XML_PLACEHOLDER_TEMPLATE_PLACEHOLDER] = key
-            library_xml_placeholder_opts[LIBRARY_XML_PLACEHOLDER_TEMPLATE_VALUE] = xmlEscape(src_data[DRAWING_YAML_PLACEHOLDERS][key])
-            placeholder = Template(templates["library_xml_placeholder"]).substitute(library_xml_placeholder_opts)
-            library_xml_opts[LIBRARY_XML_TEMPLATE_PLACEHOLDERS] += placeholder
-    library_xml_data = drawio_compress(Template(templates["library_xml"]).substitute(library_xml_opts))
+    library_xml_data = ""
+
+    if DRAWING_YAML_CUSTOM in src_data and DRAWING_YAML_CUSTOM_XML in src_data[DRAWING_YAML_CUSTOM]:
+        library_xml_data = drawio_compress(out)
+    else:
+        # Yes, I know it's silly. It's an XML...compressed...and  put in another XML...and compressed again
+        library_xml_opts = {}
+        library_xml_opts[LIBRARY_XML_TEMPLATE_DATA] = drawio_compress(out)
+        library_xml_opts[LIBRARY_XML_TEMPLATE_WIDTH] = template_opts[DRAWING_TEMPLATE_WIDTH]
+        library_xml_opts[LIBRARY_XML_TEMPLATE_HEIGHT] = template_opts[DRAWING_TEMPLATE_HEIGHT]
+        library_xml_opts[LIBRARY_XML_TEMPLATE_PLACEHOLDERS] = ""
+        if DRAWING_YAML_PLACEHOLDERS in src_data:
+            for key in src_data[DRAWING_YAML_PLACEHOLDERS]:
+                library_xml_placeholder_opts = {}
+                library_xml_placeholder_opts[LIBRARY_XML_PLACEHOLDER_TEMPLATE_PLACEHOLDER] = key
+                library_xml_placeholder_opts[LIBRARY_XML_PLACEHOLDER_TEMPLATE_VALUE] = xmlEscape(src_data[DRAWING_YAML_PLACEHOLDERS][key])
+                placeholder = Template(templates["library_xml_placeholder"]).substitute(library_xml_placeholder_opts)
+                library_xml_opts[LIBRARY_XML_TEMPLATE_PLACEHOLDERS] += placeholder
+        library_xml_data = drawio_compress(Template(templates["library_xml"]).substitute(library_xml_opts))
 
     library_data = {
         LIBRARY_JSON_XML: library_xml_data,
