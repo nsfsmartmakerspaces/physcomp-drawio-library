@@ -1,0 +1,22 @@
+schema_version: "1.0.0"
+disable: false
+
+name: "Junction"
+
+custom:
+  width: 20
+  height: 20
+  stencil: |
+    <connections>
+        <constraint name="junction" perimeter="0" x="0.5" y="0.5"/>
+    </connections>
+    <foreground>
+        <strokecolor color="#000000"/>
+        <fillcolor color="#000000"/>
+        <fontcolor color="#000000"/>
+        <alpha alpha="1"/>
+        <fontsize size="16"/>
+        <fillstroke/>
+        <ellipse h="5" w="5" x="7.5" y="7.5"/>
+        <fillstroke/>
+    </foreground>

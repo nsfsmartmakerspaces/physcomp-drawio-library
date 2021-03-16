@@ -5,9 +5,9 @@
         "button_text": "Launch Tool",
         "button_class": "primary"
     },
-    "defaultLibraries": "physcomp-block-${config_version};physcomp-components-${config_version};general",
+    "defaultLibraries": "physcomp-misc-${config_version};physcomp-block-${config_version};physcomp-components-${config_version}",
     "defaultCustomLibraries": "",
-    "enabledLibraries": ["general", "physcomp-block-${config_version}", "physcomp-components-${config_version}", "electrical"],
+    "enabledLibraries": ["general", "physcomp-misc-${config_version}", "physcomp-block-${config_version}", "physcomp-components-${config_version}", "electrical"],
     "enableCustomLibraries": false,
     "override": true,
     "defaultEdgeStyle": {
@@ -41,6 +41,23 @@
                 "main": "Physical Computing"
             },
             "entries": [
+                {
+                    "id": "physcomp-misc-${config_version}",
+                    "title": {
+                        "main": "Miscellaneous Shapes"
+                    },
+                    "desc": "Miscellaneous shapes",
+                    "libs": [
+                        {
+                            "title": {
+                                "main": "General"
+                            },
+                            "url": "https://nsfsmartmakerspaces.github.io/physcomp-drawio-library/General-${config_version}.xml",
+                            "tags": "general misc shapes",
+                            "prefetch": true
+                        }
+                    ]
+                },
                 {
                     "id": "physcomp-block-${config_version}",
                     "title": {
