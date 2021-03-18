@@ -1,0 +1,40 @@
+<shape aspect="fixed" h="170" w="130" strokewidth="inherit" name="DC Motor [1932]">
+    <connections>
+        <constraint x="0.0" y="0.4117647058823529" perimeter="0" name="+ (red)"/>
+        <constraint x="0.0" y="0.5882352941176471" perimeter="0" name="- (black)"/>
+    </connections>
+    <background>
+        <strokecolor color="#000000"/>
+        <fillcolor color="#ffffff"/>
+        <fontcolor color="#000000"/>
+        <alpha alpha="1"/>
+        <rect x="20" y="0" h="170" w="110" arcsize="-1"/>
+        <fillstroke />
+    </background>
+    <foreground>
+        <strokecolor color="#000000"/>
+        <fillcolor color="#000000"/>
+        <fontcolor color="#000000"/>
+        <alpha alpha="1"/>
+        <fontsize size="16"/>
+        <text str="DC" x="75.0" y="76.75" align="center" valign="middle" placeholders="1"/>
+        <text str="Motor" x="75.0" y="93.25" align="center" valign="middle" placeholders="1"/>
+        <fontsize size="8"/>
+        <text str="#1932" x="126" y="168.0" align="right" valign="bottom" placeholders="1"/>
+        <fontsize size="10"/>
+        <path>
+            <move x="0" y="70.0"/>
+            <line x="20" y="70.0"/>
+        </path>
+        <fillstroke />
+        <text str="+" x="24" y="64.875" align="left" valign="middle" placeholders="1" />
+        <text str="(red)" x="24" y="75.125" align="left" valign="middle" placeholders="1" />
+        <path>
+            <move x="0" y="100.0"/>
+            <line x="20" y="100.0"/>
+        </path>
+        <fillstroke />
+        <text str="-" x="24" y="94.875" align="left" valign="middle" placeholders="1" />
+        <text str="(black)" x="24" y="105.125" align="left" valign="middle" placeholders="1" />
+    </foreground>
+</shape>

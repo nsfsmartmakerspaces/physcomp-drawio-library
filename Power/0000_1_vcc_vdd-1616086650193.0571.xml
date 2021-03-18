@@ -1,0 +1,22 @@
+<shape aspect="fixed" h="40" w="50" strokewidth="inherit" name="VCC or VDD">
+  <connections>
+    <constraint name="V" perimeter="0" x="0.5" y="1"/>
+</connections>
+<foreground>
+    <strokecolor color="#000000"/>
+    <fillcolor color="#000000"/>
+    <fontcolor color="#000000"/>
+    <alpha alpha="1"/>
+    <fontsize size="16"/>
+    <path>
+        <move x="0" y="20"/>
+        <line x="50" y="20"/>
+        <move x="25" y="20"/>
+        <line x="25" y="40"/>
+    </path>
+    <stroke/>
+    <text str="%voltage%V" x="25" y="0" align="center" valign="top" placeholders="1"/>
+    <stroke/>
+</foreground>
+
+</shape>
