@@ -1,0 +1,25 @@
+<shape aspect="fixed" h="40" w="60" strokewidth="inherit" name="Ground">
+  <connections>
+    <constraint name="ground" perimeter="0" x="0.5" y="0"/>
+</connections>
+<foreground>
+    <strokecolor color="#000000"/>
+    <fillcolor color="#ffffff"/>
+    <fontcolor color="#000000"/>
+    <alpha alpha="1"/>
+    <fontsize size="16"/>
+    <path>
+        <move x="5" y="20"/>
+        <line x="30" y="40"/>
+        <line x="55" y="20"/>
+        <close/>
+    </path>
+    <fillstroke/>
+    <path>
+        <move x="30" y="0"/>
+        <line x="30" y="20"/>
+    </path>
+    <stroke/>
+</foreground>
+
+</shape>
