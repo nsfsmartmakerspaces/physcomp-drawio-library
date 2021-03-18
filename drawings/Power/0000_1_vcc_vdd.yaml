@@ -1,0 +1,32 @@
+schema_version: "1.0.0"
+disable: false
+
+name: "VCC or VDD"
+
+placeholders:
+  "voltage": "!VOLTAGE!"
+
+# Modified from https://github.com/jgraph/drawio/blob/cd8fb3ab6bbfc949722444b1901771332b3387d3/src/main/webapp/stencils/electrical/signal_sources.xml
+custom:
+  width: 50
+  height: 40
+  stencil: |
+    <connections>
+        <constraint name="V" perimeter="0" x="0.5" y="1"/>
+    </connections>
+    <foreground>
+        <strokecolor color="#000000"/>
+        <fillcolor color="#000000"/>
+        <fontcolor color="#000000"/>
+        <alpha alpha="1"/>
+        <fontsize size="16"/>
+        <path>
+            <move x="0" y="20"/>
+            <line x="50" y="20"/>
+            <move x="25" y="20"/>
+            <line x="25" y="40"/>
+        </path>
+        <stroke/>
+        <text str="%voltage%V" x="25" y="0" align="center" valign="top" placeholders="1"/>
+        <stroke/>
+    </foreground>
