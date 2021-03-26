@@ -1,7 +1,7 @@
 schema_version: "1.0.0"
 disable: false
 
-name: "Ground"
+name: "Ground (GND)"
 
 # Modified from https://github.com/jgraph/drawio/blob/cd8fb3ab6bbfc949722444b1901771332b3387d3/src/main/webapp/stencils/electrical/signal_sources.xml
 custom:
