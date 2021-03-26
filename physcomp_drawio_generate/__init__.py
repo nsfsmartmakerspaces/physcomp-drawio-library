@@ -596,7 +596,7 @@ async def www_end(now_year: str, now_str: str, templates: dict) -> None:
     append_file(f"./{YAML_DIST_DIR}/{CONFIG_TARGET_FILE}", end)
 
 
-async def generate_config(file: str, name: str, version: int, templates: dict) -> None:
+async def generate_config(file: str, name: str, version: int, config_out: dict, templates: dict) -> None:
     file_opts = {}
     file_opts[CONFIG_TEMPLATE_CONFIG_VERSION] = version
     inputJSON = read_json_file_template_safe(file, file_opts)
@@ -609,6 +609,9 @@ async def generate_config(file: str, name: str, version: int, templates: dict) -
     url_opts = {}
     url_opts[CONFIG_URL_TEMPLATE_DATA] = compressed
     url = Template(templates["url"]).substitute(url_opts)
+
+    config_out[CONFIG_OUT_CONFIGS][name] = entry_opts
+    config_out[CONFIG_OUT_CONFIGS][name][CONFIG_OUT_CONFIGS_URL] = url
 
     entry_opts[CONFIG_ENTRY_TEMPLATE_URL] = url
     entry = Template(templates["entry"]).substitute(entry_opts)
@@ -721,10 +724,14 @@ async def main() -> None:
     config_tasks = []
     config_files = glob(f"./{CONFIG_SRC_DIR}/*.json")
     config_files.sort()
+    config_out = {
+        CONFIG_OUT_CONFIGS: {},
+        CONFIG_OUT_VERSION: config_version
+    }
     for config_file in config_files:
         split = os.path.normpath(config_file).split(os.path.sep)
         file_name = os.path.splitext(split[1])[0]
-        config_tasks.append(generate_config(config_file, file_name, config_version, config_templates))
+        config_tasks.append(generate_config(config_file, file_name, config_version, config_out, config_templates))
 
     if len(file_tasks) > 0:
         # await asyncio.wait(library_tasks_start)
@@ -742,5 +749,6 @@ async def main() -> None:
             for task in config_tasks:
                 await task
             await www_end(now_year, now_str, config_templates)
+            save_file(f"./{YAML_DIST_DIR}/{CONFIG_OUT_TARGET_FILE}", json.dumps(config_out))
     else:
         print("No drawings to process, stopping")

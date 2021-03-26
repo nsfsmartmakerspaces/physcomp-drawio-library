@@ -159,6 +159,11 @@ STYLE_YAML_PINS_LEFT_ARROW_PAD = "left_arrow_pad"
 CONFIG_JSON_VERSION = "version"
 CONFIG_JSON_PAGE_GEN = "PAGE_GEN"
 
+CONFIG_OUT_CONFIGS = "configs"
+CONFIG_OUT_CONFIGS_URL = "url"
+CONFIG_OUT_VERSION = "version"
+CONFIG_OUT_TARGET_FILE = "index.json"
+
 # Template attr values
 TEXT_ALIGN_LEFT = "left"
 TEXT_ALIGN_RIGHT = "right"
