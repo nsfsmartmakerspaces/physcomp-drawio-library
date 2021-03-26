@@ -17,6 +17,6 @@ custom:
         <alpha alpha="1"/>
         <fontsize size="16"/>
         <fillstroke/>
-        <ellipse h="5" w="5" x="7.5" y="7.5"/>
+        <ellipse h="6" w="6" x="7" y="7"/>
         <fillstroke/>
     </foreground>
