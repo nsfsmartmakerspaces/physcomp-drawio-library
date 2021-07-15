@@ -1,0 +1,51 @@
+<shape aspect="fixed" h="180" w="220" strokewidth="inherit" name="Custom 1 input, 1 output">
+    <connections>
+        <constraint x="0.5" y="0.0" perimeter="0" name="%top%"/>
+        <constraint x="0.5" y="1.0" perimeter="0" name="%botom%"/>
+        <constraint x="0.0" y="0.5" perimeter="0" name="%input1%"/>
+        <constraint x="1.0" y="0.5" perimeter="0" name="%output1%"/>
+    </connections>
+    <background>
+        <strokecolor color="#000000"/>
+        <fillcolor color="#ffffff"/>
+        <fontcolor color="#000000"/>
+        <alpha alpha="1"/>
+        <rect x="20" y="20" h="140" w="180" arcsize="-1"/>
+        <fillstroke />
+    </background>
+    <foreground>
+        <strokecolor color="#000000"/>
+        <fillcolor color="#000000"/>
+        <fontcolor color="#000000"/>
+        <alpha alpha="1"/>
+        <fontsize size="16"/>
+        <text str="%name%" x="110.0" y="90.0" align="center" valign="middle" placeholders="1"/>
+        <fontsize size="8"/>
+        <text str="" x="196" y="158.0" align="right" valign="bottom" placeholders="1"/>
+        <fontsize size="10"/>
+        <path>
+            <move x="110.0" y="0"/>
+            <line x="110.0" y="20"/>
+        </path>
+        <fillstroke />
+        <text str="%top%" x="110.0" y="33.0" align="center" valign="bottom" placeholders="1" />
+        <path>
+            <move x="110.0" y="180"/>
+            <line x="110.0" y="160"/>
+        </path>
+        <fillstroke />
+        <text str="%botom%" x="110.0" y="157.0" align="center" valign="bottom" placeholders="1" />
+        <path>
+            <move x="0" y="90.0"/>
+            <line x="20" y="90.0"/>
+        </path>
+        <fillstroke />
+        <text str="%input1%" x="24" y="90.0" align="left" valign="middle" placeholders="1" />
+        <path>
+            <move x="220" y="90.0"/>
+            <line x="200" y="90.0"/>
+        </path>
+        <fillstroke />
+        <text str="%output1%" x="196" y="90.0" align="right" valign="middle" placeholders="1" />
+    </foreground>
+</shape>

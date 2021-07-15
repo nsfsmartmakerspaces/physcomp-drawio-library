@@ -1,0 +1,65 @@
+<shape aspect="fixed" h="150" w="250" strokewidth="inherit" name="Custom 1 input, 2 outputs">
+    <connections>
+        <constraint x="0.0" y="0.4" perimeter="0" name="%input1%"/>
+        <constraint x="1.0" y="0.4" perimeter="0" name="%output1%"/>
+        <constraint x="1.0" y="0.6" perimeter="0" name="%output2%"/>
+    </connections>
+    <background>
+        <strokecolor color="#000000"/>
+        <fillcolor color="#ffffff"/>
+        <fontcolor color="#000000"/>
+        <alpha alpha="1"/>
+        <roundrect x="70" y="0" h="150" w="110" arcsize="20"/>
+        <fillstroke />
+    </background>
+    <foreground>
+        <strokecolor color="#000000"/>
+        <fillcolor color="#000000"/>
+        <fontcolor color="#000000"/>
+        <alpha alpha="1"/>
+        <fontsize size="16"/>
+        <text str="%name%" x="125.0" y="75.0" align="center" valign="middle" placeholders="1"/>
+        <fontsize size="8"/>
+        <text str="" x="125.0" y="148.0" align="center" valign="bottom" placeholders="1"/>
+        <fontsize size="8"/>
+        <path>
+            <move x="0" y="60.0"/>
+            <line x="70" y="60.0"/>
+        </path>
+        <fillstroke />
+        <path>
+            <move x="59.33974596215561" y="55.0"/>
+            <line x="59.33974596215561" y="65.0"/>
+            <line x="68.0" y="60.0"/>
+            <close/>
+        </path>
+        <fillstroke />
+        <text str="%input1%" x="29.669872981077805" y="59.0" align="center" valign="bottom" placeholders="1" />
+        <path>
+            <move x="250" y="60.0"/>
+            <line x="180" y="60.0"/>
+        </path>
+        <fillstroke />
+        <path>
+            <move x="241.3397459621556" y="55.0"/>
+            <line x="241.3397459621556" y="65.0"/>
+            <line x="250" y="60.0"/>
+            <close/>
+        </path>
+        <fillstroke />
+        <text str="%output1%" x="210.66987298107782" y="59.0" align="center" valign="bottom" placeholders="1" />
+        <path>
+            <move x="250" y="90.0"/>
+            <line x="180" y="90.0"/>
+        </path>
+        <fillstroke />
+        <path>
+            <move x="241.3397459621556" y="85.0"/>
+            <line x="241.3397459621556" y="95.0"/>
+            <line x="250" y="90.0"/>
+            <close/>
+        </path>
+        <fillstroke />
+        <text str="%output2%" x="210.66987298107782" y="89.0" align="center" valign="bottom" placeholders="1" />
+    </foreground>
+</shape>
