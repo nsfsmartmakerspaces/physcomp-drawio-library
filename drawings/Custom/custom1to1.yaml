@@ -18,7 +18,7 @@ bottom_text:
 top:
   - - "%top%"
 bottom:
-  - - "%botom%"
+  - - "%bottom%"
 left:
   - - "%input1%"
 right:
