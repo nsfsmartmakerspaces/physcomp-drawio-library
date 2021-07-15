@@ -88,6 +88,14 @@
                             "url": "https://nsfsmartmakerspaces.github.io/physcomp-drawio-library/Output%20(Block)-${config_version}.xml",
                             "tags": "block output",
                             "prefetch": true
+                        },
+                        {
+                            "title": {
+                                "main": "Custom (Block)"
+                            },
+                            "url": "https://nsfsmartmakerspaces.github.io/physcomp-drawio-library/Custom%20(Block)-${config_version}.xml",
+                            "tags": "block custom",
+                            "prefetch": true
                         }
                     ]
                 },
@@ -128,6 +136,14 @@
                             },
                             "url": "https://nsfsmartmakerspaces.github.io/physcomp-drawio-library/Power-${config_version}.xml",
                             "tags": "component power",
+                            "prefetch": true
+                        },
+                        {
+                            "title": {
+                                "main": "Custom"
+                            },
+                            "url": "https://nsfsmartmakerspaces.github.io/physcomp-drawio-library/Custom-${config_version}.xml",
+                            "tags": "component custom",
                             "prefetch": true
                         }
                     ]

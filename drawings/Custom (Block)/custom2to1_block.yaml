@@ -1,0 +1,21 @@
+schema_version: "1.0.0"
+disable: false
+
+dip: false
+block: true
+style: block_1
+name: "Custom 2 inputs, 1 output"
+placeholders:
+  "name": "!NAME!"
+  "input1": "!INPUT1!"
+  "input2": "!INPUT2!"
+  "output1": "!OUTPUT1!"
+title:
+  - "%name%"
+bottom_text:
+  - ""
+left:
+  - - "%input1%"
+  - - "%input2%"
+right:
+  - - "%output1%"

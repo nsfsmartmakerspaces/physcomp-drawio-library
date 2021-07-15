@@ -1,0 +1,27 @@
+schema_version: "1.0.0"
+disable: false
+
+dip: false
+block: false
+style: chip_1
+name: "Custom 1 input, 2 outputs"
+placeholders:
+  "name": "!NAME!"
+  "top": "!TOP!"
+  "bottom": "!BOTTOM!"
+  "input1": "!INPUT1!"
+  "output1": "!OUTPUT1!"
+  "output2": "!OUTPUT2!"
+title:
+  - "%name%"
+bottom_text:
+  - ""
+top:
+  - - "%top%"
+bottom:
+  - - "%botom%"
+left:
+  - - "%input1%"
+right:
+  - - "%output1%"
+  - - "%output2%"

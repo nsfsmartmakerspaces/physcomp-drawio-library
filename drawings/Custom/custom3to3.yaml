@@ -1,0 +1,33 @@
+schema_version: "1.0.0"
+disable: false
+
+dip: false
+block: false
+style: chip_1
+name: "Custom 3 inputs, 3 outputs"
+placeholders:
+  "name": "!NAME!"
+  "top": "!TOP!"
+  "bottom": "!BOTTOM!"
+  "input1": "!INPUT1!"
+  "input2": "!INPUT2!"
+  "input3": "!INPUT3!"
+  "output1": "!OUTPUT1!"
+  "output2": "!OUTPUT2!"
+  "output3": "!OUTPUT3!"
+title:
+  - "%name%"
+bottom_text:
+  - ""
+top:
+  - - "%top%"
+bottom:
+  - - "%botom%"
+left:
+  - - "%input1%"
+  - - "%input2%"
+  - - "%input3%"
+right:
+  - - "%output1%"
+  - - "%output2%"
+  - - "%output3%"
