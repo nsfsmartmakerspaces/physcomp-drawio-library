@@ -1,0 +1,43 @@
+schema_version: "1.0.0"
+disable: false
+
+name: "Net (left)"
+
+placeholders:
+  - x: 10
+    y: 0
+    width: 80
+    height: 18
+    horiz_align: left
+    vert_align:  middle
+    spacing: 0
+    top_spacing: 0
+    left_spacing: 2
+    right_spacing: 0
+    font_size: 16
+    value: "EDIT ME"
+
+custom:
+  width: 90
+  height: 20
+  stencil: |
+    <connections>
+        <constraint name="net" perimeter="0" x="0" y="0.5"/>
+    </connections>
+    <foreground>
+        <strokecolor color="#000000"/>
+        <fillcolor color="#ffffff"/>
+        <fontcolor color="#000000"/>
+        <alpha alpha="1"/>
+        <fontsize size="16"/>
+        <fillstroke/>
+        <path>
+            <move x="0" y="10"/>
+            <line x="10" y="0"/>
+            <line x="90" y="0"/>
+            <line x="90" y="20"/>
+            <line x="10" y="20"/>
+            <close/>
+        </path>
+        <stroke/>
+    </foreground>

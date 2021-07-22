@@ -29,13 +29,20 @@ title:
 bottom_text:
   - "BOTTOM TEXT"
 
-# Placeholders provide user-configurable text values
-# Simply use %value_name% anywhere there is text and
-# add it here. The object key must match your %key%
-# and the key's value is the default text. The key
-# must be XML safe (as an attribute)
+# Placeholders provide user-configurable text values.
 placeholders:
-  customValue: "HEYO CHANGE ME"
+  - x: 50
+    y: 0
+    width: 100
+    height: 20
+    horiz_align: center
+    vert_align: bottom
+    spacing: 2
+    top_spacing: 0
+    left_spacing: 0
+    right_spacing: 0
+    font_size: 16
+    value: "DOUBLE CLICK TO CHANGE ME!"
 
 # To disable any side of the chip, comment out or remove
 # that entire section.
@@ -54,6 +61,10 @@ placeholders:
 #   - - "A1"
 #     - "Cool pin"
 #   - "A2"
+#
+# Placeholder on pins can be added make adding a placeholder
+# key. The value is the initial placeholder text. This also
+# works on lines if you only want a placeholder on one line.
 
 left:
   - - "A1"
@@ -62,7 +73,7 @@ left:
   - "A3"
   - ""
   - "SDA"
-  - "SCL"
+  - placeholder: "EDIT ME"
 top:
   - "5V"
   - - "Vin"
@@ -78,5 +89,5 @@ right:
 bottom:
   - - "GND"
     - "(jack)"
-    - "yay"
+    - placeholder: "EDIT ME TOO"
   - "GND"

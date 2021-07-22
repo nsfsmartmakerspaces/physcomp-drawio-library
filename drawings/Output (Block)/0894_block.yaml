@@ -9,11 +9,9 @@ title:
   - "Light"
   - "Emitting"
   - "Diode (LED)"
-  - "%color%"
+  - placeholder: COLOR
 bottom_text:
   - "#0894"
-placeholders:
-  "color": "!COLOR!"
 left:
  - - "LED"
    - "Signal"

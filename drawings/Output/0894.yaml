@@ -4,7 +4,18 @@ disable: false
 name: "Light Emitting Diode (LED) [0894]"
 
 placeholders:
-  "color": "!COLOR!"
+  - x: 2
+    y: 42
+    width: 30
+    height: 10
+    horiz_align: left
+    vert_align:  bottom
+    spacing: 0
+    top_spacing: 0
+    left_spacing: 2
+    right_spacing: 0
+    font_size: 8
+    value: "COLOR"
 
 # Modified from https://github.com/jgraph/drawio/blob/cd8fb3ab6bbfc949722444b1901771332b3387d3/src/main/webapp/stencils/electrical/opto_electronics.xml
 custom:
@@ -49,7 +60,6 @@ custom:
             <line x="100" y="40"/>
         </path>
         <fontsize size="8"/>
-        <text str="%color%" x="2" y="42" align="left" valign="top" placeholders="1"/>
         <text str="#0894" x="98" y="42" align="right" valign="top" placeholders="1"/>
         <stroke/>
     </foreground>

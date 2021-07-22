@@ -4,7 +4,18 @@ disable: false
 name: "VCC or VDD"
 
 placeholders:
-  "voltage": "!VOLTAGE!"
+  - x: 30
+    y: 0
+    width: 60
+    height: 20
+    horiz_align: center
+    vert_align: bottom
+    spacing: 2
+    top_spacing: 0
+    left_spacing: 0
+    right_spacing: 0
+    font_size: 16
+    value: "##V"
 
 # Modified from https://github.com/jgraph/drawio/blob/cd8fb3ab6bbfc949722444b1901771332b3387d3/src/main/webapp/stencils/electrical/signal_sources.xml
 custom:
@@ -26,7 +37,5 @@ custom:
             <move x="30" y="20"/>
             <line x="30" y="40"/>
         </path>
-        <stroke/>
-        <text str="%voltage%V" x="30" y="0" align="center" valign="top" placeholders="1"/>
         <stroke/>
     </foreground>

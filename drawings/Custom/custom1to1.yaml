@@ -5,21 +5,15 @@ dip: false
 block: false
 style: chip_1
 name: "Custom 1 input, 1 output"
-placeholders:
-  "name": "!NAME!"
-  "top": "!TOP!"
-  "bottom": "!BOTTOM!"
-  "input1": "!INPUT1!"
-  "output1": "!OUTPUT1!"
 title:
-  - "%name%"
+  - placeholder: "EDIT ME"
 bottom_text:
   - ""
 top:
-  - - "%top%"
+  - - placeholder: "EDIT ME"
 bottom:
-  - - "%bottom%"
+  - - placeholder: "EDIT ME"
 left:
-  - - "%input1%"
+  - - placeholder: "EDIT ME"
 right:
-  - - "%output1%"
+  - - placeholder: "EDIT ME"

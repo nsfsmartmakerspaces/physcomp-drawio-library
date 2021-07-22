@@ -20,6 +20,8 @@ import yaml
 
 from .const import *
 
+MAIN_DRAWING_PARENT_ID = 2
+
 # Requires >= Python 3.5
 assert sys.version_info >= (3, 5)
 
@@ -41,16 +43,62 @@ def check_drawing_yaml_file(name: str, src_data: dict, styles: dict) -> bool:
         res = False
         print(f"Missing {DRAWING_YAML_NAME} or not str in '{name}'")
     if DRAWING_YAML_PLACEHOLDERS in src_data:
-        if type(src_data[DRAWING_YAML_PLACEHOLDERS]) is not dict:
+        if type(src_data[DRAWING_YAML_PLACEHOLDERS]) is not list:
             res = False
-            print(f"{DRAWING_YAML_PLACEHOLDERS} is not dict in '{name}'")
-        for key in src_data[DRAWING_YAML_PLACEHOLDERS]:
-            if type(key) is not str:
+            print(f"{DRAWING_YAML_PLACEHOLDERS} is not list in '{name}'")
+        for item in src_data[DRAWING_YAML_PLACEHOLDERS]:
+            if type(item) is not dict:
                 res = False
-                print(f"A key in {DRAWING_YAML_PLACEHOLDERS} is not str in '{name}'")
-            if type(src_data[DRAWING_YAML_PLACEHOLDERS][key]) is not str:
+                print(f"An item in {DRAWING_YAML_PLACEHOLDERS} is not dict in '{name}'")
+                continue
+            if (LIBRARY_XML_TEMPLATE_PLACEHOLDERS_X not in item or
+               not isinstance(item[LIBRARY_XML_TEMPLATE_PLACEHOLDERS_X], Number)):
                 res = False
-                print(f"A value of a key in {DRAWING_YAML_PLACEHOLDERS} is not str in '{name}'")
+                print(f"A placeholder is missing {LIBRARY_XML_TEMPLATE_PLACEHOLDERS_X} or not number in '{name}'")
+            if (LIBRARY_XML_TEMPLATE_PLACEHOLDERS_Y not in item or
+               not isinstance(item[LIBRARY_XML_TEMPLATE_PLACEHOLDERS_Y], Number)):
+                res = False
+                print(f"A placeholder is missing {LIBRARY_XML_TEMPLATE_PLACEHOLDERS_Y} or not number in '{name}'")
+            if (LIBRARY_XML_TEMPLATE_PLACEHOLDERS_WIDTH not in item or
+               not isinstance(item[LIBRARY_XML_TEMPLATE_PLACEHOLDERS_WIDTH], Number)):
+                res = False
+                print(f"A placeholder is missing {LIBRARY_XML_TEMPLATE_PLACEHOLDERS_WIDTH} or not number in '{name}'")
+            if (LIBRARY_XML_TEMPLATE_PLACEHOLDERS_HEIGHT not in item or
+               not isinstance(item[LIBRARY_XML_TEMPLATE_PLACEHOLDERS_HEIGHT], Number)):
+                res = False
+                print(f"A placeholder is missing {LIBRARY_XML_TEMPLATE_PLACEHOLDERS_HEIGHT} or not number in '{name}'")
+            if (LIBRARY_XML_TEMPLATE_PLACEHOLDERS_HORIZ_ALIGN not in item or
+               type(item[LIBRARY_XML_TEMPLATE_PLACEHOLDERS_HORIZ_ALIGN]) is not str):
+                res = False
+                print(f"A placeholder is missing {LIBRARY_XML_TEMPLATE_PLACEHOLDERS_HORIZ_ALIGN} or not str in '{name}'")
+            if (LIBRARY_XML_TEMPLATE_PLACEHOLDERS_VERT_ALIGN not in item or
+               type(item[LIBRARY_XML_TEMPLATE_PLACEHOLDERS_VERT_ALIGN]) is not str):
+                res = False
+                print(f"A placeholder is missing {LIBRARY_XML_TEMPLATE_PLACEHOLDERS_VERT_ALIGN} or not str in '{name}'")
+            if (LIBRARY_XML_TEMPLATE_PLACEHOLDERS_FONT_SIZE not in item or
+               not isinstance(item[LIBRARY_XML_TEMPLATE_PLACEHOLDERS_FONT_SIZE], Number)):
+                res = False
+                print(f"A placeholder is missing {LIBRARY_XML_TEMPLATE_PLACEHOLDERS_FONT_SIZE} or not number in '{name}'")
+            if (LIBRARY_XML_TEMPLATE_PLACEHOLDERS_SPACING not in item or
+               not isinstance(item[LIBRARY_XML_TEMPLATE_PLACEHOLDERS_SPACING], Number)):
+                res = False
+                print(f"A placeholder is missing {LIBRARY_XML_TEMPLATE_PLACEHOLDERS_SPACING} or not number in '{name}'")
+            if (LIBRARY_XML_TEMPLATE_PLACEHOLDERS_TOP_SPACING not in item or
+               not isinstance(item[LIBRARY_XML_TEMPLATE_PLACEHOLDERS_TOP_SPACING], Number)):
+                res = False
+                print(f"A placeholder is missing {LIBRARY_XML_TEMPLATE_PLACEHOLDERS_TOP_SPACING} or not number in '{name}'")
+            if (LIBRARY_XML_TEMPLATE_PLACEHOLDERS_LEFT_SPACING not in item or
+               not isinstance(item[LIBRARY_XML_TEMPLATE_PLACEHOLDERS_LEFT_SPACING], Number)):
+                res = False
+                print(f"A placeholder is missing {LIBRARY_XML_TEMPLATE_PLACEHOLDERS_LEFT_SPACING} or not number in '{name}'")
+            if (LIBRARY_XML_TEMPLATE_PLACEHOLDERS_RIGHT_SPACING not in item or
+               not isinstance(item[LIBRARY_XML_TEMPLATE_PLACEHOLDERS_RIGHT_SPACING], Number)):
+                res = False
+                print(f"A placeholder is missing {LIBRARY_XML_TEMPLATE_PLACEHOLDERS_RIGHT_SPACING} or not number in '{name}'")
+            if (LIBRARY_XML_TEMPLATE_PLACEHOLDERS_VALUE not in item or
+               type(item[LIBRARY_XML_TEMPLATE_PLACEHOLDERS_VALUE]) is not str):
+                res = False
+                print(f"A placeholder is missing {LIBRARY_XML_TEMPLATE_PLACEHOLDERS_VALUE} or not str in '{name}'")
     if DRAWING_YAML_CUSTOM in src_data and type(src_data[DRAWING_YAML_CUSTOM]) is not dict:
         res = False
         print(f"{DRAWING_YAML_CUSTOM} is not object in '{name}'")
@@ -58,11 +106,11 @@ def check_drawing_yaml_file(name: str, src_data: dict, styles: dict) -> bool:
         if (DRAWING_YAML_CUSTOM_WIDTH not in src_data[DRAWING_YAML_CUSTOM] or
            not isinstance(src_data[DRAWING_YAML_CUSTOM][DRAWING_YAML_CUSTOM_WIDTH], Number)):
             res = False
-            print(f"Missing {DRAWING_YAML_CUSTOM}/{DRAWING_YAML_CUSTOM_WIDTH} or not str in '{name}'")
+            print(f"Missing {DRAWING_YAML_CUSTOM}/{DRAWING_YAML_CUSTOM_WIDTH} or not number in '{name}'")
         if (DRAWING_YAML_CUSTOM_HEIGHT not in src_data[DRAWING_YAML_CUSTOM] or
            not isinstance(src_data[DRAWING_YAML_CUSTOM][DRAWING_YAML_CUSTOM_HEIGHT], Number)):
             res = False
-            print(f"Missing {DRAWING_YAML_CUSTOM}/{DRAWING_YAML_CUSTOM_HEIGHT} or not str in '{name}'")
+            print(f"Missing {DRAWING_YAML_CUSTOM}/{DRAWING_YAML_CUSTOM_HEIGHT} or not number in '{name}'")
         if (DRAWING_YAML_CUSTOM_STENCIL not in src_data[DRAWING_YAML_CUSTOM] and
            DRAWING_YAML_CUSTOM_XML not in src_data[DRAWING_YAML_CUSTOM]):
             res = False
@@ -116,9 +164,10 @@ def check_drawing_yaml_file(name: str, src_data: dict, styles: dict) -> bool:
                     print(f"{key} is not list in '{name}'")
                 else:
                     for pin in src_data[key]:
-                        if type(pin) is not str and type(pin) is not list:
+                        if (type(pin) is not str and type(pin) is not list and
+                            not (type(pin) is dict and LIBRARY_XML_TEMPLATE_PLACEHOLDER in pin)):
                             res = False
-                            print(f"An item in {key} is not str or list in '{name}'")
+                            print(f"An item in {key} is not str or list or placeholder in '{name}'")
                         if (type(pin) is list and DRAWING_YAML_BLOCK in src_data and
                            src_data[DRAWING_YAML_BLOCK] and len(pin) > 2):
                             res = False
@@ -128,9 +177,10 @@ def check_drawing_yaml_file(name: str, src_data: dict, styles: dict) -> bool:
                             print(f"An item in {key} has a multiline pin without any elements '{name}'")
                         elif type(pin) is list:
                             for line in pin:
-                                if type(line) is not str:
+                                if (type(line) is not str and
+                                    not (type(line) is dict and LIBRARY_XML_TEMPLATE_PLACEHOLDER in line)):
                                     res = False
-                                    print(f"An item in {key} has a multiline pin with a non-str element '{name}'")
+                                    print(f"An item in {key} has a multiline pin with a non-str element that isn't a placeholder '{name}'")
     return res
 
 
@@ -335,9 +385,28 @@ async def generate(src_file: str, file_name: str, dest_file: str, templates: dic
             title_x += style["pins"]["length"]
         for i, line in enumerate(src_data[DRAWING_YAML_TITLE]):
             title_opts = {}
-            title_opts[TITLE_TEMPLATE_TITLE] = xmlEscape(line)
             title_opts[TITLE_TEMPLATE_X] = title_x
             title_opts[TITLE_TEMPLATE_Y] = title_start + (style["title_text"]["size"] * i) + (style["title_text"]["size"] / 2) + (style["title_text"]["line_spacing"] * i)
+            if type(line) is dict and LIBRARY_XML_TEMPLATE_PLACEHOLDER in line:
+                if DRAWING_YAML_PLACEHOLDERS not in src_data:
+                    src_data[DRAWING_YAML_PLACEHOLDERS] = []
+                src_data[DRAWING_YAML_PLACEHOLDERS].append({
+                    LIBRARY_XML_TEMPLATE_PLACEHOLDERS_X: dip_opts[DIP_TEMPLATE_RECT_LEFT],
+                    LIBRARY_XML_TEMPLATE_PLACEHOLDERS_Y: title_opts[TITLE_TEMPLATE_Y],
+                    LIBRARY_XML_TEMPLATE_PLACEHOLDERS_WIDTH: template_opts[DRAWING_TEMPLATE_RECT_WIDTH],
+                    LIBRARY_XML_TEMPLATE_PLACEHOLDERS_HEIGHT: template_opts[DRAWING_TEMPLATE_TITLE_TEXT_SIZE],
+                    LIBRARY_XML_TEMPLATE_PLACEHOLDERS_HORIZ_ALIGN: TEXT_ALIGN_CENTER,
+                    LIBRARY_XML_TEMPLATE_PLACEHOLDERS_VERT_ALIGN: TEXT_VALIGN_MIDDLE,
+                    LIBRARY_XML_TEMPLATE_PLACEHOLDERS_FONT_SIZE: template_opts[DRAWING_TEMPLATE_TITLE_TEXT_SIZE],
+                    LIBRARY_XML_TEMPLATE_PLACEHOLDERS_SPACING: 2,
+                    LIBRARY_XML_TEMPLATE_PLACEHOLDERS_TOP_SPACING: -13,
+                    LIBRARY_XML_TEMPLATE_PLACEHOLDERS_LEFT_SPACING: 0,
+                    LIBRARY_XML_TEMPLATE_PLACEHOLDERS_RIGHT_SPACING: 0,
+                    LIBRARY_XML_TEMPLATE_PLACEHOLDERS_VALUE: xmlEscape(line[LIBRARY_XML_TEMPLATE_PLACEHOLDER])
+                })
+                title_opts[TITLE_TEMPLATE_TITLE] = ""
+            else:
+                title_opts[TITLE_TEMPLATE_TITLE] = xmlEscape(line)
             titles += Template(templates["title"]).substitute(title_opts)
         template_opts[DRAWING_TEMPLATE_RECT_TITLE_INSERT] = titles
 
@@ -356,10 +425,30 @@ async def generate(src_file: str, file_name: str, dest_file: str, templates: dic
             bottom_x += style["pins"]["length"]
         for i, line in enumerate(src_data[DRAWING_YAML_BOTTOM_TEXT]):
             bottom_opts = {}
-            bottom_opts[BOTTOM_TEMPLATE_TEXT] = xmlEscape(line)
-            bottom_opts[BOTTOM_TEMPLATE_ALIGN] = bottom_align
             bottom_opts[BOTTOM_TEMPLATE_X] = bottom_x
             bottom_opts[BOTTOM_TEMPLATE_Y] = bottom_start + (style["bottom_text"]["size"] * i) + (style["bottom_text"]["size"] / 2) + (style["bottom_text"]["line_spacing"] * i)
+            bottom_opts[BOTTOM_TEMPLATE_TEXT] = xmlEscape(line)
+            if type(line) is dict and LIBRARY_XML_TEMPLATE_PLACEHOLDER in line:
+                if DRAWING_YAML_PLACEHOLDERS not in src_data:
+                    src_data[DRAWING_YAML_PLACEHOLDERS] = []
+                src_data[DRAWING_YAML_PLACEHOLDERS].append({
+                    LIBRARY_XML_TEMPLATE_PLACEHOLDERS_X: dip_opts[DIP_TEMPLATE_RECT_LEFT],
+                    LIBRARY_XML_TEMPLATE_PLACEHOLDERS_Y: bottom_opts[BOTTOM_TEMPLATE_Y],
+                    LIBRARY_XML_TEMPLATE_PLACEHOLDERS_WIDTH: template_opts[DRAWING_TEMPLATE_RECT_WIDTH],
+                    LIBRARY_XML_TEMPLATE_PLACEHOLDERS_HEIGHT: template_opts[DRAWING_TEMPLATE_BOTTOM_TEXT_SIZE],
+                    LIBRARY_XML_TEMPLATE_PLACEHOLDERS_HORIZ_ALIGN: bottom_align,
+                    LIBRARY_XML_TEMPLATE_PLACEHOLDERS_VERT_ALIGN: TEXT_VALIGN_TOP,
+                    LIBRARY_XML_TEMPLATE_PLACEHOLDERS_FONT_SIZE: template_opts[DRAWING_TEMPLATE_BOTTOM_TEXT_SIZE],
+                    LIBRARY_XML_TEMPLATE_PLACEHOLDERS_SPACING: -13,
+                    LIBRARY_XML_TEMPLATE_PLACEHOLDERS_TOP_SPACING: 0,
+                    LIBRARY_XML_TEMPLATE_PLACEHOLDERS_LEFT_SPACING: 0,
+                    LIBRARY_XML_TEMPLATE_PLACEHOLDERS_RIGHT_SPACING: 0,
+                    LIBRARY_XML_TEMPLATE_PLACEHOLDERS_VALUE: xmlEscape(line[LIBRARY_XML_TEMPLATE_PLACEHOLDER])
+                })
+                bottom_opts[TITLE_TEMPLATE_TITLE] = ""
+            else:
+                bottom_opts[TITLE_TEMPLATE_TITLE] = xmlEscape(line)
+            bottom_opts[BOTTOM_TEMPLATE_ALIGN] = bottom_align
             bottom += Template(templates["bottom"]).substitute(bottom_opts)
         template_opts[DRAWING_TEMPLATE_RECT_BOTTOM_INSERT] = bottom
 
@@ -431,18 +520,52 @@ async def generate(src_file: str, file_name: str, dest_file: str, templates: dic
 
                     for i, line in enumerate(pin):
                         pin_opts = {}
-                        pin_opts[PIN_TEMPLATE_NAME] = xmlEscape(line)
-                        pin_opts[PIN_TEMPLATE_TEXT_ALIGN] = pin_align
-                        pin_opts[PIN_TEMPLATE_TEXT_VALIGN] = pin_valign
                         pin_opts[PIN_TEMPLATE_X] = pin_x
                         pin_opts[PIN_TEMPLATE_Y] = pin_start + (style["pin_text"]["size"] * i) + (style["pin_text"]["size"] / 2) + (style["pin_text"]["line_spacing"] * i)
+                        pin_opts[PIN_TEMPLATE_TEXT_ALIGN] = pin_align
+                        pin_opts[PIN_TEMPLATE_TEXT_VALIGN] = pin_valign
+                        if type(line) is dict and LIBRARY_XML_TEMPLATE_PLACEHOLDER in line:
+                            if DRAWING_YAML_PLACEHOLDERS not in src_data:
+                                src_data[DRAWING_YAML_PLACEHOLDERS] = []
+                            if key == DRAWING_YAML_TOP:
+                                placeholder_vert_align = TEXT_VALIGN_TOP
+                            elif key == DRAWING_YAML_BOTTOM:
+                                placeholder_vert_align = TEXT_VALIGN_BOTTOM
+                            else:
+                                placeholder_vert_align = TEXT_VALIGN_MIDDLE
+                            placeholder_x = pin_opts[PIN_TEMPLATE_X]
+                            if key == DRAWING_YAML_RIGHT:
+                                placeholder_x -= style["pin_text"]["vert_width"]
+                            elif key == DRAWING_YAML_TOP or key == DRAWING_YAML_BOTTOM:
+                                placeholder_x -= style["pin_text"]["vert_width"] / 2
+                            placeholder_y = pin_opts[PIN_TEMPLATE_Y] - 4.5
+                            if key == DRAWING_YAML_TOP:
+                                placeholder_y -= 12
+                            elif key == DRAWING_YAML_BOTTOM:
+                                placeholder_y -= 4
+                            src_data[DRAWING_YAML_PLACEHOLDERS].append({
+                                LIBRARY_XML_TEMPLATE_PLACEHOLDERS_X: placeholder_x,
+                                LIBRARY_XML_TEMPLATE_PLACEHOLDERS_Y: placeholder_y,
+                                LIBRARY_XML_TEMPLATE_PLACEHOLDERS_WIDTH: style["pin_text"]["vert_width"],
+                                LIBRARY_XML_TEMPLATE_PLACEHOLDERS_HEIGHT: template_opts[DRAWING_TEMPLATE_PIN_TEXT_SIZE],
+                                LIBRARY_XML_TEMPLATE_PLACEHOLDERS_HORIZ_ALIGN: pin_opts[PIN_TEMPLATE_TEXT_ALIGN],
+                                LIBRARY_XML_TEMPLATE_PLACEHOLDERS_VERT_ALIGN: placeholder_vert_align,
+                                LIBRARY_XML_TEMPLATE_PLACEHOLDERS_FONT_SIZE: template_opts[DRAWING_TEMPLATE_PIN_TEXT_SIZE],
+                                LIBRARY_XML_TEMPLATE_PLACEHOLDERS_SPACING: 0,
+                                LIBRARY_XML_TEMPLATE_PLACEHOLDERS_TOP_SPACING: 0,
+                                LIBRARY_XML_TEMPLATE_PLACEHOLDERS_LEFT_SPACING: 0,
+                                LIBRARY_XML_TEMPLATE_PLACEHOLDERS_RIGHT_SPACING: 0,
+                                LIBRARY_XML_TEMPLATE_PLACEHOLDERS_VALUE: xmlEscape(line[LIBRARY_XML_TEMPLATE_PLACEHOLDER])
+                            })
+                            pin_opts[PIN_TEMPLATE_NAME] = ""
+                        else:
+                            pin_opts[PIN_TEMPLATE_NAME] = xmlEscape(line)
                         if key == DRAWING_YAML_BOTTOM:
                             # pin_opts[PIN_TEMPLATE_Y] -= ((len(pin) - 1) - i) * (style["pin_text"]["line_spacing"] + style["pin_text"]["size"])
                             pin_opts[PIN_TEMPLATE_Y] -= (len(pin) - 1) * (style["pin_text"]["size"] + style["pin_text"]["line_spacing"])
                         pins += Template(templates["pin_horiz"]).substitute(pin_opts)
                 else:
                     pin_opts = {}
-                    pin_opts[PIN_TEMPLATE_NAME] = xmlEscape(pin[0])
                     arrow_point_dist = sqrt((style["pins"]["arrow_size"]) ** 2 - ((style["pins"]["arrow_size"]) / 2) ** 2)
                     pin_opts[PIN_TEMPLATE_TEXT_ALIGN] = TEXT_ALIGN_CENTER
                     pin_opts[PIN_TEMPLATE_TEXT_VALIGN] = TEXT_VALIGN_BOTTOM
@@ -456,6 +579,28 @@ async def generate(src_file: str, file_name: str, dest_file: str, templates: dic
                         pin_x += style["pins"]["length"] / 2
                         pin_x -= arrow_point_dist / 2
                     pin_opts[PIN_TEMPLATE_X] = pin_x
+                    if type(pin[0]) is dict and LIBRARY_XML_TEMPLATE_PLACEHOLDER in pin[0]:
+                        if DRAWING_YAML_PLACEHOLDERS not in src_data:
+                            src_data[DRAWING_YAML_PLACEHOLDERS] = []
+                        placeholder_x = pin_opts[PIN_TEMPLATE_X] - style["pins"]["length"] / 2
+                        placeholder_y = pin_opts[PIN_TEMPLATE_Y] - 6
+                        src_data[DRAWING_YAML_PLACEHOLDERS].append({
+                            LIBRARY_XML_TEMPLATE_PLACEHOLDERS_X: placeholder_x,
+                            LIBRARY_XML_TEMPLATE_PLACEHOLDERS_Y: placeholder_y,
+                            LIBRARY_XML_TEMPLATE_PLACEHOLDERS_WIDTH: style["pins"]["length"],
+                            LIBRARY_XML_TEMPLATE_PLACEHOLDERS_HEIGHT: template_opts[DRAWING_TEMPLATE_PIN_TEXT_SIZE],
+                            LIBRARY_XML_TEMPLATE_PLACEHOLDERS_HORIZ_ALIGN: TEXT_ALIGN_CENTER,
+                            LIBRARY_XML_TEMPLATE_PLACEHOLDERS_VERT_ALIGN: TEXT_VALIGN_TOP,
+                            LIBRARY_XML_TEMPLATE_PLACEHOLDERS_FONT_SIZE: template_opts[DRAWING_TEMPLATE_PIN_TEXT_SIZE],
+                            LIBRARY_XML_TEMPLATE_PLACEHOLDERS_SPACING: 0,
+                            LIBRARY_XML_TEMPLATE_PLACEHOLDERS_TOP_SPACING: -7,
+                            LIBRARY_XML_TEMPLATE_PLACEHOLDERS_LEFT_SPACING: 0,
+                            LIBRARY_XML_TEMPLATE_PLACEHOLDERS_RIGHT_SPACING: 0,
+                            LIBRARY_XML_TEMPLATE_PLACEHOLDERS_VALUE: xmlEscape(pin[0][LIBRARY_XML_TEMPLATE_PLACEHOLDER])
+                        })
+                        pin_opts[PIN_TEMPLATE_NAME] = ""
+                    else:
+                        pin_opts[PIN_TEMPLATE_NAME] = xmlEscape(pin[0])
 
                     arrow_opts = {}
                     arrow_opts[ARROW_TEMPLATE_TOP] = y - (style["pins"]["arrow_size"] / 2)
@@ -472,15 +617,40 @@ async def generate(src_file: str, file_name: str, dest_file: str, templates: dic
                     pins += Template(templates["pin_horiz"]).substitute(pin_opts)
 
                     if len(pin) == 2:
-                        pin_opts[PIN_TEMPLATE_NAME] = xmlEscape(pin[1])
                         pin_opts[PIN_TEMPLATE_TEXT_VALIGN] = TEXT_VALIGN_TOP
                         pin_opts[PIN_TEMPLATE_Y] = y
                         # pin_opts[PIN_TEMPLATE_Y] += style["pin_text"]["size"] / 2
                         pin_opts[PIN_TEMPLATE_Y] += style["pin_text"]["pad"] / 2
+                        if type(pin[1]) is dict and LIBRARY_XML_TEMPLATE_PLACEHOLDER in pin[1]:
+                            if DRAWING_YAML_PLACEHOLDERS not in src_data:
+                                src_data[DRAWING_YAML_PLACEHOLDERS] = []
+                            placeholder_x = pin_opts[PIN_TEMPLATE_X] - style["pins"]["length"] / 2
+                            placeholder_y = pin_opts[PIN_TEMPLATE_Y] - 6 + template_opts[DRAWING_TEMPLATE_PIN_TEXT_SIZE]
+                            src_data[DRAWING_YAML_PLACEHOLDERS].append({
+                                LIBRARY_XML_TEMPLATE_PLACEHOLDERS_X: placeholder_x,
+                                LIBRARY_XML_TEMPLATE_PLACEHOLDERS_Y: placeholder_y,
+                                LIBRARY_XML_TEMPLATE_PLACEHOLDERS_WIDTH: style["pins"]["length"],
+                                LIBRARY_XML_TEMPLATE_PLACEHOLDERS_HEIGHT: template_opts[DRAWING_TEMPLATE_PIN_TEXT_SIZE],
+                                LIBRARY_XML_TEMPLATE_PLACEHOLDERS_HORIZ_ALIGN: TEXT_ALIGN_CENTER,
+                                LIBRARY_XML_TEMPLATE_PLACEHOLDERS_VERT_ALIGN: TEXT_VALIGN_TOP,
+                                LIBRARY_XML_TEMPLATE_PLACEHOLDERS_FONT_SIZE: template_opts[DRAWING_TEMPLATE_PIN_TEXT_SIZE],
+                                LIBRARY_XML_TEMPLATE_PLACEHOLDERS_SPACING: 0,
+                                LIBRARY_XML_TEMPLATE_PLACEHOLDERS_TOP_SPACING: -7,
+                                LIBRARY_XML_TEMPLATE_PLACEHOLDERS_LEFT_SPACING: 0,
+                                LIBRARY_XML_TEMPLATE_PLACEHOLDERS_RIGHT_SPACING: 0,
+                                LIBRARY_XML_TEMPLATE_PLACEHOLDERS_VALUE: xmlEscape(pin[1][LIBRARY_XML_TEMPLATE_PLACEHOLDER])
+                            })
+                            pin_opts[PIN_TEMPLATE_NAME] = ""
+                        else:
+                            pin_opts[PIN_TEMPLATE_NAME] = xmlEscape(pin[1])
                         pins += Template(templates["pin_horiz"]).substitute(pin_opts)
 
                 connection_opts = {}
-                connection_opts[CONNECTION_TEMPLATE_NAME] = xmlEscape(" ".join(pin))
+                pin_0_safe = pin[0]
+                for i, line in enumerate(pin_0_safe):
+                    if type(line) is dict and LIBRARY_XML_TEMPLATE_PLACEHOLDER in line:
+                        pin_0_safe[i] = line[LIBRARY_XML_TEMPLATE_PLACEHOLDER]
+                connection_opts[CONNECTION_TEMPLATE_NAME] = xmlEscape(" ".join(pin_0_safe))
                 connection_opts[CONNECTION_TEMPLATE_X] = conn_x / template_opts[DRAWING_TEMPLATE_WIDTH]
                 connection_opts[CONNECTION_TEMPLATE_Y] = conn_y / template_opts[DRAWING_TEMPLATE_HEIGHT]
                 connections += Template(templates["connection"]).substitute(connection_opts)
@@ -510,10 +680,21 @@ async def generate(src_file: str, file_name: str, dest_file: str, templates: dic
         library_xml_opts[LIBRARY_XML_TEMPLATE_HEIGHT] = template_opts[DRAWING_TEMPLATE_HEIGHT]
         library_xml_opts[LIBRARY_XML_TEMPLATE_PLACEHOLDERS] = ""
         if DRAWING_YAML_PLACEHOLDERS in src_data:
-            for key in src_data[DRAWING_YAML_PLACEHOLDERS]:
+            for i, placeholder_obj in enumerate(src_data[DRAWING_YAML_PLACEHOLDERS], start=1):
                 library_xml_placeholder_opts = {}
-                library_xml_placeholder_opts[LIBRARY_XML_PLACEHOLDER_TEMPLATE_PLACEHOLDER] = key
-                library_xml_placeholder_opts[LIBRARY_XML_PLACEHOLDER_TEMPLATE_VALUE] = xmlEscape(src_data[DRAWING_YAML_PLACEHOLDERS][key])
+                library_xml_placeholder_opts[LIBRARY_XML_PLACEHOLDER_TEMPLATE_X] = placeholder_obj[LIBRARY_XML_TEMPLATE_PLACEHOLDERS_X]
+                library_xml_placeholder_opts[LIBRARY_XML_PLACEHOLDER_TEMPLATE_Y] = placeholder_obj[LIBRARY_XML_TEMPLATE_PLACEHOLDERS_Y]
+                library_xml_placeholder_opts[LIBRARY_XML_PLACEHOLDER_TEMPLATE_WIDTH] = placeholder_obj[LIBRARY_XML_TEMPLATE_PLACEHOLDERS_WIDTH]
+                library_xml_placeholder_opts[LIBRARY_XML_PLACEHOLDER_TEMPLATE_HEIGHT] = placeholder_obj[LIBRARY_XML_TEMPLATE_PLACEHOLDERS_HEIGHT]
+                library_xml_placeholder_opts[LIBRARY_XML_PLACEHOLDER_TEMPLATE_HORIZ_ALIGN] = placeholder_obj[LIBRARY_XML_TEMPLATE_PLACEHOLDERS_HORIZ_ALIGN]
+                library_xml_placeholder_opts[LIBRARY_XML_PLACEHOLDER_TEMPLATE_VERT_ALIGN] = placeholder_obj[LIBRARY_XML_TEMPLATE_PLACEHOLDERS_VERT_ALIGN]
+                library_xml_placeholder_opts[LIBRARY_XML_PLACEHOLDER_TEMPLATE_FONT_SIZE] = placeholder_obj[LIBRARY_XML_TEMPLATE_PLACEHOLDERS_FONT_SIZE]
+                library_xml_placeholder_opts[LIBRARY_XML_PLACEHOLDER_TEMPLATE_SPACING] = placeholder_obj[LIBRARY_XML_TEMPLATE_PLACEHOLDERS_SPACING]
+                library_xml_placeholder_opts[LIBRARY_XML_PLACEHOLDER_TEMPLATE_TOP_SPACING] = placeholder_obj[LIBRARY_XML_TEMPLATE_PLACEHOLDERS_TOP_SPACING]
+                library_xml_placeholder_opts[LIBRARY_XML_PLACEHOLDER_TEMPLATE_LEFT_SPACING] = placeholder_obj[LIBRARY_XML_TEMPLATE_PLACEHOLDERS_LEFT_SPACING]
+                library_xml_placeholder_opts[LIBRARY_XML_PLACEHOLDER_TEMPLATE_RIGHT_SPACING] = placeholder_obj[LIBRARY_XML_TEMPLATE_PLACEHOLDERS_RIGHT_SPACING]
+                library_xml_placeholder_opts[LIBRARY_XML_PLACEHOLDER_TEMPLATE_VALUE] = xmlEscape(placeholder_obj[LIBRARY_XML_TEMPLATE_PLACEHOLDERS_VALUE])
+                library_xml_placeholder_opts[LIBRARY_XML_PLACEHOLDER_TEMPLATE_ID] = MAIN_DRAWING_PARENT_ID + i
                 placeholder = Template(templates["library_xml_placeholder"]).substitute(library_xml_placeholder_opts)
                 library_xml_opts[LIBRARY_XML_TEMPLATE_PLACEHOLDERS] += placeholder
         library_xml_data = drawio_compress(Template(templates["library_xml"]).substitute(library_xml_opts))
@@ -596,11 +777,14 @@ async def www_end(now_year: str, now_str: str, templates: dict) -> None:
     append_file(f"./{YAML_DIST_DIR}/{CONFIG_TARGET_FILE}", end)
 
 
-async def generate_config(file: str, name: str, version: int, config_out: dict, templates: dict) -> None:
+async def generate_config(file: str, name: str, version: int, config_out: dict, templates: dict, empty_diagram_files: dict) -> None:
     file_opts = {}
     file_opts[CONFIG_TEMPLATE_CONFIG_VERSION] = version
     inputJSON = read_json_file_template_safe(file, file_opts)
     inputJSON[CONFIG_JSON_VERSION] = f"{version}-{name}"
+    # if name in empty_diagram_files:
+        # with open(empty_diagram_files[name], 'r') as stream:
+            # inputJSON[CONFIG_EMPTY_DIAGRAM_XML] = drawio_compress(xmlEscape(stream.read()))
     entry_opts = deepcopy(inputJSON[CONFIG_JSON_PAGE_GEN])
     del inputJSON[CONFIG_JSON_PAGE_GEN]
     stringify = json.dumps(inputJSON, separators=(',', ':'))
@@ -723,15 +907,21 @@ async def main() -> None:
 
     config_tasks = []
     config_files = glob(f"./{CONFIG_SRC_DIR}/*.json")
+    empty_diagrams = glob(f"./{EMPTY_DIAGRAMS_SRC_DIR}/*.xml")
     config_files.sort()
     config_out = {
         CONFIG_OUT_CONFIGS: {},
         CONFIG_OUT_VERSION: config_version
     }
+    empty_diagram_files = {}
+    for diagram_file in empty_diagrams:
+        split = os.path.normpath(diagram_file).split(os.path.sep)
+        file_name = os.path.splitext(split[1])[0]
+        empty_diagram_files[file_name] = diagram_file
     for config_file in config_files:
         split = os.path.normpath(config_file).split(os.path.sep)
         file_name = os.path.splitext(split[1])[0]
-        config_tasks.append(generate_config(config_file, file_name, config_version, config_out, config_templates))
+        config_tasks.append(generate_config(config_file, file_name, config_version, config_out, config_templates, empty_diagram_files))
 
     if len(file_tasks) > 0:
         # await asyncio.wait(library_tasks_start)
