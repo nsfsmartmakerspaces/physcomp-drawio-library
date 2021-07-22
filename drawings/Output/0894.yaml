@@ -15,7 +15,7 @@ placeholders:
     left_spacing: 2
     right_spacing: 0
     font_size: 8
-    value: "COLOR"
+    value: "EDIT COLOR"
 
 # Modified from https://github.com/jgraph/drawio/blob/cd8fb3ab6bbfc949722444b1901771332b3387d3/src/main/webapp/stencils/electrical/opto_electronics.xml
 custom:
