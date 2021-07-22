@@ -1,0 +1,52 @@
+<shape aspect="fixed" h="100" w="100" strokewidth="inherit" name="NPN Transistor (PN2222) [1341]">
+  <connections>
+  <constraint name="Collector" perimeter="0" x="0.7" y="0"/>
+  <constraint name="Emitter" perimeter="0" x="0.7" y="1"/>
+  <constraint name="Base" perimeter="0" x="0" y="0.5"/>
+</connections>
+<background>
+  <ellipse h="90" w="90" x="10" y="5"/>
+</background>
+<foreground>
+  <strokecolor color="#000000"/>
+  <fillcolor color="#ffffff"/>
+  <fontcolor color="#000000"/>
+  <alpha alpha="1"/>
+  <fontsize size="16"/>
+  <fillstroke/>
+  <path>
+    <move x="0" y="50"/>
+    <line x="40" y="50"/>
+    <move x="40" y="35"/>
+    <line x="70" y="7.5"/>
+    <line x="70" y="0"/>
+    <move x="40" y="65"/>
+    <line x="70" y="92.5"/>
+    <line x="70" y="100"/>
+  </path>
+  <stroke/>
+  <path>
+    <move x="54" y="84"/>
+    <line x="69" y="91.5"/>
+    <line x="60.5" y="77.5"/>
+    <close/>
+  </path>
+  <fillstroke/>
+  <strokewidth width="2"/>
+  <path>
+    <move x="40" y="25"/>
+    <line x="40" y="75"/>
+  </path>
+  <stroke/>
+  <fontsize size="8"/>
+  <text str="NPN" x="60" y="45" align="center" valign="middle" placeholders="1"/>
+  <text str="(PN2222)" x="60" y="55" align="center" valign="middle" placeholders="1"/>
+  <text str="#1341" x="98" y="92" align="right" valign="top" placeholders="1"/>
+  <fontsize size="4"/>
+  <text str="BASE" x="12.5" y="45" align="left" valign="top" placeholders="1"/>
+  <text str="COLLECTOR" x="65" y="12.5" align="right" valign="bottom" placeholders="1" rotation="42.51044707800084414923" />
+  <text str="EMITTER" x="55" y="80" align="right" valign="bottom" placeholders="1" rotation="-42.51044707800084414923" />
+  <stroke/>
+</foreground>
+
+</shape>
