@@ -127,7 +127,8 @@ TEMPLATE_LIBRARY_XML_PLACEHOLDER = "templates/library_xml_placeholder.xml"
 TEMPLATE_CONFIG_START = "templates/config_start.html"
 TEMPLATE_CONFIG_END = "templates/config_end.html"
 TEMPLATE_CONFIG_ENTRY = "templates/config_entry.html"
-TEMPLATE_CONFIG_URL = "templates/config_url.txt"
+TEMPLATE_CONFIG_URL_BASE = "templates/config_url_base.txt"
+TEMPLATE_CONFIG_URL_HASH = "templates/config_url_hash.txt"
 
 # Src and dist dirs
 YAML_SRC_DIR = "drawings"
@@ -187,6 +188,8 @@ CONFIG_JSON_PAGE_GEN = "PAGE_GEN"
 
 CONFIG_OUT_CONFIGS = "configs"
 CONFIG_OUT_CONFIGS_URL = "url"
+CONFIG_OUT_CONFIGS_URL_BASE = "url_base"
+CONFIG_OUT_CONFIGS_URL_HASH = "url_hash"
 CONFIG_OUT_VERSION = "version"
 CONFIG_OUT_TARGET_FILE = "index.json"
 

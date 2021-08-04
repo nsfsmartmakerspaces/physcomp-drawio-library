@@ -792,10 +792,14 @@ async def generate_config(file: str, name: str, version: int, config_out: dict, 
 
     url_opts = {}
     url_opts[CONFIG_URL_TEMPLATE_DATA] = compressed
-    url = Template(templates["url"]).substitute(url_opts)
+    hash = Template(templates["url_hash"]).substitute(url_opts)
+    base = templates["url_base"]
+    url = f"{base}{hash}"
 
     config_out[CONFIG_OUT_CONFIGS][name] = entry_opts
     config_out[CONFIG_OUT_CONFIGS][name][CONFIG_OUT_CONFIGS_URL] = url
+    config_out[CONFIG_OUT_CONFIGS][name][CONFIG_OUT_CONFIGS_URL_BASE] = base
+    config_out[CONFIG_OUT_CONFIGS][name][CONFIG_OUT_CONFIGS_URL_HASH] = hash
 
     entry_opts[CONFIG_ENTRY_TEMPLATE_URL] = url
     entry = Template(templates["entry"]).substitute(entry_opts)
@@ -847,8 +851,10 @@ async def main() -> None:
         config_templates["end"] = stream.read()
     with open(TEMPLATE_CONFIG_ENTRY, 'r') as stream:
         config_templates["entry"] = stream.read()
-    with open(TEMPLATE_CONFIG_URL, 'r') as stream:
-        config_templates["url"] = stream.read()
+    with open(TEMPLATE_CONFIG_URL_BASE, 'r') as stream:
+        config_templates["url_base"] = stream.read()
+    with open(TEMPLATE_CONFIG_URL_HASH, 'r') as stream:
+        config_templates["url_hash"] = stream.read()
 
     style_names = []
     styles = {}
