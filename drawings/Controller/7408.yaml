@@ -4,14 +4,14 @@ disable: false
 dip: true
 block: false
 style: chip_1
-name: "7400 NAND gate [7400]"
+name: "7408 AND gate [7408]"
 title:
   - "Quad"
-  - "NAND"
+  - "AND"
   - "Gate"
-  - "(SN74HCT00N)"
+  - "(SN74HCT08N)"
 bottom_text:
-  - "#7400"
+  - "#7408"
 left:
   - "A input (gate 1)"
   - "B input (gate 1)"

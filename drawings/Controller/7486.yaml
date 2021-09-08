@@ -4,14 +4,14 @@ disable: false
 dip: true
 block: false
 style: chip_1
-name: "7400 NAND gate [7400]"
+name: "7486 XOR gate [7486]"
 title:
   - "Quad"
-  - "NAND"
+  - "XOR"
   - "Gate"
-  - "(SN74HCT00N)"
+  - "(CD74HCT86E)"
 bottom_text:
-  - "#7400"
+  - "#7486"
 left:
   - "A input (gate 1)"
   - "B input (gate 1)"
