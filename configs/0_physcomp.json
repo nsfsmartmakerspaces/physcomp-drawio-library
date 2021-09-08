@@ -124,6 +124,14 @@
                         },
                         {
                             "title": {
+                                "main": "Logic"
+                            },
+                            "url": "https://nsfsmartmakerspaces.github.io/physcomp-drawio-library/Logic-${config_version}.xml",
+                            "tags": "component logic",
+                            "prefetch": true
+                        },
+                        {
+                            "title": {
                                 "main": "Output"
                             },
                             "url": "https://nsfsmartmakerspaces.github.io/physcomp-drawio-library/Output-${config_version}.xml",
