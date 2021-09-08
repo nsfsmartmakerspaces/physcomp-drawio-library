@@ -22,12 +22,12 @@ left:
   - "ground"
 right:
   - "logic power (5V)"
-  - "A input (gate 3)"
-  - "B input (gate 3)"
-  - "output (gate 3)"
   - "A input (gate 4)"
   - "B input (gate 4)"
   - "output (gate 4)"
+  - "A input (gate 3)"
+  - "B input (gate 3)"
+  - "output (gate 3)"
 # widen:
 bottom:
   - ""
