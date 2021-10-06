@@ -4,9 +4,9 @@ disable: false
 dip: true
 block: false
 style: chip_1
-name: "A4988 Stepper Motor Driver [4988]"
+name: "4988 Stepper Motor Driver [4988]"
 title:
-  - "A4988"
+  - "4988"
   - "Stepper"
   - "Motor"
   - "Driver"
