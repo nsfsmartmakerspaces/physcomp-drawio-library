@@ -1,0 +1,18 @@
+schema_version: "1.0.0"
+disable: false
+
+dip: false
+block: true
+style: block_1
+name: "Arduino Mega [1002]"
+title:
+  - "Arduino"
+  - "Mega"
+bottom_text:
+  - "#1002"
+left:
+  - - "Input"
+    - "Signals"
+right:
+  - - "Output"
+    - "Signals"
