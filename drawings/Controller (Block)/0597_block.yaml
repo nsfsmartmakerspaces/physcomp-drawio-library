@@ -1,0 +1,18 @@
+schema_version: "1.0.0"
+disable: false
+
+dip: false
+block: true
+style: block_1
+name: "Arduino Pro Micro [0597]"
+title:
+  - "Arduino"
+  - "Pro Micro"
+bottom_text:
+  - "#0597"
+left:
+  - - "Input"
+    - "Signals"
+right:
+  - - "Output"
+    - "Signals"
