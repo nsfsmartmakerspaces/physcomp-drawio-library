@@ -1,0 +1,29 @@
+schema_version: "1.0.0"
+disable: false
+
+dip: false
+block: false
+style: chip_1
+name: "Custom 6 inputs, 6 outputs"
+title:
+  - placeholder: "EDIT ME"
+bottom_text:
+  - ""
+top:
+  - - placeholder: "EDIT ME"
+bottom:
+  - - placeholder: "EDIT ME"
+left:
+  - - placeholder: "EDIT ME"
+  - - placeholder: "EDIT ME"
+  - - placeholder: "EDIT ME"
+  - - placeholder: "EDIT ME"
+  - - placeholder: "EDIT ME"
+  - - placeholder: "EDIT ME"
+right:
+  - - placeholder: "EDIT ME"
+  - - placeholder: "EDIT ME"
+  - - placeholder: "EDIT ME"
+  - - placeholder: "EDIT ME"
+  - - placeholder: "EDIT ME"
+  - - placeholder: "EDIT ME"
