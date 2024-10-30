@@ -872,8 +872,8 @@ async def main() -> None:
             print(f"Duplicate style base name {style_name}")
             exit(1)
         style_names.append(style_name)
-        tasks.append(asyncio.create_task(load_style(styles, style_name, style_path)))
-    await asyncio.wait(tasks)
+        tasks.append(load_style(styles, style_name, style_path))
+    await asyncio.gather(*tasks)
 
     tz = pytz.timezone(TIMEZONE)
     now = datetime.now(tz)
@@ -905,7 +905,7 @@ async def main() -> None:
         library_dest = f"./{YAML_DIST_DIR}/{library_name}-{config_version}.xml"
         if os.path.isdir(f"./{YAML_DIST_DIR}"):
             shutil.rmtree(f"./{YAML_DIST_DIR}")
-        file_tasks.append(asyncio.create_task(generate(src_file, file_name, dest_file, drawing_templates, styles, library_name, library_dest, libraries_with_first_entry)))
+        file_tasks.append(generate(src_file, file_name, dest_file, drawing_templates, styles, library_name, library_dest, libraries_with_first_entry))
     for library_name in library_names:
         dest_file = f"./{YAML_DIST_DIR}/{library_name}-{config_version}.xml"
         library_tasks_start.append(generate_library_start(library_name, dest_file, library_templates))
@@ -927,7 +927,7 @@ async def main() -> None:
     for config_file in config_files:
         split = os.path.normpath(config_file).split(os.path.sep)
         file_name = os.path.splitext(split[1])[0]
-        config_tasks.append(asyncio.create_task(generate_config(config_file, file_name, config_version, config_out, config_templates, empty_diagram_files)))
+        config_tasks.append(generate_config(config_file, file_name, config_version, config_out, config_templates, empty_diagram_files))
 
     if len(file_tasks) > 0:
         # await asyncio.wait(library_tasks_start)
