@@ -13,3 +13,6 @@ bottom_text:
 left:
   - - "Display"
     - "Input Signal"
+right:
+ - - "Displayed"
+   - "Pixels"
