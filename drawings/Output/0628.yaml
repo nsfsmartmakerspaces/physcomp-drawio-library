@@ -6,8 +6,8 @@ block: false
 style: chip_1
 name: "I²C LCD Display Module [628]"
 title:
-  - "I²C LCD Display"
-  - "Module"
+  - "I²C LCD"
+  - "Display Module"
 bottom_text:
   - "#0628"
 top:
