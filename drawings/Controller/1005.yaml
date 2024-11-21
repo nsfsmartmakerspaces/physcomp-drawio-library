@@ -18,9 +18,9 @@ top:
 
 left:
   - - "GP0 / UART0 TX, pin #1"
-    - "(default Universal Asynchronous Receiver-Transmitter transmit)"
+    - "(default UART transmit)"
   - - "GP1 / UART0 RX, pin #2"
-    - "(default Universal Asynchronous Receiver-Transmitter receive)"
+    - "(default UART receive)"
   - "GND, pin #3"
   - "GP2, pin #4"
   - "GP3, pin #5"
@@ -80,7 +80,9 @@ right:
     
 bottom:
   - - "SWCLK"
-    - "(Serial Wire Debug Clock)"
+    - "(Serial Wire"
+    - "Debug Clock)"
   - "GND"
   - - "SWCIO"
-    - "(Serial Wire Debug Input/Output)"
+    - "(Serial Wire Debug"
+    - "Input/Output)"
