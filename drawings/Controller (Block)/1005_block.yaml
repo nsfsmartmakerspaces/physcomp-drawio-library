@@ -1,0 +1,18 @@
+schema_version: "1.0.0"
+disable: false
+
+dip: false
+block: true
+style: block_1
+name: "Raspberry Pi Pico [1005]"
+title:
+  - "Raspberry"
+  - "Pi Pico"
+bottom_text:
+  - "#1005"
+left:
+  - - "Input"
+    - "Signals"
+right:
+  - - "Output"
+    - "Signals"
