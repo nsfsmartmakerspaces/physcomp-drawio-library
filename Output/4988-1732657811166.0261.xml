@@ -1,0 +1,146 @@
+<shape aspect="fixed" h="370" w="290" strokewidth="inherit" name="4988 Stepper Motor Driver [4988]">
+    <connections>
+        <constraint x="0.0" y="0.1891891891891892" perimeter="0" name="E n a b l e"/>
+        <constraint x="0.0" y="0.2702702702702703" perimeter="0" name="M i c r o s t e p   1"/>
+        <constraint x="0.0" y="0.35135135135135137" perimeter="0" name="M i c r o s t e p   2"/>
+        <constraint x="0.0" y="0.43243243243243246" perimeter="0" name="M i c r o s t e p   3"/>
+        <constraint x="0.0" y="0.5135135135135135" perimeter="0" name="R e s e t"/>
+        <constraint x="0.0" y="0.5945945945945946" perimeter="0" name="S l e e p"/>
+        <constraint x="0.0" y="0.6756756756756757" perimeter="0" name="S t e p"/>
+        <constraint x="0.0" y="0.7567567567567568" perimeter="0" name="D i r e c t i o n"/>
+        <constraint x="1.0" y="0.1891891891891892" perimeter="0" name="M o t o r   p o w e r   ( 8 – 3 5 V )"/>
+        <constraint x="1.0" y="0.2702702702702703" perimeter="0" name="M o t o r   g r o u n d"/>
+        <constraint x="1.0" y="0.35135135135135137" perimeter="0" name="M o t o r   o u t p u t   2 B"/>
+        <constraint x="1.0" y="0.43243243243243246" perimeter="0" name="M o t o r   o u t p u t   2 A"/>
+        <constraint x="1.0" y="0.5135135135135135" perimeter="0" name="M o t o r   o u t p u t   1 A"/>
+        <constraint x="1.0" y="0.5945945945945946" perimeter="0" name="M o t o r   o u t p u t   1 B"/>
+        <constraint x="1.0" y="0.6756756756756757" perimeter="0" name="L o g i c   p o w e r   ( 3 – 5 V )"/>
+        <constraint x="1.0" y="0.7567567567567568" perimeter="0" name="L o g i c   g r o u n d"/>
+    </connections>
+    <background>
+        <strokecolor color="#000000"/>
+        <fillcolor color="#ffffff"/>
+        <fontcolor color="#000000"/>
+        <alpha alpha="1"/>
+        <path>
+            <move x="20" y="0"/>
+            <line x="20" y="350"/>
+            <line x="270" y="350"/>
+            <line x="270" y="0"/>
+            <line x="186.66666666666669" y="0"/>
+            <arc rx="41.666666666666664" ry="41.666666666666664" x-axis-rotation="0" large-arc-flag="1" sweep-flag="1" x="103.33333333333334" y="0"/>
+            <close/>
+        </path>
+        <fillstroke />
+    </background>
+    <foreground>
+        <strokecolor color="#000000"/>
+        <fillcolor color="#000000"/>
+        <fontcolor color="#000000"/>
+        <alpha alpha="1"/>
+        <fontsize size="16"/>
+        <text str="4988" x="145.0" y="150.25" align="center" valign="middle" placeholders="1"/>
+        <text str="Stepper" x="145.0" y="166.75" align="center" valign="middle" placeholders="1"/>
+        <text str="Motor" x="145.0" y="183.25" align="center" valign="middle" placeholders="1"/>
+        <text str="Driver" x="145.0" y="199.75" align="center" valign="middle" placeholders="1"/>
+        <fontsize size="8"/>
+        <text str="#4988" x="266" y="348.0" align="right" valign="bottom" placeholders="1"/>
+        <fontsize size="10"/>
+        <path>
+            <move x="0" y="70.0"/>
+            <line x="20" y="70.0"/>
+        </path>
+        <fillstroke />
+        <text str="Enable" x="24" y="70.0" align="left" valign="middle" placeholders="1" />
+        <path>
+            <move x="0" y="100.0"/>
+            <line x="20" y="100.0"/>
+        </path>
+        <fillstroke />
+        <text str="Microstep 1" x="24" y="100.0" align="left" valign="middle" placeholders="1" />
+        <path>
+            <move x="0" y="130.0"/>
+            <line x="20" y="130.0"/>
+        </path>
+        <fillstroke />
+        <text str="Microstep 2" x="24" y="130.0" align="left" valign="middle" placeholders="1" />
+        <path>
+            <move x="0" y="160.0"/>
+            <line x="20" y="160.0"/>
+        </path>
+        <fillstroke />
+        <text str="Microstep 3" x="24" y="160.0" align="left" valign="middle" placeholders="1" />
+        <path>
+            <move x="0" y="190.0"/>
+            <line x="20" y="190.0"/>
+        </path>
+        <fillstroke />
+        <text str="Reset" x="24" y="190.0" align="left" valign="middle" placeholders="1" />
+        <path>
+            <move x="0" y="220.0"/>
+            <line x="20" y="220.0"/>
+        </path>
+        <fillstroke />
+        <text str="Sleep" x="24" y="220.0" align="left" valign="middle" placeholders="1" />
+        <path>
+            <move x="0" y="250.0"/>
+            <line x="20" y="250.0"/>
+        </path>
+        <fillstroke />
+        <text str="Step" x="24" y="250.0" align="left" valign="middle" placeholders="1" />
+        <path>
+            <move x="0" y="280.0"/>
+            <line x="20" y="280.0"/>
+        </path>
+        <fillstroke />
+        <text str="Direction" x="24" y="280.0" align="left" valign="middle" placeholders="1" />
+        <path>
+            <move x="290" y="70.0"/>
+            <line x="270" y="70.0"/>
+        </path>
+        <fillstroke />
+        <text str="Motor power (8–35V)" x="266" y="70.0" align="right" valign="middle" placeholders="1" />
+        <path>
+            <move x="290" y="100.0"/>
+            <line x="270" y="100.0"/>
+        </path>
+        <fillstroke />
+        <text str="Motor ground" x="266" y="100.0" align="right" valign="middle" placeholders="1" />
+        <path>
+            <move x="290" y="130.0"/>
+            <line x="270" y="130.0"/>
+        </path>
+        <fillstroke />
+        <text str="Motor output 2B" x="266" y="130.0" align="right" valign="middle" placeholders="1" />
+        <path>
+            <move x="290" y="160.0"/>
+            <line x="270" y="160.0"/>
+        </path>
+        <fillstroke />
+        <text str="Motor output 2A" x="266" y="160.0" align="right" valign="middle" placeholders="1" />
+        <path>
+            <move x="290" y="190.0"/>
+            <line x="270" y="190.0"/>
+        </path>
+        <fillstroke />
+        <text str="Motor output 1A" x="266" y="190.0" align="right" valign="middle" placeholders="1" />
+        <path>
+            <move x="290" y="220.0"/>
+            <line x="270" y="220.0"/>
+        </path>
+        <fillstroke />
+        <text str="Motor output 1B" x="266" y="220.0" align="right" valign="middle" placeholders="1" />
+        <path>
+            <move x="290" y="250.0"/>
+            <line x="270" y="250.0"/>
+        </path>
+        <fillstroke />
+        <text str="Logic power (3–5V)" x="266" y="250.0" align="right" valign="middle" placeholders="1" />
+        <path>
+            <move x="290" y="280.0"/>
+            <line x="270" y="280.0"/>
+        </path>
+        <fillstroke />
+        <text str="Logic ground" x="266" y="280.0" align="right" valign="middle" placeholders="1" />
+    </foreground>
+</shape>
