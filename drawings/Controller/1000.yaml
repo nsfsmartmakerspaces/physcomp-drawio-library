@@ -14,8 +14,8 @@ bottom_text:
 top:
   - - "Vin"
     - "(jack)"
-  - - "Vin"
-    - "(USB)"
+  - - "5V input"
+    - "(via USB)"
 
 left:
   - - "Vin"
