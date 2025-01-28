@@ -1,0 +1,39 @@
+<shape aspect="fixed" h="50" w="80" strokewidth="inherit" name="Lever Microswitch [0350]">
+  <connections>
+    <constraint name="COM" perimeter="0" x="0" y="0.6"/>
+    <constraint name="NC" perimeter="0" x="1" y="0.2"/>
+    <constraint name="NO" perimeter="0" x="1" y="0.6"/>
+</connections>
+<foreground>
+    <strokecolor color="#000000"/>
+    <fillcolor color="#ffffff"/>
+    <fontcolor color="#000000"/>
+    <alpha alpha="1"/>
+    <fontsize size="16"/>
+    <fillstroke/>
+    <path>
+        <move x="0" y="30"/>
+        <line x="17.5" y="30"/>
+        <move x="62.5" y="10"/>
+        <line x="80" y="10"/>
+        <move x="20.5" y="30"/>
+        <line x="59.5" y="14"/>
+        <move x="40" y="0"/>
+        <line x="40" y="22"/>
+        <move x="62.5" y="30"/>
+        <line x="80" y="30"/>
+    </path>
+    <stroke/>
+    <ellipse h="6" w="6" x="56.5" y="7"/>
+    <fillstroke/>
+    <ellipse h="6" w="6" x="17.5" y="27"/>
+    <fillstroke/>
+    <ellipse h="6" w="6" x="56.5" y="27"/>
+    <fillstroke/>
+    <fontsize size="8"/>
+    <text str="LEVER" x="2" y="34" align="left" valign="top" placeholders="1"/>
+    <text str="#0350" x="78" y="34" align="right" valign="top" placeholders="1"/>
+    <stroke/>
+</foreground>
+
+</shape>
