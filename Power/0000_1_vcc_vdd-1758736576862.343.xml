@@ -1,0 +1,20 @@
+<shape aspect="fixed" h="40" w="60" strokewidth="inherit" name="VCC or VDD">
+  <connections>
+    <constraint name="V" perimeter="0" x="0.5" y="1"/>
+</connections>
+<foreground>
+    <strokecolor color="#000000"/>
+    <fillcolor color="#000000"/>
+    <fontcolor color="#000000"/>
+    <alpha alpha="1"/>
+    <fontsize size="16"/>
+    <path>
+        <move x="5" y="20"/>
+        <line x="55" y="20"/>
+        <move x="30" y="20"/>
+        <line x="30" y="40"/>
+    </path>
+    <stroke/>
+</foreground>
+
+</shape>
