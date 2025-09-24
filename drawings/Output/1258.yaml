@@ -18,8 +18,8 @@ left:
   - "motor 1 output A"
   - "ground"
   - "ground"
-  - "motor 1 signal B"
   - "motor 1 output B"
+  - "motor 1 signal B"
   - "motor power (4.5–36V)"
 right:
   - "logic power (5V)"
@@ -27,8 +27,8 @@ right:
   - "motor 2 output A"
   - "ground"
   - "ground"
-  - "motor 2 signal B"
   - "motor 2 output B"
+  - "motor 2 signal B"
   - "motor 2 enable"
 # widen:
 bottom:
