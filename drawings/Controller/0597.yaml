@@ -41,9 +41,12 @@ right:
   - "20/A2"
   - "19/A1"
   - "18/A0"
-  - "15"
-  - "14"
-  - "16"
+  - - "15/SCLK"
+    - "(SPI Serial Clock)"
+  - - "14/MISO"
+    - "(SPI Master In Slave Out)"
+  - - "16/MOSI"
+    - "(SPI Master Out Slave In)"
   - "~10/A10"
   
 bottom:
